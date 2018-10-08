@@ -24,4 +24,8 @@
     <ProjectReference Include="..\Infra\Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="test1\" />
+  </ItemGroup>
+
 </Project>
