@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Open.Facade.Common.EntityView">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <Members>
+      <Field Name="id" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Common\EntityView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Facade.Common.PeriodView">
+    <Position X="5.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAACAAAAAAAAA=</HashCode>
+      <FileName>Common\PeriodView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Facade.Party.AddressView" Collapsed="true">
+    <Position X="1" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Party\AddressView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Facade.Quantity.MoneyView" Collapsed="true">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Quantity\MoneyView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Facade.Quantity.PaymentMethodView" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Quantity\PaymentMethodView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Facade.Party.EMailAddressView" Collapsed="true">
+    <Position X="1" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAACAAAAAgAAAAA=</HashCode>
+      <FileName>Party\EMailAddressView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Facade.Party.GeographicAddressView" Collapsed="true">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABwAAAAAAAAAAAAMAAAACAAAAAIAFAACAAAAAAAQEAA=</HashCode>
+      <FileName>Party\GeographicAddressView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Facade.Party.TelecomAddressView" Collapsed="true">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAAAhAAAAQAAEAEAAAAAEAAAABQAIAAEAAAAAAAE=</HashCode>
+      <FileName>Party\TelecomAddressView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Facade.Party.WebPageAddressView" Collapsed="true">
+    <Position X="6.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAIAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Party\WebPageAddressView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,23 @@
+﻿@using Open.Sentry.Extensions
+@model Open.Facade.Quantity.CurrencyView
+
+@{
+    ViewBag.Title = "Edit";
+    ViewBag.SubTitle = $"Currency ({Model.IsoCode})";
+    ViewBag.Button = "Save";
+    Layout = "_EditPartial";
+}
+
+<body>
+    @Html.HiddenFor(model => model.IsoCode)
+    @Html.EditingControlsFor(model => model.Symbol)
+    @Html.EditingControlsFor(model => model.Name)
+    @Html.EditingControlsFor(model => model.ValidFrom)
+    @Html.EditingControlsFor(model => model.ValidTo)
+</body>
+
+@section Actions{
+    @Html.ActionLink("Back to List", "Index")
+}
+
+

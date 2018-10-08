@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA58F6D8-69BF-4313-A766-D3E85457AB60}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Open.Facade</RootNamespace>
+    <AssemblyName>Open.Facade</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\NamedView.cs" />
+    <Compile Include="Common\PeriodView.cs" />
+    <Compile Include="Common\EntityView.cs" />
+    <Compile Include="Party\AddressView.cs" />
+    <Compile Include="Party\AddressViewFactory.cs" />
+    <Compile Include="Party\AddressViewsList.cs" />
+    <Compile Include="Party\CountryView.cs" />
+    <Compile Include="Party\CountryViewFactory.cs" />
+    <Compile Include="Party\CountryViewsList.cs" />
+    <Compile Include="Party\EMailAddressView.cs" />
+    <Compile Include="Party\GeographicAddressView.cs" />
+    <Compile Include="Party\TelecomAddressView.cs" />
+    <Compile Include="Party\WebPageAddressView.cs" />
+    <Compile Include="Quantity\MoneyCalculatorView.cs" />
+    <Compile Include="Quantity\CashView.cs" />
+    <Compile Include="Quantity\CheckView.cs" />
+    <Compile Include="Quantity\CreditCardView.cs" />
+    <Compile Include="Quantity\CurrencyView.cs" />
+    <Compile Include="Quantity\CurrencyViewFactory.cs" />
+    <Compile Include="Quantity\CurrencyViewsList.cs" />
+    <Compile Include="Quantity\DebitCardView.cs" />
+    <Compile Include="Quantity\MoneyView.cs" />
+    <Compile Include="Quantity\PaymentCardView.cs" />
+    <Compile Include="Quantity\PaymentMethodView.cs" />
+    <Compile Include="Quantity\PaymentMethodViewFactory.cs" />
+    <Compile Include="Quantity\PaymentMethodViewsList.cs" />
+    <Compile Include="Quantity\PaymentView.cs" />
+    <Compile Include="Quantity\PaymentViewFactory.cs" />
+    <Compile Include="Quantity\PaymentViewsList.cs" />
+    <Compile Include="Quantity\RateTypeView.cs" />
+    <Compile Include="Quantity\RateTypeViewFactory.cs" />
+    <Compile Include="Quantity\RateTypeViewsList.cs" />
+    <Compile Include="Quantity\RateView.cs" />
+    <Compile Include="Quantity\RateViewFactory.cs" />
+    <Compile Include="Quantity\RateViewsList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aids\Aids.csproj">
+      <Project>{10694a63-1ad2-49ad-9085-70748d4d5ce6}</Project>
+      <Name>Aids</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{7973d7de-de92-4b02-8f7e-862dece68148}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{9050c062-6a65-41e0-9d76-95fc307cd92f}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{45851ea0-73c5-4f4c-8a0b-9bc33836a851}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Party\Docs\Address.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Quantity\Docs\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

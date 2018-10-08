@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Open.Data.Common.MetricsData" Collapsed="true">
+    <Position X="1.25" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\MetricsData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Data.Common.IdentifiedData">
+    <Position X="6" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Common\IdentifiedData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Data.Common.PeriodData">
+    <Position X="6" Y="3" Width="1.5" />
+    <Members>
+      <Field Name="validFrom" Hidden="true" />
+      <Field Name="validTo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAACAAAAAgAAA=</HashCode>
+      <FileName>Common\PeriodData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Data.Quantity.CurrencyData" Collapsed="true">
+    <Position X="1.25" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Quantity\CurrencyData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Data.Party.CountryData" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Party\CountryData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Data.Common.NamedData" Collapsed="true">
+    <Position X="4" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAgAAQAIAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\NamedData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Core.Archetype" Collapsed="true">
+    <Position X="6" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Open.Data.Quantity.NationalCurrencyData" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAABAACAIQAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Quantity\NationalCurrencyData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Country" />
+      <Property Name="Currency" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

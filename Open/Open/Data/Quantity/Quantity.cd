@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Open.Logic.QuantityClasses.Quantity">
+    <Position X="1" Y="1" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAJAAAAAgQAgAAQBIAIDAACAAAAAhCAAAgAgAAIACAA=</HashCode>
+      <FileName>QuantityClasses\Quantity.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GetUnit" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Open.Logic.QuantityClasses.Unit" Collapsed="true">
+    <Position X="4.5" Y="1" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAJAAAAAgQAACAAAAAIBAAAEAAAABAghBCAIAJQAAAA=</HashCode>
+      <FileName>QuantityClasses\Unit.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GetMeasure" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Open.Logic.QuantityClasses.Measure" Collapsed="true">
+    <Position X="8" Y="1" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAQAAAAAAABIBAAAAAAAABAABAAAAAAAAAAA=</HashCode>
+      <FileName>QuantityClasses\Measure.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Logic.QuantityClasses.UnitBase" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAgAAAAIAAAAAAA=</HashCode>
+      <FileName>QuantityClasses\UnitBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Logic.QuantityClasses.UnitDerived" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAgACAAAAAABAAAAAAAABAgBAAAIAAAAAAA=</HashCode>
+      <FileName>QuantityClasses\UnitDerived.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Terms" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Open.Logic.QuantityClasses.UnitFactored" Collapsed="true">
+    <Position X="4.25" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAASAAAAAAAAAAAAAAABAgAAAAIAAAAAAA=</HashCode>
+      <FileName>QuantityClasses\UnitFactored.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Logic.QuantityClasses.UnitFunctioned" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAACBAAACEAAAAAAIAAAAACBBBgAAAAIAAAAAAA=</HashCode>
+      <FileName>QuantityClasses\UnitFunctioned.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Logic.QuantityClasses.UnitTerm">
+    <Position X="5.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAgACAAAAAIAIAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>QuantityClasses\UnitTerm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GetUnit" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Open.Logic.QuantityClasses.CommonTerm&lt;T&gt;">
+    <Position X="8.25" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAACACAAAAAAAAAAAACMABAABAAAAAAAAAAA=</HashCode>
+      <FileName>QuantityClasses\CommonTerm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

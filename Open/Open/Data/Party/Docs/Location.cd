@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Open.Data.Common.IdentifiedData">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Common\IdentifiedData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Data.Common.PeriodData">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAACAAAAAgAAA=</HashCode>
+      <FileName>Common\PeriodData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Data.Party.AddressData" Collapsed="true">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAIAAQAAAAAAAIAUAACAAAAAAAAAAE=</HashCode>
+      <FileName>Party\AddressData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Data.Party.EmailAddressData" Collapsed="true">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Party\EmailAddressData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Data.Party.GeographicAddressData" Collapsed="true">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAIQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Party\GeographicAddressData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Data.Party.TelecomAddressData" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAE=</HashCode>
+      <FileName>Party\TelecomAddressData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Data.Party.WebPageAddressData" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Party\WebPageAddressData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Core.Archetype" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

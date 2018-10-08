@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="Open.Core.ICrudRepository&lt;TObject&gt;">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAIAIAAAAABAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ICrudRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Open.Core.IPaginatedList&lt;T&gt;">
+    <Position X="1" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAEAAUAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPaginatedList.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Open.Core.IPaginatedRepository&lt;TObject, TRecord&gt;">
+    <Position X="3.5" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAEAAAAAAAAAAIAAAAECAAAAA=</HashCode>
+      <FileName>IPaginatedRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Open.Core.IRepository&lt;TObject, TRecord&gt;" Collapsed="true">
+    <Position X="1" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

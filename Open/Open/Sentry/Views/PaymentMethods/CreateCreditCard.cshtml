@@ -1,0 +1,14 @@
+﻿@model Open.Facade.Quantity.CreditCardView
+
+@{
+    ViewBag.Title = "Create";
+    ViewBag.SubTitle = $"{Model.PaymentType}";
+    ViewBag.Button = "Create";
+    Layout = "_EditPartial";
+}
+
+<body>
+    @await Html.PartialAsync("_EditCreditCard", Model)
+</body>
+
+@section Actions{ @Html.ActionLink("Back to List", "Index") }

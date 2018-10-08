@@ -1,0 +1,23 @@
+﻿@using Open.Sentry.Extensions
+@model Open.Facade.Quantity.PaymentView
+
+@{
+    ViewBag.Title = "Delete";
+    ViewBag.SubTitle = "Payment";
+    ViewBag.Button = "Delete";
+    Layout = "_DeletePartial";
+}
+
+<body>
+@Html.ViewingControlsFor(x => x.Amount)
+@Html.ViewingControlsFor(x => x.CurrencyID)
+@Html.ViewingControlsFor(x => x.PaymentMethodID)
+@Html.ViewingControlsFor(x => x.DateDue)
+@Html.ViewingControlsFor(x => x.DateMade)
+@Html.ViewingControlsFor(x => x.ValidTo)
+</body>
+
+@section Actions{
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+    @Html.ActionLink("Back to List", "Index")
+}

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Open.Aids.GetRandom">
+    <Position X="0.5" Y="0.75" Width="2.25" />
+    <Members>
+      <Field Name="r" Hidden="true" />
+      <Method Name="toTheSequenceOfGrowing" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>QgAAAAAAIAAgAACxQAAAAAAAIAACACQAEEQhgAAgAAA=</HashCode>
+      <FileName>GetRandom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Aids.SetRandom">
+    <Position X="3.75" Y="0.75" Width="2.75" />
+    <Members>
+      <Method Name="getListElementsType" Hidden="true" />
+      <Method Name="setValuesForList" Hidden="true" />
+      <Method Name="setValuesForProperties" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAEAAgAAAAIAA=</HashCode>
+      <FileName>SetRandom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.Aids.CreateNew">
+    <Position X="3.75" Y="3" Width="2.75" />
+    <Members>
+      <Method Name="getFirstOrDefaultConstructorInfo" Hidden="true" />
+      <Method Name="invokeConstructor" Hidden="true" />
+      <Method Name="setRandomParameterValues" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAQAAAAAAgAAg=</HashCode>
+      <FileName>CreateNew.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

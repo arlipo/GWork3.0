@@ -1,0 +1,38 @@
+﻿@using Open.Sentry.Extensions
+@model Open.Facade.Party.GeographicAddressView
+
+@Html.ViewingControlsFor(a => a.AddressLine)
+@Html.ViewingControlsFor(a => a.City)
+@Html.ViewingControlsFor(a => a.RegionOrState)
+@Html.ViewingControlsFor(a => a.ZipOrPostalCode)
+@Html.ViewingControlsFor(a => a.Country)
+@Html.ViewingControlsFor(a => a.ValidFrom)
+@Html.ViewingControlsFor(a => a.ValidTo)
+
+@if (Model.RegisteredTelecomAddresses.Count > 0) {
+    <div class="form-group">
+        @Html.LabelFor(m => m.RegisteredTelecomAddresses, new {@class = "control-label col-md-2"}),
+        <div class="col-md-4" style="margin-top: 10px">
+            <table class="table">
+                @{ var r = Model.RegisteredTelecomAddresses.FirstOrDefault(); }
+                <thead>
+                <tr>
+                    <th>@Html.LabelFor(x => r.Contact)</th>
+                    <th>@Html.LabelFor(x => r.ValidFrom)</th>
+                    <th>@Html.LabelFor(x => r.ValidTo)</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.RegisteredTelecomAddresses) {
+                    <tr>
+                        <td>@Html.DisplayFor(x => item.Contact)</td>
+                        <td>@Html.DisplayFor(x => item.ValidFrom)</td>
+                        <td>@Html.DisplayFor(x => item.ValidTo)</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+

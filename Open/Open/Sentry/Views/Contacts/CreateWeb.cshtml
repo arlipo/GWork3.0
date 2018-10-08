@@ -1,0 +1,18 @@
+﻿@model Open.Facade.Party.WebPageAddressView
+
+@{
+    ViewBag.Title = "Create";
+    ViewBag.SubTitle = $"{Model.AddressType} Address";
+    ViewBag.Button = "Create";
+    Layout = "_EditPartial";
+}
+
+<body>
+    @await Html.PartialAsync("_EditWeb", Model)
+</body>
+
+@section Actions{
+    @Html.ActionLink("Back to List", "Index")
+}
+
+

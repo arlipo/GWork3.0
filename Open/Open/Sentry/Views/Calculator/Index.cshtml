@@ -1,0 +1,68 @@
+﻿@using Open.Core
+@using Open.Sentry.Extensions
+@model Open.Facade.Quantity.MoneyCalculatorView
+
+@{
+    ViewBag.Title = "Calculator";
+    Layout = "_Layout";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm()) {
+    @*@Html.AntiForgeryToken()*@
+    <div class="form-horizontal">
+        <h4>@ViewBag.SubTitle</h4>
+        <hr/>
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+        @Html.ViewingControlsFor(m => m.Result)
+        @Html.HiddenFor(m => m.Operation)
+        @if (Model.Operation == MoneyOperation.Round) {
+            @Html.EditingControlsForEnum(m => m.RoundingStrategy)
+            @Html.EditingControlsFor(m => m.RoundingDecimals)
+            @Html.EditingControlsFor(m => m.RoundingDigit)
+            @Html.EditingControlsFor(m => m.RoundingStep)
+        }
+        else if (Model.Operation == MoneyOperation.Convert) {
+            <div class="form-group">
+                @Html.LabelFor(m => m.CurrencyID, new { @class = "control-label col-md-2" })
+                <div class="col-md-2">
+                    @Html.DropDownListFor(m => m.CurrencyID, new SelectList(Model.Currencies), new { @class = "form-control"})
+                </div>
+            </div>
+        }
+        else {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Amount, new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.EditorFor(m => m.Amount, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="col-md-2">
+                @Html.DropDownListFor(m => m.CurrencyID, new SelectList(Model.Currencies), new { @class = "form-control"})
+            </div>
+        </div>
+        }
+        @Html.HiddenFor(m => m.Score)
+        @Html.HiddenFor(m => m.ScoreCurrency)
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" name="submit"value="+" class="btn btn-default"/>
+            <input type="submit" name="submit" value="-" class="btn btn-default"/>
+            <input type="submit" name="submit" value="*" class="btn btn-default"/>
+            <input type="submit" name="submit" value="%" class="btn btn-default"/>
+            <input type="submit" name="submit" value="Convert" class="btn btn-default"/>
+            <input type="submit" name="submit" value="Round" class="btn btn-default"/>
+            <input type="submit" name="submit" value="=" class="btn btn-default"/>
+            <input type="submit" name="submit" value="Clear" class="btn btn-default"/>
+        </div>
+    </div>
+}
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

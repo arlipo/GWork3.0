@@ -1,0 +1,14 @@
+﻿@model Open.Facade.Quantity.CheckView
+
+@{
+    ViewBag.Title = "Delete";
+    ViewBag.SubTitle = $"{Model.PaymentType}";
+    ViewBag.Button = "Delete";
+    Layout = "_DeletePartial";
+}
+
+<body>
+    @await Html.PartialAsync("_ViewCheck", Model);
+</body>
+
+@section Actions{ @Html.ActionLink("Back to List", "Index") }

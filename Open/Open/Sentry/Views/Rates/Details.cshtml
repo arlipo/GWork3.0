@@ -1,0 +1,23 @@
+﻿@using Open.Sentry.Extensions
+@model Open.Facade.Quantity.RateView
+
+@{
+    ViewBag.Title = "Details";
+    ViewBag.SubTitle = "Exchange Rate";
+    Layout = "_DetailsPartial";
+}
+
+<body>
+    @Html.ViewingControlsFor(model => model.ID)
+    @Html.ViewingControlsFor(model => model.Rate)
+    @Html.ViewingControlsFor(model => model.CurrencyID)
+    @Html.ViewingControlsFor(model => model.RateTypeID)
+    @Html.ViewingControlsFor(model => model.ValidFrom)
+    @Html.ViewingControlsFor(model => model.ValidTo)
+
+</body>
+
+@section Actions{
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+    @Html.ActionLink("Back to List", "Index")
+}

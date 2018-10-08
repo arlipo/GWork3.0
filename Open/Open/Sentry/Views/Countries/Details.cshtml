@@ -1,0 +1,49 @@
+﻿@using Open.Sentry.Extensions
+@model Open.Facade.Party.CountryView
+
+@{
+    ViewBag.Title = "Details";
+    ViewBag.SubTitle = "Country";
+    Layout = "_DetailsPartial";
+}
+
+<body>
+    @Html.ViewingControlsFor(model => model.Alpha3Code)
+    @Html.ViewingControlsFor(model => model.Alpha2Code)
+    @Html.ViewingControlsFor(model => model.Name)
+    @Html.ViewingControlsFor(model => model.ValidFrom)
+    @Html.ViewingControlsFor(model => model.ValidTo)
+
+@if (Model.CurrenciesInUse.Count > 0) {
+    <p/>
+    <h4>@Html.DisplayNameFor(model => model.CurrenciesInUse)</h4>
+    <p/>
+    <table class="table">
+        @{ var dummy = Model.CurrenciesInUse.FirstOrDefault(); }
+        <thead>
+        <tr>
+            <th>@Html.LabelFor(model => dummy.Name)</th>
+            <th>@Html.LabelFor(model => dummy.IsoCode)</th>
+            <th>@Html.LabelFor(model => dummy.Symbol)</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.CurrenciesInUse) {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsoCode)</td>
+                <td>@Html.DisplayFor(modelItem => item.Symbol)</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+
+</body>
+
+@section Actions{
+    @Html.ActionLink("Edit", "Edit", new {id = Model.Alpha3Code})
+    @Html.ActionLink("Back to List", "Index")
+}
+

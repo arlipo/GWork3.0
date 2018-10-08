@@ -1,0 +1,13 @@
+﻿@using Open.Sentry.Extensions
+@model Open.Facade.Quantity.CheckView
+
+@Html.HiddenFor(a => a.ID)
+@Html.EditingControlsFor(a => a.Payee)
+@Html.EditingControlsFor(a => a.AccountName)
+@Html.EditingControlsFor(a => a.AccountNumber)
+@Html.EditingControlsFor(a => a.BankAddress)
+@Html.EditingControlsFor(a => a.BankID)
+@Html.EditingControlsFor(a => a.BankName)
+@Html.EditingControlsFor(a => a.CheckNumber)
+@Html.EditingControlsFor(a => a.DateWritten)
+@Html.EditingControlsFor(a => a.ValidTo)

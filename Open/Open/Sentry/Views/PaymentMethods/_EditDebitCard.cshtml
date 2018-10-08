@@ -1,0 +1,14 @@
+﻿@using Open.Sentry.Extensions
+@model Open.Facade.Quantity.DebitCardView
+
+@Html.HiddenFor(a => a.ID)
+@Html.EditingControlsFor(a => a.NameOnCard)
+@Html.EditingControlsFor(a => a.CardName)
+@Html.EditingControlsFor(a => a.CardNumber)
+@Html.EditingControlsFor(a => a.CurrencyID)
+@Html.EditingControlsFor(a => a.DailyLimit)
+@Html.EditingControlsFor(a => a.BillingAddress)
+@Html.EditingControlsFor(a => a.IssueNumber)
+@Html.EditingControlsFor(a => a.VerificationCode)
+@Html.EditingControlsFor(a => a.ValidFrom)
+@Html.EditingControlsFor(a => a.ExpireDate)

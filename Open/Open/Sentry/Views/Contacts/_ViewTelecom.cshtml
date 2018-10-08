@@ -1,0 +1,39 @@
+﻿@using Open.Sentry.Extensions
+@model Open.Facade.Party.TelecomAddressView
+
+@Html.ViewingControlsFor(a => a.CountryCode)
+@Html.ViewingControlsFor(a => a.NationalDirectDialingPrefix)
+@Html.ViewingControlsFor(a => a.AreaCode)
+@Html.ViewingControlsFor(a => a.Number)
+@Html.ViewingControlsFor(a => a.Extension)
+@Html.ViewingControlsFor(a => a.DeviceType)
+@Html.ViewingControlsFor(a => a.ValidFrom)
+@Html.ViewingControlsFor(a => a.ValidTo)
+
+@if (Model.RegisteredInAddresses.Count > 0) {
+    <div class="form-group">
+        @Html.LabelFor(m => m.RegisteredInAddresses, new {@class = "control-label col-md-2"}),
+        <div class="col-md-4" style="margin-top: 10px">
+            <table class="table">
+                @{ var x = Model.RegisteredInAddresses.FirstOrDefault(); }
+                <thead>
+                <tr>
+                    <th>@Html.LabelFor(a => x.Contact)</th>
+                    <th>@Html.LabelFor(a => x.ValidFrom)</th>
+                    <th>@Html.LabelFor(a => x.ValidTo)</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.RegisteredInAddresses) {
+                    <tr>
+                        <td>@Html.DisplayFor(a => item.Contact)</td>
+                        <td>@Html.DisplayFor(a => item.ValidFrom)</td>
+                        <td>@Html.DisplayFor(a => item.ValidTo)</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
