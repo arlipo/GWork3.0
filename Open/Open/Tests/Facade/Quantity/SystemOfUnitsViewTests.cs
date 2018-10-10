@@ -2,7 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Facade.Quantity;
 namespace Open.Tests.Facade.Quantity {
-    [TestClass] public class SystemOfUnitsViewTests : ClassTests<SystemOfUnitsView> {
+    [TestClass] public class SystemOfUnitsViewTests //: ClassTests<SystemOfUnitsView>
+    {
 
         //protected override SystemOfUnits getRandomObj() { return SystemOfUnits.Random(); }
 

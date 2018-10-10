@@ -2,7 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Facade.Quantity;
 namespace Open.Tests.Facade.Quantity {
-    [TestClass] public class UnitFunctionedViewTests : ClassTests<UnitFunctionedView> {
+    [TestClass] public class UnitFunctionedViewTests //: ClassTests<UnitFunctionedView>
+    {
 
         //[TestMethod] public void FromBaseRuleIdTest() {
         //    testProperty(() => Obj.FromBaseRuleId, x => Obj.FromBaseRuleId = x);

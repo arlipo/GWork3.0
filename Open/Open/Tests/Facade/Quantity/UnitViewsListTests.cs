@@ -3,7 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Facade.Quantity;
 namespace Open.Tests.Facade.Quantity {
 
-    [TestClass] public class UnitViewsListTests : ClassTests<UnitViewsList> {
+    [TestClass] public class UnitViewsListTests //: ClassTests<UnitViewsList>
+    {
 
         //private UnitBase unit;
         //private string name;

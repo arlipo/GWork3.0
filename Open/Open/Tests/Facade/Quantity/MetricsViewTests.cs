@@ -2,7 +2,7 @@
 using Open.Facade.Quantity;
 namespace Open.Tests.Facade.Quantity
 {
-    [TestClass] public class MetricsViewTests: ClassTests<MetricsView>
+    [TestClass] public class MetricsViewTests //ClassTests<MetricsView>
     {
     }
 }

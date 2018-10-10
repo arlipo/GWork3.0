@@ -2,7 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Facade.Quantity;
 namespace Open.Tests.Facade.Quantity {
-    [TestClass] public class UnitBaseViewTests : ClassTests<UnitBaseView> {
+    [TestClass] public class UnitBaseViewTests //: ClassTests<UnitBaseView>
+    {
 
         //[TestInitialize] public override void TestInitialize() {
         //    base.TestInitialize();

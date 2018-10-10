@@ -2,7 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Facade.Quantity;
 namespace Open.Tests.Facade.Quantity {
-    [TestClass] public class UnitFactoredViewTests : ClassTests<UnitFactoredView> {
+    [TestClass] public class UnitFactoredViewTests //: ClassTests<UnitFactoredView>
+    {
 
     //    [TestMethod] public void FactorTest() {
     //        testProperty(() => Obj.Factor, x => Obj.Factor = x);

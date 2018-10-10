@@ -1,7 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Facade.Quantity;
 namespace Open.Tests.Facade.Quantity {
-    [TestClass] public class CommonTermViewTests : ClassTests<CommonTermView<MetricsView>> {
+    [TestClass] public class CommonTermViewTests //: ClassTests<CommonTermView<MetricsView>>
+    {
 
         //private class testClass : CommonTerm<Metric> {
         //    public testClass() : this(null) { }

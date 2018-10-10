@@ -2,7 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Facade.Quantity;
 namespace Open.Tests.Facade.Quantity {
-    [TestClass] public class MeasureDerivedViewTests : ClassTests<MeasureDerivedView> {
+    [TestClass] public class MeasureDerivedViewTests //: ClassTests<MeasureDerivedView>
+    {
 
         //protected override MeasureDerived getRandomObj() {
         //    return  MeasureDerived.Random();

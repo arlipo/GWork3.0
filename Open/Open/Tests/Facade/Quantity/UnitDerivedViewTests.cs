@@ -2,7 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Facade.Quantity;
 namespace Open.Tests.Facade.Quantity {
-    [TestClass] public class UnitDerivedViewTests : ClassTests<UnitDerivedView> {
+    [TestClass] public class UnitDerivedViewTests //: ClassTests<UnitDerivedView>
+    {
         //private SystemOfUnits systemOfUnits;
         //private MeasureBase measure1;
         //private MeasureBase measure2;

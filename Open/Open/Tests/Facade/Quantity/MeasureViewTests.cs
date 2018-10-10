@@ -2,7 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Facade.Quantity;
 namespace Open.Tests.Facade.Quantity {
-    [TestClass] public class MeasureViewTests : ClassTests<MeasureView> {
+    [TestClass] public class MeasureViewTests //: ClassTests<MeasureView>
+    {
         //protected string elementPattern => "{0}";
         //protected string multiplyPattern => "{0}*{1}";
         //protected string powerPattern => "{0}^{1}";
