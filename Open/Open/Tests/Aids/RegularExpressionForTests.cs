@@ -25,5 +25,17 @@ namespace Open.Tests.Aids {
             Assert.IsFalse(Regex.IsMatch("AB?", match));
             Assert.IsFalse(Regex.IsMatch("aBC", match));
         }
+
+        [TestMethod]
+        public void NumericOnlyTest()
+        {
+            const string match = RegularExpressionFor.NumericOnly;
+            Assert.IsTrue(Regex.IsMatch("123", match));
+            Assert.IsFalse(Regex.IsMatch("123 ", match));
+            Assert.IsFalse(Regex.IsMatch("123a", match));
+            Assert.IsFalse(Regex.IsMatch("a123", match));
+            Assert.IsFalse(Regex.IsMatch("123'", match));
+            Assert.IsFalse(Regex.IsMatch("123\"", match));
+        }
     }
 }
