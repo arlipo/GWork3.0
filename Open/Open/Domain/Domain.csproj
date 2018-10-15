@@ -50,6 +50,7 @@
     <Compile Include="Goods\Good.cs" />
     <Compile Include="Goods\GoodFactory.cs" />
     <Compile Include="Goods\GoodsList.cs" />
+    <Compile Include="Goods\IGoodsRepository.cs" />
     <Compile Include="Party\Address.cs" />
     <Compile Include="Party\AddressFactory.cs" />
     <Compile Include="Party\AddressesList.cs" />

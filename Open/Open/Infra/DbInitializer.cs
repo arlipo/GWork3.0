@@ -1,4 +1,5 @@
-﻿using Open.Infra.Party;
+﻿using Open.Infra.Goods;
+using Open.Infra.Party;
 using Open.Infra.Quantity;
 namespace Open.Infra {
     public static class DbInitializer {
@@ -9,6 +10,7 @@ namespace Open.Infra {
             ContactsInitializer.Initialize(dbContext);
             EuroRateTypesInitializer.Initialize(dbContext);
             EuroRatesInitializer.Initialize(dbContext);
+            GoodsInitializer.Initialize(dbContext);
         }
     }
 }
