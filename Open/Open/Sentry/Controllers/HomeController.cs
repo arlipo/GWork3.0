@@ -32,5 +32,11 @@ namespace Open.Sentry.Controllers {
 
             return View();
         }
+        public IActionResult Autor()
+        {
+            ViewData["Message"] = "Contacts related stuff.";
+
+            return View();
+        }
     }
 }
