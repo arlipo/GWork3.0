@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Sentry</title>
 
+
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -16,8 +17,8 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+<body style="background-color:whitesmoke">
+    <nav class="navbar">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -33,8 +34,8 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Money">Money</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contacts">Countries</a></li>
                     <a class="navbar-brand" href="#">Shop now</a>
-                    
-                    <button class="btn btn-danger navbar-btn">My Cart</button>
+
+                    <button class="btn btn-success navbar-btn">My Cart</button>
                     <input type="text" class="form-control" placeholder="Search">
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
@@ -73,3 +74,5 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+
+
