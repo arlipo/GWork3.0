@@ -36,7 +36,7 @@ namespace Open.Tests.Domain.Quantity {
 
 
         [TestMethod] public void ToCurrencyTest() {
-
+            Assert.Inconclusive();
             var c = new Currency(GetRandom.Object<CurrencyData>());
             var m = new Money(c, GetRandom.Decimal(10, 1000));
             c = new Currency(GetRandom.Object<CurrencyData>());
