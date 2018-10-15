@@ -32,12 +32,19 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Money">Money</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">Help & Contact</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contacts">Countries</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Goods">Goods</a></li>
-                    <a class="navbar-brand" href="#">Shop now</a>
-                    <button class="btn btn-success navbar-btn">My Cart</button>
-                    <input type="text" class="form-control" placeholder="Search">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Autor">About Seller</a></li>
+
+
                 </ul>
+                <a class="navbar-brand" href="#">Shop now</a>
+                <input type="text" class="form-control" placeholder="Search">
+                <p>
+                    <a href="#" class="btn btn-info btn-lg">
+                        <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+                    </a>
+                </p>
                 @await Html.PartialAsync("_LoginPartial")
             </div>
         </div>
