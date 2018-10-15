@@ -32,5 +32,10 @@ namespace Open.Sentry.Controllers {
 
             return View();
         }
+        public IActionResult goods() {
+            ViewData["Message"] = "Goods related stuff.";
+
+            return View();
+        }
     }
 }
