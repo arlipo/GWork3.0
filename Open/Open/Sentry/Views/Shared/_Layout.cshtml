@@ -1,24 +1,51 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Sentry</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - Gwork</title>
 
-
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+<environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="~/css/site.css"/>
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"/>
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true"/>
     </environment>
+    <style>
+        body {
+            background-image: url(images/bg.jpg);
+            opacity: 0.97;
+            font: 15px Montserrat, sans-serif;
+        }
+        input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+        input[type=text]:focus {
+            width: 100%;
+        }
+        footer {
+            color: aliceblue;
+        }
+    </style>
+
 </head>
-<body style="background-color:whitesmoke">
-    <nav class="navbar">
+<body style="background-color:#545B6E">
+ <nav class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -31,33 +58,39 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Money">Money</a></li>
+                    
+                    <li><a asp-area="" asp-controller="Home" asp-action="SpareParts">Spare Parts</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Accessories">Accessories</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Chemistry">Chemistry</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="goods">Goods</a></li>
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="Money">Money</a></li>*@
                     <li><a asp-area="" asp-controller="Home" asp-action="About">Help & Contact</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contacts">Countries</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Autor">About Seller</a></li>
-
-
-                </ul>
-                <a class="navbar-brand" href="#">Shop now</a>
-                <input type="text" class="form-control" placeholder="Search">
+                    @*<li><a asp-area="" asp-controller="Home" asp-action="Contacts">Countries</a></li>*@
+                    <li><a asp-area="" asp-controller="Home" asp-action="Team">Team</a></li>
+                    @await Html.PartialAsync("_LoginPartial")
+                </ul>             
                 <p>
                     <a href="#" class="btn btn-info btn-lg">
                         <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
                     </a>
                 </p>
-                @await Html.PartialAsync("_LoginPartial")
+                <ul class="nav navbar-nav navbar-right"></ul>
+                <a class="navbar-brand" href="#">Shop now</a>
+               <form>
+                    <input type="text" name="search" placeholder="Search..">
+                </form>
             </div>
         </div>
     </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - Sentry</p>
-        </footer>
-    </div>
+<div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; Made by Gwork Company</p>
+    </footer>
+</div>
 
-    <environment include="Development">
+<environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
@@ -77,8 +110,7 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
-    @RenderSection("Scripts", required: false)
+ @RenderSection("Scripts", required: false)
 </body>
 </html>
 

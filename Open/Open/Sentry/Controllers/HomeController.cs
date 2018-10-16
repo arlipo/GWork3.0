@@ -32,7 +32,33 @@ namespace Open.Sentry.Controllers {
 
             return View();
         }
-        public IActionResult Autor()
+       
+        
+        public IActionResult goods()
+        {
+            ViewData["Message"] = "Contacts related stuff.";
+
+            return View();
+        }
+        public IActionResult SpareParts()
+        {
+            ViewData["Message"] = "Contacts related stuff.";
+
+            return View();
+        }
+        public IActionResult Accessories()
+        {
+            ViewData["Message"] = "Contacts related stuff.";
+
+            return View();
+        }
+        public IActionResult Chemistry()
+        {
+            ViewData["Message"] = "Contacts related stuff.";
+
+            return View();
+        }
+        public IActionResult Team()
         {
             ViewData["Message"] = "Contacts related stuff.";
 

@@ -1,27 +1,60 @@
-﻿@{
-    ViewData["Title"] = "About";
-}
+﻿<title>@ViewData["Title"] - About</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+    body {
+        background-color:#C8D2F4;
+        font: 15px Montserrat, sans-serif;
+    }
+    .bg-1 {
+        background-color: #C8D2F4;
+        font: 15px Montserrat, sans-serif;
+    }
+        </style>
+</head>
 
-<div class="container-fluid">
-    <h1>How can we help you today?</h1>
-    <p>Get personalized help and see your recent orders</p>
-    <p>Browse Help Articles</p>
-    <div class="row">
-        <div class="col-sm-4">
-            
-        
-            <div class="col-sm-4" style="">
-                Shipping & Tracking
-                <p> <span class="glyphicon glyphicon-home"></span></p>
+<body>
+    <div class="container-fluid bg-1 text-center">
+        <h2>How can we help you today?</h2>
+        <p>Get personalized help and see your recent orders</p>
+        <p>Browse Help Articles</p>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Returns & Refunds<span class="glyphicon glyphicon-usd"></span></a></li>
+            <li><a data-toggle="tab" href="#menu1">Shipping & Tracking <span class="glyphicon glyphicon-home"></span></a></li>
+            <li><a data-toggle="tab" href="#menu2">Account<span class="glyphicon glyphicon-user"></span></a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h3>Where's My Item?</h3>
+                <p>
+                    If your item hasn't arrived yet, the first thing to do is check the delivery information. You can find your item's delivery information by selecting it from your recent purchases above, or in your purchase history. In the delivery information, you can:
+
+                    View the estimated delivery date – Your item's estimated delivery date tells you when you should expect to receive the item. If the date hasn't passed yet, your item is probably still in transit.
+                    Make sure your shipping address is correct – If the shipping address you provided to the seller is incorrect, select Contact the seller and ask them to send the item to your new address. If they haven't shipped your item already, they'll be able to send it to the correct address. If they've already shipped the item, they won't be able to help. If possible, we recommend trying to collect your package from the original address.
+                </p>
             </div>
-
-            <div class="col-sm-4">Account
-                <p> <span class="glyphicon glyphicon-user"></span></p>   </div>
-
-        <div class="col-sm-4" style="">
-            Returns & Refunds
-            <p> <span class="glyphicon glyphicon-usd"></span></p>
+            <div id="menu1" class="tab-pane fade">
+                <h3>Shipping & Tracking for Buyers</h3>
+                <p>
+                    You can follow your package online all the way to your shipping address when the seller uploads tracking information.
+                    For you to be able to track your item, your seller has to be using a tracked delivery service.
+                    Additionally, your seller must upload their carrier's tracking number
+                </p>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+                <h3>Your Account Status</h3>
+                <p>
+                    If your account is on hold, restricted, or suspended, we'll send an email to your registered email address and to your  Messages explaining why.
+                    We'll also let you know what you need to do before it can be reinstated.
+                </p>
+            </div>
         </div>
     </div>
-</div>
-</div>
+</body>
+</html>
