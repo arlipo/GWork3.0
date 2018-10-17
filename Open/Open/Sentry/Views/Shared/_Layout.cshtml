@@ -3,20 +3,21 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - Gwork</title>
+    <title>@ViewData["Title"]Car Parts/SHOP ONLINE</title>
 
 <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
         <link rel="stylesheet" href="~/css/site.css"/>
     </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"/>
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true"/>
-    </environment>
+<environment exclude="Development">
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+          asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    <script src="~/js/site.min.js" asp-append-version="true"></script>
+</environment>
     <style>
-        body {
+        body{
             background-image: url(images/bg.jpg);
             opacity: 0.97;
             font: 15px Montserrat, sans-serif;
@@ -44,73 +45,77 @@
     </style>
 
 </head>
-<body style="background-color:#545B6E">
- <nav class="navbar navbar-inverse">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">GWork</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    
-                    <li><a asp-area="" asp-controller="Home" asp-action="SpareParts">Spare Parts</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Accessories">Accessories</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Chemistry">Chemistry</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="goods">Goods</a></li>
-                    @*<li><a asp-area="" asp-controller="Home" asp-action="Money">Money</a></li>*@
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">Help & Contact</a></li>
-                    @*<li><a asp-area="" asp-controller="Home" asp-action="Contacts">Countries</a></li>*@
-                    <li><a asp-area="" asp-controller="Home" asp-action="Team">Team</a></li>
-                    @await Html.PartialAsync("_LoginPartial")
-                </ul>             
-                <p>
-                    <a href="#" class="btn btn-info btn-lg">
-                        <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
-                    </a>
-                </p>
-                <ul class="nav navbar-nav navbar-right"></ul>
-                <a class="navbar-brand" href="#">Shop now</a>
-               <form>
-                    <input type="text" name="search" placeholder="Search..">
-                </form>
-            </div>
+<body style="background-image: url(images/9.jpg)">
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Home</a>
         </div>
-    </nav>
-<div class="container body-content">
-    @RenderBody()
-    <hr />
-    <footer>
-        <p>&copy; Made by Gwork Company</p>
-    </footer>
-</div>
+        <ul class="nav navbar-nav navbar-right"></ul>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
 
-<environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
- @RenderSection("Scripts", required: false)
+
+                <li><a asp-area="" asp-controller="Home" asp-action="SpareParts">Spare Parts</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Accessories">Accessories</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Chemistry">Chemistry</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="goods">Goods</a></li>
+                @*<li><a asp-area="" asp-controller="Home" asp-action="Money">Money</a></li>*@
+                <li><a asp-area="" asp-controller="Home" asp-action="About">Help & Contact</a></li>
+                @*<li><a asp-area="" asp-controller="Home" asp-action="Contacts">Countries</a></li>*@
+                <li><a asp-area="" asp-controller="Home" asp-action="Team">Team</a></li>
+                @await Html.PartialAsync("_LoginPartial")
+
+            </ul>             
+            <p>
+                <a href="#" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+                </a>
+            </p>
+            <ul class="nav navbar-nav navbar-right"></ul>
+            <a class="navbar-brand" href="#">Shop now</a>
+            <form>
+                <input type="text" name="search" placeholder="Search..">
+            </form>
+        </div>
+    </div>
+</nav>
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>Made by Gwork Company</p>
+            </footer>
+        </div>
+
+        <environment include="Development">
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+        </environment>
+        <environment exclude="Development">
+            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+            </script>
+            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+            </script>
+            <script src="~/js/site.min.js" asp-append-version="true"></script>
+        </environment>
+        @RenderSection("Scripts", required: false)
 </body>
 </html>
 
