@@ -1,11 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"]Car Parts, Shop ONLINE</title>
 
-<environment include="Development">
+    <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
         <link rel="stylesheet" href="~/css/site.css"/>
     </environment>
@@ -17,9 +18,9 @@
     </environment>
     @*<link rel="shortcut icon" href="/nazvanie.ico"> /* сюда можно вставить иконку в вкладке браузера*/*@
     <style>
-        body{
+        body {
             background-image: url(images/bg.jpg);
-            opacity: 0.97;
+            opacity: 0.93;
             font: 15px Montserrat, sans-serif;
         }
         input[type=text] {
@@ -30,7 +31,7 @@
             font-size: 16px;
             background-color: white;
             background-image: url('searchicon.png');
-            background-position: 10px 10px; 
+            background-position: 10px 10px;
             background-repeat: no-repeat;
             padding: 12px 20px 12px 40px;
             -webkit-transition: width 0.4s ease-in-out;
@@ -50,6 +51,7 @@
     </style>
 
 </head>
+
 <body style="background-color:#545B6E">
  <nav class="navbar navbar-inverse">
         <div class="container">
@@ -64,7 +66,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="goods"> All Goods</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Goods"> All Goods</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="SpareParts">Spare Parts</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Accessories">Accessories</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Chemistry">Chemistry</a></li>
@@ -75,12 +77,12 @@
                     @await Html.PartialAsync("_LoginPartial")
                 </ul>  
                 <p>
-                    <a href="#" class="btn btn-info btn-lg">
+                    <a href="#" class="btn btn-success">
                         <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
                     </a>
                 </p>
                 <ul class="nav navbar-nav navbar-right"></ul>
-                <a class="navbar-brand" href="#">Shop now</a>
+                
                <form>
                     <input type="text" name="search" placeholder="Search..">
                 </form>
