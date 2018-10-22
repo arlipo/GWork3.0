@@ -19,11 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sentry", "Open\Sentry\Sentr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Open\Tests\Tests.csproj", "{3BCC7997-8FB3-4EDA-83BA-8757691EC8C1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{819510F1-1127-4416-8D3B-A4F4BB3EB2C0}"
-	ProjectSection(SolutionItems) = preProject
-		ReSharper.DotSettings = ReSharper.DotSettings
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
