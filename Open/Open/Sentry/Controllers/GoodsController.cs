@@ -7,9 +7,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Open.Domain.Goods;
 using Open.Facade.Goods;
-using Open.Sentry.Controllers;
 
-namespace Sentry.Controllers
+namespace Open.Sentry.Controllers
 {
     [Authorize]
     public class GoodsController : Controller //, ISentryController
