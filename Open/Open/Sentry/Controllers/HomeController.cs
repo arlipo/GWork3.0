@@ -33,13 +33,6 @@ namespace Open.Sentry.Controllers {
             return View();
         }
        
-        
-        public IActionResult Goods()
-        {
-            ViewData["Message"] = "Contacts related stuff.";
-
-            return View();
-        }
         public IActionResult SpareParts()
         {
             ViewData["Message"] = "Contacts related stuff.";
