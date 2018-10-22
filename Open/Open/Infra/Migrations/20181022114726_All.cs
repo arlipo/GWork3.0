@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Open.Infra.Migrations
 {
-    public partial class initial : Migration
+    public partial class All : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -36,6 +36,25 @@ namespace Open.Infra.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Currency", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Good",
+                columns: table => new
+                {
+                    ValidFrom = table.Column<DateTime>(nullable: false),
+                    ValidTo = table.Column<DateTime>(nullable: false),
+                    Code = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    ID = table.Column<string>(nullable: false),
+                    ImageType = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    FileLocation = table.Column<string>(nullable: true),
+                    Price = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Good", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -264,6 +283,9 @@ namespace Open.Infra.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Good");
+
             migrationBuilder.DropTable(
                 name: "NationalCurrency");
 
