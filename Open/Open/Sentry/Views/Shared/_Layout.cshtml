@@ -19,7 +19,7 @@
     <style>
         body{
             background-image: url(images/bg.jpg);
-            opacity: 0.97;
+            opacity: 0.93;
             font: 15px Montserrat, sans-serif;
         }
         input[type=text] {
@@ -64,7 +64,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="goods"> All Goods</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Goods"> All Goods</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="SpareParts">Spare Parts</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Accessories">Accessories</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Chemistry">Chemistry</a></li>
@@ -75,13 +75,13 @@
                     @await Html.PartialAsync("_LoginPartial")
                 </ul>  
                 <p>
-                    <a href="#" class="btn btn-info btn-lg">
+                    <a href="#" class="btn btn-success">
                         <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
                     </a>
                 </p>
                 <ul class="nav navbar-nav navbar-right"></ul>
-                <a class="navbar-brand" href="#">Shop now</a>
-                <form>
+                
+               <form>
                     <input type="text" name="search" placeholder="Search..">
                 </form>
             </div>

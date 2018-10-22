@@ -34,7 +34,7 @@ namespace Open.Sentry.Controllers {
         }
        
         
-        public IActionResult goods()
+        public IActionResult Goods()
         {
             ViewData["Message"] = "Contacts related stuff.";
 
