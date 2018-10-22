@@ -74,6 +74,7 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="About">Help & Contact</a></li>
                     @*<li><a asp-area="" asp-controller="Home" asp-action="Contacts">Countries</a></li>*@
                     <li><a asp-area="" asp-controller="Home" asp-action="Team">Team</a></li>
+
                     @await Html.PartialAsync("_LoginPartial")
                 </ul>  
                 <p>
@@ -81,8 +82,7 @@
                         <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
                     </a>
                 </p>
-                <ul class="nav navbar-nav navbar-right"></ul>
-                
+                <ul class="nav navbar-nav navbar-right"></ul>  
                <form>
                     <input type="text" name="search" placeholder="Search..">
                 </form>
