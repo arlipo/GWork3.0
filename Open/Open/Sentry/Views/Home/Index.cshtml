@@ -20,15 +20,18 @@
             font: 20px Montserrat, sans-serif;
         }
         .bg-3 {
-            background-color: #4d4d4d; /* Dark Blue */
+            background-color: #26403B; /* Dark Blue */
             color: #ffffff;
             font: 20px Montserrat, sans-serif;
         }
         .bg-4 {
-            background-color: #253056; /* Black Gray */
+            background-color: #26403B; /* Black Gray */
             color: #fff;
             padding-bottom: 120px;
             font: 20px Montserrat, sans-serif;
+        }
+        fd {
+            color: #111111;
         }
     </style>
 </head>
@@ -37,12 +40,12 @@
     
     <div class="container-fluid bg-1 text-center">
         <h3 class="margin"><strong><font size="35">Welcome to GWork Shop</font></strong> </h3>
-        <a href="http://localhost:57494/Home/SpareParts"><img src="serv.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Service" width="350" height="350"></a>
+        <a href="http://localhost:57494/Home/SpareParts"><img src="body.png" class="img-responsive img-circle margin" style="display:inline" alt="Service" width="350" height="350"></a>
             <h3>
                 Be one of the first to try out our new online store and discover all the advantages and services that we’ve created just for you.
                 We’re constantly improving our service to keep up with your needs. This is only the beginning.
             </h3>
-            <button class="btn btn-info">See items</button>
+            <button class="btn btn-success">See items</button>
 </div>
     
 
@@ -52,21 +55,37 @@
             <div class="col-sm-4">
                 <p><strong>Antifreeze + coolant LONG LIFE</strong></p>
                 <p></p>
-                <img src="21.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+                <img src="freez.png" alt="Image" width="255px" height="255px" border ="1px">
                 <p><strong>8,99€</strong></p>
-                <button class="btn btn-info">Buy</button>
+                <button class="btn btn-success">Buy</button>
             </div>
             <div class="col-sm-4">
                 <p><strong>RIDEX Brake Disc Rear Axle</strong></p>
-                <img src="23.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+                <img src="ridex.png" alt="Image" width="255px" height="255px" border ="1px">
                 <p><strong>14,99€</strong></p>
-                <button class="btn btn-info">Buy</button>
+                <button class="btn btn-success">Buy</button>
             </div>
             <div class="col-sm-4">
                 <p><strong>EXTREME Mobile phone holders</strong></p>
-                <img src="21.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+                <img src="horder.png" alt="Image" width="255px" height="255px" border ="1px">
                 <p><strong>6,99€</strong></p>
-                <button class="btn btn-info">Buy</button>
+             
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Buy</button>
+                
+                <div class="modal fade fd" id="myModal" role="dialog">
+                    <div class="modal-dialog" >
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Some text in the modal.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
             </div>
         </div>
     </div>   
