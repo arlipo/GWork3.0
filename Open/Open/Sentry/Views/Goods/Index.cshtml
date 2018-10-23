@@ -1,0 +1,21 @@
+﻿@using Open.Sentry.Extensions
+@model Open.Core.IPaginatedList<Open.Facade.Goods.GoodView>
+
+@{
+    ViewBag.Title = "Goods";
+    Layout = "_IndexPartial";
+}
+
+@section Create {
+    <a asp-action=Create>Create New</a>
+}
+
+<body>
+    <table class="table">
+        @{var dummy = Model.FirstOrDefault();}
+        <thead>
+        </thead>
+    </table>
+</body>
+
+<h2>title</h2>
