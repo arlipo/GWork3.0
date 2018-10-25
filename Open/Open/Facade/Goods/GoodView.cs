@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Open.Aids;
 using Open.Facade.Common;
@@ -23,12 +24,14 @@ namespace Open.Facade.Goods
             set => code = value;
         }
 
+        
         public string ImageType
         {
             get => getString(ref imageType);
             set => imageType = value;
         }
 
+        [DisplayName("Picture")]
         public string FileLocation
         {
             get => getString(ref fileLocation);
