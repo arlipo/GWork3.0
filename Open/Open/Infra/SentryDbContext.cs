@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using Open.Data.Customers;
 using Open.Data.Goods;
 using Open.Data.Party;
 using Open.Data.Quantity;
@@ -17,6 +18,7 @@ namespace Open.Infra {
         public DbSet<AddressData> Addresses { get; set; }
 
         public DbSet<GoodsData> Goods { get; set; }
+        public DbSet<CustomersData> Customers { get; set; }
 
         public DbSet<TelecomDeviceRegistrationData> TelecomDeviceRegistrations { get; set; }
 
@@ -30,6 +32,7 @@ namespace Open.Infra {
             b.Entity<CurrencyData>().ToTable("Currency");
             b.Entity<CountryData>().ToTable("Country");
             b.Entity<GoodsData>().ToTable("Good");
+            b.Entity<CustomersData>().ToTable("Customers");
             b.Entity<RateTypeData>().ToTable("RateType");
             createAddressTable(b);
             createTelecomAddressRegistrationTable(b);

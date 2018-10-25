@@ -1,4 +1,5 @@
-﻿using Open.Infra.Goods;
+﻿using Open.Infra.Customers;
+using Open.Infra.Goods;
 using Open.Infra.Party;
 using Open.Infra.Quantity;
 namespace Open.Infra {
@@ -11,6 +12,7 @@ namespace Open.Infra {
             EuroRateTypesInitializer.Initialize(dbContext);
             EuroRatesInitializer.Initialize(dbContext);
             GoodsInitializer.Initialize(dbContext);
+            CustomersInitializer.Initialize(dbContext);
         }
     }
 }
