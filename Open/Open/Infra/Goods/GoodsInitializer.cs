@@ -11,11 +11,11 @@ namespace Open.Infra.Goods
         {
             c.Database.EnsureCreated();
             if (c.Goods.Any()) return;
-            //здесь заполняется база данных с товарами
+            goodsList(c);
             c.SaveChanges();
         }
 
-        private static List<string> goodsList(SentryDbContext c)
+        private static void goodsList(SentryDbContext c)
         {
             var l = new List<string> {
                 add(c, new GoodsData{
@@ -25,12 +25,11 @@ namespace Open.Infra.Goods
                                   " for use in all automobiles and light-duty trucks, regardless of make, " +
                                   "model, year or original antifreeze color.",
                     FileLocation = "hz",
-                    ID = "12345",
+                    ID = "1",
                     ImageType = "png",
                     Price = "8,99"
                 })
             };
-            return l;
         }
         private static string add(SentryDbContext c, GoodsData goods)
         {
