@@ -9,12 +9,8 @@
 @section Create {
     <a asp-action=Create>Create New</a>
 }
-<style>
-    body {
-        background-color: #26403B;
-    }
-    </style>
-<body>
+
+
     <table class="table">
         @{var dummy = Model.FirstOrDefault();}
         <thead>
@@ -25,6 +21,5 @@
         </tr>
         </thead>
     </table>
-</body>
 
 <h2>title</h2>
