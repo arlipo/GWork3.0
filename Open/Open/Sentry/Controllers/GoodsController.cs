@@ -6,7 +6,7 @@ using Open.Facade.Goods;
 
 namespace Open.Sentry.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class GoodsController : Controller //, ISentryController
     {
         private readonly IGoodsRepository repository;
