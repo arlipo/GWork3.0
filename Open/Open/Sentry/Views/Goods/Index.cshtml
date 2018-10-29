@@ -14,6 +14,11 @@
     <table class="table">
         @{var dummy = Model.FirstOrDefault();}
         <thead>
+        <tr>
+            @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
+            @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.Price)
+            @Html.SortColumnHeaderFor(ViewData["SortImage"], model => dummy.FileLocation)
+        </tr>
         </thead>
     </table>
 </body>
