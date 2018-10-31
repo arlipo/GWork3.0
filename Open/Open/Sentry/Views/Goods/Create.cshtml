@@ -1,19 +1,22 @@
 ﻿@using Open.Sentry.Extensions
-@model Open.Facade.Quantity.CurrencyView
+@model Open.Facade.Goods.GoodView
 
 @{
     ViewBag.Title = "Create";
-    ViewBag.SubTitle = "Currency";
+    ViewBag.SubTitle = "Goods";
     ViewBag.Button = "Create";
     Layout = "_EditPartial";
 }
 
 <body>
-@Html.EditingControlsFor(model => model.IsoCode)
-@Html.EditingControlsFor(model => model.Symbol)
-@Html.EditingControlsFor(model => model.Name)
-@Html.EditingControlsFor(model => model.ValidFrom)
-@Html.EditingControlsFor(model => model.ValidTo)
+    @Html.EditingControlsFor(model => model.Code)
+    @Html.EditingControlsFor(model => model.Description)
+    @Html.EditingControlsFor(model => model.Name)
+    @Html.EditingControlsFor(model => model.ValidFrom)
+    @Html.EditingControlsFor(model => model.ValidTo)
+    @Html.EditingControlsFor(model => model.FileLocation)
+    @Html.EditingControlsFor(model => model.ImageType)
+    @Html.EditingControlsFor(model => model.Price)
 </body>
 
 @section Actions{

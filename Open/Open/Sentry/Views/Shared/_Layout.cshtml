@@ -52,22 +52,19 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="About">Help & Contact</a></li>
                     @*<li><a asp-area="" asp-controller="Home" asp-action="Contacts">Countries</a></li>*@
                     <li><a asp-area="" asp-controller="Home" asp-action="Team">Team</a></li>
-                    <li><href="#" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span>Shopping Card</href>
+                    <li><href="#" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Card</href>
                        
                     
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-
-
-                   
                     <form>
                         <input type="text" name="search" placeholder="Search..">
                     </form>
-
+                    @await Html.PartialAsync("_LoginPartial")
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
-                @*@await Html.PartialAsync("_LoginPartial")*@
+               
 
             </div>
         </div>

@@ -1,19 +1,21 @@
 ﻿@using Open.Sentry.Extensions
-@model Open.Facade.Quantity.CurrencyView
+@model Open.Facade.Goods.GoodView
 
 @{
     ViewBag.Title = "Edit";
-    ViewBag.SubTitle = $"Currency ({Model.IsoCode})";
+    ViewBag.SubTitle = $"Goods ({Model.Code})";
     ViewBag.Button = "Save";
     Layout = "_EditPartial";
 }
 
 <body>
-    @Html.HiddenFor(model => model.IsoCode)
-    @Html.EditingControlsFor(model => model.Symbol)
+    @Html.HiddenFor(model => model.ImageType)
+    @Html.EditingControlsFor(model => model.Description)
     @Html.EditingControlsFor(model => model.Name)
     @Html.EditingControlsFor(model => model.ValidFrom)
     @Html.EditingControlsFor(model => model.ValidTo)
+    @Html.EditingControlsFor(model => model.FileLocation)
+    @Html.EditingControlsFor(model => model.Price)
 </body>
 
 @section Actions{
