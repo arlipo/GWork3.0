@@ -9,11 +9,11 @@ namespace Open.Infra.Goods {
             c.Database.EnsureCreated();
             if (c.Goods.Any()) return;
             goodsList(c);
-            gGoodsList(c);
+            initializedGood(c);
             c.SaveChanges();
         }
-        private static void gGoodsList(SentryDbContext c) {
-            GoodsData data = new GoodsData{Code = "23123", Description = "HUY", FileLocation = "Doma", ID = "10"};
+        private static void initializedGood(SentryDbContext c) {
+            GoodsData data = new GoodsData{Name = "Anti-UGON",Code = "23123", Description = "Prevent from theft", FileLocation = "Doma", ID = "10"};
             var e = GoodFactory.Create(data);
             c.Goods.Add(e.Data);
         }
@@ -27,7 +27,7 @@ namespace Open.Infra.Goods {
                         " for use in all automobiles and light-duty trucks, regardless of make, " +
                         "model, year or original antifreeze color.",
                     FileLocation = "hz",
-                    ID = "3",
+                    ID = "1",
                     ImageType = "png",
                     Price = "8,99"
                 }),
