@@ -21,8 +21,7 @@ namespace Open.Sentry.Controllers
         }
 
         public async Task<IActionResult> Index(string sortOrder = null, string currentFilter = null,
-            string searchString = null, int? page = null) {
-            ViewData["CurrentSort"] = sortOrder;
+            string searchString = null, int? page = null) {            
             var l = await repository.GetObjectsList();
             return View(new GoodViewsList(l));
         }
