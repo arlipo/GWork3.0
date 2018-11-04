@@ -2,37 +2,38 @@
 using System.Collections.Generic;
 using System.Linq;
 using Open.Data.Goods;
-
-namespace Open.Infra.Goods
-{
-    public static class GoodsInitializer
-    {
-        public static void Initialize(SentryDbContext c)
-        {
+using Open.Domain.Goods;
+namespace Open.Infra.Goods {
+    public static class GoodsInitializer {
+        public static void Initialize(SentryDbContext c) {
             c.Database.EnsureCreated();
             if (c.Goods.Any()) return;
             goodsList(c);
+            gGoodsList(c);
             c.SaveChanges();
         }
-
-        private static void goodsList(SentryDbContext c)
-        {
+        private static void gGoodsList(SentryDbContext c) {
+            GoodsData data = new GoodsData{Code = "23123", Description = "HUY", FileLocation = "Doma", ID = "10"};
+            var e = GoodFactory.Create(data);
+            c.Goods.Add(e.Data);
+        }
+        private static void goodsList(SentryDbContext c) {
             var l = new List<string> {
-                add(c, new GoodsData{
+                add(c, new GoodsData {
                     Name = "Antifreeze + coolant LONG LIFE",
                     Code = "12345",
-                    Description = "Organic Acid Technology (OAT) coolant technology that is compatible" +
-                                  " for use in all automobiles and light-duty trucks, regardless of make, " +
-                                  "model, year or original antifreeze color.",
+                    Description =
+                        "Organic Acid Technology (OAT) coolant technology that is compatible" +
+                        " for use in all automobiles and light-duty trucks, regardless of make, " +
+                        "model, year or original antifreeze color.",
                     FileLocation = "hz",
-                    ID = "1",
+                    ID = "3",
                     ImageType = "png",
                     Price = "8,99"
                 })
             };
         }
-        private static string add(SentryDbContext c, GoodsData goods)
-        {
+        private static string add(SentryDbContext c, GoodsData goods) {
             goods.ID = Guid.NewGuid().ToString();
             c.Goods.Add(goods);
             return goods.ID;
