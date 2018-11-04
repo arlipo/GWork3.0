@@ -10,7 +10,7 @@
     <a asp-action=Create>Create New</a>
 }
 
-
+<body>
     <table class="table">
         @{var dummy = Model.FirstOrDefault();}
         <thead>
@@ -20,6 +20,14 @@
             @Html.SortColumnHeaderFor(ViewData["SortImage"], model => dummy.FileLocation)
         </tr>
         </thead>
+        <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <td>@Html.DisplayFor(modelItem => item.FileLocation)</td>
+            </tr>
+        }
+        </tbody>
     </table>
-
-<h2>title</h2>
+</body>
