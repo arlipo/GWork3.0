@@ -17,7 +17,7 @@ namespace Open.Infra.Goods {
             var e = GoodFactory.Create(data);
             c.Goods.Add(e.Data);
         }
-        private static void goodsList(SentryDbContext c) {
+        private static List<string> goodsList(SentryDbContext c) {
             var l = new List<string> {
                 add(c, new GoodsData {
                     Name = "Antifreeze + coolant LONG LIFE",
@@ -106,6 +106,7 @@ namespace Open.Infra.Goods {
                     Price = "10,99"
                 }),
             };
+            return l;
         }
         private static string add(SentryDbContext c, GoodsData goods) {
             goods.ID = Guid.NewGuid().ToString();
