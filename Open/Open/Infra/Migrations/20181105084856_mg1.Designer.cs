@@ -10,7 +10,7 @@ using Open.Infra;
 namespace Open.Infra.Migrations
 {
     [DbContext(typeof(SentryDbContext))]
-    [Migration("20181104203421_mg1")]
+    [Migration("20181105084856_mg1")]
     partial class mg1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
