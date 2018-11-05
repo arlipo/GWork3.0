@@ -21,38 +21,40 @@
 
         body {
             background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg);
-            opacity: 0.90;
+            
         }
         footer {
             color: aliceblue;
         }
         .navbar {
-            position: fixed; 
-            top: 0; 
+            font: 16px "Montserrat", sans-serif;
+            opacity: initial;
+            border-style: dotted;
+            position: fixed;
+            top: 0;
             width: 100%;
-            
         }
     </style>
 
 </head>
 
 <body>
- <nav class="navbar navbar-inverse">
+ <nav class="navbar navbar" style="background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg) ">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Home</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" style="color:black" class="navbar-brand">Home</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Goods" asp-action="Index"> All Goods</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="SpareParts">Spare Parts</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Accessories">Accessories</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Chemistry">Chemistry</a></li>
+                    <li><a asp-area="" asp-controller="Goods" asp-action="Index" style="color:black"> All Goods</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="SpareParts" style="color:black">Spare Parts</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Accessories" style="color:black">Accessories</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Chemistry" style="color:black">Chemistry</a></li>
                     @*<li><a asp-area="" asp-controller="Home" asp-action="Money">Money</a></li>*@
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">Help & Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About" style="color:black">Help & Contact</a></li>
                     @*<li><a asp-area="" asp-controller="Home" asp-action="Contacts">Countries</a></li>*@
-                    <li><a asp-area="" asp-controller="Home" asp-action="Team">Team</a></li>
-                    <li><href="#" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</href>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Team" style="color:black">Team</a></li>
+                    <li><href="#" class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</href>
                        
                     
                 </ul>
