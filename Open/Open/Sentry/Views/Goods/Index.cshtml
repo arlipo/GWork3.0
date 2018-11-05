@@ -1,14 +1,21 @@
 ﻿@using Open.Sentry.Extensions
 @model Open.Core.IPaginatedList<Open.Facade.Goods.GoodView>
 
-@{
-    ViewBag.Title = "Goods";
+@{ 
+    
+    ViewBag.Title = "Goods"; 
     Layout = "_IndexPartial";
 }
 
 @section Create {
     <a asp-action=Create>Create New</a>
 }
+<style>
+    Title
+    {
+        color: aliceblue;
+    }
+    </style>
 
 <body>
     <table class="table"style="background-color:#26403B; color:aliceblue;" >
