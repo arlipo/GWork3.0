@@ -12,7 +12,7 @@
 
 <form asp-action=@ViewBag.ActionIndex method="get">
     <div class="form-inline col-md-6">
-        Find by: <input class="form-control" type="text" name="SearchString" value="@ViewData["CurrentFilter"]"/>
+        <input class="form-control" type="text" name="SearchString" value="@ViewData["CurrentFilter"]"/>
         <input type="submit" value="Search" class="btn btn-default" /> |
         <a asp-action=@ViewBag.ActionIndex>Back to Full List</a>
     </div>
