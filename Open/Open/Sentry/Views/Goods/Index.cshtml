@@ -24,7 +24,7 @@
         <tr>
             @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
             @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.Price)
-            @Html.SortColumnHeaderFor(ViewData["SortImage"], model => dummy.FileLocation)
+            @Html.SortColumnHeaderFor(ViewData["SortImage"], model => dummy.Picture)
         </tr>
         </thead>
         <tbody>
@@ -32,7 +32,7 @@
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.Name)</td>
                 <td>@Html.DisplayFor(modelItem => item.Price)</td>
-                <td>@Html.DisplayFor(modelItem => item.FileLocation)</td>
+                <td>@Html.DisplayFor(modelItem => item.Picture)</td>
             </tr>
         }
         </tbody>

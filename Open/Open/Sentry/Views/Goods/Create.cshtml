@@ -2,20 +2,21 @@
 @model Open.Facade.Goods.GoodView
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add product";
     ViewBag.SubTitle = "Goods";
-    ViewBag.Button = "Create";
+    ViewBag.Button = "Add";
     Layout = "_EditPartial";
 }
 
 <body>
-    @Html.EditingControlsFor(model => model.Code)
-    @Html.EditingControlsFor(model => model.Description)
     @Html.EditingControlsFor(model => model.Name)
-    @Html.EditingControlsFor(model => model.ValidFrom)
-    @Html.EditingControlsFor(model => model.ValidTo)
-    @Html.EditingControlsFor(model => model.FileLocation)
-    @Html.EditingControlsFor(model => model.ImageType)
+    @Html.EditingControlsFor(model => model.Description)
+<div class="form-group">
+    <label class="control-label col-md-2">Picture</label>
+    <div class="col-md-4" style="position: relative; top: 5px">
+        <input type="file" name="Picture" accept="image/*">
+    </div>
+</div>
     @Html.EditingControlsFor(model => model.Price)
 </body>
 
