@@ -13,7 +13,7 @@ namespace Open.Facade.Goods
                 Name = o?.Data?.Name,
                 Code = o?.Data?.Code,
                 Description = o?.Data?.Description,
-                FileLocation = o?.Data?.FileLocation,
+                Picture = o?.Data?.FileLocation,
                 ImageType = o?.Data?.ImageType,
                 Price = o?.Data?.Price
             };
