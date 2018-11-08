@@ -9,6 +9,10 @@ namespace Open.Infra {
     public class SentryDbContext : DbContext {
         public SentryDbContext(DbContextOptions<SentryDbContext> o) : base(o) { }
 
+        public SentryDbContext()
+        {
+        }
+
         public DbSet<CountryData> Countries { get; set; }
 
         public DbSet<CurrencyData> Currencies { get; set; }
@@ -26,6 +30,7 @@ namespace Open.Infra {
         public DbSet<RateTypeData> RateTypes { get; set; }
         public DbSet<PaymentMethodData> PaymentMethods { get; set; }
         public DbSet<PaymentData> Payments { get; set; }
+        public object Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder b) {
             base.OnModelCreating(b);
