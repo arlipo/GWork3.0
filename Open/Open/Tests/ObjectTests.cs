@@ -29,7 +29,10 @@ namespace Open.Tests {
             Assert.AreEqual(0, list.Count);
         }
 
-        protected abstract T getRandomObject();
+        protected virtual T getRandomObject()
+        {
+            return GetRandom.Object<T>();
+        }
 
         protected void canReadWrite<TR>(Func<TR> get, Action<TR> set) {
             canReadWrite(get, set, () => (TR) GetRandom.Value(typeof(TR)));

@@ -45,9 +45,6 @@
     <Compile Include="Common\NamedView.cs" />
     <Compile Include="Common\PeriodView.cs" />
     <Compile Include="Common\EntityView.cs" />
-    <Compile Include="Customers\CustomerView.cs" />
-    <Compile Include="Customers\CustomerViewFactory.cs" />
-    <Compile Include="Customers\CustomerViewsList.cs" />
     <Compile Include="Goods\GoodView.cs" />
     <Compile Include="Goods\GoodViewFactory.cs" />
     <Compile Include="Goods\GoodViewsList.cs" />

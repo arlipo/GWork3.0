@@ -21,7 +21,9 @@ namespace Open.Infra.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Open.Data.Customers.CustomersData", b =>
+            modelBuilder.Entity("Open.Data." +
+                                "Customer" +
+                                "s.CustomersData", b =>
                 {
                     b.Property<string>("ID")
                         .ValueGeneratedOnAdd();

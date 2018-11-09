@@ -45,7 +45,6 @@
     <Compile Include="Common\MetricsData.cs" />
     <Compile Include="Common\PeriodData.cs" />
     <Compile Include="Common\IdentifiedData.cs" />
-    <Compile Include="Customers\CustomersData.cs" />
     <Compile Include="Goods\GoodsData.cs" />
     <Compile Include="Party\AddressData.cs" />
     <Compile Include="Party\CountryData.cs" />
