@@ -1,21 +1,21 @@
 ﻿using System;
-using Open.Domain.Goods;
+using Open.Domain.Users;
 
-namespace Open.Facade.Goods
+namespace Open.Facade.Users
 {
-    public static class GoodViewFactory
+    public static class UserViewFactory
     {
-        public static GoodView Create(Good o)
+        public static UserView Create(User o)
         {
-            GoodView v = new GoodView
+            UserView v = new UserView
             {
                 ID = o?.Data?.ID,
                 Name = o?.Data?.Name,
                 Code = o?.Data?.Code,
-                Description = o?.Data?.Description,
-                Picture = o?.Data?.FileLocation,
-                ImageType = o?.Data?.ImageType,
-                Price = o?.Data?.Price
+                Phone = o?.Data?.Phone,
+                Address = o?.Data?.Address,
+                Login = o?.Data?.Login,
+                Password = o?.Data?.Password
             };
             if (o is null) return v;
             v.ValidFrom = setNullIfExtremum(o.Data.ValidFrom);

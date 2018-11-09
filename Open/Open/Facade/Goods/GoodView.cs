@@ -32,7 +32,7 @@ namespace Open.Facade.Goods
         }
 
         [DisplayName("Picture")]
-        public string FileLocation
+        public string Picture
         {
             get => getString(ref fileLocation);
             set => fileLocation = value;

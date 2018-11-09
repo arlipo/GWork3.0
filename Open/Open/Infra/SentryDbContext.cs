@@ -1,12 +1,19 @@
 ﻿using System;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using Open.Data.Customers;
 using Open.Data.Goods;
 using Open.Data.Party;
 using Open.Data.Quantity;
+using Open.Data.Users;
+
 namespace Open.Infra {
     public class SentryDbContext : DbContext {
         public SentryDbContext(DbContextOptions<SentryDbContext> o) : base(o) { }
+
+        public SentryDbContext()
+        {
+        }
 
         public DbSet<CountryData> Countries { get; set; }
 
@@ -17,6 +24,7 @@ namespace Open.Infra {
         public DbSet<AddressData> Addresses { get; set; }
 
         public DbSet<GoodsData> Goods { get; set; }
+        public DbSet<CustomersData> Customers { get; set; }
 
         public DbSet<TelecomDeviceRegistrationData> TelecomDeviceRegistrations { get; set; }
 
@@ -24,12 +32,16 @@ namespace Open.Infra {
         public DbSet<RateTypeData> RateTypes { get; set; }
         public DbSet<PaymentMethodData> PaymentMethods { get; set; }
         public DbSet<PaymentData> Payments { get; set; }
+        //public object Users { get; set; }
+        public DbSet<UsersData> Users { get; set; }
+        public DbSet<CustomersData> Customer { get; set; }
 
         protected override void OnModelCreating(ModelBuilder b) {
             base.OnModelCreating(b);
             b.Entity<CurrencyData>().ToTable("Currency");
             b.Entity<CountryData>().ToTable("Country");
             b.Entity<GoodsData>().ToTable("Good");
+            b.Entity<UsersData>().ToTable("Users");
             b.Entity<RateTypeData>().ToTable("RateType");
             createGoodTable(b);
             createAddressTable(b);

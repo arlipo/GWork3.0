@@ -101,6 +101,10 @@
     <Compile Include="Quantity\RateTypeList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quantity\Value.cs" />
+    <Compile Include="Users\IUsersRepository.cs" />
+    <Compile Include="Users\User.cs" />
+    <Compile Include="Users\UserFactory.cs" />
+    <Compile Include="Users\UsersList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Quantity\Docs\MoneyPattern.cd" />
