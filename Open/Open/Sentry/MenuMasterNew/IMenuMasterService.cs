@@ -1,11 +1,9 @@
-﻿using Open.Facade;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Open.Facade
+namespace Open.Sentry.MenuMasterNew
 {
     public interface IMenuMasterService
     {
@@ -13,3 +11,4 @@ namespace Open.Facade
         IEnumerable<MenuMaster> GetMenuMaster(String UserRole);
     }
 }
+

@@ -51,9 +51,6 @@
     <Compile Include="Goods\GoodView.cs" />
     <Compile Include="Goods\GoodViewFactory.cs" />
     <Compile Include="Goods\GoodViewsList.cs" />
-    <Compile Include="IMenuMasterService.cs" />
-    <Compile Include="MenuMaster.cs" />
-    <Compile Include="MenuMasterService.cs" />
     <Compile Include="Party\AddressView.cs" />
     <Compile Include="Party\AddressViewFactory.cs" />
     <Compile Include="Party\AddressViewsList.cs" />

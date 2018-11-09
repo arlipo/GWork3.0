@@ -21,6 +21,7 @@ using System.Threading.Tasks;
 using Open.Domain.Users;
 using Open.Infra.Customers;
 using System;
+using Open.Facade;
 
 namespace Open.Sentry {
     public class Startup
@@ -49,6 +50,8 @@ namespace Open.Sentry {
             services.AddScoped<IRateRepository, RatesRepository>();
             services.AddScoped<IPaymentMethodsRepository, PaymentMethodsRepository>();
             services.AddScoped<IPaymentsRepository, PaymentsRepository>();
+            services.AddTransient<MenuMasterService, MenuMasterService>();
+
 
 
             //Password Strength Setting

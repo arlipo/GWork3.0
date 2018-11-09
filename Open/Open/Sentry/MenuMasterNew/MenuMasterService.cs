@@ -1,11 +1,10 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Open.Sentry.Data;
 
-namespace Open.Facade
+namespace Open.Sentry.MenuMasterNew
 {
     public class MenuMasterService : IMenuMasterService
     {
@@ -28,4 +27,3 @@ namespace Open.Facade
             return result;
         }
     }
-}
