@@ -10,7 +10,7 @@ using Open.Domain.Goods;
 using Open.Domain.Party;
 using Open.Domain.Quantity;
 using Open.Infra;
-using Open.Infra.Customers;
+using Open.Infra.Users;
 using Open.Infra.Goods;
 using Open.Infra.Party;
 using Open.Infra.Quantity;
@@ -18,6 +18,8 @@ using Open.Sentry.Data;
 using Open.Sentry.Models;
 using Open.Sentry.Services;
 using System.Threading.Tasks;
+using Open.Domain.Users;
+using Open.Infra.Customers;
 
 namespace Open.Sentry {
     public class Startup {
@@ -35,7 +37,7 @@ namespace Open.Sentry {
             services.AddScoped<ICountriesRepository, CountriesRepository>();
             services.AddScoped<ICurrencyRepository, CurrenciesRepository>();
             services.AddScoped<IGoodsRepository, GoodsRepository>();
-            services.AddScoped<ICustomersRepository, CustomersRepository>();
+            services.AddScoped<IUsersRepository, UsersRepository>();
             services.AddScoped<INationalCurrenciesRepository, NationalCurrenciesRepository>();
             services.AddScoped<IAddressesRepository, ContactsRepository>();
             services.AddScoped<ITelecomDeviceRegistrationsRepository, TelecomDeviceRegistrationsRepository>();

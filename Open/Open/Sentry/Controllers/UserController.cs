@@ -1,24 +1,21 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
-//using Microsoft.AspNetCore.Authorization;
-//using Microsoft.AspNetCore.Mvc;
-//using Open.Infra;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Open.Domain.Users;
 
 
-//namespace Sentry.Controllers
-//{
-// [Authorize(Roles = "Администратор, Модератор, Исполнитель")]
-//        public class UserController : Controller
-//        {
-//            private SentryDbContext db = new SentryDbContext();
-
-//            //[HttpGet]
-//        //    public ActionResult Index()
-//        //    {
-//        //        //var users = db.Users.Include(u => u.Department).Include(u => u.Role).ToList();
-//        //        return View(users);
-//        //}
-//        }
-//    }
+namespace Open.Sentry.Controllers { 
+[Authorize]
+public class UsersController : Controller
+{
+    private readonly IUsersRepository repository;
+    internal const string properties = "ID, Name, Code, Phone, Address";
+    public UsersController(IUsersRepository r)
+    {
+        repository = r;
+    }
+}
+}

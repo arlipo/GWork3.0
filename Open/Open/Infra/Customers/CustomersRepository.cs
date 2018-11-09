@@ -15,7 +15,7 @@ namespace Open.Infra.Customers
             return await dbSet.AsNoTracking().SingleOrDefaultAsync(x => x.ID == id);
         }
 
-        public CustomersRepository(SentryDbContext c) : base(c?.Customers, c) { }
+        public CustomersRepository(SentryDbContext c) : base(c?.Customer, c) { }
         protected internal override Customer createObject(CustomersData r)
         {
             return new Customer(r);
