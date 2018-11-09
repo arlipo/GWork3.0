@@ -27,3 +27,4 @@ namespace Open.Sentry.MenuMasterNew
             return result;
         }
     }
+}

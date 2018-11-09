@@ -22,6 +22,7 @@ using Open.Domain.Users;
 using Open.Infra.Customers;
 using System;
 using Open.Facade;
+using Open.Sentry.MenuMasterNew;
 
 namespace Open.Sentry {
     public class Startup
