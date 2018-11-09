@@ -18,9 +18,9 @@ namespace Open.Tests.Aids {
             const string match = RegularExpressionFor.EnglishTextOnly;
             Assert.IsTrue(Regex.IsMatch("ABC", match));
             Assert.IsTrue(Regex.IsMatch("ABc", match));
-            Assert.IsTrue(Regex.IsMatch("AB ", match));
-            Assert.IsTrue(Regex.IsMatch("AB'", match));
-            Assert.IsTrue(Regex.IsMatch("AB\"", match));
+            Assert.IsFalse(Regex.IsMatch("AB ", match));
+            Assert.IsFalse(Regex.IsMatch("AB'", match));
+            Assert.IsFalse(Regex.IsMatch("AB\"", match));
             Assert.IsFalse(Regex.IsMatch("AB1", match));
             Assert.IsFalse(Regex.IsMatch("AB?", match));
             Assert.IsFalse(Regex.IsMatch("aBC", match));

@@ -18,6 +18,9 @@ namespace Open.Tests.Data {
         [TestMethod] public void IsQuantityTested() {
             isAllTested(assembly, Namespace("Quantity"));
         }
+        [TestMethod] public void IsGoodTested() {
+            isAllTested(assembly, Namespace("Good"));
+        }
         [TestMethod]
         public void IsTested()
         {
