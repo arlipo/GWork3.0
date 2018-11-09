@@ -24,7 +24,7 @@ namespace Open.Infra {
         public DbSet<AddressData> Addresses { get; set; }
 
         public DbSet<GoodsData> Goods { get; set; }
-        public DbSet<UsersData> Customers { get; set; }
+        public DbSet<CustomersData> Customers { get; set; }
 
         public DbSet<TelecomDeviceRegistrationData> TelecomDeviceRegistrations { get; set; }
 

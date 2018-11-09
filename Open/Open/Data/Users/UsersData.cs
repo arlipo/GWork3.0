@@ -26,10 +26,12 @@ namespace Open.Data.Users
             get => getString(ref login);
             set => login = value;
         }
+
         public string Password
         {
             get => getString(ref password);
             set => password = value;
         }
     }
-    }
+
+}
