@@ -23,6 +23,7 @@ namespace Open.Infra {
         public DbSet<AddressData> Addresses { get; set; }
 
         public DbSet<GoodsData> Goods { get; set; }
+        public DbSet<ChemistryData> Chemistry { get; set; }
 
         public DbSet<TelecomDeviceRegistrationData> TelecomDeviceRegistrations { get; set; }
 
@@ -38,6 +39,8 @@ namespace Open.Infra {
             b.Entity<CurrencyData>().ToTable("Currency");
             b.Entity<CountryData>().ToTable("Country");
             b.Entity<GoodsData>().ToTable("Good");
+            b.Entity<ChemistryData>().ToTable("Good");
+
             b.Entity<UsersData>().ToTable("Users");
             b.Entity<RateTypeData>().ToTable("RateType");
             createGoodTable(b);

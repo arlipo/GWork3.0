@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Open.Core;
@@ -20,6 +21,15 @@ namespace Open.Infra.Goods
         protected internal override PaginatedList<Good> createList(
             List<GoodsData> l, RepositoryPage p) {
             return new GoodsList(l, p);
+        }
+        public async Task<PaginatedList<Good>> GetWithSpecificType(GoodTypes type)
+        {
+            var countries = getSorted().Where(s => s.Contains(SearchString)).AsNoTracking();
+            var count = await countries.CountAsync();
+            var p = new RepositoryPage(count, PageIndex, PageSize);
+            var items = await countries.Skip(p.FirstItemIndex).Take(p.PageSize).ToListAsync();
+            var newList = items.Where(x => x.Type == type.ToString()).ToList();
+            return createList(newList, p);
         }
     }
 }

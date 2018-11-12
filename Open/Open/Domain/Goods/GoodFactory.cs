@@ -10,7 +10,7 @@ namespace Open.Domain.Goods
             return new Good(data);
         }
         
-        public static Good Create(string id, string name, string code, string description, string fileLocation,
+        public static Good Create(string id, string name, string code, string description, string type, string fileLocation,
             string imageType, string price, DateTime? validFrom = null, DateTime? validTo = null)
         {
             GoodsData o = new GoodsData
@@ -19,6 +19,7 @@ namespace Open.Domain.Goods
                 Name = name,
                 Code = code,
                 Description = description,
+                Type = type,
                 FileLocation = fileLocation,
                 ImageType = imageType,
                 Price = price,

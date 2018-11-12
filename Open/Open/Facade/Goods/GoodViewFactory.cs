@@ -12,6 +12,7 @@ namespace Open.Facade.Goods
                 ID = o?.Data?.ID,
                 Name = o?.Data?.Name,
                 Code = o?.Data?.Code,
+                Type = o?.Data?.Type,
                 Description = o?.Data?.Description,
                 Picture = o?.Data?.FileLocation,
                 ImageType = o?.Data?.ImageType,

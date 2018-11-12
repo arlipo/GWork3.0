@@ -19,7 +19,6 @@ using Open.Sentry.Services;
 using System.Threading.Tasks;
 using Open.Domain.Users;
 using System;
-using Open.Facade;
 using Open.Sentry.MenuMasterNew;
 
 namespace Open.Sentry {
@@ -73,7 +72,7 @@ namespace Open.Sentry {
                 options.User.RequireUniqueEmail = true;
             });
 
-            //Seting the Account Login page
+            //Setting the Account Login page
             services.ConfigureApplicationCookie(options =>
             {
                 // Cookie settings

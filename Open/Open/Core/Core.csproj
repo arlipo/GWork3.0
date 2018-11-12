@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="GoodTypes.cs" />
     <Compile Include="IActivity.cs" />
     <Compile Include="IActivityType.cs" />
     <Compile Include="ICrudRepository.cs" />

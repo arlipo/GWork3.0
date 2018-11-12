@@ -9,7 +9,7 @@ namespace Open.Facade.Goods
     public class GoodView : NamedView
     {
         private string id, code, imageType,
-        description, fileLocation, price;
+        description, fileLocation, price, type;
 
 
         public string ID
@@ -24,7 +24,12 @@ namespace Open.Facade.Goods
             set => code = value;
         }
 
-        
+        public string Type
+        {
+            get => getString(ref type);
+            set => type = value;
+        }
+
         public string ImageType
         {
             get => getString(ref imageType);

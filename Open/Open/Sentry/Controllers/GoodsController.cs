@@ -1,6 +1,5 @@
-﻿using System;
+﻿using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Open.Aids;
@@ -9,18 +8,19 @@ using Open.Domain.Goods;
 using Open.Facade.Goods;
 
 namespace Open.Sentry.Controllers {
-    //[Authorize]
+
     public class GoodsController : Controller //, ISentryController
     {
         private readonly IGoodsRepository repository;
         internal const string properties =
-            "ID, Name, Code, ImageType, Description, FileLocation, Price";
+            "ID, Name, Code, ImageType, Description, Type, FileLocation, Price";
         public GoodsController(IGoodsRepository r) {
             repository = r;
         }
 
         public async Task<IActionResult> Index(string sortOrder = null, string currentFilter = null,
-            string searchString = null, int? page = null) {
+            string searchString = null, int? page = null)
+        {
             var l = await repository.GetObjectsList();
             return View(new GoodViewsList(l));
         }
@@ -47,7 +47,7 @@ namespace Open.Sentry.Controllers {
         [HttpPost] public async Task<IActionResult> Create([Bind(properties)] GoodView c) {
             await validateId(c.Code, ModelState);
             if (!ModelState.IsValid) return View(c);
-            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Picture,
+            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description,c.Type, c.Picture,
                 c.ImageType, c.Price);
             /*c.ValidTo ?? DateTime.MinValue,*/ /* c.ValidTo ?? DateTime.MaxValue*/
 

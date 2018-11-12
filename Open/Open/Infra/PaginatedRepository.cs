@@ -33,7 +33,7 @@ namespace Open.Infra {
         private IQueryable<TDbRecord> getSet() {
             return from s in dbSet select s;
         }
-        private IQueryable<TDbRecord> getSorted() {
+        protected IQueryable<TDbRecord> getSorted() {
             if (SortFunction is null) return getSet();
             return SortOrder == SortOrder.Descending
                 ? getSet().OrderByDescending(x => SortFunction(x))
