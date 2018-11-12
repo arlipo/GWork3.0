@@ -37,7 +37,7 @@ namespace Open.Infra.Goods {
                                   " (Original Equipment) specifications and are manufactured " +
                                   "for direct replacement.",
                     FileLocation = "zh",
-                    Type = "Spare Parts",
+                    Type = "SpareParts",
                     ID = "2",
                     ImageType = "png",
                     Price = "14,99"
@@ -61,7 +61,7 @@ namespace Open.Infra.Goods {
                     Code = "543",
                     Description = "AUDI 3 button remote key fob case FULL service repair kit.",
                     FileLocation = "a",
-                    Type = "Spare Parts",
+                    Type = "SpareParts",
                     ID = "4",
                     ImageType = "png",
                     Price = "9,99"

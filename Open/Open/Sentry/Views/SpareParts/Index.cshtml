@@ -1,0 +1,40 @@
+﻿@using Open.Sentry.Extensions
+@model Open.Core.IPaginatedList<Open.Facade.Goods.GoodView>
+
+    @{
+
+        ViewBag.Title = "Spare Parts";
+        Layout = "_IndexPartial";
+    }
+
+    @section Create {
+        <a asp-action=Create>Create New</a>
+    }
+    <style>
+        Title {
+            color: aliceblue;
+        }
+    </style>
+
+    <body>
+        <table class="table" style="background-color:#26403B; color:aliceblue;">
+            @{var dummy = Model.FirstOrDefault();}
+            <thead>
+                <tr>
+                    @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
+                    @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.Price)
+                    @Html.SortColumnHeaderFor(ViewData["SortImage"], model => dummy.Picture)
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Picture)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </body>
