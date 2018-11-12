@@ -24,6 +24,8 @@ namespace Open.Infra {
 
         public DbSet<GoodsData> Goods { get; set; }
         public DbSet<ChemistryData> Chemistry { get; set; }
+        public DbSet<AccessoriesData> Accessories { get; set; }
+        public DbSet<SparePartsData> SpareParts { get; set; }
 
         public DbSet<TelecomDeviceRegistrationData> TelecomDeviceRegistrations { get; set; }
 
