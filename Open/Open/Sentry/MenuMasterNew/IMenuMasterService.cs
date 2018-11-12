@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using Open.Data.MenuMaster;
 
 namespace Open.Sentry.MenuMasterNew
 {
     public interface IMenuMasterService
     {
-        IEnumerable<MenuMaster> GetMenuMaster();
-        IEnumerable<MenuMaster> GetMenuMaster(String UserRole);
+        IEnumerable<MenuMasterData> GetMenuMaster();
+        IEnumerable<MenuMasterData> GetMenuMaster(string UserRole);
     }
 }
 

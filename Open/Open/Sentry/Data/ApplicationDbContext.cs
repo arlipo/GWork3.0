@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Open.Data.MenuMaster;
 using Open.Sentry.Models;
+
 namespace Open.Sentry.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -11,7 +13,8 @@ namespace Open.Sentry.Data
         {
         }
 
-       
+        public DbSet<MenuMasterData> MenuMaster { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

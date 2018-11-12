@@ -22,6 +22,12 @@ namespace Open.Core {
             Sort.Upwards(ref value, ref field);
             return field;
         }
+
+        protected internal T getRandomValue<T>(ref T field) {
+            field = field.Equals(default(T)) ? GetRandom.Object<T>() : field;
+            return field;
+        }
+
         public virtual bool Contains(string searchString) {
             if (string.IsNullOrEmpty(searchString)) return true;
             searchString = searchString.ToLower();
