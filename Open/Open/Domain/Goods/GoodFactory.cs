@@ -20,7 +20,7 @@ namespace Open.Domain.Goods
                 Code = code,
                 Description = description,
                 Type = type,
-                FileLocation = fileLocation,
+                PicFileLocation = fileLocation,
                 ImageType = imageType,
                 Price = price,
                 ValidFrom = validFrom ?? DateTime.MinValue,

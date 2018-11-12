@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Open.Data.MenuMaster;
-using Open.Infra;
 using Open.Sentry.Data;
 
 namespace Open.Sentry.MenuMasterNew

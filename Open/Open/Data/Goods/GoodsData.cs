@@ -22,7 +22,7 @@ namespace Open.Data.Goods
             set => description = value;
         }
 
-        public string FileLocation
+        public string PicFileLocation
         {
             get => getString(ref fileLocation);
             set => fileLocation = value;

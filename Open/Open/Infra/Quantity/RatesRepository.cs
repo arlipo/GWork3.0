@@ -49,10 +49,5 @@ namespace Open.Infra.Quantity {
         private IQueryable<RateData> getSet() {
             return from s in dbSet select s;
         }
-
-        private IQueryable<RateData> getSorted() {
-            return getSet()
-                .OrderBy(x => x.ValidFrom);
-        }
     }
 }

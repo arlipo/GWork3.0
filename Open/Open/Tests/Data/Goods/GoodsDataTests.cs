@@ -16,7 +16,7 @@ namespace Open.Tests.Data.Goods
         [TestMethod]
         public void FileLocationTest()
         {
-            canReadWrite(() => obj.FileLocation, x => obj.FileLocation = x);
+            canReadWrite(() => obj.PicFileLocation, x => obj.PicFileLocation = x);
         }
 
         [TestMethod]
