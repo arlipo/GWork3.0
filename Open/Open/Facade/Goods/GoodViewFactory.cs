@@ -14,7 +14,7 @@ namespace Open.Facade.Goods
                 Code = o?.Data?.Code,
                 Type = o?.Data?.Type,
                 Description = o?.Data?.Description,
-                Picture = o?.Data?.FileLocation,
+                Picture = o?.Data?.PicFileLocation,
                 ImageType = o?.Data?.ImageType,
                 Price = o?.Data?.Price
             };

@@ -39,24 +39,6 @@ namespace Open.Infra.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Customers",
-                columns: table => new
-                {
-                    ValidFrom = table.Column<DateTime>(nullable: false),
-                    ValidTo = table.Column<DateTime>(nullable: false),
-                    Code = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
-                    ID = table.Column<string>(nullable: false),
-                    Email = table.Column<string>(nullable: true),
-                    Phone = table.Column<string>(nullable: true),
-                    Address = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Customers", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Good",
                 columns: table => new
                 {
@@ -67,8 +49,11 @@ namespace Open.Infra.Migrations
                     ID = table.Column<string>(nullable: false),
                     ImageType = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    FileLocation = table.Column<string>(nullable: true),
-                    Price = table.Column<string>(nullable: true)
+                    PicFileLocation = table.Column<string>(nullable: true),
+                    Price = table.Column<string>(nullable: true),
+                    Type = table.Column<string>(nullable: true),
+                    Discriminator = table.Column<string>(nullable: false),
+                    Volume = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -89,6 +74,25 @@ namespace Open.Infra.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_RateType", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    ValidFrom = table.Column<DateTime>(nullable: false),
+                    ValidTo = table.Column<DateTime>(nullable: false),
+                    Code = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    ID = table.Column<string>(nullable: false),
+                    Phone = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: true),
+                    Login = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -302,9 +306,6 @@ namespace Open.Infra.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Customers");
-
-            migrationBuilder.DropTable(
                 name: "Good");
 
             migrationBuilder.DropTable(
@@ -318,6 +319,9 @@ namespace Open.Infra.Migrations
 
             migrationBuilder.DropTable(
                 name: "TelecomDeviceRegistration");
+
+            migrationBuilder.DropTable(
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "PaymentMethod");
