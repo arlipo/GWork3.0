@@ -10,14 +10,14 @@ using Open.Infra;
 namespace Open.Infra.Migrations
 {
     [DbContext(typeof(SentryDbContext))]
-    [Migration("20181112181041_mg1")]
-    partial class mg1
+    [Migration("20181112212614_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
+                .HasAnnotation("ProductVersion", "2.1.3-rtm-32065")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -288,6 +288,16 @@ namespace Open.Infra.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("Open.Data.Goods.AccessoriesData", b =>
+                {
+                    b.HasBaseType("Open.Data.Goods.GoodsData");
+
+
+                    b.ToTable("AccessoriesData");
+
+                    b.HasDiscriminator().HasValue("AccessoriesData");
+                });
+
             modelBuilder.Entity("Open.Data.Goods.ChemistryData", b =>
                 {
                     b.HasBaseType("Open.Data.Goods.GoodsData");
@@ -297,6 +307,16 @@ namespace Open.Infra.Migrations
                     b.ToTable("Good");
 
                     b.HasDiscriminator().HasValue("ChemistryData");
+                });
+
+            modelBuilder.Entity("Open.Data.Goods.SparePartsData", b =>
+                {
+                    b.HasBaseType("Open.Data.Goods.GoodsData");
+
+
+                    b.ToTable("SparePartsData");
+
+                    b.HasDiscriminator().HasValue("SparePartsData");
                 });
 
             modelBuilder.Entity("Open.Data.Party.EmailAddressData", b =>
