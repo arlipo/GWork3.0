@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Open.Data.Common;
 using Open.Data.Goods;
 
-namespace Open.Sentry.Models
+namespace Open.Data.ShoppingCartItem
 {
-    public class CartItem
+    public class ShoppingCartItem : NamedData
     {
         public int ShoppingCartItemId { get; set; }
         public GoodsData Goods { get; set; }

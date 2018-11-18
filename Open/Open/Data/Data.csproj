@@ -68,6 +68,8 @@
     <Compile Include="Quantity\RateData.cs" />
     <Compile Include="Quantity\RateTypeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCartItem\ShoppingCart.cs" />
+    <Compile Include="ShoppingCartItem\ShoppingCartItem.cs" />
     <Compile Include="Users\UsersData.cs" />
   </ItemGroup>
   <ItemGroup>

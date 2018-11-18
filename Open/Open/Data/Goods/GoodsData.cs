@@ -5,6 +5,7 @@ namespace Open.Data.Goods
     public class GoodsData : NamedData
     {
         private string imageType;
+        private byte[] image;
         private string description;
         private string fileLocation;
         private string price;
@@ -16,7 +17,8 @@ namespace Open.Data.Goods
             set => imageType = value;
         }
 
-        public string Description
+        public byte[] Image { get; set; }
+        public string Description 
         {
             get => getString(ref description);
             set => description = value;

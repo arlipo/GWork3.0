@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Open.Data.Goods;
 using Open.Data.Party;
 using Open.Data.Quantity;
+using Open.Data.ShoppingCartItem;
 using Open.Data.Users;
 
 namespace Open.Infra {
@@ -15,6 +16,7 @@ namespace Open.Infra {
         }
 
         public DbSet<CountryData> Countries { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         public DbSet<CurrencyData> Currencies { get; set; }
 
