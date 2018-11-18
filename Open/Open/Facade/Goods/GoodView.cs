@@ -34,8 +34,7 @@ namespace Open.Facade.Goods
             get => getString(ref imageType);
             set => imageType = value;
         }
-
-        [DisplayName("Picture")]
+        
         public string Picture
         {
             get => getString(ref fileLocation);
