@@ -19,7 +19,6 @@ using Open.Sentry.Services;
 using System.Threading.Tasks;
 using Open.Domain.Users;
 using System;
-using Open.Sentry.MenuMasterNew;
 
 namespace Open.Sentry {
     public class Startup
@@ -48,7 +47,6 @@ namespace Open.Sentry {
             services.AddScoped<IRateRepository, RatesRepository>();
             services.AddScoped<IPaymentMethodsRepository, PaymentMethodsRepository>();
             services.AddScoped<IPaymentsRepository, PaymentsRepository>();
-            services.AddTransient<MenuMasterService, MenuMasterService>();
 
 
 
