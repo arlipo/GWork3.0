@@ -11,8 +11,8 @@ namespace Open.Domain.Goods
             return new Good(data);
         }
         
-        public static Good Create(string id, string name, string code, string description, GoodTypes type, string fileLocation,
-            string imageType, string price, DateTime? validFrom = null, DateTime? validTo = null)
+        public static Good Create(string id, string name, string code, string description, string price, 
+            GoodTypes type, byte[] image,DateTime? validFrom = null, DateTime? validTo = null)
         {
             GoodsData o = new GoodsData
             {
@@ -21,9 +21,8 @@ namespace Open.Domain.Goods
                 Code = code,
                 Description = description,
                 Type = type,
-                PicFileLocation = fileLocation,
-                ImageType = imageType,
                 Price = price,
+                Image = image,
                 ValidFrom = validFrom ?? DateTime.MinValue,
                 ValidTo = validTo ?? DateTime.MaxValue
             };

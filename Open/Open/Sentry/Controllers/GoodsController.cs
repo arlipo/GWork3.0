@@ -33,8 +33,8 @@ namespace Open.Sentry.Controllers {
             var o = await repository.GetObject(c.Code);
             o.Data.Name = c.Name;
             o.Data.Code = c.Description;
-            o.Data.Code = c.Picture;
-            o.Data.Code = c.Price;
+            o.Data.Image = c.Image;
+            o.Data.Price = c.Price;
 
             await repository.UpdateObject(o);
             return RedirectToAction("Index");
@@ -46,8 +46,7 @@ namespace Open.Sentry.Controllers {
         [HttpPost] public async Task<IActionResult> Create([Bind(properties)] GoodView c) {
             await validateId(c.Code, ModelState);
             if (!ModelState.IsValid) return View(c);
-            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Type, c.Picture,
-                c.ImageType, c.Price);
+            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type, c.Image);
             /*c.ValidTo ?? DateTime.MinValue,*/ /* c.ValidTo ?? DateTime.MaxValue*/
 
             await repository.AddObject(o);
