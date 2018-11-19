@@ -3,16 +3,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Open.Aids;
 using Open.Core;
+using Open.Data.Goods;
 using Open.Domain.Goods;
 using Open.Facade.Goods;
 
 namespace Open.Sentry.Controllers {
 
-    public class GoodsController : Controller //, ISentryController
+    public class GoodsController : Controller // ISentryController
     {
         private readonly IGoodsRepository repository;
         internal const string properties =
-            "ID, Name, Code, ImageType, Description, Type, FileLocation, Price";
+            "ID, Name, Code, ImageType, Description, Price, Type, Image";
         public GoodsController(IGoodsRepository r) {
             repository = r;
         }
@@ -33,8 +34,8 @@ namespace Open.Sentry.Controllers {
             var o = await repository.GetObject(c.Code);
             o.Data.Name = c.Name;
             o.Data.Code = c.Description;
-            o.Data.Code = c.Picture;
-            o.Data.Code = c.Price;
+            o.Data.Image = c.Image;
+            o.Data.Price = c.Price;
 
             await repository.UpdateObject(o);
             return RedirectToAction("Index");
@@ -46,10 +47,7 @@ namespace Open.Sentry.Controllers {
         [HttpPost] public async Task<IActionResult> Create([Bind(properties)] GoodView c) {
             await validateId(c.Code, ModelState);
             if (!ModelState.IsValid) return View(c);
-            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Type, c.Picture,
-                c.ImageType, c.Price);
-            /*c.ValidTo ?? DateTime.MinValue,*/ /* c.ValidTo ?? DateTime.MaxValue*/
-
+            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type, c.Image);
             await repository.AddObject(o);
             return RedirectToAction("Index");
         }

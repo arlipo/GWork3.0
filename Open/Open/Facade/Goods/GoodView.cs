@@ -8,8 +8,8 @@ namespace Open.Facade.Goods
 {
     public class GoodView : EntityView
     {
-        private string name, code, imageType,
-        description, fileLocation, price;
+        private string name, code,
+        description, price;
 
         [Required]
         public string Name
@@ -25,18 +25,8 @@ namespace Open.Facade.Goods
         }
 
         public GoodTypes Type { get; set; }
-
-        public string ImageType
-        {
-            get => getString(ref imageType);
-            set => imageType = value;
-        }
         
-        public string Picture
-        {
-            get => getString(ref fileLocation);
-            set => fileLocation = value;
-        }
+        public byte[] Image { get; set; }
 
         public string Description
         {
