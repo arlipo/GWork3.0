@@ -113,7 +113,7 @@ namespace Open.Infra.Goods {
                     ID = "8",
                     ImageType = "png",
                     Price = "10,99"
-                }),
+                })
             };
         }
         private static string add(SentryDbContext c, GoodsData goods) {
