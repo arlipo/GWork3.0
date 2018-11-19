@@ -28,6 +28,12 @@ namespace Open.Core {
             return field;
         }
 
+        protected internal DateTime getTodayDataIfNull(ref DateTime date)
+        {
+            if (date == default(DateTime)) date = DateTime.Today;
+            return date;
+        }
+
         public virtual bool Contains(string searchString) {
             if (string.IsNullOrEmpty(searchString)) return true;
             searchString = searchString.ToLower();

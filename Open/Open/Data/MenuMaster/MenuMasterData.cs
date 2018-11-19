@@ -62,7 +62,7 @@ namespace Open.Data.MenuMaster
 
         public DateTime DataCreated
         {
-            get => getRandomValue(ref dataCreated);
+            get => getTodayDataIfNull(ref dataCreated);
             set => dataCreated = value;
         }
     }
