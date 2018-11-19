@@ -3,16 +3,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Open.Aids;
 using Open.Core;
+using Open.Data.Goods;
 using Open.Domain.Goods;
 using Open.Facade.Goods;
 
 namespace Open.Sentry.Controllers {
 
-    public class GoodsController : Controller //, ISentryController
+    public class GoodsController : Controller // ISentryController
     {
         private readonly IGoodsRepository repository;
         internal const string properties =
-            "ID, Name, Code, ImageType, Description, Type, FileLocation, Price";
+            "ID, Name, Code, ImageType, Description, Price, Type, Image";
         public GoodsController(IGoodsRepository r) {
             repository = r;
         }
@@ -47,8 +48,6 @@ namespace Open.Sentry.Controllers {
             await validateId(c.Code, ModelState);
             if (!ModelState.IsValid) return View(c);
             var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type, c.Image);
-            /*c.ValidTo ?? DateTime.MinValue,*/ /* c.ValidTo ?? DateTime.MaxValue*/
-
             await repository.AddObject(o);
             return RedirectToAction("Index");
         }
