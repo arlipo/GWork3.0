@@ -46,7 +46,7 @@ namespace Open.Sentry.Controllers {
         [HttpPost] public async Task<IActionResult> Create([Bind(properties)] GoodView c) {
             await validateId(c.Code, ModelState);
             if (!ModelState.IsValid) return View(c);
-            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description,c.Type, c.Picture,
+            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Type, c.Picture,
                 c.ImageType, c.Price);
             /*c.ValidTo ?? DateTime.MinValue,*/ /* c.ValidTo ?? DateTime.MaxValue*/
 
