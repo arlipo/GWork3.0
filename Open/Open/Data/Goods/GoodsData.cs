@@ -1,4 +1,5 @@
-﻿using Open.Data.Common;
+﻿using Open.Core;
+using Open.Data.Common;
 
 namespace Open.Data.Goods
 {
@@ -9,7 +10,6 @@ namespace Open.Data.Goods
         private string description;
         private string fileLocation;
         private string price;
-        private string type;
 
         public string ImageType
         {
@@ -35,10 +35,6 @@ namespace Open.Data.Goods
             get => getString(ref price);
             set => price = value;
         }
-        public string Type
-        {
-            get => getString(ref type);
-            set => type = value;
-        }
+        public GoodTypes Type { get; set; }
     }
 }

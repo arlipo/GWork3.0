@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Open.Core;
 using Open.Data.Goods;
 namespace Open.Infra.Goods {
     public static class GoodsInitializer {
@@ -16,7 +17,7 @@ namespace Open.Infra.Goods {
                 add(c, new ChemistryData {
                     Name = "Antifreeze + coolant LONG LIFE",
                     Code = "12345",
-                    Type = "Chemistry",
+                    Type = GoodTypes.Chemistry,
                     Description =
                         "Organic Acid Technology (OAT) coolant technology that is compatible" +
                         " for use in all automobiles and light-duty trucks, regardless of make, " +
@@ -36,7 +37,7 @@ namespace Open.Infra.Goods {
                                   " (Original Equipment) specifications and are manufactured " +
                                   "for direct replacement.",
                     PicFileLocation = "-",
-                    Type = "SpareParts",
+                    Type = GoodTypes.SpareParts,
                     ID = "2",
                     ImageType = "png",
                     Price = "14,99"
@@ -50,7 +51,7 @@ namespace Open.Infra.Goods {
                         "residue Cable management access ports for charging your device USB " +
                         "charging cable not included.",
                     PicFileLocation = "-",
-                    Type = "Accessories",
+                    Type = GoodTypes.Accessories,
                     ID = "3",
                     ImageType = "png",
                     Price = "6,99"
@@ -60,7 +61,7 @@ namespace Open.Infra.Goods {
                     Code = "543",
                     Description = "AUDI 3 button remote key fob case FULL service repair kit.",
                     PicFileLocation = "-",
-                    Type = "SpareParts",
+                    Type = GoodTypes.SpareParts,
                     ID = "4",
                     ImageType = "png",
                     Price = "9,99"
@@ -73,7 +74,7 @@ namespace Open.Infra.Goods {
                         "It is a perfect accessory for your safety, comfort and" +
                         " ideal for use with baby and infant car seats.",
                     PicFileLocation = "-",
-                    Type = "Accessories",
+                    Type = GoodTypes.Accessories,
                     ID = "5",
                     ImageType = "png",
                     Price = "7,99"
@@ -85,7 +86,7 @@ namespace Open.Infra.Goods {
                         "Black Leather Steering Wheel Cover. Genuine leather. Suitable for" +
                         " steering wheels with an exterior diameter of 37 - 39cm.Simply stretches over the existing steering wheel",
                     PicFileLocation = "-",
-                    Type = "Accessories",
+                    Type = GoodTypes.Accessories,
                     ID = "6",
                     ImageType = "png",
                     Price = "9,99"
@@ -97,7 +98,7 @@ namespace Open.Infra.Goods {
                         "Natural rubber matting provides years of trouble-free service. Our matting provides excellent insulation" +
                         " from the cold. ",
                     PicFileLocation = "-",
-                    Type = "Accessories",
+                    Type = GoodTypes.Accessories,
                     ID = "7",
                     ImageType = "png",
                     Price = "15,99"
@@ -108,7 +109,7 @@ namespace Open.Infra.Goods {
                     Description =
                         "This cup/can holder has a designated space for cans/cups anda space for coins and other small items.",
                     PicFileLocation = "-",
-                    Type = "Accessories",
+                    Type = GoodTypes.Accessories,
                     ID = "8",
                     ImageType = "png",
                     Price = "10,99"

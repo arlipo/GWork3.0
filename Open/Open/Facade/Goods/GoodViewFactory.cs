@@ -1,4 +1,5 @@
 ﻿using System;
+using Open.Core;
 using Open.Domain.Goods;
 
 namespace Open.Facade.Goods
@@ -12,7 +13,7 @@ namespace Open.Facade.Goods
                 ID = o?.Data?.ID,
                 Name = o?.Data?.Name,
                 Code = o?.Data?.Code,
-                Type = o?.Data?.Type,
+                Type = o?.Data?.Type ?? GoodTypes.Accessories,
                 Description = o?.Data?.Description,
                 Picture = o?.Data?.PicFileLocation,
                 ImageType = o?.Data?.ImageType,

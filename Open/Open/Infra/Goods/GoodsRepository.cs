@@ -28,7 +28,7 @@ namespace Open.Infra.Goods
             var count = await countries.CountAsync();
             var p = new RepositoryPage(count, PageIndex, PageSize);
             var items = await countries.Skip(p.FirstItemIndex).Take(p.PageSize).ToListAsync();
-            var newList = items.Where(x => x.Type == type.ToString()).ToList();
+            var newList = items.Where(x => x.Type == type).ToList();
             return createList(newList, p);
         }
     }

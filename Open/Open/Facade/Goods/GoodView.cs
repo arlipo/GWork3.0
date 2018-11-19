@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Open.Aids;
+using Open.Core;
 using Open.Facade.Common;
 
 namespace Open.Facade.Goods
@@ -8,7 +9,7 @@ namespace Open.Facade.Goods
     public class GoodView : NamedView
     {
         private string id, code, imageType,
-        description, fileLocation, price, type;
+        description, fileLocation, price;
 
 
         public string ID
@@ -23,11 +24,7 @@ namespace Open.Facade.Goods
             set => code = value;
         }
 
-        public string Type
-        {
-            get => getString(ref type);
-            set => type = value;
-        }
+        public GoodTypes Type { get; set; }
 
         public string ImageType
         {
