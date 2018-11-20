@@ -6,16 +6,16 @@ using Open.Facade.Common;
 
 namespace Open.Facade.Goods
 {
-    public class GoodView : NamedView
+    public class GoodView : EntityView
     {
-        private string id, code, imageType,
-        description, fileLocation, price;
+        private string name, code,
+        description, price;
 
-
-        public string ID
+        [Required]
+        public string Name
         {
-            get => getString(ref id);
-            set => id = value;
+            get => getString(ref name);
+            set => name = value;
         }
 
         public string Code
@@ -25,20 +25,9 @@ namespace Open.Facade.Goods
         }
 
         public GoodTypes Type { get; set; }
-
-        public string ImageType
-        {
-            get => getString(ref imageType);
-            set => imageType = value;
-        }
         
-        public string Picture
-        {
-            get => getString(ref fileLocation);
-            set => fileLocation = value;
-        }
+        public byte[] Image { get; set; }
 
-        [Required, RegularExpression(RegularExpressionFor.EnglishTextOnly)]
         public string Description
         {
             get => getString(ref description);

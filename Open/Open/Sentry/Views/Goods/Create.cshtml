@@ -12,10 +12,9 @@
     @Html.EditingControlsFor(model => model.Name)
     @Html.EditingControlsFor(model => model.Description)
 <div class="form-group">
-    <label class="control-label col-md-2">Picture</label>
-    <div class="col-md-4" style="position: relative; top: 5px">
-        <input type="file" name="Picture" accept="image/*">
-    </div>
+    <label asp-for="Image" class="control-label col-md-2">Picture</label>
+    <input type="file" id="files" accept="image/jpeg, image/x-png" asp-for="Image">
+    <span asp-validation-for="Image" class="text-danger"></span>
 </div>
     @Html.EditingControlsFor(model => model.Price)
     @Html.EditingControlsForEnum(model => model.Type)

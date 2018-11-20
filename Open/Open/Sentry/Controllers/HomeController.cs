@@ -1,8 +1,48 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Open.Sentry.Models;
 namespace Open.Sentry.Controllers {
-    public class HomeController : Controller {
+    public class HomeController : Controller
+    {
+        private readonly IServiceProvider services;
+        private UserManager<ApplicationUser> _userManager;
+
+        public HomeController(IServiceProvider s, UserManager<ApplicationUser> userManager)
+        {
+            services = s;
+            _userManager = userManager;
+            CreateUserRoles(services).Wait();
+        }
+        private async Task CreateUserRoles(IServiceProvider serviceProvider)
+        {
+            var userr = new ApplicationUser();
+            userr.Id = Guid.NewGuid().ToString();
+            userr.UserName = "yana";
+            userr.Email = "Yana@yana.com";
+            var result = await _userManager.CreateAsync(userr, "1!Aabcsef");
+            var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+
+            IdentityResult roleResult;
+            //Adding Addmin Role  
+            var roleCheck = await RoleManager.RoleExistsAsync("Admin");
+            if (!roleCheck)
+            {
+                //create the roles and seed them to the database  
+                roleResult = await RoleManager.CreateAsync(new IdentityRole("Admin"));
+            }
+           
+            //Assign Admin role to the main User here we have given our newly loregistered login id for Admin management  
+            ApplicationUser user = await UserManager.FindByEmailAsync("Yana@yana.com");
+            var User = new ApplicationUser();
+            await UserManager.AddToRoleAsync(user, "Admin");
+
+        }
         public IActionResult Index() { return View(); }
 
         public IActionResult About() {

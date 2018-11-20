@@ -1,6 +1,6 @@
 ﻿namespace Open.Facade.Common
 {
-    public class EntityView: PeriodView
+    public class EntityView : PeriodView
     {
         private string id;
         public string ID {

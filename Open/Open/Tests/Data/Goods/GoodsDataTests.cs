@@ -14,12 +14,6 @@ namespace Open.Tests.Data.Goods
         }
 
         [TestMethod]
-        public void FileLocationTest()
-        {
-            canReadWrite(() => obj.PicFileLocation, x => obj.PicFileLocation = x);
-        }
-
-        [TestMethod]
         public void PriceTest()
         {
             canReadWrite(() => obj.Price, x => obj.Price = x);
@@ -29,12 +23,6 @@ namespace Open.Tests.Data.Goods
         public void DescriptionTest()
         {
             canReadWrite(() => obj.Description, x => obj.Description = x);
-        }
-
-        [TestMethod]
-        public void ImageTypeTest()
-        {
-            canReadWrite(() => obj.ImageType, x => obj.ImageType = x);
         }
     }
 }
