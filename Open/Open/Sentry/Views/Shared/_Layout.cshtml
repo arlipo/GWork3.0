@@ -128,7 +128,7 @@
 
             </ul>
             <div class="dropdown">
-                <button class="dropbtn">Products</button>
+                <button class="dropbtn" style="color: black">Products</button>
                 <div class="dropdown-content">
                     <a asp-area="" asp-controller="Goods" asp-action="Index" style="color: black"> All products</a>
                     <a asp-area="" asp-controller="SpareParts" asp-action="Index" style="color: black">Spare Parts</a>
@@ -136,14 +136,14 @@
                     <a asp-area="" asp-controller="Chemistry" asp-action="Index" style="color: black">Chemistry</a>
                 </div>
             </div>
+            <a asp-area="" asp-controller="Cart"asp-action="Index" class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a>
             <div class="nav navbar-nav navbar-right">
                 <form>
-                    <li><href="#" class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</href>
-                    <li>
+                    <
                     <input type="text" name="search" placeholder="Search...">
                 </form>
             </div>
-            @await Html.PartialAsync("_LoginPartial")  
+            @await Html.PartialAsync("_LoginPartial")
         </div>
     </div>
 </nav>
