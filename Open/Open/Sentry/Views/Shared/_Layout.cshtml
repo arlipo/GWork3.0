@@ -61,43 +61,91 @@
             top: 0;
             width: 100%;
         }
+
+
+        .dropbtn {
+            background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg);
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+            .dropdown-content a:hover {
+                background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg);
+            }
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+
+        .dropdown:hover .dropbtn {
+            background-color: #cceeff;
+        }
     </style>
 
 </head>
 
 <body>
- <nav class="navbar navbar" style="background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg) ">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a asp-area="" asp-controller="Home" asp-action="Index" style="color:black" class="navbar-brand">Home</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Goods" asp-action="Index" style="color: black"> All products</a></li>
-                    <li><a asp-area="" asp-controller="SpareParts" asp-action="Index" style="color: black">Spare Parts</a></li>
-                    <li><a asp-area="" asp-controller="Accessories" asp-action="Index" style="color: black">Accessories</a></li>
-                    <li><a asp-area="" asp-controller="Chemistry" asp-action="Index" style="color: black">Chemistry</a></li>
-                    @*<li><a asp-area="" asp-controller="Home" asp-action="Money">Money</a></li>*@
-                    <li><a asp-area="" asp-controller="Home" asp-action="About" style="color: black">Help & Contact</a></li>
-                    @*<li><a asp-area="" asp-controller="Home" asp-action="Contacts">Countries</a></li>*@
-                    <li><a asp-area="" asp-controller="Home" asp-action="Team" style="color: black">Team</a></li>
-                    <li><href="#" class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</href>
-
-
-                </ul>
-                <div class="nav navbar-nav navbar-right">
-                    <form>
-                        <input type="text" name="search" placeholder="Search...">
-                    </form>
-
-                    @*<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>*@
-                </div>
-                @await Html.PartialAsync("_LoginPartial")
-
-            </div>
+<nav class="navbar navbar" style="background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg) ">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a asp-area="" asp-controller="Home" asp-action="Index" style="color:black" class="navbar-brand">Home</a>
         </div>
-    </nav>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a asp-area="" asp-controller="Home" asp-action="About" style="color: black">Help & Contact</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Team" style="color: black">Team</a></li>
+
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.IsInRole("Admin"))
+                    {
+                        <a asp-area="" asp-controller="Home" asp-action="Money">Money</a>
+                    }
+                }
+
+            </ul>
+            <div class="dropdown">
+                <button class="dropbtn">Products</button>
+                <div class="dropdown-content">
+                    <a asp-area="" asp-controller="Goods" asp-action="Index" style="color: black"> All products</a>
+                    <a asp-area="" asp-controller="SpareParts" asp-action="Index" style="color: black">Spare Parts</a>
+                    <a asp-area="" asp-controller="Accessories" asp-action="Index" style="color: black">Accessories</a>
+                    <a asp-area="" asp-controller="Chemistry" asp-action="Index" style="color: black">Chemistry</a>
+                </div>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <form>
+                    <li><href="#" class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</href>
+                    <li>
+                    <input type="text" name="search" placeholder="Search...">
+                </form>
+            </div>
+            @await Html.PartialAsync("_LoginPartial")  
+        </div>
+    </div>
+</nav>
+
 <div class="container body-content">
     <br/>
     @RenderBody()
@@ -105,9 +153,7 @@
     <footer>
         <p>&copy; Made by Gwork Company</p>
     </footer>
-</div>
-
-        
+</div>       
 </body>
 </html>
 

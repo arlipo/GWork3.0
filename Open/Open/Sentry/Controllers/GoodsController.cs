@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Open.Aids;
@@ -8,6 +9,7 @@ using Open.Domain.Goods;
 using Open.Facade.Goods;
 
 namespace Open.Sentry.Controllers {
+    
 
     public class GoodsController : Controller // ISentryController
     {
@@ -43,7 +45,7 @@ namespace Open.Sentry.Controllers {
         public IActionResult Create() {
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost] public async Task<IActionResult> Create([Bind(properties)] GoodView c) {
             await validateId(c.Code, ModelState);
             if (!ModelState.IsValid) return View(c);

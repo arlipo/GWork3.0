@@ -157,6 +157,8 @@ namespace Open.Sentry {
             await UserManager.AddToRoleAsync(user, "Manager");
 
         }
+
+
         
     }
 
