@@ -1,41 +1,48 @@
 ﻿@using Open.Sentry.Extensions
+@using Open.Sentry.Models
 @model Open.Core.IPaginatedList<Open.Facade.Goods.GoodView>
 
-@{ 
+@{
 
     ViewBag.Title = "Goods";
     Layout = "_IndexPartial";
 }
 
 @section Create {
-    <a asp-action="Create">Create New</a>
-}
-<style>
-    Title
+    @if (User.Identity.IsAuthenticated)
     {
-        color: aliceblue; 
-
+        if (User.IsInRole("Admin"))
+        {<a asp-action="Create">Create New</a>}
     }
-    </style>
+}
+
+
+
+<style>
+    Title {
+        color: aliceblue;
+    }
+</style>
 
 <body>
-    <table class="table"style="background-color:#26403B; color:aliceblue;" >
+    <table class="table" style="background-color:#26403B; color:aliceblue;">
         @{var dummy = Model.FirstOrDefault();}
         <thead>
-        <tr>
-            @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
-            @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.Price)
-            @Html.SortColumnHeaderFor(ViewData["SortImage"], model => dummy.Image)
-        </tr>
+            <tr>
+                @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
+                @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.Price)
+                @Html.SortColumnHeaderFor(ViewData["SortImage"], model => dummy.Image)
+            </tr>
         </thead>
         <tbody>
-        @foreach (var item in Model)  {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                <td>@Html.DisplayFor(modelItem => item.Price)</td>
-                <td>@Html.DisplayFor(modelItem => item.Image)</td>
-            </tr>
-        }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Image)</td>
+                </tr>
+            }
         </tbody>
     </table>
 </body>

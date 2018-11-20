@@ -21,7 +21,7 @@ namespace Open.Sentry.Controllers {
         {
             var userr = new ApplicationUser();
             userr.Id = Guid.NewGuid().ToString();
-            userr.UserName = "yana";
+            userr.UserName = "Yana@yana.com";
             userr.Email = "Yana@yana.com";
             var result = await _userManager.CreateAsync(userr, "1!Aabcsef");
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
