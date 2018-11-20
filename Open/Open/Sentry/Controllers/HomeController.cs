@@ -21,9 +21,10 @@ namespace Open.Sentry.Controllers {
         {
             var userr = new ApplicationUser();
             userr.Id = Guid.NewGuid().ToString();
-            userr.UserName = "Yana@yana.com";
-            userr.Email = "Yana@yana.com";
+            userr.UserName = "Admin@admin.com";
+            userr.Email = "Admin@admin.com";
             var result = await _userManager.CreateAsync(userr, "1!Aabcsef");
+
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
@@ -38,7 +39,7 @@ namespace Open.Sentry.Controllers {
             }
            
             //Assign Admin role to the main User here we have given our newly loregistered login id for Admin management  
-            ApplicationUser user = await UserManager.FindByEmailAsync("Yana@yana.com");
+            ApplicationUser user = await UserManager.FindByEmailAsync("Admin@admin.com");
             var User = new ApplicationUser();
             await UserManager.AddToRoleAsync(user, "Admin");
 
