@@ -1,5 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Open.Aids;
@@ -42,13 +44,14 @@ namespace Open.Sentry.Controllers {
             await repository.UpdateObject(o);
             return RedirectToAction("Index");
         }
-        public IActionResult Create() {
+        [HttpGet] public IActionResult Create() {
             return View();
         }
         [Authorize(Roles = "Admin")]
         [HttpPost] public async Task<IActionResult> Create([Bind(properties)] GoodView c) {
             await validateId(c.Code, ModelState);
             if (!ModelState.IsValid) return View(c);
+            
             var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type, c.Image);
             await repository.AddObject(o);
             return RedirectToAction("Index");
