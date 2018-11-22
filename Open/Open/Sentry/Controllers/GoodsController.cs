@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -48,10 +49,17 @@ namespace Open.Sentry.Controllers {
             return View();
         }
         [Authorize(Roles = "Admin")]
-        [HttpPost] public async Task<IActionResult> Create([Bind(properties)] GoodView c) {
+        [HttpPost] public async Task<IActionResult> Create([Bind(properties)] GoodView c, List<IFormFile> image) {
             await validateId(c.Code, ModelState);
             if (!ModelState.IsValid) return View(c);
-            
+            foreach (var item in image) {
+                if (item.Length>0) {
+                    using (var stream = new MemoryStream()) {
+                        await item.CopyToAsync(stream);
+                        c.Image = stream.ToArray();
+                    }
+                }
+            }
             var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type, c.Image);
             await repository.AddObject(o);
             return RedirectToAction("Index");
