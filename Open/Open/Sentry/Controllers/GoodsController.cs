@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -50,8 +51,10 @@ namespace Open.Sentry.Controllers {
         }
         [Authorize(Roles = "Admin")]
         [HttpPost] public async Task<IActionResult> Create([Bind(properties)] GoodView c, List<IFormFile> image) {
+            c.ID = Guid.NewGuid().ToString();
             await validateId(c.Code, ModelState);
             if (!ModelState.IsValid) return View(c);
+
             foreach (var item in image) {
                 if (item.Length>0) {
                     using (var stream = new MemoryStream()) {
