@@ -7,11 +7,11 @@ namespace Open.Infra.Goods {
         public static void Initialize(SentryDbContext c) {
             c.Database.EnsureCreated();
             if (c.Goods.Any()) return;
-            goodsList(c);
+            initializeGoods(c);
             c.SaveChanges();
 
         }
-        private static void goodsList(SentryDbContext c)
+        private static void initializeGoods(SentryDbContext c)
         {
             add(c, new ChemistryData
             {
