@@ -33,11 +33,7 @@ namespace Open.Infra.Migrations
 
                     b.Property<byte[]>("Image");
 
-                    b.Property<string>("ImageType");
-
                     b.Property<string>("Name");
-
-                    b.Property<string>("PicFileLocation");
 
                     b.Property<string>("Price");
 

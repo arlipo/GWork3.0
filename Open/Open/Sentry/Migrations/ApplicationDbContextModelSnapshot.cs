@@ -15,7 +15,7 @@ namespace Open.Sentry.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.3-rtm-32065")
+                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -127,33 +127,6 @@ namespace Open.Sentry.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("Open.Data.MenuMaster.MenuMasterData", b =>
-                {
-                    b.Property<int>("MenuIdentity")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("DataCreated");
-
-                    b.Property<string>("MenuFileName");
-
-                    b.Property<string>("MenuID");
-
-                    b.Property<string>("MenuName");
-
-                    b.Property<string>("MenuURL");
-
-                    b.Property<string>("Parent_MenuID");
-
-                    b.Property<string>("Use_YN");
-
-                    b.Property<string>("User_Roll");
-
-                    b.HasKey("MenuIdentity");
-
-                    b.ToTable("MenuMaster");
                 });
 
             modelBuilder.Entity("Open.Sentry.Models.ApplicationUser", b =>

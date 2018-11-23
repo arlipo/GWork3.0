@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Open.Sentry.Migrations
 {
-    public partial class mg2 : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -45,26 +45,6 @@ namespace Open.Sentry.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "MenuMaster",
-                columns: table => new
-                {
-                    MenuIdentity = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    MenuID = table.Column<string>(nullable: true),
-                    Parent_MenuID = table.Column<string>(nullable: true),
-                    MenuName = table.Column<string>(nullable: true),
-                    User_Roll = table.Column<string>(nullable: true),
-                    MenuFileName = table.Column<string>(nullable: true),
-                    MenuURL = table.Column<string>(nullable: true),
-                    Use_YN = table.Column<string>(nullable: true),
-                    DataCreated = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MenuMaster", x => x.MenuIdentity);
                 });
 
             migrationBuilder.CreateTable(
@@ -229,9 +209,6 @@ namespace Open.Sentry.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
-
-            migrationBuilder.DropTable(
-                name: "MenuMaster");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

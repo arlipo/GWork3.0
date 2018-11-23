@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Open.Aids;
 using Open.Core;
-using Open.Data.Goods;
 using Open.Domain.Goods;
 using Open.Facade.Goods;
 
@@ -49,21 +48,29 @@ namespace Open.Sentry.Controllers {
         [HttpGet] public IActionResult Create() {
             return View();
         }
-        [Authorize(Roles = "Admin")]
-        [HttpPost] public async Task<IActionResult> Create([Bind(properties)] GoodView c, List<IFormFile> image) {
-            c.ID = Guid.NewGuid().ToString();
-            await validateId(c.Code, ModelState);
-            if (!ModelState.IsValid) return View(c);
 
-            foreach (var item in image) {
-                if (item.Length>0) {
+        [Authorize(Roles = "Admin")] [ValidateAntiForgeryToken] [HttpPost]
+        public async Task<IActionResult> Create([Bind(properties)] GoodView c,
+            List<IFormFile> Image) {
+
+            c.ID = Guid.NewGuid().ToString();
+
+            await validateId(c.ID, ModelState);
+
+            //if (!ModelState.IsValid) return View(c);
+
+
+            foreach (var item in Image) {
+                if (item.Length > 0) {
                     using (var stream = new MemoryStream()) {
                         await item.CopyToAsync(stream);
                         c.Image = stream.ToArray();
                     }
                 }
             }
-            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type, c.Image);
+
+            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
+                c.Image);
             await repository.AddObject(o);
             return RedirectToAction("Index");
         }

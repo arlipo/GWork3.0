@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Open.Infra.Migrations
 {
-    public partial class min1 : Migration
+    public partial class mg1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,10 +47,8 @@ namespace Open.Infra.Migrations
                     Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     ID = table.Column<string>(nullable: false),
-                    ImageType = table.Column<string>(nullable: true),
                     Image = table.Column<byte[]>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    PicFileLocation = table.Column<string>(nullable: true),
                     Price = table.Column<string>(nullable: true),
                     Type = table.Column<int>(nullable: false),
                     Discriminator = table.Column<string>(nullable: false),
