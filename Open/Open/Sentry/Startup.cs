@@ -6,13 +6,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Open.Domain.Goods;
-using Open.Domain.Party;
-using Open.Domain.Quantity;
 using Open.Infra;
 using Open.Infra.Users;
 using Open.Infra.Goods;
-using Open.Infra.Party;
-using Open.Infra.Quantity;
 using Open.Sentry.Data;
 using Open.Sentry.Models;
 using Open.Sentry.Services;
@@ -36,19 +32,8 @@ namespace Open.Sentry {
             setAuthentication(services);
             services.AddTransient<IEmailSender, EmailSender>();
             setMvcWithAntyFoggeryToken(services);
-            services.AddScoped<ICountriesRepository, CountriesRepository>();
-            services.AddScoped<ICurrencyRepository, CurrenciesRepository>();
             services.AddScoped<IGoodsRepository, GoodsRepository>();
             services.AddScoped<IUsersRepository, UsersRepository>();
-            services.AddScoped<INationalCurrenciesRepository, NationalCurrenciesRepository>();
-            services.AddScoped<IAddressesRepository, ContactsRepository>();
-            services.AddScoped<ITelecomDeviceRegistrationsRepository, TelecomDeviceRegistrationsRepository>();
-            services.AddScoped<IRateTypeRepository, RateTypesRepository>();
-            services.AddScoped<IRateRepository, RatesRepository>();
-            services.AddScoped<IPaymentMethodsRepository, PaymentMethodsRepository>();
-            services.AddScoped<IPaymentsRepository, PaymentsRepository>();
-
-
 
             //Password Strength Setting
             services.Configure<IdentityOptions>(options =>

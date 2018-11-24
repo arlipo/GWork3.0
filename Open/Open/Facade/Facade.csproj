@@ -48,38 +48,6 @@
     <Compile Include="Goods\GoodView.cs" />
     <Compile Include="Goods\GoodViewFactory.cs" />
     <Compile Include="Goods\GoodViewsList.cs" />
-    <Compile Include="Party\AddressView.cs" />
-    <Compile Include="Party\AddressViewFactory.cs" />
-    <Compile Include="Party\AddressViewsList.cs" />
-    <Compile Include="Party\CountryView.cs" />
-    <Compile Include="Party\CountryViewFactory.cs" />
-    <Compile Include="Party\CountryViewsList.cs" />
-    <Compile Include="Party\EMailAddressView.cs" />
-    <Compile Include="Party\GeographicAddressView.cs" />
-    <Compile Include="Party\TelecomAddressView.cs" />
-    <Compile Include="Party\WebPageAddressView.cs" />
-    <Compile Include="Quantity\MoneyCalculatorView.cs" />
-    <Compile Include="Quantity\CashView.cs" />
-    <Compile Include="Quantity\CheckView.cs" />
-    <Compile Include="Quantity\CreditCardView.cs" />
-    <Compile Include="Quantity\CurrencyView.cs" />
-    <Compile Include="Quantity\CurrencyViewFactory.cs" />
-    <Compile Include="Quantity\CurrencyViewsList.cs" />
-    <Compile Include="Quantity\DebitCardView.cs" />
-    <Compile Include="Quantity\MoneyView.cs" />
-    <Compile Include="Quantity\PaymentCardView.cs" />
-    <Compile Include="Quantity\PaymentMethodView.cs" />
-    <Compile Include="Quantity\PaymentMethodViewFactory.cs" />
-    <Compile Include="Quantity\PaymentMethodViewsList.cs" />
-    <Compile Include="Quantity\PaymentView.cs" />
-    <Compile Include="Quantity\PaymentViewFactory.cs" />
-    <Compile Include="Quantity\PaymentViewsList.cs" />
-    <Compile Include="Quantity\RateTypeView.cs" />
-    <Compile Include="Quantity\RateTypeViewFactory.cs" />
-    <Compile Include="Quantity\RateTypeViewsList.cs" />
-    <Compile Include="Quantity\RateView.cs" />
-    <Compile Include="Quantity\RateViewFactory.cs" />
-    <Compile Include="Quantity\RateViewsList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users\UserViewsList.cs" />
     <Compile Include="Users\UsersView.cs" />
@@ -103,11 +71,6 @@
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Party\Docs\Address.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Quantity\Docs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

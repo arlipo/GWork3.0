@@ -50,34 +50,11 @@
     <Compile Include="Goods\ChemistryData.cs" />
     <Compile Include="Goods\GoodsData.cs" />
     <Compile Include="Goods\SparePartsData.cs" />
-    <Compile Include="Party\AddressData.cs" />
-    <Compile Include="Party\CountryData.cs" />
-    <Compile Include="Party\TelecomDeviceRegistrationData.cs" />
-    <Compile Include="Party\EmailAddressData.cs" />
-    <Compile Include="Party\GeographicAddressData.cs" />
-    <Compile Include="Party\TelecomAddressData.cs" />
-    <Compile Include="Party\WebPageAddressData.cs" />
-    <Compile Include="Quantity\CheckData.cs" />
-    <Compile Include="Quantity\NationalCurrencyData.cs" />
-    <Compile Include="Quantity\CreditCardData.cs" />
-    <Compile Include="Quantity\CurrencyData.cs" />
-    <Compile Include="Quantity\DebitCardData.cs" />
-    <Compile Include="Quantity\PaymentData.cs" />
-    <Compile Include="Quantity\PaymentMethodData.cs" />
-    <Compile Include="Quantity\RateData.cs" />
-    <Compile Include="Quantity\RateTypeData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShoppingCartItem\ShoppingCart.cs" />
-    <Compile Include="ShoppingCartItem\ShoppingCartItem.cs" />
     <Compile Include="Users\UsersData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Common\Docs\BaseClasses.cd" />
-    <None Include="Party\Docs\Location.cd" />
-    <None Include="Quantity\Docs\CountryCurrency.cd" />
-    <None Include="Quantity\Docs\Fig 11 - 2 Currency.cd" />
-    <None Include="Quantity\Docs\Fig 11 - 6 Rate.cd" />
-    <None Include="Quantity\Docs\Fig 11 - 7 Payment Method.cd" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

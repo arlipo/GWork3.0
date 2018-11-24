@@ -51,64 +51,11 @@
     <Compile Include="Goods\GoodFactory.cs" />
     <Compile Include="Goods\GoodsList.cs" />
     <Compile Include="Goods\IGoodsRepository.cs" />
-    <Compile Include="Party\Address.cs" />
-    <Compile Include="Party\AddressFactory.cs" />
-    <Compile Include="Party\AddressesList.cs" />
-    <Compile Include="Party\Country.cs" />
-    <Compile Include="Party\CountryFactory.cs" />
-    <Compile Include="Party\CountriesList.cs" />
-    <Compile Include="Party\EmailAddress.cs" />
-    <Compile Include="Party\GeographicAddress.cs" />
-    <Compile Include="Party\IAddress.cs" />
-    <Compile Include="Party\IAddressesRepository.cs" />
-    <Compile Include="Party\ICountriesRepository.cs" />
-    <Compile Include="Party\ITelecomDeviceRegistrationsRepository.cs" />
-    <Compile Include="Party\TelecomAddress.cs" />
-    <Compile Include="Party\TelecomDeviceRegistration.cs" />
-    <Compile Include="Party\TelecomDeviceRegistrationFactory.cs" />
-    <Compile Include="Party\TelecomDeviceRegistrationsList.cs" />
-    <Compile Include="Party\WebPageAddress.cs" />
-    <Compile Include="Quantity\Calculator.cs" />
-    <Compile Include="Quantity\CardPaymentMethod.cs" />
-    <Compile Include="Quantity\Cash.cs" />
-    <Compile Include="Quantity\Check.cs" />
-    <Compile Include="Quantity\ConvertMoney.cs" />
-    <Compile Include="Quantity\NationalCurrency.cs" />
-    <Compile Include="Quantity\NationalCurrencyFactory.cs" />
-    <Compile Include="Quantity\NationalCurrenciesList.cs" />
-    <Compile Include="Quantity\CreditCard.cs" />
-    <Compile Include="Quantity\Currency.cs" />
-    <Compile Include="Quantity\CurrencyFactory.cs" />
-    <Compile Include="Quantity\CurrenciesList.cs" />
-    <Compile Include="Quantity\DebitCard.cs" />
-    <Compile Include="Quantity\INationalCurrenciesRepository.cs" />
-    <Compile Include="Quantity\ICurrencyRepository.cs" />
-    <Compile Include="Quantity\IPaymentMethod.cs" />
-    <Compile Include="Quantity\IPaymentMethodsRepository.cs" />
-    <Compile Include="Quantity\IPaymentsRepository.cs" />
-    <Compile Include="Quantity\IRateRepository.cs" />
-    <Compile Include="Quantity\IRateTypeRepository.cs" />
-    <Compile Include="Quantity\Money.cs" />
-    <Compile Include="Quantity\Payment.cs" />
-    <Compile Include="Quantity\PaymentMethod.cs" />
-    <Compile Include="Quantity\PaymentMethodFactory.cs" />
-    <Compile Include="Quantity\PaymentMethodsList.cs" />
-    <Compile Include="Quantity\PaymentsList.cs" />
-    <Compile Include="Quantity\Rate.cs" />
-    <Compile Include="Quantity\RateFactory.cs" />
-    <Compile Include="Quantity\RatesList.cs" />
-    <Compile Include="Quantity\RateType.cs" />
-    <Compile Include="Quantity\RateTypeList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Quantity\Value.cs" />
     <Compile Include="Users\IUsersRepository.cs" />
     <Compile Include="Users\User.cs" />
     <Compile Include="Users\UserFactory.cs" />
     <Compile Include="Users\UsersList.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Quantity\Docs\MoneyPattern.cd" />
-    <None Include="Quantity\Docs\Repository.cd" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

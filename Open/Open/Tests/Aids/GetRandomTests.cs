@@ -4,7 +4,6 @@ using System.Drawing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Aids;
 using Open.Core;
-using Open.Data.Party;
 namespace Open.Tests.Aids {
 
     [TestClass] public class GetRandomTests : BaseTests {
@@ -230,19 +229,6 @@ namespace Open.Tests.Aids {
             test(typeof(ulong?), typeof(ulong));
             test(typeof(string));
             test(typeof(object));
-            test(typeof(CountryData));
-        }
-
-        [TestMethod] public void ObjectTest() {
-            Assert.IsNull(GetRandom.Object(null));
-            var o = GetRandom.Object(typeof(CountryData)) as CountryData;
-            Assert.IsNotNull(o);
-            Assert.IsFalse(string.IsNullOrWhiteSpace(o.ID));
-            Assert.IsFalse(string.IsNullOrWhiteSpace(o.Code));
-            Assert.IsFalse(string.IsNullOrWhiteSpace(o.Name));
-            var l = GetRandom.Object(typeof(List<int>)) as List<int>;
-            Assert.IsNotNull(l);
-            Assert.IsTrue(l.Count > 0);
         }
     }
 }

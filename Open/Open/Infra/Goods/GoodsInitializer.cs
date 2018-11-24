@@ -101,13 +101,77 @@ namespace Open.Infra.Goods {
 
             add(c, new ChemistryData()
             {
-                Name = "Antifreeze",
-                Code = "98765",
-                Type = GoodTypes.Chemistry,
-                Volume = "3l",
-                Price = "19,99"
+                Name = "'Chemical Guys' Premium Air Freshener",
+                Code ="5555",
+                Description = "Premium air freshener formulated with unique fragrances " +
+                              "engineered to smell just like a new car.\r\n" +
+                              "One spray is all you need for a full size vehicle",
+                Type= GoodTypes.Chemistry,
+                Price = "9,99"
             });
-
+            add(c, new ChemistryData()
+            {
+                Name = "Engine Oil TOTAL QUARTZ 9000 ",
+                Code = "55444",
+                Description = "Suitable For: BMW\r\nSuitable For: Citroen\r\nSuitable For: Fiat\r\nSuitable For: Mercedes-Benz\r\nSuitable For: Peugeot\r\n" +
+                              "Suitable For: Porsche\r\nSuitable For: Renault\r\nSuitable For: Seat\r\nSuitable For: Skoda\r\nSuitable For: Vauxhall / Opel\r\n" +
+                              "Suitable For: Volkswagen",
+                Type = GoodTypes.Chemistry,
+                Price = "14,49"
+            });
+            add(c, new ChemistryData()
+            {
+                Name = "Mobil Super Motor Oil 5L",
+                Code = "4444",
+                Description = "Mobil Super 3000 X1 Formula FE 5W-30 is a high performance" +
+                              " motor oil designed for use in petrol and diesel engines that " +
+                              "are specifically designed to use a low viscosity (HTHS) motor oil. ",
+                Type = GoodTypes.Chemistry,
+                Price = "20,49"
+            });
+            add(c, new ChemistryData()
+            {
+                Name = "Power Steering Fluid for Honda",
+                Code = "3333",
+                Description = " This listing is for a set of two power steering pump " +
+                              "o-rings and one bottle of Honda Genuine power steering fluid.",
+                Type = GoodTypes.Chemistry,
+                Price = "23,49"
+            });
+            add(c, new ChemistryData()
+            {
+                Name = "Genuine Ford Antifreeze",
+                Code = "2222",
+                Description = "Genuine Ford Antifreeze Antifreeze Super plus Premium 4 Liter",
+                Type = GoodTypes.Chemistry,
+                Price = "10,99"
+            });
+            add(c, new ChemistryData()
+            {
+                Name = "Genuine Wurth Brake Cleaner Plus Aerosol",
+                Code = "8888",
+                Description = "Suitable for brake cleaner and other de-greaser products, Motorcycle Motorbike",
+                Type = GoodTypes.Chemistry,
+                Price = "7,49"
+            });
+            add(c, new ChemistryData()
+            {
+                Name = "Red Penguin Auto Shampoo",
+                Code = "9999",
+                Description = "Removes gently and effectively all kinds of dirt on the body (dirt, dust, oil, salt - and insect remains, poplar buds and leaves tree secretions.",
+                Type = GoodTypes.Chemistry,
+                Price = "20,99"
+            });
+            add(c, new ChemistryData()
+            {
+                Name = "Kim Tec Auto Shampoo and Wax",
+                Code = "1000",
+                Description = "KIM TEC car shampoo + wax is a two in one -" +
+                              " product in a concentrated form.\r\nThrough regular use, " +
+                              "the vehicle is intensely cleaned surface and brought to shine over the waxes contained in the product. ",
+                Type = GoodTypes.Chemistry,
+                Price = "20,99"
+            });
         }
         private static void add(SentryDbContext c, GoodsData goods) {
             goods.ID = Guid.NewGuid().ToString();
