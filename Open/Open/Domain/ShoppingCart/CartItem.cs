@@ -42,6 +42,6 @@ namespace Open.Domain.ShoppingCart
             ProductId = productId;
         }
 
-        public bool Equals(CartItem item) => item.ProductId == ProductId;
+        public bool Equals(CartItem item) => item?.ProductId == ProductId;
     }
 }
