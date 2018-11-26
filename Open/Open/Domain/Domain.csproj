@@ -57,7 +57,9 @@
     <Compile Include="Users\UserFactory.cs" />
     <Compile Include="Users\UsersList.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ShoppingCart\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aids\Aids.csproj">
       <Project>{10694a63-1ad2-49ad-9085-70748d4d5ce6}</Project>
