@@ -43,7 +43,7 @@ namespace Open.Sentry.Controllers {
             if (!ModelState.IsValid) return View(c);
             var o = await repository.GetObject(c.Code);
             o.Data.Name = c.Name;
-            o.Data.Code = c.Description;
+            o.Data.Description = c.Description;
             o.Data.Image = c.Image;
             o.Data.Price = c.Price;
 

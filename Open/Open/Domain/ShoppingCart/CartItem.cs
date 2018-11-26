@@ -1,47 +1,30 @@
 ﻿using System;
 using Open.Data.Goods;
+using Open.Domain.Goods;
 
 namespace Open.Domain.ShoppingCart
 {
     public class CartItem : IEquatable<CartItem>
     {
+        private Good _product;
+
+        public GoodsData Data { get; set; }
+
         public int Quantity { get; set; }
 
-        private int _productId;
+        public Good Prod => _product ?? (_product = GoodFactory.Create(Data));
 
-        public int ProductId
-        {
-            get => _productId;
-            set
-            {
-                _product = null;
-                _productId = value;
-            }
-        }
+        public string Name => Prod.Data.Name;
 
-        private GoodsData _product = null;
-
-        public GoodsData Prod
-        {
-            get
-            {
-                if (_product == null)
-                    _product = new GoodsData();
-                return _product;
-            }
-        }
-
-        public string Description => Prod.Description;
-
-        public decimal UnitPrice => decimal.Parse(Prod.Price);
+        public decimal UnitPrice => decimal.Parse(Prod.Data.Price);
 
         public decimal TotalPrice => UnitPrice * Quantity;
 
-        public CartItem(int productId)
+        public CartItem(GoodsData db)
         {
-            ProductId = productId;
+            Data = db;
         }
 
-        public bool Equals(CartItem item) => item?.ProductId == ProductId;
+        public bool Equals(CartItem item) => item?.Data == Data;
     }
 }
