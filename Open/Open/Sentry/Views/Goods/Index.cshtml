@@ -10,7 +10,13 @@
 
 @section Create 
 {
-    <a asp-action="Create">Create New</a>
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (User.IsInRole("Admin"))
+        {
+            <a asp-action="Create">Create New</a>
+        }
+    }
 }
 
 
