@@ -8,12 +8,9 @@
     Layout = "_IndexPartial";
 }
 
-@section Create {
-    @if (User.Identity.IsAuthenticated)
-    {
-        if (User.IsInRole("Admin"))
-        {<a asp-action="Create">Create New</a>}
-    }
+@section Create 
+{
+    <a asp-action="Create">Create New</a>
 }
 
 
@@ -41,6 +38,21 @@
                 <td>@Html.DisplayFor(modelItem => item.Name)</td>
                 <td>@Html.DisplayFor(modelItem => item.Price)</td>
                 <td>@Html.DisplayFor(modelItem => item.Image)</td>
+                @if (User.Identity.IsAuthenticated)
+                 {
+                    if (User.IsInRole("Admin"))
+                    {
+                        <td>@Html.EditDetailDeleteFor(modelItem => item.ID)</td>
+                    }
+                    else
+                    {
+                        <td>
+                            <div>
+                                <button type="button" class="btn btn-info">Add to Cart</button>
+                            </div>
+                        </td>
+                    }
+                 }
             </tr>
             }
         </tbody>

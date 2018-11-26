@@ -7,9 +7,17 @@
 <div class="container text-left" style="background-color: #26403B; opacity: 70;">
     <h2 style="color: white">@ViewBag.Title</h2>
 
-    <p>
-        @RenderSection("Create")
-    </p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        {
+            if (User.IsInRole("Admin"))
+            {
+                <p>
+                    @RenderSection("Create")
+                </p>
+            }
+        }
+    }
 
     <form asp-action=@ViewBag.ActionIndex method="get">
         <div class="form-inline col-md-6">
