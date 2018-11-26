@@ -14,7 +14,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Aids;
-using Open.Data.Quantity;
 using Open.Infra;
 using Open.Sentry;
 namespace Open.Tests.Sentry {
@@ -101,19 +100,6 @@ namespace Open.Tests.Sentry {
             }
 
             throw new Exception($"No solution file in path <{p}>.");
-        }
-        protected static void addRateType(string id) {
-            db.Currencies.Add(new CurrencyData {ID = id});
-            db.SaveChanges();
-        }
-
-        protected static void addCurrency(string id) {
-            db.RateTypes.Add(new RateTypeData {ID = id});
-            db.SaveChanges();
-        }
-        protected static void addPaymentMethod(string id) {
-            db.PaymentMethods.Add(new PaymentMethodData {ID = id});
-            db.SaveChanges();
         }
     }
 }

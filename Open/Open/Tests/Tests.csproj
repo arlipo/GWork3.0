@@ -40,6 +40,15 @@
 
   <ItemGroup>
     <Folder Include="Aids\Extensions\" />
+    <Folder Include="Data\Party\" />
+    <Folder Include="Data\Quantity\" />
+    <Folder Include="Domain\Common\" />
+    <Folder Include="Domain\Party\" />
+    <Folder Include="Domain\Quantity\" />
+    <Folder Include="Facade\Party\" />
+    <Folder Include="Facade\Quantity\" />
+    <Folder Include="Infra\Party\" />
+    <Folder Include="Infra\Quantity\" />
   </ItemGroup>
 
 </Project>

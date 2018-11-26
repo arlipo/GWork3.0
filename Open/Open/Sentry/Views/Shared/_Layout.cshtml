@@ -114,32 +114,30 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn" style="color: black">Products</button>
+                        <div class="dropdown-content">
+                            <a asp-area="" asp-controller="Goods" asp-action="Index" style="color: black"> All</a>
+                            <a asp-area="" asp-controller="SpareParts" asp-action="Index" style="color: black">Spare Parts</a>
+                            <a asp-area="" asp-controller="Accessories" asp-action="Index" style="color: black">Accessories</a>
+                            <a asp-area="" asp-controller="Chemistry" asp-action="Index" style="color: black">Chemistry</a>
+                        </div>
+                    </div>
+                </li>
                 <li><a asp-area="" asp-controller="Home" asp-action="About" style="color: black">Help & Contact</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="Team" style="color: black">Team</a></li>
 
 
-                @if (User.Identity.IsAuthenticated)
-                {
-                    if (User.IsInRole("Admin"))
-                    {
-                        <a asp-area="" asp-controller="Home" asp-action="Money">Money</a>
+                @if (User.Identity.IsAuthenticated) {
+                    if (User.IsInRole("Admin")) {
+                        <li><a asp-area="" asp-controller="Home" asp-action="Money" style="color: black">Money</a></li>
                     }
                 }
-
             </ul>
-            <div class="dropdown">
-                <button class="dropbtn" style="color: black">Products</button>
-                <div class="dropdown-content">
-                    <a asp-area="" asp-controller="Goods" asp-action="Index" style="color: black"> All products</a>
-                    <a asp-area="" asp-controller="SpareParts" asp-action="Index" style="color: black">Spare Parts</a>
-                    <a asp-area="" asp-controller="Accessories" asp-action="Index" style="color: black">Accessories</a>
-                    <a asp-area="" asp-controller="Chemistry" asp-action="Index" style="color: black">Chemistry</a>
-                </div>
-            </div>
-            <a asp-area="" asp-controller="Cart"asp-action="Index" class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a>
-            <div class="nav navbar-nav navbar-right">
+            <a asp-area="" asp-controller="Cart" asp-action="Index" class="btn btn-info" style="position: relative;top: 8px"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a>
+            <div class="nav navbar-nav navbar-right" style="position: relative;left: 8px">
                 <form>
-                    
                     <input type="text" name="search" placeholder="Search...">
                 </form>
             </div>

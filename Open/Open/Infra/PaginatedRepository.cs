@@ -28,7 +28,8 @@ namespace Open.Infra {
             var count = await countries.CountAsync();
             var p = new RepositoryPage(count, PageIndex, PageSize);
             var items = await countries.Skip(p.FirstItemIndex).Take(p.PageSize).ToListAsync();
-            return createList(items, p);
+            var l = createList(items, p);
+            return l;
         }
         private IQueryable<TDbRecord> getSet() {
             return from s in dbSet select s;

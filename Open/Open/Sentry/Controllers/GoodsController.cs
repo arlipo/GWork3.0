@@ -1,10 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Open.Aids;
 using Open.Core;
-using Open.Data.Goods;
 using Open.Domain.Goods;
 using Open.Facade.Goods;
 
@@ -22,7 +25,12 @@ namespace Open.Sentry.Controllers {
 
         public async Task<IActionResult> Index(string sortOrder = null, string currentFilter = null,
             string searchString = null, int? page = null)
-        {
+        { 
+            if (searchString != null) page = 1;
+            else searchString = currentFilter;
+        ViewData["CurrentFilter"] = searchString;
+        repository.SearchString = searchString;
+        repository.PageIndex = page ?? 1;
             var l = await repository.GetObjectsList();
             return View(new GoodViewsList(l));
         }
@@ -42,14 +50,32 @@ namespace Open.Sentry.Controllers {
             await repository.UpdateObject(o);
             return RedirectToAction("Index");
         }
-        public IActionResult Create() {
+        [HttpGet] public IActionResult Create() {
             return View();
         }
-        [Authorize(Roles = "Admin")]
-        [HttpPost] public async Task<IActionResult> Create([Bind(properties)] GoodView c) {
-            await validateId(c.Code, ModelState);
-            if (!ModelState.IsValid) return View(c);
-            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type, c.Image);
+
+        [Authorize(Roles = "Admin")] [ValidateAntiForgeryToken] [HttpPost]
+        public async Task<IActionResult> Create([Bind(properties)] GoodView c,
+            List<IFormFile> Image) {
+
+            c.ID = Guid.NewGuid().ToString();
+
+            await validateId(c.ID, ModelState);
+
+            //if (!ModelState.IsValid) return View(c);
+
+
+            foreach (var item in Image) {
+                if (item.Length > 0) {
+                    using (var stream = new MemoryStream()) {
+                        await item.CopyToAsync(stream);
+                        c.Image = stream.ToArray();
+                    }
+                }
+            }
+
+            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
+                c.Image);
             await repository.AddObject(o);
             return RedirectToAction("Index");
         }
