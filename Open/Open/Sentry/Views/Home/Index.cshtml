@@ -1,6 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Open.Sentry.Resouces
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    @inject LocService SharedLocalizer
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -10,23 +12,27 @@
         p {
             font-size: 18px;
         }
+
         .bg-1 {
             background-color: #B3CBDE;
             padding-top: 120px;
             color: #ffffff;
             font: 16px "Montserrat", sans-serif;
         }
+
         .bg-3 {
             background-color: #B3CBDE;
             color: #ffffff;
             font: 16px "Montserrat", sans-serif;
         }
+
         .bg-4 {
             background-color: #B3CBDE;
             color: #fff;
             padding-bottom: 120px;
             font: 16px "Montserrat", sans-serif;
         }
+
         fd {
             color: #111111;
         }
@@ -34,7 +40,7 @@
 </head>
 <body >
 <div class="container-fluid bg-1 text-center">
-    <h3 style="font-size: 50px; color: black; opacity: 0.9"><strong>Welcome to GWork Shop</strong></h3>
+    <h3 style="font-size: 50px; color: black; opacity: 0.9"><strong>@SharedLocalizer.GetLocalizedHtmlString("Home.Index.Welcome")</strong></h3>
 
     <h2 style="color: black; font-family: sans-serif; opacity: 0.6">
         <b>Best provider of car performance</b>
@@ -50,7 +56,7 @@
             We’re constantly improving our service to keep up with your needs. This is only the beginning.
         </h3>*@
     <form action="http://localhost:57494/goods">
-        <button class="btn btn-success">Show products</button>
+        <button class="btn btn-success">@SharedLocalizer.GetLocalizedHtmlString("Home.Index.ShowProduct")</button>
     </form>
     <br>
 </div>
@@ -58,27 +64,27 @@
 <br>
 
 <div class="container-fluid bg-3 text-center">
-    <h3 class="margin"><strong><font size="20"  color: black; face="Arial" >Hot items!</font></strong></h3><br>
+    <h3 class="margin"><strong><font size="20" color: black; face="Arial">@SharedLocalizer.GetLocalizedHtmlString("Home.Index.HotItems")</font></strong></h3><br>
 <div class="row">
     <div class="col-sm-4">
         <p><strong>Antifreeze + coolant LONG LIFE</strong></p>
         <p></p>
         <img src="freez.png" alt="Image" width="255" height="255">
         <p><strong>8,99€</strong></p>
-        <button class="btn btn-info">Buy</button>
+        <button class="btn btn-info">@SharedLocalizer.GetLocalizedHtmlString("Home.Index.Buy")</button>
     </div>
     <div class="col-sm-4">
         <p><strong>RIDEX Brake Disc Rear Axle</strong></p>
         <img src="ridex.png" alt="Image" width="255" height="255">
         <p><strong>14,99€</strong></p>
-        <button class="btn btn-info">Buy</button>
+        <button class="btn btn-info">@SharedLocalizer.GetLocalizedHtmlString("Home.Index.Buy")</button>
     </div>
     <div class="col-sm-4">
         <p><strong>EXTREME Mobile phone holders</strong></p>
         <img src="horder.png" alt="Image" width="255" height="255">
         <p><strong>6,99€</strong></p>
              
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Buy</button>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">@SharedLocalizer.GetLocalizedHtmlString("Home.Index.Buy")</button>
                 
         <div class="modal fade fd" id="myModal" role="dialog">
             <div class="modal-dialog" >
@@ -88,10 +94,10 @@
                         <h4 class="modal-title">Modal Header</h4>
                     </div>
                     <div class="modal-body" style="color:black">
-                        <p> Thank You!</p>
+                        <p> @SharedLocalizer.GetLocalizedHtmlString("Home.Index.ThankYou")</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">@SharedLocalizer.GetLocalizedHtmlString("Home.Index.Close")</button>
                     </div>
                 </div>
             </div>

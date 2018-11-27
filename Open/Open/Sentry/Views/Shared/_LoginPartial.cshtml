@@ -1,4 +1,7 @@
 @using Open.Sentry.Models
+@using Open.Sentry.Resouces
+
+@inject LocService SharedLocalizer
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
@@ -7,7 +10,7 @@
     <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+                <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">@SharedLocalizer.GetLocalizedHtmlString("login.Hello") @UserManager.GetUserName(User)!</a>
             </li>
             <li>
                 <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
@@ -18,7 +21,7 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li><a asp-area="" asp-controller="Account" asp-action="Register" style="color: black">Register</a></li>
-        <li><a asp-area="" asp-controller="Account" asp-action="Login" style="color: black">Log in</a></li>
+        <li><a asp-area="" asp-controller="Account" asp-action="Register" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("login.Register")</a></li>
+        <li><a asp-area="" asp-controller="Account" asp-action="Login" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("login.LogIn")</a></li>
     </ul>
 }

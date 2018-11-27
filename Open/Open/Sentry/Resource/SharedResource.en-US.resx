@@ -141,16 +141,40 @@
   <data name="header.Team" xml:space="preserve">
     <value>Team</value>
   </data>
-  <data name="header.Made" xml:space="preserve">
-    <value />
-  </data>
   <data name="header.Search" xml:space="preserve">
     <value>Search ...</value>
   </data>
   <data name="header.ShoppingCart" xml:space="preserve">
     <value>Shopping Cart</value>
   </data>
+  <data name="Home.Index.Buy" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="Home.Index.Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Home.Index.HotItems" xml:space="preserve">
+    <value>Hot Items!</value>
+  </data>
+  <data name="Home.Index.ShowProduct" xml:space="preserve">
+    <value>Show products</value>
+  </data>
+  <data name="Home.Index.ThankYou" xml:space="preserve">
+    <value>Thank You!</value>
+  </data>
+  <data name="Home.Index.Welcome" xml:space="preserve">
+    <value>Welcome to GWork Shop</value>
+  </data>
   <data name="hrader.Money" xml:space="preserve">
     <value>Money</value>
+  </data>
+  <data name="login.Hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="login.LogIn" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="login.Register" xml:space="preserve">
+    <value>Register</value>
   </data>
 </root>
