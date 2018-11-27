@@ -15,6 +15,12 @@ using Open.Sentry.Services;
 using System.Threading.Tasks;
 using Open.Domain.Users;
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Reflection;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
+using Open.Sentry.Resouces;
 
 namespace Open.Sentry {
     public class Startup
@@ -66,7 +72,42 @@ namespace Open.Sentry {
                 options.AccessDeniedPath = "/Account/AccessDenied"; // If the AccessDeniedPath is not set here, ASP.NET Core will default to /Account/AccessDenied
                 options.SlidingExpiration = true;
             });
+
+
+            services.AddSingleton<LocService>();
+            services.AddLocalization(options => options.ResourcesPath = "Resource");
+
+            services.AddMvc()
+                .AddViewLocalization()
+                .AddDataAnnotationsLocalization(options =>
+                {
+                    options.DataAnnotationLocalizerProvider = (type, factory) =>
+                    {
+                        var assemblyName = new AssemblyName(typeof(SharedResource).GetTypeInfo().Assembly.FullName);
+                        return factory.Create("SharedResource", assemblyName.Name);
+                    };
+                });
+
+            services.Configure<RequestLocalizationOptions>(
+                options =>
+                {
+                    var supportedCultures = new List<CultureInfo>
+                    {
+                        new CultureInfo("en-US"),
+                        new CultureInfo("et-EE"),
+                       
+                    };
+
+                    options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
+                    options.SupportedCultures = supportedCultures;
+                    options.SupportedUICultures = supportedCultures;
+
+                    options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
+                });
+
+            services.AddMvc();
         }
+    
 
         protected virtual void setMvcWithAntyFoggeryToken(IServiceCollection services)
         {
@@ -85,12 +126,27 @@ namespace Open.Sentry {
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            setErrorPage(app, env);
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+            }
+
+            var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(locOptions.Value);
+
             app.UseStaticFiles();
+
             app.UseAuthentication();
+
             app.UseMvc(routes =>
             {
-                routes.MapRoute(name: "default",
+                routes.MapRoute(
+                    name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }

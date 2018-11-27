@@ -59,6 +59,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Resource\SharedResource.en-US.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\SharedResource.et-EE.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Resource.est.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>

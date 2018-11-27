@@ -1,7 +1,13 @@
-﻿@using Open.Sentry.Extensions
+﻿@using Microsoft.CodeAnalysis.CSharp
+@using Microsoft.EntityFrameworkCore.Design.Internal
+@using Open.Sentry.Extensions
+@using Open.Sentry.Resouces
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    @inject LocService SharedLocalizer
+    <link rel="stylesheet" href="~/css/vendor.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,7 +52,6 @@
     <style>
 
         body {
-
             background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg);
             opacity: 0.89;
         }
@@ -86,22 +91,27 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 0;
         }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-            .dropdown-content a:hover {
-                background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg);
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
             }
 
-        .dropdown:hover .dropdown-content {display: block;}
+                .dropdown-content a:hover {
+                    background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg);
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
 
         .dropdown:hover .dropbtn {
             background-color: #cceeff;
         }
+
     </style>
 
 </head>
@@ -110,38 +120,45 @@
 <nav class="navbar navbar" style="background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg) ">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a asp-area="" asp-controller="Home" asp-action="Index" style="color:black" class="navbar-brand">Home</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index" style="color:black" class="navbar-brand">@SharedLocalizer.GetLocalizedHtmlString("header.Home")</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>
                     <div class="dropdown">
-                        <button class="dropbtn" style="color: black">Products</button>
+                        <button class="dropbtn" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.Products")</button>
                         <div class="dropdown-content">
-                            <a asp-area="" asp-controller="Goods" asp-action="Index" style="color: black"> All</a>
-                            <a asp-area="" asp-controller="SpareParts" asp-action="Index" style="color: black">Spare Parts</a>
-                            <a asp-area="" asp-controller="Accessories" asp-action="Index" style="color: black">Accessories</a>
-                            <a asp-area="" asp-controller="Chemistry" asp-action="Index" style="color: black">Chemistry</a>
+                            <a asp-area="" asp-controller="Goods" asp-action="Index" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.All")</a>
+                            <a asp-area="" asp-controller="SpareParts" asp-action="Index" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.SpareParts")</a>
+                            <a asp-area="" asp-controller="Accessories" asp-action="Index" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.Accessories")</a>
+                            <a asp-area="" asp-controller="Chemistry" asp-action="Index" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.Chemistry")</a>
                         </div>
                     </div>
                 </li>
-                <li><a asp-area="" asp-controller="Home" asp-action="About" style="color: black">Help & Contact</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Team" style="color: black">Team</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="About" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.HelpContact")</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Team" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.Team")</a></li>
+                <input type="text" name="search" style="position: relative;top: 8px" placeholder="@SharedLocalizer.GetLocalizedHtmlString("header.Search")">
+               
 
-
-                @if (User.Identity.IsAuthenticated) {
-                    if (User.IsInRole("Admin")) {
-                        <li><a asp-area="" asp-controller="Home" asp-action="Money" style="color: black">Money</a></li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.IsInRole("Admin"))
+                    {
+                        <li><a asp-area="" asp-controller="Home" asp-action="Money" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.Money")</a></li>
                     }
                 }
+               
             </ul>
-            <a asp-area="" asp-controller="Cart" asp-action="Index" class="btn btn-info" style="position: relative;top: 8px"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a>
-            <div class="nav navbar-nav navbar-right" style="position: relative;left: 8px">
+            <a asp-area="" asp-controller="Cart" asp-action="Index" class="btn btn-info" style="position: relative;top: 8px"><span class="glyphicon glyphicon-shopping-cart"></span> @SharedLocalizer.GetLocalizedHtmlString("header.ShoppingCart")</a>
+            <div class="nav navbar-nav navbar-right" style="position: relative;left: 1px">
                 <form>
-                    <input type="text" name="search" placeholder="Search...">
+                    
+                    @await Html.PartialAsync("_SelectLanguagePartial")
                 </form>
             </div>
+            
             @await Html.PartialAsync("_LoginPartial")
+           
         </div>
     </div>
 </nav>
@@ -151,9 +168,10 @@
     @RenderBody()
     <hr/>
     <footer>
-        <p>&copy; Made by Gwork Company</p>
+        <p>Made by Gwork Company</p>
     </footer>
-</div>       
+</div>  
+
 </body>
 </html>
 
