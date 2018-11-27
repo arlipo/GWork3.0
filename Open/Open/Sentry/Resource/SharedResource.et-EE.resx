@@ -150,6 +150,42 @@
   <data name="header.ShoppingCart" xml:space="preserve">
     <value>Ostukorv</value>
   </data>
+  <data name="Home.About.Account" xml:space="preserve">
+    <value>Konto</value>
+  </data>
+  <data name="Home.About.AccStatus" xml:space="preserve">
+    <value>Teie konto olek</value>
+  </data>
+  <data name="Home.About.AccStatusTEXT" xml:space="preserve">
+    <value>Kui teie konto on ootel, piiratud või peatatud, saadame me teie registreeritud e-posti aadressile ja teie sõnumitele, mis selgitavad. Samuti teavitame teid sellest, mida peate tegema, enne kui seda saab taastada.</value>
+  </data>
+  <data name="Home.About.Browse" xml:space="preserve">
+    <value>Sirvige abimaterjale</value>
+  </data>
+  <data name="Home.About.GetHelp" xml:space="preserve">
+    <value>Hankige isikupärastatud abi ja näete oma tellimusi</value>
+  </data>
+  <data name="Home.About.HowCan" xml:space="preserve">
+    <value>Kuidas me saame Teile aidata?</value>
+  </data>
+  <data name="Home.About.Returns" xml:space="preserve">
+    <value>Tagasimaksed</value>
+  </data>
+  <data name="Home.About.Shipping" xml:space="preserve">
+    <value>Saatmine ja jälgimine</value>
+  </data>
+  <data name="Home.About.ShippingBuyers" xml:space="preserve">
+    <value>Kohaletoimetamine ja jälgimine ostjatele</value>
+  </data>
+  <data name="Home.About.ShippingTEXT" xml:space="preserve">
+    <value>Kui müüja saab jälgimisteavet, saate jälgida oma paketti kogu teie edastusaadressi. Selleks, et saaksite oma eset jälgida, peab teie müüja kasutama jälgimisteenuse teenust. Peale selle peab teie müüja üles laadima oma vedaja jälgimisnumbri</value>
+  </data>
+  <data name="Home.About.WhereItem" xml:space="preserve">
+    <value>Kus on minu tellimus?</value>
+  </data>
+  <data name="Home.About.WhereTEXT" xml:space="preserve">
+    <value>Kui teie toode pole veel jõudnud, tuleb kõigepealt kontrollida saateteavet. Saate oma eseme kohaletoimetamise teavet leida, valides selle oma hiljutisest ostust ülalpool või oma ostuajaloost. Saateandes saate: Hinnangulise tarnekuupäeva kuvamine - teie üksuse hinnanguline tarnetähtaeg ütleb teile, millal peaksite objekti vastu võtma. Kui kuupäev pole veel lõppenud, on teie üksus tõenäoliselt veel transiit. Veenduge, et teie veoaadress on õige - kui müüja poolt edastatud veoaadress on vale, valige Võta ühendust müüjaga ja paluge neil saata kirje oma uude aadressi. Kui nad pole teie eset juba saatnud, saavad nad saata selle õigele aadressile. Kui nad on objekti juba saatnud, ei saa nad seda aidata. Võimalusel soovitame proovida oma paketti esialgsest aadressilt koguda.</value>
+  </data>
   <data name="Home.Index.Buy" xml:space="preserve">
     <value>Osta</value>
   </data>

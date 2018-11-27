@@ -147,6 +147,42 @@
   <data name="header.ShoppingCart" xml:space="preserve">
     <value>Shopping Cart</value>
   </data>
+  <data name="Home.About.Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="Home.About.AccStatus" xml:space="preserve">
+    <value>Your Account Status</value>
+  </data>
+  <data name="Home.About.AccStatusTEXT" xml:space="preserve">
+    <value>If your account is on hold, restricted, or suspended, we'll send an email to your registered email address and to your  Messages explaining why. We'll also let you know what you need to do before it can be reinstated.</value>
+  </data>
+  <data name="Home.About.Browse" xml:space="preserve">
+    <value>Browse Help Articles</value>
+  </data>
+  <data name="Home.About.GetHelp" xml:space="preserve">
+    <value>Get personalized help and see your recent orders</value>
+  </data>
+  <data name="Home.About.HowCan" xml:space="preserve">
+    <value>How can we help you today?</value>
+  </data>
+  <data name="Home.About.Returns" xml:space="preserve">
+    <value>Returns &amp; Refunds</value>
+  </data>
+  <data name="Home.About.Shipping" xml:space="preserve">
+    <value>Shipping &amp; Tracking</value>
+  </data>
+  <data name="Home.About.ShippingBuyers" xml:space="preserve">
+    <value>Shipping &amp; Tracking for Buyers</value>
+  </data>
+  <data name="Home.About.ShippingTEXT" xml:space="preserve">
+    <value>You can follow your package online all the way to your shipping address when the seller uploads tracking information. For you to be able to track your item, your seller has to be using a tracked delivery service. Additionally, your seller must upload their carrier's tracking number</value>
+  </data>
+  <data name="Home.About.WhereItem" xml:space="preserve">
+    <value>Where's My Item?</value>
+  </data>
+  <data name="Home.About.WhereTEXT" xml:space="preserve">
+    <value>If your item hasn't arrived yet, the first thing to do is check the delivery information. You can find your item's delivery information by selecting it from your recent purchases above, or in your purchase history. In the delivery information, you can: View the estimated delivery date – Your item's estimated delivery date tells you when you should expect to receive the item. If the date hasn't passed yet, your item is probably still in transit. Make sure your shipping address is correct – If the shipping address you provided to the seller is incorrect, select Contact the seller and ask them to send the item to your new address. If they haven't shipped your item already, they'll be able to send it to the correct address. If they've already shipped the item, they won't be able to help. If possible, we recommend trying to collect your package from the original address.</value>
+  </data>
   <data name="Home.Index.Buy" xml:space="preserve">
     <value>Buy</value>
   </data>
