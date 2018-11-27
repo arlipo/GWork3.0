@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<lang>
+  <item id ="lng">EN</item>
+  <item id="lngLNG">en-US</item>
+  <item id="lngName">English</item>
+  <item id="charset">UFT-8</item>
+  <item id="dir">ltr</item>
+  <item id="changeLNG">Change Language</item>
+  <item id="changedLNG">Language has been changed</item>
+
+  <item id="displayName">Display Name</item>
+  <item id="stringLength">The field {0} must be a string with maximum length of {1}</item>
+  <item id="required">Required</item>
+  <item id="description">Description</item>
+
+  <item id="homepage">HomePage</item>
+</lang>
