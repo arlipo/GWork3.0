@@ -8,7 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Open.Aids;
 using Open.Core;
+using Open.Data.Goods;
 using Open.Domain.Goods;
+using Open.Domain.ShoppingCart;
 using Open.Facade.Goods;
 
 namespace Open.Sentry.Controllers {
@@ -43,7 +45,7 @@ namespace Open.Sentry.Controllers {
             if (!ModelState.IsValid) return View(c);
             var o = await repository.GetObject(c.Code);
             o.Data.Name = c.Name;
-            o.Data.Code = c.Description;
+            o.Data.Description = c.Description;
             o.Data.Image = c.Image;
             o.Data.Price = c.Price;
 
@@ -90,6 +92,22 @@ namespace Open.Sentry.Controllers {
         private static string idIsInUseMessage(string id) {
             var name = GetMember.DisplayName<GoodView>(c => c.Code);
             return string.Format(Messages.ValueIsAlreadyInUse, id, name);
+        }
+
+        public IActionResult AddToCart([Bind(properties)] GoodView c)
+        {
+            var db = new GoodsData
+            {
+                Code = c.Code,
+                Description = c.Description,
+                ID = c.ID,
+                Image = c.Image,
+                Name = c.Name,
+                Price = c.Price,
+                Type = c.Type
+            };
+            ShoppingCart.Instance.AddItem(db);
+            return RedirectToAction("Index");
         }
     }
 }
