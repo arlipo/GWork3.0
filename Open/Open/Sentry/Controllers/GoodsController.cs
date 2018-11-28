@@ -21,6 +21,8 @@ namespace Open.Sentry.Controllers {
         private readonly IGoodsRepository repository;
         internal const string properties =
             "ID, Name, Code, ImageType, Description, Price, Type, Image";
+        private ShoppingCart cart = null;
+
         public GoodsController(IGoodsRepository r) {
             repository = r;
         }
