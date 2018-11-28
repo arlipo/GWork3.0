@@ -1,6 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Open.Sentry.Resouces
+<!DOCTYPE html>
 <html lang="en">
 <head>    
+    @inject LocService SharedLocalizer
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
     @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">*@
@@ -36,8 +38,8 @@
 </head>
 <body> 
 <div class="container text-center" style="background-color: #B3CBDE; opacity: 70;">
-    <h1 style="color: black" font: 20px "Montserrat", sans-serif;><strong>Meet our team!</strong></h1>
-    <p style="color: black" font: 16px "Montserrat", sans-serif;><em>We are always ready to help and try to provide good service.</em></p>
+    <h1 style="color: black" font: 20px "Montserrat", sans-serif;><strong>@SharedLocalizer.GetLocalizedHtmlString("Home.Team.Meet")</strong></h1>
+    <p style="color: black" font: 16px "Montserrat", sans-serif;><em>@SharedLocalizer.GetLocalizedHtmlString("Home.Team.AlwaysReady")</em></p>
     <br>
     <div class="row">
         <div class="col-sm-6">

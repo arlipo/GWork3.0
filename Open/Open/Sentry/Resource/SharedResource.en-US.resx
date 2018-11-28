@@ -201,7 +201,7 @@
   <data name="Home.Index.Welcome" xml:space="preserve">
     <value>Welcome to GWork Shop</value>
   </data>
-  <data name="hrader.Money" xml:space="preserve">
+  <data name="header.Money" xml:space="preserve">
     <value>Money</value>
   </data>
   <data name="login.Hello" xml:space="preserve">
@@ -212,5 +212,20 @@
   </data>
   <data name="login.Register" xml:space="preserve">
     <value>Register</value>
+  </data>
+  <data name="Home.Index.BestPro" xml:space="preserve">
+    <value>Best provider of car performance</value>
+  </data>
+  <data name="Home.Team.AlwaysReady" xml:space="preserve">
+    <value>We are always ready to help and try to provide good service.</value>
+  </data>
+  <data name="Home.Team.Meet" xml:space="preserve">
+    <value>Meet our team!</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Save</value>
   </data>
 </root>

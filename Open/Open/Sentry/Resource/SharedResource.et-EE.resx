@@ -213,4 +213,19 @@
   <data name="login.Register" xml:space="preserve">
     <value>Registreeruge</value>
   </data>
+  <data name="Home.Index.BestPro" xml:space="preserve">
+    <value>Parim auto jõudluse pakkuja</value>
+  </data>
+  <data name="Home.Team.AlwaysReady" xml:space="preserve">
+    <value>Oleme alati valmis aitama ja proovima pakkuda head teenust.</value>
+  </data>
+  <data name="Home.Team.Meet" xml:space="preserve">
+    <value>Tutvuge meie meeskonnaga!</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>Keel</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Salvesta</value>
+  </data>
 </root>
