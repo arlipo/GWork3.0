@@ -225,6 +225,12 @@
   <data name="language" xml:space="preserve">
     <value>Language</value>
   </data>
+  <data name="register.CreateNewAccount" xml:space="preserve">
+    <value>Create New Account</value>
+  </data>
+  <data name="register.Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
   <data name="save" xml:space="preserve">
     <value>Save</value>
   </data>

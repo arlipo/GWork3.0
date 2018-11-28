@@ -225,6 +225,12 @@
   <data name="language" xml:space="preserve">
     <value>Keel</value>
   </data>
+  <data name="register.CreateNewAccount" xml:space="preserve">
+    <value>Loo uus konto</value>
+  </data>
+  <data name="register.Register" xml:space="preserve">
+    <value>Registreeri</value>
+  </data>
   <data name="save" xml:space="preserve">
     <value>Salvesta</value>
   </data>
