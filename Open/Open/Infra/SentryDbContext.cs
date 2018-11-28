@@ -40,17 +40,17 @@ namespace Open.Infra {
                 .ToTable(tableName)
                 .HasKey(primaryKey);
         }
-        internal static void createForeignKey<TEntity, TRelatedEntity>(ModelBuilder b,
-            string tableName, Expression<Func<TEntity, object>> foreignKey,
-            Expression<Func<TEntity, TRelatedEntity>> getRelatedEntity)
-            where TEntity : class where TRelatedEntity : class {
-            b.Entity<TEntity>()
-                .ToTable(tableName)
-                .HasOne(getRelatedEntity)
-                .WithMany()
-                .HasForeignKey(foreignKey)
-                .OnDelete(DeleteBehavior.Restrict);
-        }
+        //internal static void createForeignKey<TEntity, TRelatedEntity>(ModelBuilder b,
+        //    string tableName, Expression<Func<TEntity, object>> foreignKey,
+        //    Expression<Func<TEntity, TRelatedEntity>> getRelatedEntity)
+        //    where TEntity : class where TRelatedEntity : class {
+        //    b.Entity<TEntity>()
+        //        .ToTable(tableName)
+        //        .HasOne(getRelatedEntity)
+        //        .WithMany()
+        //        .HasForeignKey(foreignKey)
+        //        .OnDelete(DeleteBehavior.Restrict);
+        //}
     }
 }
 

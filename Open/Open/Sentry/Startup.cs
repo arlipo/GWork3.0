@@ -95,7 +95,7 @@ namespace Open.Sentry {
                     {
                         new CultureInfo("en-US"),
                         new CultureInfo("et-EE"),
-                       
+
                     };
 
                     options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
