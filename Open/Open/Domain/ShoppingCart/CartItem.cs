@@ -4,7 +4,7 @@ using Open.Domain.Goods;
 
 namespace Open.Domain.ShoppingCart
 {
-    public class CartItem : IEquatable<CartItem>
+    public class CartItem
     {
         private Good _product;
 

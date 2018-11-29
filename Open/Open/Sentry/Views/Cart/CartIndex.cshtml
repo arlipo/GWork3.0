@@ -1,0 +1,28 @@
+﻿@using Open.Sentry.Extensions
+@model Open.Domain.ShoppingCart.ShoppingCart
+
+<h1>Cart</h1>
+
+
+<table class="table" style="background-color:#26403B; color:aliceblue;">
+    @{var dummy = Model.FirstOrDefault();}
+    <thead>
+    <tr>
+        @Html.DisplayNameFor(model => dummy.Name)
+        @Html.DisplayNameFor(model => dummy.UnitPrice)
+        @Html.DisplayNameFor(model => dummy.Quantity)
+        @Html.DisplayNameFor(model => dummy.TotalPrice)
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.UnitPrice)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                <td>@Html.DisplayFor(modelItem => item.TotalPrice)</td>
+            </tr>
+        }
+    </tbody>
+</table>

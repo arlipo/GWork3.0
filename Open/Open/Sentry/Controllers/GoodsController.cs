@@ -21,7 +21,7 @@ namespace Open.Sentry.Controllers {
         private readonly IGoodsRepository repository;
         internal const string properties =
             "ID, Name, Code, ImageType, Description, Price, Type, Image";
-        private ShoppingCart cart = null;
+        internal ShoppingCart cart = new ShoppingCart();
 
         public GoodsController(IGoodsRepository r) {
             repository = r;
@@ -32,9 +32,9 @@ namespace Open.Sentry.Controllers {
         { 
             if (searchString != null) page = 1;
             else searchString = currentFilter;
-        ViewData["CurrentFilter"] = searchString;
-        repository.SearchString = searchString;
-        repository.PageIndex = page ?? 1;
+            ViewData["CurrentFilter"] = searchString;
+            repository.SearchString = searchString;
+            repository.PageIndex = page ?? 1;
             var l = await repository.GetObjectsList();
             return View(new GoodViewsList(l));
         }
@@ -96,7 +96,7 @@ namespace Open.Sentry.Controllers {
             return string.Format(Messages.ValueIsAlreadyInUse, id, name);
         }
 
-        public IActionResult AddToCart([Bind(properties)] GoodView c)
+        public IActionResult AddToCart(GoodView c)
         {
             var db = new GoodsData
             {
@@ -108,7 +108,7 @@ namespace Open.Sentry.Controllers {
                 Price = c.Price,
                 Type = c.Type
             };
-            ShoppingCart.Instance.AddItem(db);
+            cart.AddItem(db);
             return RedirectToAction("Index");
         }
     }
