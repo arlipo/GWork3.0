@@ -3,18 +3,19 @@
 
 <h1>Cart</h1>
 
+<div class="container text-left" style="background-color: #26403B; opacity: 70;">
 
-<table class="table" style="background-color:#26403B; color:aliceblue;">
-    @{var dummy = Model.FirstOrDefault();}
-    <thead>
-    <tr>
-        @Html.DisplayNameFor(model => dummy.Name)
-        @Html.DisplayNameFor(model => dummy.UnitPrice)
-        @Html.DisplayNameFor(model => dummy.Quantity)
-        @Html.DisplayNameFor(model => dummy.TotalPrice)
-    </tr>
-    </thead>
-    <tbody>
+    <table class="table" style="background-color:#26403B; color:aliceblue;">
+        @{var dummy = Model.FirstOrDefault();}
+        <thead>
+        <tr>
+            @Html.DisplayNameFor(model => dummy.Name)
+            @Html.DisplayNameFor(model => dummy.UnitPrice)
+            @Html.DisplayNameFor(model => dummy.Quantity)
+            @Html.DisplayNameFor(model => dummy.TotalPrice)
+        </tr>
+        </thead>
+        <tbody>
         @foreach (var item in Model)
         {
             <tr>
@@ -24,5 +25,6 @@
                 <td>@Html.DisplayFor(modelItem => item.TotalPrice)</td>
             </tr>
         }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
