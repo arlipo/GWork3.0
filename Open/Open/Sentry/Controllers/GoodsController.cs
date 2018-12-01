@@ -64,9 +64,11 @@ namespace Open.Sentry.Controllers {
 
             c.ID = Guid.NewGuid().ToString();
 
+            c.Code = GetRandom.String(6, 6);
+
             await validateId(c.ID, ModelState);
 
-            //if (!ModelState.IsValid) return View(c);
+            if (!ModelState.IsValid) return View(c);
 
 
             foreach (var item in Image) {
