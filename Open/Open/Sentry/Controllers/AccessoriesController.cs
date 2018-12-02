@@ -14,8 +14,14 @@ namespace Open.Sentry.Controllers
         {
             goodRepository = gR;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder = null, string currentFilter = null,
+            string searchString = null, int? page = null)
         {
+            if (searchString != null) page = 1;
+            else searchString = currentFilter;
+            ViewData["CurrentFilter"] = searchString;
+            goodRepository.SearchString = searchString;
+            goodRepository.PageIndex = page ?? 1;
             var l = await goodRepository.GetWithSpecificType(GoodTypes.Accessories);
             return View(new GoodViewsList(l));
         }
