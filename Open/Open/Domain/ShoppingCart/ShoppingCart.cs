@@ -4,30 +4,14 @@ using Open.Data.Goods;
 
 namespace Open.Domain.ShoppingCart
 {
-    public class ShoppingCart
+    public class ShoppingCart : List<CartItem>
     {
-        public List<CartItem> Items { get; private set; }
-
-        public static readonly ShoppingCart Instance;
-
-        static ShoppingCart()
-        {
-            if (HttpContext.Current.Session["ASPNETShoppingCart"] == null)
-            {
-                Instance = new ShoppingCart {Items = new List<CartItem>()};
-                HttpContext.Current.Session["ASPNETShoppingCart"] = Instance;
-            }
-            else Instance = (ShoppingCart) HttpContext.Current.Session["ASPNETShoppingCart"];
-        }
-
-        protected ShoppingCart() { }
-
         public void AddItem(GoodsData data)
         {
             var newItem = new CartItem(data);
-            if (Items.Contains(newItem))
+            if (Contains(newItem))
             {
-                foreach (var item in Items)
+                foreach (var item in this)
                 {
                     if (!item.Equals(newItem)) continue;
                     item.Quantity++;
@@ -37,7 +21,7 @@ namespace Open.Domain.ShoppingCart
             else
             {
                 newItem.Quantity = 1;
-                Items.Add(newItem);
+                Add(newItem);
             }
         }
 
@@ -51,7 +35,7 @@ namespace Open.Domain.ShoppingCart
 
             var updatedItem = new CartItem(data);
 
-            foreach (var item in Items)
+            foreach (var item in this)
             {
                 if (!item.Equals(updatedItem)) continue;
                 item.Quantity = quantity;
@@ -62,13 +46,13 @@ namespace Open.Domain.ShoppingCart
         public void RemoveItem(GoodsData data)
         {
             var removedItem = new CartItem(data);
-            Items.Remove(removedItem);
+            Remove(removedItem);
         }
 
         public decimal GetSubTotal()
         {
             decimal subTotal = 0;
-            foreach (var item in Items) subTotal += item.TotalPrice;
+            foreach (var item in this) subTotal += item.TotalPrice;
             return subTotal;
         }
     }
