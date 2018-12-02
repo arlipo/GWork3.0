@@ -64,12 +64,12 @@ namespace Open.Sentry.Controllers {
 
             c.ID = Guid.NewGuid().ToString();
 
-            c.Code = GetRandom.String(6, 6);
+            c.Code = getRandomCode();
+            await changeCodeIfInUse(c.Code, c);
 
             await validateId(c.ID, ModelState);
 
             if (!ModelState.IsValid) return View(c);
-
 
             foreach (var item in Image) {
                 if (item.Length > 0) {
@@ -90,6 +90,13 @@ namespace Open.Sentry.Controllers {
             if (await isIdInUse(id))
                 d.AddModelError(string.Empty, idIsInUseMessage(id));
         }
+        private async Task changeCodeIfInUse(string code,[Bind("Code")] GoodView c) {
+            if (await isCodeInUse(code)) c.Code = getRandomCode();
+        }
+        private static string getRandomCode() {
+            string code = GetRandom.String(6, 6) + GetRandom.UInt8(0, 9) + GetRandom.UInt8(0, 9);
+            return code;
+        }
         private async Task<bool> isIdInUse(string id) {
             return (await repository.GetObject(id))?.Data?.ID == id;
         }
@@ -97,7 +104,10 @@ namespace Open.Sentry.Controllers {
             var name = GetMember.DisplayName<GoodView>(c => c.Code);
             return string.Format(Messages.ValueIsAlreadyInUse, id, name);
         }
-
+        private async Task<bool> isCodeInUse(string code)
+        {
+            return (await repository.GetObject(code))?.Data?.Code == code;
+        }
         public IActionResult AddToCart(GoodView c)
         {
             var db = new GoodsData
@@ -115,86 +125,4 @@ namespace Open.Sentry.Controllers {
         }
     }
 }
-//}
-//        // GET: Goods/Create
-//        /
-//        public IActionResult Create()
-//        {
-//            return View();
-//        }
-
-//// POST: Goods/Create
-
-//[HttpPost]
-//[ValidateAntiForgeryToken]
-//public IActionResult Create(IFormCollection collection)
-//{
-//    try
-//    {
-//        // TODO: Add insert logic here
-
-//        return RedirectToAction(nameof(Index));
-//    }
-//    catch
-//    {
-//        return View();
-//    }
-//}
-
-
-//// GET: Goods/Edit/5
-//public IActionResult Edit(int id)
-//{
-//    return View();
-//}
-
-//        // POST: Goods/Edit/5
-//        [HttpPost]
-//        [ValidateAntiForgeryToken]
-//        public IActionResult Edit(int id, IFormCollection collection)
-//        {
-//            try
-//            {
-//                // TODO: Add update logic here
-
-//                return RedirectToAction(nameof(Index));
-//            }
-//            catch
-//            {
-//                return View();
-//            }
-//        }
-
-//        // GET: Goods/Delete/5
-//        public IActionResult Delete(int id)
-//        {
-//            return View();
-//        }
-
-//        // POST: Goods/Delete/5
-//        [HttpPost]
-//        [ValidateAntiForgeryToken]
-//        public IActionResult Delete(int id, IFormCollection collection)
-//        {
-//            try
-//            {
-//                // TODO: Add delete logic here
-
-//                return RedirectToAction(nameof(Index));
-//            }
-//            catch
-//            {
-//                return View();
-//            }
-//        }
-
-
-//        // GET: Goods/Details/5
-//        public IActionResult Details(int id)
-//        {
-//            return View();
-//        }
-
-//    }
-//}
 
