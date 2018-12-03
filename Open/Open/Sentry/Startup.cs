@@ -159,49 +159,7 @@ namespace Open.Sentry {
                 app.UseDatabaseErrorPage();
             }
             else { app.UseExceptionHandler("/Home/Error"); }
-        }
-
-
-
-
-
-
-        private async Task CreateUserRoles(IServiceProvider serviceProvider)
-        {
-            var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-            var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-
-
-            IdentityResult roleResult;
-            //Adding Addmin Role  
-            var roleCheck = await RoleManager.RoleExistsAsync("Admin");
-            if (!roleCheck)
-            {
-                //create the roles and seed them to the database  
-                roleResult = await RoleManager.CreateAsync(new IdentityRole("Admin"));
-            }
-
-            roleCheck = await RoleManager.RoleExistsAsync("Manager");
-            if (!roleCheck)
-            {
-                //create the roles and seed them to the database  
-                roleResult = await RoleManager.CreateAsync(new IdentityRole("Manager"));
-            }
-
-            //Assign Admin role to the main User here we have given our newly loregistered login id for Admin management  
-            ApplicationUser user = await UserManager.FindByEmailAsync("admin@gmail.com");
-            var User = new ApplicationUser();
-            await UserManager.AddToRoleAsync(user, "Admin");
-
-
-            user = await UserManager.FindByEmailAsync("Afraz@gmail.com");
-            await UserManager.AddToRoleAsync(user, "Manager");
-
-        }
-
-
-
-        
+        }     
     }
 
 }

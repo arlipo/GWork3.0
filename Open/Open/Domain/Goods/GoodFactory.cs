@@ -12,7 +12,7 @@ namespace Open.Domain.Goods
         }
         
         public static Good Create(string id, string name, string code, string description, string price, 
-            GoodTypes type, byte[] image,DateTime? validFrom = null, DateTime? validTo = null)
+            GoodTypes type, int quantity, byte[] image,DateTime? validFrom = null, DateTime? validTo = null)
         {
             GoodsData o = new GoodsData
             {
@@ -22,6 +22,7 @@ namespace Open.Domain.Goods
                 Description = description,
                 Type = type,
                 Price = price,
+                Quantity = quantity,
                 Image = image,
                 ValidFrom = validFrom ?? DateTime.MinValue,
                 ValidTo = validTo ?? DateTime.MaxValue

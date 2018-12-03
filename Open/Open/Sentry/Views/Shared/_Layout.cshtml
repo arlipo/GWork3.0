@@ -52,7 +52,7 @@
     <style>
 
         body {
-            background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg);
+            background-image: url(https://pp.userapi.com/c848520/v848520695/d01ab/Ti1RMWKiIzA.jpg);
             opacity: 0.89;
         }
 
@@ -61,6 +61,7 @@
         }
 
         .navbar {
+            color: white;
             opacity: initial;
             border-style: dotted;
             position: fixed;
@@ -71,7 +72,7 @@
 
 
         .dropbtn {
-            background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg);
+            background-image: url(https://pp.userapi.com/c848520/v848520695/d01ab/Ti1RMWKiIzA.jpg);
             color: white;
             padding: 16px;
             font-size: 16px;
@@ -100,7 +101,7 @@
             }
 
                 .dropdown-content a:hover {
-                    background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg);
+                    background-color: #B3CBDE;
                 }
 
         .dropdown:hover .dropdown-content {
@@ -117,16 +118,16 @@
 </head>
 
 <body>
-<nav class="navbar navbar" style="background-image: url(https://pp.userapi.com/c849524/v849524313/b0896/arOiieRHz54.jpg) ">
+<nav class="navbar navbar" style="background-image: url(https://pp.userapi.com/c848520/v848520695/d01ab/Ti1RMWKiIzA.jpg) ">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a asp-area="" asp-controller="Home" asp-action="Index" style="color:black" class="navbar-brand">@SharedLocalizer.GetLocalizedHtmlString("header.Home")</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index" style="color:white" class="navbar-brand">@SharedLocalizer.GetLocalizedHtmlString("header.Home")</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>
                     <div class="dropdown">
-                        <button class="dropbtn" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.Products")</button>
+                        <button class="dropbtn" style="color: white">@SharedLocalizer.GetLocalizedHtmlString("header.Products")</button>
                         <div class="dropdown-content">
                             <a asp-area="" asp-controller="Goods" asp-action="Index" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.All")</a>
                             <a asp-area="" asp-controller="SpareParts" asp-action="Index" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.SpareParts")</a>
@@ -135,8 +136,8 @@
                         </div>
                     </div>
                 </li>
-                <li><a asp-area="" asp-controller="Home" asp-action="About" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.HelpContact")</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Team" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.Team")</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="About" style="color: white">@SharedLocalizer.GetLocalizedHtmlString("header.HelpContact")</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Team" style="color: white">@SharedLocalizer.GetLocalizedHtmlString("header.Team")</a></li>
                 <input type="text" name="search" style="position: relative;top: 8px" placeholder="@SharedLocalizer.GetLocalizedHtmlString("header.Search")">
                
 
@@ -144,7 +145,7 @@
                 {
                     if (User.IsInRole("Admin"))
                     {
-                        <li><a asp-area="" asp-controller="Home" asp-action="Money" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.Money")</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Money" style="color: white">@SharedLocalizer.GetLocalizedHtmlString("header.Money")</a></li>
                     }
                 }
                
