@@ -22,8 +22,13 @@ namespace Open.Tests
         public async Task<TObject> GetObject(string id) {
             return await Task.Run(()=> objects.Find(x => getObject(x, id)));
         }
+        public async Task<TObject> GetObjectByCode(string code)
+        {
+            return await Task.Run(() => objects.Find(x => getObjectByCode(x, code)));
+        }
 
         protected abstract bool getObject(TObject obj, string id);
+        protected abstract bool getObjectByCode(TObject obj, string code);
 
         public async Task AddObject(TObject o) {
             await Task.Run(() =>objects.Add(o));
