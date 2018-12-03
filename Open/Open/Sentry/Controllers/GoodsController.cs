@@ -20,7 +20,7 @@ namespace Open.Sentry.Controllers {
     {
         private readonly IGoodsRepository repository;
         internal const string properties =
-            "ID, Name, Code, ImageType, Description, Price, Type, Image";
+            "ID, Name, Code, ImageType, Description, Price, Type, Quantity, Image";
         internal ShoppingCart cart = new ShoppingCart();
 
         public GoodsController(IGoodsRepository r) {
@@ -81,7 +81,7 @@ namespace Open.Sentry.Controllers {
             }
 
             var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
-                c.Image);
+        c.Quantity, c.Image);
             await repository.AddObject(o);
             return RedirectToAction("Index");
         }
@@ -108,93 +108,11 @@ namespace Open.Sentry.Controllers {
                 Image = c.Image,
                 Name = c.Name,
                 Price = c.Price,
-                Type = c.Type
+                Type = c.Type,
+                Quantity = c.Quantity
             };
             cart.AddItem(db);
             return RedirectToAction("Index");
         }
     }
 }
-//}
-//        // GET: Goods/Create
-//        /
-//        public IActionResult Create()
-//        {
-//            return View();
-//        }
-
-//// POST: Goods/Create
-
-//[HttpPost]
-//[ValidateAntiForgeryToken]
-//public IActionResult Create(IFormCollection collection)
-//{
-//    try
-//    {
-//        // TODO: Add insert logic here
-
-//        return RedirectToAction(nameof(Index));
-//    }
-//    catch
-//    {
-//        return View();
-//    }
-//}
-
-
-//// GET: Goods/Edit/5
-//public IActionResult Edit(int id)
-//{
-//    return View();
-//}
-
-//        // POST: Goods/Edit/5
-//        [HttpPost]
-//        [ValidateAntiForgeryToken]
-//        public IActionResult Edit(int id, IFormCollection collection)
-//        {
-//            try
-//            {
-//                // TODO: Add update logic here
-
-//                return RedirectToAction(nameof(Index));
-//            }
-//            catch
-//            {
-//                return View();
-//            }
-//        }
-
-//        // GET: Goods/Delete/5
-//        public IActionResult Delete(int id)
-//        {
-//            return View();
-//        }
-
-//        // POST: Goods/Delete/5
-//        [HttpPost]
-//        [ValidateAntiForgeryToken]
-//        public IActionResult Delete(int id, IFormCollection collection)
-//        {
-//            try
-//            {
-//                // TODO: Add delete logic here
-
-//                return RedirectToAction(nameof(Index));
-//            }
-//            catch
-//            {
-//                return View();
-//            }
-//        }
-
-
-//        // GET: Goods/Details/5
-//        public IActionResult Details(int id)
-//        {
-//            return View();
-//        }
-
-//    }
-//}
-

@@ -23,7 +23,8 @@ namespace Open.Infra.Goods {
                     " for use in all automobiles and light-duty trucks, regardless of make, " +
                     "model, year or original antifreeze color.",
                 Volume = "2l",
-                Price = "8,99"
+                Price = "8,99",
+                Quantity = 10
             });
             add(c, new SparePartsData
             {
@@ -35,7 +36,8 @@ namespace Open.Infra.Goods {
                               " (Original Equipment) specifications and are manufactured " +
                               "for direct replacement.",
                 Type = GoodTypes.SpareParts,
-                Price = "14,99"
+                Price = "14,99",
+                Quantity = 9
             });
             add(c, new AccessoriesData
             {
@@ -47,7 +49,8 @@ namespace Open.Infra.Goods {
                     "residue Cable management access ports for charging your device USB " +
                     "charging cable not included.",
                 Type = GoodTypes.Accessories,
-                Price = "6,99"
+                Price = "6,99",
+                Quantity = 12
             });
             add(c, new SparePartsData
             {
@@ -55,7 +58,8 @@ namespace Open.Infra.Goods {
                 Code = "543",
                 Description = "AUDI 3 button remote key fob case FULL service repair kit.",
                 Type = GoodTypes.SpareParts,
-                Price = "9,99"
+                Price = "9,99",
+                Quantity = 8
             });
             add(c, new AccessoriesData
             {
@@ -67,7 +71,8 @@ namespace Open.Infra.Goods {
                     " ideal for use with baby and infant car seats.",
                 Type = GoodTypes.Accessories,
                 ID = "5",
-                Price = "7,99"
+                Price = "7,99",
+                Quantity = 7
             });
             add(c, new AccessoriesData
             {
@@ -77,7 +82,8 @@ namespace Open.Infra.Goods {
                     "Black Leather Steering Wheel Cover. Genuine leather. Suitable for" +
                     " steering wheels with an exterior diameter of 37 - 39cm.Simply stretches over the existing steering wheel",
                 Type = GoodTypes.Accessories,
-                Price = "9,99"
+                Price = "9,99",
+                Quantity = 2
             });
             add(c, new AccessoriesData
             {
@@ -87,7 +93,9 @@ namespace Open.Infra.Goods {
                     "Natural rubber matting provides years of trouble-free service. Our matting provides excellent insulation" +
                     " from the cold. ",
                 Type = GoodTypes.Accessories,
-                Price = "15,99"
+                Price = "15,99",
+                Quantity= 4
+           
             });
             add(c, new AccessoriesData()
             {
@@ -96,7 +104,8 @@ namespace Open.Infra.Goods {
                 Description =
                     "This cup/can holder has a designated space for cans/cups anda space for coins and other small items.",
                 Type = GoodTypes.Accessories,
-                Price = "10,99"
+                Price = "10,99",
+                Quantity = 3
             });
 
             add(c, new ChemistryData()
@@ -107,7 +116,8 @@ namespace Open.Infra.Goods {
                               "engineered to smell just like a new car.\r\n" +
                               "One spray is all you need for a full size vehicle",
                 Type= GoodTypes.Chemistry,
-                Price = "9,99"
+                Price = "9,99",
+                Quantity = 2
             });
             add(c, new ChemistryData()
             {
@@ -117,7 +127,8 @@ namespace Open.Infra.Goods {
                               "Suitable For: Porsche\r\nSuitable For: Renault\r\nSuitable For: Seat\r\nSuitable For: Skoda\r\nSuitable For: Vauxhall / Opel\r\n" +
                               "Suitable For: Volkswagen",
                 Type = GoodTypes.Chemistry,
-                Price = "14,49"
+                Price = "14,49",
+                Quantity =3
             });
             add(c, new ChemistryData()
             {
@@ -127,7 +138,8 @@ namespace Open.Infra.Goods {
                               " motor oil designed for use in petrol and diesel engines that " +
                               "are specifically designed to use a low viscosity (HTHS) motor oil. ",
                 Type = GoodTypes.Chemistry,
-                Price = "20,49"
+                Price = "20,49",
+                Quantity = 1
             });
             add(c, new ChemistryData()
             {
@@ -136,7 +148,8 @@ namespace Open.Infra.Goods {
                 Description = " This listing is for a set of two power steering pump " +
                               "o-rings and one bottle of Honda Genuine power steering fluid.",
                 Type = GoodTypes.Chemistry,
-                Price = "23,49"
+                Price = "23,49",
+                Quantity =4
             });
             add(c, new ChemistryData()
             {
@@ -144,7 +157,8 @@ namespace Open.Infra.Goods {
                 Code = "2222",
                 Description = "Genuine Ford Antifreeze Antifreeze Super plus Premium 4 Liter",
                 Type = GoodTypes.Chemistry,
-                Price = "10,99"
+                Price = "10,99",
+                Quantity = 4
             });
             add(c, new ChemistryData()
             {
@@ -152,7 +166,8 @@ namespace Open.Infra.Goods {
                 Code = "8888",
                 Description = "Suitable for brake cleaner and other de-greaser products, Motorcycle Motorbike",
                 Type = GoodTypes.Chemistry,
-                Price = "7,49"
+                Price = "7,49",
+                Quantity = 5
             });
             add(c, new ChemistryData()
             {
@@ -160,7 +175,8 @@ namespace Open.Infra.Goods {
                 Code = "9999",
                 Description = "Removes gently and effectively all kinds of dirt on the body (dirt, dust, oil, salt - and insect remains, poplar buds and leaves tree secretions.",
                 Type = GoodTypes.Chemistry,
-                Price = "20,99"
+                Price = "20,99",
+                Quantity =5
             });
             add(c, new ChemistryData()
             {
@@ -170,7 +186,8 @@ namespace Open.Infra.Goods {
                               " product in a concentrated form.\r\nThrough regular use, " +
                               "the vehicle is intensely cleaned surface and brought to shine over the waxes contained in the product. ",
                 Type = GoodTypes.Chemistry,
-                Price = "20,99"
+                Price = "20,99",
+                Quantity = 3
             });
         }
         private static void add(SentryDbContext c, GoodsData goods) {
