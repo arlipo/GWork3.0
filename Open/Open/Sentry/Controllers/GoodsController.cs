@@ -80,7 +80,7 @@ namespace Open.Sentry.Controllers {
                 }
             }
 
-            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
+            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type, c.Quantity,
                 c.Image);
             await repository.AddObject(o);
             return RedirectToAction("Index");
