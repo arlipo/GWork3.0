@@ -90,7 +90,7 @@ namespace Open.Sentry.Controllers {
             if (await isIdInUse(id))
                 d.AddModelError(string.Empty, idIsInUseMessage(id));
         }
-        private async Task changeCodeIfInUse(string code,[Bind("Code")] GoodView c) {
+        private async Task changeCodeIfInUse(string code, GoodView c) {
             if (await isCodeInUse(code)) c.Code = getRandomCode();
         }
         private static string getRandomCode() {
@@ -106,7 +106,7 @@ namespace Open.Sentry.Controllers {
         }
         private async Task<bool> isCodeInUse(string code)
         {
-            return (await repository.GetObject(code))?.Data?.Code == code;
+            return (await repository.GetObjectByCode(code))?.Data?.Code == code;
         }
         public IActionResult AddToCart(GoodView c)
         {
