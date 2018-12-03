@@ -10,8 +10,8 @@ using Open.Sentry.Data;
 namespace Open.Sentry.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181203115239_migrato2")]
-    partial class migrato2
+    [Migration("20181203155849_mig")]
+    partial class mig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

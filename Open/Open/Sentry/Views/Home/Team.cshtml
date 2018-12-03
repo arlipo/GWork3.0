@@ -1,69 +1,112 @@
 ﻿@using Open.Sentry.Resouces
-<!DOCTYPE html>
-<html lang="en">
-<head>    
-    @inject LocService SharedLocalizer
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">*@
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            opacity: 0.89;
-            font: 16px "Montserrat", sans-serif;
-        }
-        div.gallery {
-           
-            background-color: #B3CBDE;
-            margin: 5px;
-            border: 1px solid #ccc;
-            float: left;
-            width: 180px;
-            
-        }
-            div.gallery:hover {
-              
+@inject LocService SharedLocalizer
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+
+            .card {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                max-width: 300px;
+                
+                text-align: center;
+                font-family: arial;
                 background-color: #B3CBDE;
-                border: 1px solid #777;
             }
-            div.gallery img {
+
+            .title {
+                color: black;
+                font-size: 18px;
+            }
+
+            button {
+                border: none;
+                outline: 0;
+                display: inline-block;
+                padding: 8px;
+                color: white;
+                background-color: #000;
+                text-align: center;
+                cursor: pointer;
                 width: 100%;
-                height: auto;
+                font-size: 14px;
+                background-color: #B3CBDE;
             }
-        div.desc {
-            text-align: center;
-        }
-    </style>
-</head>
-<body> 
-<div class="container text-center" style="background-color: #B3CBDE; opacity: 70;">
-    <h1 style="color: black" font: 20px "Montserrat", sans-serif;><strong>@SharedLocalizer.GetLocalizedHtmlString("Home.Team.Meet")</strong></h1>
-    <p style="color: black" font: 16px "Montserrat", sans-serif;><em>@SharedLocalizer.GetLocalizedHtmlString("Home.Team.AlwaysReady")</em></p>
-    <br>
-    <div class="row">
-        <div class="col-sm-6">
-            <p style="color: black"><strong><i>Artjom Lipodat</i></strong></p><br>
-            <img src="https://pp.userapi.com/c847021/v847021286/1167b2/G7edKdNHazM.jpg" alt="Random Name" width="300" height="300">
+
+            button:hover, a:hover {
+                opacity: 0.7;
+                background-color: #B3CBDE;
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+        <h2 style="color: white; text-align:center">
+            @SharedLocalizer.GetLocalizedHtmlString("Home.Team.Meet")
+        </h2>
+
+        <div class="col-md-3 ml-md-auto">
+            <div class="card">
+                <img src="https://pp.userapi.com/c847021/v847021286/1167b2/G7edKdNHazM.jpg" alt="Artjom Lipodat" style="width: 100%">
+                <h2>Artjom Lipodat</h2>
+                <p class="title">Student</p>
+                <p>TalTech University</p>
+                <div style="margin: 24px 0;">
+                    <a href="https://plus.google.com/105121202281622035475"><i class="fa fa-google"></i></a>
+                    <a href="https://www.instagram.com/lipodat_mladshiy"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/artjom.lipodat?jazoest=2651001227676114575711510212171754872112765579661181101207045669586561071075685114119112981126753101117116831106558651001201086986671051028950115679011012010966101122121681121036810085771131018357118711127973795177120109688950103"><i class="fa fa-facebook"></i></a>
+                  
+                </div>
+               
+            </div>
         </div>
-        <div class="col-sm-6">
-            <p style="color: black"><strong><i>Mark Porohnja</i></strong></p><br>
-            <img src="https://pp.userapi.com/c847120/v847120286/11b82c/biA0VT4O828.jpg" alt="Random Name" width="300" height="300">
-        </div>
-        <div class="col-sm-6">
-            <p style="color: black"><strong><i> </i></strong></p><br>
-            <img src="https://pp.userapi.com/c851136/v851136021/340fc/y2ABmJ8izEY.jpg" alt="Random Name" width="300" height="300">
-            <p style="color: black"><strong><i>Luizi-Anna Meshalkina</i></strong></p><br>
-        </div>
-        <div class="col-sm-6">
-            <p style="color: black"><strong><i> </i></strong></p><br>
-            <img src="https://pp.userapi.com/c846220/v846220286/11e554/GDxZnwxRrZo.jpg" alt="Random Name" width="300" height="300">
-            <p style="color: black"><strong><i>Yana Sirotkina</i></strong></p><br>
+
+    <div class="col-md-3 ml-md-auto">
+        <div class="card">
+            <img src="https://pp.userapi.com/c846220/v846220286/11e554/GDxZnwxRrZo.jpg" alt="Yana Sirotkina" style="width:100%">
+            <h2>Yana Sirotkina</h2>
+            <p class="title">Student</p>
+            <p>TalTech University</p>
+            <div style="margin: 24px 0;">
+                <a href="https://plus.google.com/103393733106004170611"><i class="fa fa-google"></i></a>
+                <a href="https://www.instagram.com/yanaharrison"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/yana.harrison.9?jazoest=2651001227676114575711510212171754872112765579661181101207045669586561071075685114119112981126753101117116831106558651001201086986671051028950115679011012010966101122121681121036810085771131018357118711127973795177120109688950103"><i class="fa fa-facebook"></i></a>
+
+            </div>
         </div>
     </div>
-</div>
-</body>
-</html>
 
+    <div class="col-md-3 ml-md-auto">
+        <div class="card">
+            <img src="https://pp.userapi.com/c851332/v851332472/59d60/99WenKITXmI.jpg" alt="Mark Porohnja" style="width:100%">
+            <h2>Mark Porohnja</h2>
+            <p class="title">Student</p>
+            <p>TalTech University</p>
+            <div style="margin: 24px 0;">
+                <a href="https://plus.google.com/105857026344567296953"><i class="fa fa-google"></i></a>
+                <a href="https://www.instagram.com/m.romanson"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.facebook.com/porokhnya.m?jazoest=2651001227676114575711510212171754872112765579661181101207045669586561071075685114119112981126753101117116831106558651001201086986671051028950115679011012010966101122121681121036810085771131018357118711127973795177120109688950103"><i class="fa fa-facebook"></i></a>
 
+            </div>
+        </div>
+    </div>    
+
+    <div class="col-md-3 ml-md-auto">
+            <div class="card">
+                <img src="https://pp.userapi.com/c851136/v851136021/340fc/y2ABmJ8izEY.jpg" alt="Luiza Meshalkina" style="width:100%">
+                <h2>Luiza Meshalkina</h2>
+                <p class="title">Student</p>
+                <p>TalTech University</p>
+                <div style="margin: 24px 0;">
+                    <a href="https://plus.google.com/u/0/109111317469700518013"><i class="fa fa-google"></i></a>
+                    <a href="https://www.instagram.com/luiza9b"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/luizamesh9?jazoest=2651001227676114575711510212171754872112765579661181101207045669586561071075685114119112981126753101117116831106558651001201086986671051028950115679011012010966101122121681121036810085771131018357118711127973795177120109688950103"><i class="fa fa-facebook"></i></a> 
+                </div>
+            </div>
+        </div>
+      </body>
+    </html>
 
