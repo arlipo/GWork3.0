@@ -20,7 +20,7 @@ namespace Open.Sentry.Controllers {
     {
         private readonly IGoodsRepository repository;
         internal const string properties =
-            "ID, Name, Code, ImageType, Description, Price, Type, Quantity, Image";
+            "ID, Name, Code, ImageType, Description, Price, Type, Image";
         internal ShoppingCart cart = new ShoppingCart();
 
         public GoodsController(IGoodsRepository r) {
@@ -64,12 +64,12 @@ namespace Open.Sentry.Controllers {
 
             c.ID = Guid.NewGuid().ToString();
 
-            c.Code = GetRandom.String(6, 6);
+            c.Code = getRandomCode();
+            await changeCodeIfInUse(c.Code, c);
 
             await validateId(c.ID, ModelState);
 
             if (!ModelState.IsValid) return View(c);
-
 
             foreach (var item in Image) {
                 if (item.Length > 0) {
@@ -81,7 +81,7 @@ namespace Open.Sentry.Controllers {
             }
 
             var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
-        c.Quantity, c.Image);
+                c.Image);
             await repository.AddObject(o);
             return RedirectToAction("Index");
         }
@@ -90,6 +90,13 @@ namespace Open.Sentry.Controllers {
             if (await isIdInUse(id))
                 d.AddModelError(string.Empty, idIsInUseMessage(id));
         }
+        private async Task changeCodeIfInUse(string code, GoodView c) {
+            if (await isCodeInUse(code)) c.Code = getRandomCode();
+        }
+        private static string getRandomCode() {
+            string code = GetRandom.String(6, 6) + GetRandom.UInt8(0, 9) + GetRandom.UInt8(0, 9);
+            return code;
+        }
         private async Task<bool> isIdInUse(string id) {
             return (await repository.GetObject(id))?.Data?.ID == id;
         }
@@ -97,7 +104,10 @@ namespace Open.Sentry.Controllers {
             var name = GetMember.DisplayName<GoodView>(c => c.Code);
             return string.Format(Messages.ValueIsAlreadyInUse, id, name);
         }
-
+        private async Task<bool> isCodeInUse(string code)
+        {
+            return (await repository.GetObjectByCode(code))?.Data?.Code == code;
+        }
         public IActionResult AddToCart(GoodView c)
         {
             var db = new GoodsData
@@ -108,11 +118,11 @@ namespace Open.Sentry.Controllers {
                 Image = c.Image,
                 Name = c.Name,
                 Price = c.Price,
-                Type = c.Type,
-                Quantity = c.Quantity
+                Type = c.Type
             };
             cart.AddItem(db);
             return RedirectToAction("Index");
         }
     }
 }
+

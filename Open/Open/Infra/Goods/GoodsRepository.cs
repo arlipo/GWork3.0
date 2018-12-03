@@ -13,6 +13,10 @@ namespace Open.Infra.Goods
         protected internal override async Task<GoodsData> getObject(string id) {
             return await dbSet.AsNoTracking().SingleOrDefaultAsync(x => x.ID == id);
         }
+        protected internal override async Task<GoodsData> getObjectByCode(string code)
+        {
+            return await dbSet.AsNoTracking().SingleOrDefaultAsync(x => x.Code == code);
+        }
 
         public GoodsRepository(SentryDbContext c) : base(c?.Goods, c) { }
         protected internal override Good createObject(GoodsData r) {

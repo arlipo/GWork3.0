@@ -14,6 +14,10 @@ namespace Open.Infra.Users
         {
             return await dbSet.AsNoTracking().SingleOrDefaultAsync(x => x.ID == id);
         }
+        protected internal override async Task<UsersData> getObjectByCode(string code)
+        {
+            return await dbSet.AsNoTracking().SingleOrDefaultAsync(x => x.Code == code);
+        }
 
         public UsersRepository(SentryDbContext c) : base(c?.Users, c) { }
         protected internal override User createObject(UsersData r)
