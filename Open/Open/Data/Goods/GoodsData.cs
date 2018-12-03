@@ -22,5 +22,7 @@ namespace Open.Data.Goods
             set => price = value;
         }
         public GoodTypes Type { get; set; }
+
+        public int Quantity { get; set; }
     }
 }

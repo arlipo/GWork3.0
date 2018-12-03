@@ -15,12 +15,19 @@ namespace Open.Infra {
         protected internal abstract TObject createObject(TDbRecord r);
 
         protected internal abstract Task<TDbRecord> getObject(string id);
+        protected internal abstract Task<TDbRecord> getObjectByCode(string code);
         protected BaseRepository(DbSet<TDbRecord> s, DbContext c) {
             dbSet = s;
             db = c;
         }
+        
         public async Task<TObject> GetObject(string id) {
             var r = await getObject(id);
+            return createObject(r);
+        }
+        public async Task<TObject> GetObjectByCode(string code)
+        {
+            var r = await getObjectByCode(code);
             return createObject(r);
         }
         public async Task AddObject(TObject o) {

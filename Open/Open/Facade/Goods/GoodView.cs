@@ -11,6 +11,7 @@ namespace Open.Facade.Goods
         private string name, code,
         description, price;
 
+
         [Required]
         public string Name
         {
@@ -25,6 +26,7 @@ namespace Open.Facade.Goods
         }
 
         public GoodTypes Type { get; set; }
+        public int Quantity { get; set; }
         
         public byte[] Image { get; set; }
 
