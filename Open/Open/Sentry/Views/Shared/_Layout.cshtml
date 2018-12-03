@@ -1,124 +1,19 @@
-﻿@using Microsoft.CodeAnalysis.CSharp
-@using Microsoft.EntityFrameworkCore.Design.Internal
-@using Open.Sentry.Extensions
-@using Open.Sentry.Resouces
+﻿@using Open.Sentry.Resouces
 <!DOCTYPE html>
 <html lang="en">
 <head>
     @inject LocService SharedLocalizer
-    <link rel="stylesheet" href="~/css/vendor.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/home/layout.css" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]GWork Shop</title>
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @RenderSection("Scripts", required: false)
-
-
-
-
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
     <link rel="shortcut icon" href="/body.png">
-
-    <style>
-
-        body {
-            background-image: url(https://pp.userapi.com/c848520/v848520695/d01ab/Ti1RMWKiIzA.jpg);
-            opacity: 0.89;
-        }
-
-        footer {
-            color: aliceblue;
-        }
-
-        .navbar {
-            color: white;
-            opacity: initial;
-            border-style: dotted;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            width: 100%;
-        }
-
-
-        .dropbtn {
-            background-image: url(https://pp.userapi.com/c848520/v848520695/d01ab/Ti1RMWKiIzA.jpg);
-            color: white;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 0;
-        }
-
-            .dropdown-content a {
-                color: black;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-            }
-
-                .dropdown-content a:hover {
-                    background-color: #B3CBDE;
-                }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-
-        .dropdown:hover .dropbtn {
-            background-color: #cceeff;
-        }
-
-    </style>
-
 </head>
-
 <body>
-<nav class="navbar navbar" style="background-image: url(https://pp.userapi.com/c848520/v848520695/d01ab/Ti1RMWKiIzA.jpg) ">
+<nav class="navbar navbar">
     <div class="container-fluid">
         <div class="navbar-header">
             <a asp-area="" asp-controller="Home" asp-action="Index" style="color:white" class="navbar-brand">@SharedLocalizer.GetLocalizedHtmlString("header.Home")</a>
@@ -138,7 +33,7 @@
                 </li>
                 <li><a asp-area="" asp-controller="Home" asp-action="About" style="color: white">@SharedLocalizer.GetLocalizedHtmlString("header.HelpContact")</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="Team" style="color: white">@SharedLocalizer.GetLocalizedHtmlString("header.Team")</a></li>
-                <input type="text" name="search" style="position: relative;top: 8px" placeholder="@SharedLocalizer.GetLocalizedHtmlString("header.Search")">
+                
                
 
                 @if (User.Identity.IsAuthenticated)
@@ -148,7 +43,6 @@
                         <li><a asp-area="" asp-controller="Home" asp-action="Money" style="color: white">@SharedLocalizer.GetLocalizedHtmlString("header.Money")</a></li>
                     }
                 }
-               
             </ul>
             <a asp-area="" asp-controller="Cart" asp-action="CartIndex" class="btn btn-info" style="position: relative;top: 8px"><span class="glyphicon glyphicon-shopping-cart"></span> @SharedLocalizer.GetLocalizedHtmlString("header.ShoppingCart")</a>
             <div class="nav navbar-nav navbar-right" style="position: relative;left: 1px">
@@ -163,7 +57,6 @@
         </div>
     </div>
 </nav>
-
 <div class="container body-content">
     <br/>
     @RenderBody()
@@ -171,8 +64,7 @@
     <footer>
         <p>Made by Gwork Company</p>
     </footer>
-</div>  
-
+</div> 
 </body>
 </html>
 
