@@ -14,7 +14,7 @@ using Open.Domain.ShoppingCart;
 using Open.Facade.Goods;
 
 namespace Open.Sentry.Controllers {
-    
+
 
     public class GoodsController : Controller // ISentryController
     {
@@ -28,8 +28,7 @@ namespace Open.Sentry.Controllers {
         }
 
         public async Task<IActionResult> Index(string sortOrder = null, string currentFilter = null,
-            string searchString = null, int? page = null)
-        { 
+            string searchString = null, int? page = null) {
             if (searchString != null) page = 1;
             else searchString = currentFilter;
             ViewData["CurrentFilter"] = searchString;
@@ -80,7 +79,8 @@ namespace Open.Sentry.Controllers {
                 }
             }
 
-            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type, c.Quantity,
+            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
+                c.Quantity,
                 c.Image);
             await repository.AddObject(o);
             return RedirectToAction("Index");
@@ -104,14 +104,11 @@ namespace Open.Sentry.Controllers {
             var name = GetMember.DisplayName<GoodView>(c => c.Code);
             return string.Format(Messages.ValueIsAlreadyInUse, id, name);
         }
-        private async Task<bool> isCodeInUse(string code)
-        {
+        private async Task<bool> isCodeInUse(string code) {
             return (await repository.GetObjectByCode(code))?.Data?.Code == code;
         }
-        public IActionResult AddToCart(GoodView c)
-        {
-            var db = new GoodsData
-            {
+        public IActionResult AddToCart(GoodView c) {
+            var db = new GoodsData {
                 Code = c.Code,
                 Description = c.Description,
                 ID = c.ID,
