@@ -20,9 +20,9 @@ namespace Open.Domain.ShoppingCart
 
         public decimal TotalPrice => UnitPrice * Quantity;
 
-        public CartItem(GoodsData db)
+        public CartItem(GoodsData data)
         {
-            Data = db;
+            Data = data;
         }
 
         public bool Equals(CartItem item) => item?.Data == Data;

@@ -68,8 +68,6 @@ namespace Open.Sentry.Controllers {
 
             await validateId(c.ID, ModelState);
 
-            if (!ModelState.IsValid) return View(c);
-
             foreach (var item in Image) {
                 if (item.Length > 0) {
                     using (var stream = new MemoryStream()) {
@@ -78,6 +76,8 @@ namespace Open.Sentry.Controllers {
                     }
                 }
             }
+
+            if (!ModelState.IsValid) return View(c);  
 
             var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
                 c.Quantity,
@@ -107,17 +107,10 @@ namespace Open.Sentry.Controllers {
         private async Task<bool> isCodeInUse(string code) {
             return (await repository.GetObjectByCode(code))?.Data?.Code == code;
         }
-        public IActionResult AddToCart(GoodView c) {
-            var db = new GoodsData {
-                Code = c.Code,
-                Description = c.Description,
-                ID = c.ID,
-                Image = c.Image,
-                Name = c.Name,
-                Price = c.Price,
-                Type = c.Type
-            };
-            cart.AddItem(db);
+        public async Task<IActionResult> AddToCart() {
+            
+            var o = await repository.GetObject("");
+            cart.AddItem(o);
             return RedirectToAction("Index");
         }
     }
