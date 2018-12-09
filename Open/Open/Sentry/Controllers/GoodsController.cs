@@ -107,10 +107,19 @@ namespace Open.Sentry.Controllers {
         private async Task<bool> isCodeInUse(string code) {
             return (await repository.GetObjectByCode(code))?.Data?.Code == code;
         }
-        public async Task<IActionResult> AddToCart() {
-            
-            var o = await repository.GetObject("");
-            cart.AddItem(o);
+        public IActionResult AddToCart(GoodsData c) {
+
+            var db = new GoodsData
+            {
+                Code = c.Code,
+                Description = c.Description,
+                ID = c.ID,
+                Image = c.Image,
+                Name = c.Name,
+                Price = c.Price,
+                Type = c.Type
+            };
+            cart.AddItem(db);
             return RedirectToAction("Index");
         }
     }
