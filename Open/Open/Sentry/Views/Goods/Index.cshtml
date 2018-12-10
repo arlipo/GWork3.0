@@ -45,6 +45,7 @@
                 <td>@Html.DisplayFor(modelItem => item.Price)</td>
                 <td>@Html.DisplayFor(modelItem => item.Image)</td>
                 <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                
                 @if (User.Identity.IsAuthenticated)
                 {
                     if (User.IsInRole("Admin"))
@@ -55,7 +56,7 @@
                         var s = item.ID;
                         <td>
                             <div>
-                                <a asp-action="AddToCart" class="btn btn-default">Add to Cart</a>
+                                <a asp-action="AddToCart" asp-route-id="@item.ID"  class="btn btn-default">Add to Cart</a>
                             </div>
                         </td>
                     }
