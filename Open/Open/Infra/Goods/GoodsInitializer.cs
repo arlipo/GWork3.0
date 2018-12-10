@@ -13,7 +13,7 @@ namespace Open.Infra.Goods {
         }
         private static void initializeGoods(SentryDbContext c)
         {
-            add(c, new ChemistryData
+            add(c, new GoodsData()
             {
                 Name = "Antifreeze + coolant LONG LIFE",
                 Code = "12345",
@@ -22,11 +22,10 @@ namespace Open.Infra.Goods {
                     "Organic Acid Technology (OAT) coolant technology that is compatible" +
                     " for use in all automobiles and light-duty trucks, regardless of make, " +
                     "model, year or original antifreeze color.",
-                Volume = "2l",
                 Price = "8,99",
                 Quantity = 10
             });
-            add(c, new SparePartsData
+            add(c, new GoodsData
             {
                 Name = "RIDEX Brake Disc Rear Axle",
                 Code = "123",
@@ -39,7 +38,7 @@ namespace Open.Infra.Goods {
                 Price = "14,99",
                 Quantity = 9
             });
-            add(c, new AccessoriesData
+            add(c, new GoodsData
             {
                 Name = "EXTREME Mobile phone holders",
                 Code = "1234",
@@ -52,7 +51,7 @@ namespace Open.Infra.Goods {
                 Price = "6,99",
                 Quantity = 12
             });
-            add(c, new SparePartsData
+            add(c, new GoodsData
             {
                 Name = "3 Button Remote Key",
                 Code = "543",
@@ -61,7 +60,7 @@ namespace Open.Infra.Goods {
                 Price = "9,99",
                 Quantity = 8
             });
-            add(c, new AccessoriesData
+            add(c, new GoodsData
             {
                 Name = "36CM UNIVERSAL CAR AUTO SAFETY SEAT BELT",
                 Code = "54321",
@@ -74,7 +73,7 @@ namespace Open.Infra.Goods {
                 Price = "7,99",
                 Quantity = 7
             });
-            add(c, new AccessoriesData
+            add(c, new GoodsData
             {
                 Name = "GENUINE BLACK LEATHER CAR/VAN STEERING WHEEL COVER GLOVE",
                 Code = "999",
@@ -85,7 +84,7 @@ namespace Open.Infra.Goods {
                 Price = "9,99",
                 Quantity = 2
             });
-            add(c, new AccessoriesData
+            add(c, new GoodsData
             {
                 Name = "5 Bar Checker Patterned Rubber Flooring Matting",
                 Code = "987",
@@ -97,7 +96,7 @@ namespace Open.Infra.Goods {
                 Quantity= 4
            
             });
-            add(c, new AccessoriesData()
+            add(c, new GoodsData
             {
                 Name = "Cup Holder",
                 Code = "98765",
@@ -108,7 +107,7 @@ namespace Open.Infra.Goods {
                 Quantity = 3
             });
 
-            add(c, new ChemistryData()
+            add(c, new GoodsData
             {
                 Name = "'Chemical Guys' Premium Air Freshener",
                 Code ="5555",
@@ -119,7 +118,7 @@ namespace Open.Infra.Goods {
                 Price = "9,99",
                 Quantity = 2
             });
-            add(c, new ChemistryData()
+            add(c, new GoodsData
             {
                 Name = "Engine Oil TOTAL QUARTZ 9000 ",
                 Code = "55444",
@@ -130,7 +129,7 @@ namespace Open.Infra.Goods {
                 Price = "14,49",
                 Quantity =3
             });
-            add(c, new ChemistryData()
+            add(c, new GoodsData()
             {
                 Name = "Mobil Super Motor Oil 5L",
                 Code = "4444",
@@ -141,7 +140,7 @@ namespace Open.Infra.Goods {
                 Price = "20,49",
                 Quantity = 1
             });
-            add(c, new ChemistryData()
+            add(c, new GoodsData()
             {
                 Name = "Power Steering Fluid for Honda",
                 Code = "3333",
@@ -151,7 +150,7 @@ namespace Open.Infra.Goods {
                 Price = "23,49",
                 Quantity =4
             });
-            add(c, new ChemistryData()
+            add(c, new GoodsData()
             {
                 Name = "Genuine Ford Antifreeze",
                 Code = "2222",
@@ -160,7 +159,7 @@ namespace Open.Infra.Goods {
                 Price = "10,99",
                 Quantity = 4
             });
-            add(c, new ChemistryData()
+            add(c, new GoodsData()
             {
                 Name = "Genuine Wurth Brake Cleaner Plus Aerosol",
                 Code = "8888",
@@ -169,7 +168,7 @@ namespace Open.Infra.Goods {
                 Price = "7,49",
                 Quantity = 5
             });
-            add(c, new ChemistryData()
+            add(c, new GoodsData()
             {
                 Name = "Red Penguin Auto Shampoo",
                 Code = "9999",
@@ -178,7 +177,7 @@ namespace Open.Infra.Goods {
                 Price = "20,99",
                 Quantity =5
             });
-            add(c, new ChemistryData()
+            add(c, new GoodsData()
             {
                 Name = "Kim Tec Auto Shampoo and Wax",
                 Code = "1000",

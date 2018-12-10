@@ -7,13 +7,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Open.Domain.Goods;
 using Open.Infra;
-using Open.Infra.Users;
 using Open.Infra.Goods;
 using Open.Sentry.Data;
 using Open.Sentry.Models;
 using Open.Sentry.Services;
 using System.Threading.Tasks;
-using Open.Domain.Users;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -39,7 +37,6 @@ namespace Open.Sentry {
             services.AddTransient<IEmailSender, EmailSender>();
             setMvcWithAntyFoggeryToken(services);
             services.AddScoped<IGoodsRepository, GoodsRepository>();
-            services.AddScoped<IUsersRepository, UsersRepository>();
 
             //Password Strength Setting
             services.Configure<IdentityOptions>(options =>

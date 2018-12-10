@@ -14,7 +14,7 @@ using Open.Domain.ShoppingCart;
 using Open.Facade.Goods;
 
 namespace Open.Sentry.Controllers {
-    
+
 
     public class GoodsController : Controller // ISentryController
     {
@@ -28,8 +28,7 @@ namespace Open.Sentry.Controllers {
         }
 
         public async Task<IActionResult> Index(string sortOrder = null, string currentFilter = null,
-            string searchString = null, int? page = null)
-        { 
+            string searchString = null, int? page = null) {
             if (searchString != null) page = 1;
             else searchString = currentFilter;
             ViewData["CurrentFilter"] = searchString;
@@ -69,8 +68,6 @@ namespace Open.Sentry.Controllers {
 
             await validateId(c.ID, ModelState);
 
-            if (!ModelState.IsValid) return View(c);
-
             foreach (var item in Image) {
                 if (item.Length > 0) {
                     using (var stream = new MemoryStream()) {
@@ -80,7 +77,10 @@ namespace Open.Sentry.Controllers {
                 }
             }
 
-            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type, c.Quantity,
+            if (!ModelState.IsValid) return View(c);  
+
+            var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
+                c.Quantity,
                 c.Image);
             await repository.AddObject(o);
             return RedirectToAction("Index");
@@ -104,12 +104,11 @@ namespace Open.Sentry.Controllers {
             var name = GetMember.DisplayName<GoodView>(c => c.Code);
             return string.Format(Messages.ValueIsAlreadyInUse, id, name);
         }
-        private async Task<bool> isCodeInUse(string code)
-        {
+        private async Task<bool> isCodeInUse(string code) {
             return (await repository.GetObjectByCode(code))?.Data?.Code == code;
         }
-        public IActionResult AddToCart(GoodView c)
-        {
+        public IActionResult AddToCart(GoodsData c) {
+
             var db = new GoodsData
             {
                 Code = c.Code,
