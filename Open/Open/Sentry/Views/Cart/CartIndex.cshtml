@@ -11,8 +11,9 @@
         <tr>
             @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
             @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.UnitPrice)
-            @Html.SortColumnHeaderFor(ViewData["SortImage"], model => dummy.Quantity)
             @Html.SortColumnHeaderFor(ViewData["SortQuantity"], model => dummy.Quantity)
+            @Html.SortColumnHeaderFor(ViewData["SortTotalPrice"], model => dummy.TotalPrice)
+
             @*@Html.DisplayNameFor(model => dummy.Name)
             @Html.DisplayNameFor(model => dummy.UnitPrice)
             @Html.DisplayNameFor(model => dummy.Quantity)
@@ -22,11 +23,13 @@
         <tbody>
         @foreach (var item in Model)
         {
+
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.Name)</td>
                 <td>@Html.DisplayFor(modelItem => item.UnitPrice)</td>
                 <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
                 <td>@Html.DisplayFor(modelItem => item.TotalPrice)</td>
+
             </tr>
         }
         </tbody>
