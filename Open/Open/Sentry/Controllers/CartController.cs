@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Open.Domain.Goods;
-using Open.Domain.ShoppingCart;
-using Open.Sentry.Controllers;
-
-namespace Sentry.Controllers
+namespace Open.Sentry.Controllers
 {
     public class CartController : GoodsController
     {
