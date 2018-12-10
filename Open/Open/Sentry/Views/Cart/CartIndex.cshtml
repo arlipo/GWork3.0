@@ -9,10 +9,14 @@
         @{var dummy = Model.FirstOrDefault();}
         <thead>
         <tr>
-            @Html.DisplayNameFor(model => dummy.Name)
+            @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
+            @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.UnitPrice)
+            @Html.SortColumnHeaderFor(ViewData["SortImage"], model => dummy.Quantity)
+            @Html.SortColumnHeaderFor(ViewData["SortQuantity"], model => dummy.Quantity)
+            @*@Html.DisplayNameFor(model => dummy.Name)
             @Html.DisplayNameFor(model => dummy.UnitPrice)
             @Html.DisplayNameFor(model => dummy.Quantity)
-            @Html.DisplayNameFor(model => dummy.TotalPrice)
+            @Html.DisplayNameFor(model => dummy.TotalPrice)*@
         </tr>
         </thead>
         <tbody>
