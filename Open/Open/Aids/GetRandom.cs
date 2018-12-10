@@ -162,6 +162,11 @@ namespace Open.Aids {
         public static string Password() {
             return $"{String()}{Char('\x20', '\x2f')}{UInt32().ToString()}.{String().ToUpper()}";
         }
+        public static string Code()
+        {
+            string code = String(6, 6) + UInt8(0, 9) + UInt8(0, 9);
+            return code;
+        }
     }
 }
 

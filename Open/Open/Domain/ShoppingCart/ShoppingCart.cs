@@ -9,20 +9,15 @@ namespace Open.Domain.ShoppingCart
         public void AddItem(GoodsData data)
         {
             var newItem = new CartItem(data);
-            if (Contains(newItem))
+            foreach (var item in this)
             {
-                foreach (var item in this)
-                {
-                    if (!item.Equals(newItem)) continue;
+                if (item.Data.ID.Equals(newItem.Data.ID)) {
                     item.Quantity++;
                     return;
                 }
             }
-            else
-            {
-                newItem.Quantity = 1;
-                Add(newItem);
-            }
+            newItem.Quantity = 1;
+            Add(newItem);
         }
 
         public void SetItemQuantity(GoodsData data, int quantity)

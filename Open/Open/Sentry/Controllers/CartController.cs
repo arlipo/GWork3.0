@@ -1,17 +1,24 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Open.Data.Goods;
 using Open.Domain.Goods;
+using Open.Domain.ShoppingCart;
 namespace Open.Sentry.Controllers
 {
-    public class CartController : GoodsController
+    public class CartController : Controller
     {
+        private static ShoppingCart cart = new ShoppingCart();
+
         [Authorize]
-        public IActionResult CartIndex()
+        public IActionResult Index()
         {
             return View(cart);
         }
 
-
-        public CartController(IGoodsRepository r) : base(r) {}
+        public static void Add(GoodsData db)
+        {
+            cart.AddItem(db);
+        }
     }
 }
