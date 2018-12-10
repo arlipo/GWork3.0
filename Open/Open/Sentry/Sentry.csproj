@@ -38,9 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\Chemistry\Create.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
     <Content Update="Views\Chemistry\Edit.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

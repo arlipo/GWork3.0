@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -8,15 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Open.Aids;
 using Open.Core;
-using Open.Data.Goods;
 using Open.Domain.Goods;
-using Open.Domain.ShoppingCart;
 using Open.Facade.Goods;
 
 namespace Open.Sentry.Controllers {
 
 
-    public class GoodsController : Controller // ISentryController
+    public class GoodsController : Controller
     {
         private readonly IGoodsRepository repository;
         internal const string properties =
@@ -57,8 +53,7 @@ namespace Open.Sentry.Controllers {
         }
 
         [Authorize(Roles = "Admin")] [ValidateAntiForgeryToken] [HttpPost]
-        public async Task<IActionResult> Create([Bind(properties)] GoodView c,
-            List<IFormFile> Image) {
+        public async Task<IActionResult> Create([Bind(properties)] GoodView c) {
 
             c.ID = Guid.NewGuid().ToString();
 
@@ -66,15 +61,6 @@ namespace Open.Sentry.Controllers {
             await changeCodeIfInUse(c.Code, c);
 
             await validateId(c.ID, ModelState);
-
-            foreach (var item in Image) {
-                if (item.Length > 0) {
-                    using (var stream = new MemoryStream()) {
-                        await item.CopyToAsync(stream);
-                        c.Image = stream.ToArray();
-                    }
-                }
-            }
 
             if (!ModelState.IsValid) return View(c);  
 

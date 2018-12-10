@@ -8,7 +8,7 @@ namespace Open.Sentry.Controllers
 {
     public class CartController : Controller
     {
-        private static ShoppingCart cart = new ShoppingCart();
+        private static readonly ShoppingCart cart = new ShoppingCart();
 
         [Authorize]
         public IActionResult Index()
