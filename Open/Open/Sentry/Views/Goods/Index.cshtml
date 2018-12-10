@@ -51,8 +51,8 @@
                     {
                         <td>@Html.EditDetailDeleteFor(modelItem => item.ID)</td>
                     }
-                    else
-                    {
+                    else {
+                        var s = item.ID;
                         <td>
                             <div>
                                 <a asp-action="AddToCart" class="btn btn-default">Add to Cart</a>

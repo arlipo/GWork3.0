@@ -107,7 +107,10 @@ namespace Open.Sentry.Controllers {
         private async Task<bool> isCodeInUse(string code) {
             return (await repository.GetObjectByCode(code))?.Data?.Code == code;
         }
-        public IActionResult AddToCart(GoodsData c) {
+        public async Task<IActionResult> AddToCart(GoodView c) {
+
+            var o = repository.GetObject(c.ID);
+            
 
             var db = new GoodsData
             {
