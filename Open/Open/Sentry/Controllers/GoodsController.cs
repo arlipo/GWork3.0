@@ -109,11 +109,8 @@ namespace Open.Sentry.Controllers {
         }
         public async Task<IActionResult> AddToCart(GoodView c) {
 
-            var o = repository.GetObject()
-
-            foreach (var item in list) {
-                
-            }
+            var o = repository.GetObject(c.ID);
+            
 
             var db = new GoodsData
             {
