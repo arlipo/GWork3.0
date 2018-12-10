@@ -1,6 +1,6 @@
 ﻿ 
         body {
-            background-image: url(https://pp.userapi.com/c848520/v848520695/d01ab/Ti1RMWKiIzA.jpg);
+            background-image: url(back.jpg);
             opacity: 0.89;
         }
 
@@ -8,24 +8,24 @@
             color: aliceblue;
         }
 
-        .navbar {
-	        background-image: url(https://pp.userapi.com/c848520/v848520695/d01ab/Ti1RMWKiIzA.jpg);
-            color: white;
-            opacity: initial;
-            position: fixed;
-            z-index: 2;
-            top: 0;
-            width: 100%;
-        }
+.navbar {
+	background-image: url(back.jpg);
+	color: white;
+	opacity: initial;
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	width: 100%;
+}
 
 
-        .dropbtn {
-	        background-image: url(https://pp.userapi.com/c848520/v848520695/d01ab/Ti1RMWKiIzA.jpg);
-            color: white;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-        }
+.dropbtn {
+	background-image: url(back.jpg);
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+}
 
         .dropdown {
             position: relative;

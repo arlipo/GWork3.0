@@ -1,0 +1,27 @@
+﻿  p {
+	  font-size: 18px;
+  }
+
+  .bg-1 {
+	  background-color: #B3CBDE;
+	  padding-top: 120px;
+	  color: #ffffff;
+	  font: 16px "Montserrat", sans-serif;
+  }
+
+  .bg-3 {
+	  background-color: #B3CBDE;
+	  color: #ffffff;
+	  font: 16px "Montserrat", sans-serif;
+  }
+
+  .bg-4 {
+	  background-color: #B3CBDE;
+	  color: #fff;
+	  padding-bottom: 120px;
+	  font: 16px "Montserrat", sans-serif;
+  }
+
+  fd {
+	  color: #111111;
+  }
