@@ -19,7 +19,7 @@ namespace Open.Domain.ShoppingCart
             newItem.Quantity = 1;
             Add(newItem);
         }
-
+        /* -------------------NOT-USED-YET-----------------------
         public void SetItemQuantity(GoodsData data, int quantity)
         {
             if (quantity == 0)
@@ -37,11 +37,11 @@ namespace Open.Domain.ShoppingCart
                 return;
             }
         }
-
+        */
         public void RemoveItem(GoodsData data)
         {
-            var removedItem = new CartItem(data);
-            Remove(removedItem);
+            var item = GetCartItemByID(data.ID);
+            Remove(item);
         }
 
         public decimal GetSubTotal()
@@ -49,6 +49,15 @@ namespace Open.Domain.ShoppingCart
             decimal subTotal = 0;
             foreach (var item in this) subTotal += item.TotalPrice;
             return subTotal;
+        }
+
+        public CartItem GetCartItemByID(string id)
+        {
+            foreach (var item in this)
+            {
+                if (item.Data.ID.Equals(id)) return item;
+            }
+            return new CartItem(new GoodsData()); 
         }
     }
 }
