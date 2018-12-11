@@ -38,9 +38,9 @@ namespace Open.Domain.ShoppingCart
             }
         }
         */
-        public void RemoveItem(GoodsData data)
+        public void RemoveItem(string id)
         {
-            var item = GetCartItemByID(data.ID);
+            var item = GetCartItemByID(id);
             Remove(item);
         }
 

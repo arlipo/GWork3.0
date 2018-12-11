@@ -26,6 +26,7 @@
                 <td>@Html.DisplayFor(modelItem => item.TotalPrice)</td>
                 <td><a asp-action="PlusOne" asp-route-id="@item.Data.ID" class="btn btn-default">+</a></td>
                 <td><a asp-action="MinusOne" asp-route-id="@item.Data.ID" class="btn btn-default">-</a></td>
+                <td><a asp-action="Remove" asp-route-id="@item.Data.ID" class="btn btn-default">Remove</a></td>
             </tr>
         }
         </tbody>
