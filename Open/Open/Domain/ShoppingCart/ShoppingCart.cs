@@ -38,10 +38,17 @@ namespace Open.Domain.ShoppingCart
             }
         }
         */
-        public void RemoveItem(string id)
+        public void RemoveItem(GoodsData data)
         {
-            var item = GetCartItemByID(id);
-            Remove(item);
+            var newItem = new CartItem(data);
+            foreach (var item in this)
+            {
+                if (item.Data.ID.Equals(newItem.Data.ID))
+                {
+                    item.Quantity--;
+                    return;
+                }
+            }
         }
 
         public decimal GetSubTotal()
