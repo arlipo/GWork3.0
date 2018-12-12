@@ -24,32 +24,30 @@ namespace Open.Sentry.Controllers
         public IActionResult PlusOne(string id)
         {
             var item = cart.GetCartItemByID(id);
-            var ind = cart.IndexOf(item);
-            cart[ind].Quantity++;
+            cart.AddItem(item.Data);
             return RedirectToAction("Index");
         }
 
         public IActionResult MinusOne(string id)
         {
             var item = cart.GetCartItemByID(id);
-            var ind = cart.IndexOf(item);
-            cart[ind].Quantity--;
-            removeItemIfQuantityIsNull(ind);
+            cart.RemoveItem(item.Data);
+            removeItemIfQuantityIsNull(item);
             return RedirectToAction("Index");
         }
 
-        public void removeItemIfQuantityIsNull(int ind)
+        public void removeItemIfQuantityIsNull(CartItem item)
         {
-            var item = cart[ind];
             if (item.Quantity == 0)
             {
-                cart.RemoveItem(item.Data.ID);
+                cart.Remove(item);
             }
         }
 
         public IActionResult Remove(string id)
         {
-            cart.RemoveItem(id);
+            var item = cart.GetCartItemByID(id);
+            cart.Remove(item);
             return RedirectToAction("Index");
         }
     }
