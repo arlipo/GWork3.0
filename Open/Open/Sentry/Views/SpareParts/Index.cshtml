@@ -7,9 +7,14 @@
         Layout = "_IndexPartial";
     }
 
-    @section Create {
-        <a asp-controller="Goods" asp-action=Create>Add new product</a>
+@section Create
+{
+    @if (User.Identity.IsAuthenticated) {
+        if (User.IsInRole("Admin")) {
+            <a asp-controller="Goods" asp-action="Create">Add new product</a>
+        }
     }
+}
     <style>
         Title {
             color: aliceblue;
