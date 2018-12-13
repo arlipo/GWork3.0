@@ -24,7 +24,8 @@ namespace Open.Infra.Goods {
                     " for use in all automobiles and light-duty trucks, regardless of make, " +
                     "model, year or original antifreeze color.",
                 Price = "8.99",
-                Quantity = 10
+                Quantity = 10,
+                Brand=1
             });
             add(c, new GoodsData
             {
@@ -37,7 +38,8 @@ namespace Open.Infra.Goods {
                               "for direct replacement.",
                 Type = GoodTypes.SpareParts,
                 Price = "14.99",
-                Quantity = 9
+                Quantity = 9,
+                Brand=2
             });
             add(c, new GoodsData
             {
@@ -50,7 +52,8 @@ namespace Open.Infra.Goods {
                     "charging cable not included.",
                 Type = GoodTypes.Accessories,
                 Price = "6.99",
-                Quantity = 12
+                Quantity = 12,
+                Brand=3
             });
             add(c, new GoodsData
             {
@@ -59,7 +62,9 @@ namespace Open.Infra.Goods {
                 Description = "AUDI 3 button remote key fob case FULL service repair kit.",
                 Type = GoodTypes.SpareParts,
                 Price = "9.99",
-                Quantity = 8
+                Quantity = 8,
+                Brand=1
+
             });
             add(c, new GoodsData
             {
@@ -72,7 +77,8 @@ namespace Open.Infra.Goods {
                 Type = GoodTypes.Accessories,
                 ID = "5",
                 Price = "7.99",
-                Quantity = 7
+                Quantity = 7,
+                Brand=2
             });
             add(c, new GoodsData
             {
@@ -83,7 +89,8 @@ namespace Open.Infra.Goods {
                     " steering wheels with an exterior diameter of 37 - 39cm.Simply stretches over the existing steering wheel",
                 Type = GoodTypes.Accessories,
                 Price = "9.99",
-                Quantity = 2
+                Quantity = 2,
+                Brand=3
             });
             add(c, new GoodsData
             {
@@ -94,7 +101,8 @@ namespace Open.Infra.Goods {
                     " from the cold. ",
                 Type = GoodTypes.Accessories,
                 Price = "15,99",
-                Quantity= 4
+                Quantity= 4,
+                Brand=1
            
             });
             add(c, new GoodsData
@@ -105,7 +113,8 @@ namespace Open.Infra.Goods {
                     "This cup/can holder has a designated space for cans/cups anda space for coins and other small items.",
                 Type = GoodTypes.Accessories,
                 Price = "10.99",
-                Quantity = 3
+                Quantity = 3,
+                Brand=2
             });
 
             add(c, new GoodsData
@@ -117,7 +126,8 @@ namespace Open.Infra.Goods {
                               "One spray is all you need for a full size vehicle",
                 Type= GoodTypes.Chemistry,
                 Price = "9.99",
-                Quantity = 2
+                Quantity = 2,
+                Brand=3
             });
             add(c, new GoodsData
             {
@@ -128,7 +138,8 @@ namespace Open.Infra.Goods {
                               "Suitable For: Volkswagen",
                 Type = GoodTypes.Chemistry,
                 Price = "14.49",
-                Quantity =3
+                Quantity =3,
+                Brand=1
             });
             add(c, new GoodsData()
             {
@@ -139,7 +150,8 @@ namespace Open.Infra.Goods {
                               "are specifically designed to use a low viscosity (HTHS) motor oil. ",
                 Type = GoodTypes.Chemistry,
                 Price = "20.49",
-                Quantity = 1
+                Quantity = 1,
+                Brand=2
             });
             add(c, new GoodsData()
             {
@@ -149,7 +161,8 @@ namespace Open.Infra.Goods {
                               "o-rings and one bottle of Honda Genuine power steering fluid.",
                 Type = GoodTypes.Chemistry,
                 Price = "23.49",
-                Quantity =4
+                Quantity =4,
+                Brand=1
             });
             add(c, new GoodsData()
             {
@@ -158,7 +171,8 @@ namespace Open.Infra.Goods {
                 Description = "Genuine Ford Antifreeze Antifreeze Super plus Premium 4 Liter",
                 Type = GoodTypes.Chemistry,
                 Price = "10.99",
-                Quantity = 4
+                Quantity = 4,
+                Brand=2
             });
             add(c, new GoodsData()
             {
@@ -167,7 +181,8 @@ namespace Open.Infra.Goods {
                 Description = "Suitable for brake cleaner and other de-greaser products, Motorcycle Motorbike",
                 Type = GoodTypes.Chemistry,
                 Price = "7.49",
-                Quantity = 5
+                Quantity = 5,
+                Brand=3
             });
             add(c, new GoodsData()
             {
@@ -176,7 +191,8 @@ namespace Open.Infra.Goods {
                 Description = "Removes gently and effectively all kinds of dirt on the body (dirt, dust, oil, salt - and insect remains, poplar buds and leaves tree secretions.",
                 Type = GoodTypes.Chemistry,
                 Price = "20.99",
-                Quantity =5
+                Quantity =5,
+                Brand=2
             });
             add(c, new GoodsData()
             {
@@ -187,7 +203,8 @@ namespace Open.Infra.Goods {
                               "the vehicle is intensely cleaned surface and brought to shine over the waxes contained in the product. ",
                 Type = GoodTypes.Chemistry,
                 Price = "20.99",
-                Quantity = 3
+                Quantity = 3,
+                Brand=3
             });
         }
         private static void add(SentryDbContext c, GoodsData goods) {

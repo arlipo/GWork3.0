@@ -65,7 +65,7 @@ namespace Open.Sentry.Controllers {
             if (!ModelState.IsValid) return View(c);  
 
             var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
-                c.Quantity,
+                c.Quantity, c.Brand,
                 c.Image);
             await repository.AddObject(o);
             return RedirectToAction("Index");

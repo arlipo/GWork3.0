@@ -24,6 +24,8 @@ namespace Open.Infra.Migrations
                     b.Property<string>("ID")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("Brand");
+
                     b.Property<string>("Code");
 
                     b.Property<string>("Description");

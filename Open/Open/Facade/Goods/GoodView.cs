@@ -27,6 +27,7 @@ namespace Open.Facade.Goods
 
         public GoodTypes Type { get; set; }
         public int Quantity { get; set; }
+        public int Brand { get; set; }
         
         public byte[] Image { get; set; }
 

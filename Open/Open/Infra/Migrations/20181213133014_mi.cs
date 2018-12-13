@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Open.Infra.Migrations
 {
-    public partial class initial : Migration
+    public partial class mi : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,7 +20,8 @@ namespace Open.Infra.Migrations
                     Description = table.Column<string>(nullable: true),
                     Price = table.Column<string>(nullable: true),
                     Type = table.Column<int>(nullable: false),
-                    Quantity = table.Column<int>(nullable: false)
+                    Quantity = table.Column<int>(nullable: false),
+                    Brand = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

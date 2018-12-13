@@ -17,7 +17,8 @@ namespace Open.Facade.Goods
                 Description = o?.Data?.Description,
                 Image = o?.Data?.Image,
                 Price = o?.Data?.Price,
-                Quantity = o.Data.Quantity
+                Quantity = o.Data.Quantity,
+                Brand = o.Data.Brand
             };
             if (o is null) return v;
             v.ValidFrom = setNullIfExtremum(o.Data.ValidFrom);
