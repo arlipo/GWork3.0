@@ -206,6 +206,59 @@ namespace Open.Infra.Goods {
                 Quantity = 3,
                 Brand=3
             });
+            add(c, new GoodsData
+            {
+                Name = "TEMPERATURE SWITCH, AIR CONDITIONING FAN",
+                Code = GetRandom.Code(),
+                Description = "Temperature switch, Weight [kg] - 0,010, 2 connectors",
+                Type = GoodTypes.SpareParts,
+                Price = "6.80",
+                Quantity = 3,
+                Brand = 1
+            });
+            add(c, new GoodsData
+            {
+                Name = "BRAKE PEDAL PAD; CLUTCH PEDAL PAD",
+                Code = GetRandom.Code(),
+                Description = "Brake pedal, Weight [kg] - 0,06",
+                Type = GoodTypes.SpareParts,
+                Price = "4",
+                Quantity = 2,
+                Brand = 3
+            });
+            add(c, new GoodsData
+            {
+                Name = "SAFETY BELT",
+                Code = GetRandom.Code(),
+                Description = "A seat belt is a vehicle safety device designed to secure the occupant" +
+                              " of a vehicle against harmful movement that may result during a collision or" +
+                              " a sudden stop.",
+                Type = GoodTypes.SpareParts,
+                Price = "3.6",
+                Quantity = 9,
+                Brand = 2
+            });
+            add(c, new GoodsData
+            {
+                Name = "Timing Belt Set Teeth Quant.: 127 FEBI ",
+                Code = GetRandom.Code(),
+                Type = GoodTypes.SpareParts,
+                Price = "10.9",
+                Quantity = 5,
+                Brand = 2
+            });
+            add(c, new GoodsData
+            {
+                Name = "Motorad MGC-837 Fuel Cap",
+                Code = GetRandom.Code(),
+                Description = "Passes all state and federal emissions tests\r\nManufactured" +
+                              " from durable, long-life materials\r\nReduces air pollution with proper" +
+                              " sealing and venting",
+                Type = GoodTypes.SpareParts,
+                Price = "7.49",
+                Quantity = 5,
+                Brand = 3
+            });
         }
         private static void add(SentryDbContext c, GoodsData goods) {
             goods.ID = Guid.NewGuid().ToString();

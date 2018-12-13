@@ -10,8 +10,8 @@ using Open.Infra;
 namespace Open.Infra.Migrations
 {
     [DbContext(typeof(SentryDbContext))]
-    [Migration("20181213133014_mi")]
-    partial class mi
+    [Migration("20181213135546_ьшпк")]
+    partial class ьшпк
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
