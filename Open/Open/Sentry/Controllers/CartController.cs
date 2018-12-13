@@ -24,7 +24,7 @@ namespace Open.Sentry.Controllers
         public IActionResult PlusOne(string id)
         {
             var item = cart.GetCartItemByID(id);
-            cart.AddItem(item.Data);
+            Add(item.Data);
             return RedirectToAction("Index");
         }
 
