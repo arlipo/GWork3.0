@@ -15,16 +15,34 @@ namespace Open.Infra.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.3-rtm-32065")
+                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Open.Data.Customers.CustomersData", b =>
+                {
+                    b.Property<string>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Code");
+
+                    b.Property<string>("Name");
+
+                    b.Property<DateTime>("ValidFrom");
+
+                    b.Property<DateTime>("ValidTo");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Customers");
+                });
 
             modelBuilder.Entity("Open.Data.Goods.GoodsData", b =>
                 {
                     b.Property<string>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Brand");
+                    b.Property<string>("Brand");
 
                     b.Property<string>("Code");
 
@@ -36,7 +54,7 @@ namespace Open.Infra.Migrations
 
                     b.Property<string>("Price");
 
-                    b.Property<int>("Quantity");
+                    b.Property<string>("Quantity");
 
                     b.Property<int>("Type");
 

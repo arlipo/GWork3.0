@@ -23,9 +23,9 @@ namespace Open.Data.Goods
         }
         public GoodTypes Type { get; set; }
 
-        public int Quantity { get; set; }
+        public string Quantity { get; set; }
 
-        public int Brand
+        public string Brand
         {
             get; set;
         }
