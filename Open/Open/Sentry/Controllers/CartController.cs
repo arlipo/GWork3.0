@@ -12,7 +12,7 @@ namespace Open.Sentry.Controllers
     {
         private static readonly ShoppingCart cart = new ShoppingCart();
 
-        [Authorize]
+        //[Authorize]
         public IActionResult Index()
         {
             var l = new CartViewsList(cart);
@@ -22,6 +22,11 @@ namespace Open.Sentry.Controllers
         public static void Add(CartData db)
         {
             cart.AddItem(db);
+        }
+
+        public IActionResult CheckOut() {
+
+            return RedirectToAction("Index");
         }
 
         public IActionResult PlusOne(string id)

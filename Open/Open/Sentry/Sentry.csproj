@@ -9,6 +9,13 @@
  </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\**" />
+    <Content Remove="Pages\**" />
+    <EmbeddedResource Remove="Pages\**" />
+    <None Remove="Pages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Home\goods.cshtml" />
   </ItemGroup>
 
@@ -66,7 +73,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\" />
     <Folder Include="wwwroot\css\Accessories\" />
     <Folder Include="wwwroot\css\Account\" />
     <Folder Include="wwwroot\css\Cart\" />

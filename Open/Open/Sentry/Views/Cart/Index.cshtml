@@ -1,4 +1,5 @@
-﻿@using Open.Sentry.Extensions
+﻿@using Open.Domain.Common
+@using Open.Sentry.Extensions
 @model Open.Facade.Goods.CartViewsList
 
 <h1>Cart</h1>
@@ -8,31 +9,35 @@
     <table class="table" style="background-color: #B3CBDE; color:black;">
         @{var dummy = Model.FirstOrDefault();}
         <thead>
-        <tr>
-            @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
-            @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.UnitPrice)
-            @Html.SortColumnHeaderFor(ViewData["SortQuantity"], model => dummy.Quantity)
-            @Html.SortColumnHeaderFor(ViewData["SortTotalPrice"], model => dummy.TotalPrice)
-        </tr>
+            <tr>
+                @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
+                @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.UnitPrice)
+                @Html.SortColumnHeaderFor(ViewData["SortQuantity"], model => dummy.Quantity)
+                @Html.SortColumnHeaderFor(ViewData["SortTotalPrice"], model => dummy.TotalPrice)
+            </tr>
         </thead>
         <tbody>
-        @foreach (var item in Model)
-        {
+            @foreach (var item in Model) {
 
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.Name)</td>
                 <td>@Html.DisplayFor(modelItem => item.UnitPrice)</td>
-                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                <td>
+                    <a asp-action="MinusOne" asp-route-id="@item.ID" class="btn btn-default" style="position: relative; right: 10px">-</a>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                    <a asp-action="PlusOne" asp-route-id="@item.ID" class="btn btn-default" style="position: relative; left: 10px">+</a>
+                </td>
                 <td>@Html.DisplayFor(modelItem => item.TotalPrice)</td>
-                <td><a asp-action="PlusOne" asp-route-id="@item.ID" class="btn btn-default">+</a></td>
-                <td><a asp-action="MinusOne" asp-route-id="@item.ID" class="btn btn-default">-</a></td>
                 <td><a asp-action="Remove" asp-route-id="@item.ID" class="btn btn-default">Remove</a></td>
             </tr>
-        }
+            }
         </tbody>
     </table>
-    <div class="col-md-2">
+    <div style="float: right; position: relative; right: 25px; bottom: 10px">
+        <a asp-action="CheckOut" class="btn btn-success">CHECKOUT</a>
+    </div>
+    <div style="float: right; position: relative; right: 60px">
         <p><strong>Total: @Model.SubTotal()</strong></p>
     </div>
-    <br/>
+    <br />
 </div>
