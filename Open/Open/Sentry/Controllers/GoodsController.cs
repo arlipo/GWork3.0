@@ -93,9 +93,7 @@ namespace Open.Sentry.Controllers {
         public async Task<IActionResult> AddToCart(string id) {
 
             var o = await repository.GetObject(id);
-            var goodsData = o.Data;
-            var cartData = new CartData();
-            cartData.GoodsData = goodsData;
+            var cartData = new CartData {GoodsData = o.Data};
             CartController.Add(cartData);
             return RedirectToAction("Index");
         }

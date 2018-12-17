@@ -1,5 +1,5 @@
 ﻿@using Open.Sentry.Extensions
-@model Open.Domain.ShoppingCart.ShoppingCart
+@model Open.Facade.Goods.CartViewsList
 
 <h1>Cart</h1>
 
@@ -24,15 +24,15 @@
                 <td>@Html.DisplayFor(modelItem => item.UnitPrice)</td>
                 <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
                 <td>@Html.DisplayFor(modelItem => item.TotalPrice)</td>
-                <td><a asp-action="PlusOne" asp-route-id="@item.Data.ID" class="btn btn-default">+</a></td>
-                <td><a asp-action="MinusOne" asp-route-id="@item.Data.ID" class="btn btn-default">-</a></td>
-                <td><a asp-action="Remove" asp-route-id="@item.Data.ID" class="btn btn-default">Remove</a></td>
+                <td><a asp-action="PlusOne" asp-route-id="@item.ID" class="btn btn-default">+</a></td>
+                <td><a asp-action="MinusOne" asp-route-id="@item.ID" class="btn btn-default">-</a></td>
+                <td><a asp-action="Remove" asp-route-id="@item.ID" class="btn btn-default">Remove</a></td>
             </tr>
         }
         </tbody>
     </table>
     <div class="col-md-2">
-        <p><strong>Total: @Model.GetSubTotal()</strong></p>
+        <p><strong>Total: @Model.SubTotal()</strong></p>
     </div>
     <br/>
 </div>

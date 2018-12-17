@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Open.Data.Goods;
 using Open.Domain.Goods;
 using Open.Domain.ShoppingCart;
+using Open.Facade.Goods;
+
 namespace Open.Sentry.Controllers
 {
     public class CartController : Controller
@@ -13,7 +15,8 @@ namespace Open.Sentry.Controllers
         [Authorize]
         public IActionResult Index()
         {
-            return View(cart);
+            var l = new CartViewsList(cart);
+            return View(l);
         }
 
         public static void Add(CartData db)

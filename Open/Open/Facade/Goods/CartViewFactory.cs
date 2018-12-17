@@ -6,7 +6,12 @@ namespace Open.Facade.Goods
     {
         public static CartView Create(CartItem itm)
         {
-            var o = new CartView().GoodsData = itm.Data.GoodsCart;
+            var db = itm.Data.GoodsData;
+            var o = new CartView
+            {
+                GoodsData = db,
+                Quantity = itm.Data.Quantity
+            };
             return o;
         }
     }
