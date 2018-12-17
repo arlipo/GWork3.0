@@ -6,17 +6,17 @@ namespace Open.Domain.ShoppingCart
 {
     public class ShoppingCart : List<CartItem>
     {
-        public void AddItem(GoodsData data)
+        public void AddItem(CartData data)
         {
             var newItem = new CartItem(data);
             foreach (var item in this)
             {
                 if (item.Data.ID.Equals(newItem.Data.ID)) {
-                    item.Quantity++;
+                    item.Data.Quantity++;
                     return;
                 }
             }
-            newItem.Quantity = 1;
+            newItem.Data.Quantity = 1;
             Add(newItem);
         }
         /* -------------------NOT-USED-YET-----------------------
@@ -38,14 +38,14 @@ namespace Open.Domain.ShoppingCart
             }
         }
         */
-        public void RemoveItem(GoodsData data)
+        public void RemoveItem(CartData data)
         {
             var newItem = new CartItem(data);
             foreach (var item in this)
             {
                 if (item.Data.ID.Equals(newItem.Data.ID))
                 {
-                    item.Quantity--;
+                    item.Data.Quantity--;
                     return;
                 }
             }
@@ -54,7 +54,7 @@ namespace Open.Domain.ShoppingCart
         public decimal GetSubTotal()
         {
             decimal subTotal = 0;
-            foreach (var item in this) subTotal += item.TotalPrice;
+            foreach (var item in this) subTotal += item.Data.TotalPrice;
             return subTotal;
         }
 
@@ -64,7 +64,7 @@ namespace Open.Domain.ShoppingCart
             {
                 if (item.Data.ID.Equals(id)) return item;
             }
-            return new CartItem(new GoodsData()); 
+            return new CartItem(new CartData()); 
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Open.Sentry.Controllers
             return View(cart);
         }
 
-        public static void Add(GoodsData db)
+        public static void Add(CartData db)
         {
             cart.AddItem(db);
         }
@@ -38,7 +38,7 @@ namespace Open.Sentry.Controllers
 
         public void removeItemIfQuantityIsNull(CartItem item)
         {
-            if (item.Quantity == 0)
+            if (item.Data.Quantity == 0)
             {
                 cart.Remove(item);
             }

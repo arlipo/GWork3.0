@@ -6,7 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Open.Aids;
 using Open.Core;
+using Open.Data.Goods;
 using Open.Domain.Goods;
+using Open.Domain.ShoppingCart;
 using Open.Facade.Goods;
 
 namespace Open.Sentry.Controllers {
@@ -91,8 +93,10 @@ namespace Open.Sentry.Controllers {
         public async Task<IActionResult> AddToCart(string id) {
 
             var o = await repository.GetObject(id);
-            var db = o.Data;
-            CartController.Add(db);
+            var goodsData = o.Data;
+            var cartData = new CartData();
+            cartData.GoodsData = goodsData;
+            CartController.Add(cartData);
             return RedirectToAction("Index");
         }
     }

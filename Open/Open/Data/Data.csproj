@@ -46,6 +46,7 @@
     <Compile Include="Common\MetricsData.cs" />
     <Compile Include="Common\PeriodData.cs" />
     <Compile Include="Common\IdentifiedData.cs" />
+    <Compile Include="Goods\CartData.cs" />
     <Compile Include="Goods\GoodsData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
