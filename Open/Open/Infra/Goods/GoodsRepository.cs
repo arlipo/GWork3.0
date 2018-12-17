@@ -6,19 +6,16 @@ using Open.Core;
 using Open.Data.Goods;
 using Open.Domain.Goods;
 
-namespace Open.Infra.Goods
-{
+namespace Open.Infra.Goods {
     public class GoodsRepository : Repository<Good, GoodsData>,
         IGoodsRepository {
+        public GoodsRepository(SentryDbContext c) : base(c?.Goods, c) { }
         protected internal override async Task<GoodsData> getObject(string id) {
             return await dbSet.AsNoTracking().SingleOrDefaultAsync(x => x.ID == id);
         }
-        protected internal override async Task<GoodsData> getObjectByCode(string code)
-        {
+        protected internal override async Task<GoodsData> getObjectByCode(string code) {
             return await dbSet.AsNoTracking().SingleOrDefaultAsync(x => x.Code == code);
         }
-
-        public GoodsRepository(SentryDbContext c) : base(c?.Goods, c) { }
         protected internal override Good createObject(GoodsData r) {
             return new Good(r);
         }
@@ -26,8 +23,7 @@ namespace Open.Infra.Goods
             List<GoodsData> l, RepositoryPage p) {
             return new GoodsList(l, p);
         }
-        public async Task<PaginatedList<Good>> GetWithSpecificType(GoodTypes type)
-        {
+        public async Task<PaginatedList<Good>> GetWithSpecificType(GoodTypes type) {
             var countries = getSorted().Where(s => s.Contains(SearchString)).AsNoTracking();
             var count = await countries.CountAsync();
             var p = new RepositoryPage(count, PageIndex, PageSize);

@@ -1,31 +1,22 @@
 ﻿using System;
-using Open.Core;
-using Open.Domain.Goods;
+using Open.Domain.Customers;
 
-namespace Open.Facade.Goods
+namespace Open.Facade.Customers
 {
-    public static class GoodViewFactory
+    public static class CustomerViewFactory
     {
-        public static GoodView Create(Good o)
+        public static CustomerView Create(Customer o)
         {
-            GoodView v = new GoodView
+            var v = new CustomerView
             {
                 ID = o?.Data?.ID,
                 Name = o?.Data?.Name,
-                Code = o?.Data?.Code,
-                Type = o?.Data?.Type ?? GoodTypes.Accessories,
-                Description = o?.Data?.Description,
-                Image = o?.Data?.Image,
-                Price = o?.Data?.Price,
-                Quantity = o?.Data?.Quantity,
-                Brand = o?.Data?.Brand
             };
             if (o is null) return v;
             v.ValidFrom = setNullIfExtremum(o.Data.ValidFrom);
             v.ValidTo = setNullIfExtremum(o.Data.ValidTo);
             return v;
         }
-
         private static DateTime? setNullIfExtremum(DateTime d)
         {
             if (d.Date >= DateTime.MaxValue.Date) return null;
