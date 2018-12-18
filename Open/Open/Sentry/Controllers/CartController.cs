@@ -2,15 +2,16 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Open.Data.Goods;
+using Open.Data.ShoppingCart;
 using Open.Domain.Goods;
 using Open.Domain.ShoppingCart;
 using Open.Facade.Goods;
-
+using Open.Facade.ShoppingCart;
 namespace Open.Sentry.Controllers
 {
     public class CartController : Controller
     {
-        private static readonly ShoppingCart cart = new ShoppingCart();
+        private static readonly Cart cart = new Cart();
 
         //[Authorize]
         public IActionResult Index()

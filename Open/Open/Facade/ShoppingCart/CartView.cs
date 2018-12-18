@@ -2,7 +2,7 @@
 using Open.Core;
 using Open.Data.Goods;
 
-namespace Open.Facade.Goods
+namespace Open.Facade.ShoppingCart
 {
     public class CartView : Archetype
     {

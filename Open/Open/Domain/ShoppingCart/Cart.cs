@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Web;
 using Open.Data.Goods;
-
+using Open.Data.ShoppingCart;
 namespace Open.Domain.ShoppingCart
 {
-    public class ShoppingCart : List<CartItem>
+    public class Cart : List<CartItem>
     {
         public void AddItem(CartData data)
         {

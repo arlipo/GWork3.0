@@ -1,6 +1,6 @@
 ﻿using Open.Core;
-
-namespace Open.Data.Goods
+using Open.Data.Goods;
+namespace Open.Data.ShoppingCart
 {
     public class CartData : Archetype
     {

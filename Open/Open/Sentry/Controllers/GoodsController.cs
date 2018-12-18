@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Open.Aids;
 using Open.Core;
 using Open.Data.Goods;
+using Open.Data.ShoppingCart;
 using Open.Domain.Goods;
 using Open.Domain.ShoppingCart;
 using Open.Facade.Goods;

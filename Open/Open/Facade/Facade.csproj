@@ -49,9 +49,9 @@
     <Compile Include="Customers\CustomerView.cs" />
     <Compile Include="Customers\CustomerViewFactory.cs" />
     <Compile Include="Customers\CustomerViewList.cs" />
-    <Compile Include="Goods\CartView.cs" />
-    <Compile Include="Goods\CartViewFactory.cs" />
-    <Compile Include="Goods\CartViewsList.cs" />
+    <Compile Include="ShoppingCart\CartView.cs" />
+    <Compile Include="ShoppingCart\CartViewFactory.cs" />
+    <Compile Include="ShoppingCart\CartViewsList.cs" />
     <Compile Include="Goods\GoodView.cs" />
     <Compile Include="Goods\GoodViewFactory.cs" />
     <Compile Include="Goods\GoodViewsList.cs" />
