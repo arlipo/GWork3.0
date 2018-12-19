@@ -10,9 +10,17 @@
 
   <ItemGroup>
     <Compile Remove="Pages\**" />
+    <Compile Remove="wwwroot\css\Accessories\**" />
+    <Compile Remove="wwwroot\css\Chemistry\**" />
     <Content Remove="Pages\**" />
+    <Content Remove="wwwroot\css\Accessories\**" />
+    <Content Remove="wwwroot\css\Chemistry\**" />
     <EmbeddedResource Remove="Pages\**" />
+    <EmbeddedResource Remove="wwwroot\css\Accessories\**" />
+    <EmbeddedResource Remove="wwwroot\css\Chemistry\**" />
     <None Remove="Pages\**" />
+    <None Remove="wwwroot\css\Accessories\**" />
+    <None Remove="wwwroot\css\Chemistry\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -74,9 +82,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\css\Accessories\" />
     <Folder Include="wwwroot\css\Account\" />
-    <Folder Include="wwwroot\css\Chemistry\" />
     <Folder Include="wwwroot\css\Manage\" />
   </ItemGroup>
 
