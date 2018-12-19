@@ -121,27 +121,22 @@ namespace Open.Sentry {
                 options => options.UseSqlServer(s));
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env) {
+            if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
                 app.UseDatabaseErrorPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
+            else { app.UseExceptionHandler("/Home/Error"); }
 
-            var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            var locOptions =
+                app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+
             app.UseRequestLocalization(locOptions.Value);
-
             app.UseStaticFiles();
-
             app.UseAuthentication();
 
-            app.UseMvc(routes =>
-            {
+            app.UseMvc(routes => {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

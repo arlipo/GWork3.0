@@ -22,32 +22,24 @@
             <ul class="nav navbar-nav">
                 <li>
                     <div class="dropdown">
-                        <button class="dropbtn" style="color: white">@SharedLocalizer.GetLocalizedHtmlString("header.Products")</button>
+                        <button class="dropbtn">@SharedLocalizer.GetLocalizedHtmlString("header.Products")</button>
                         <div class="dropdown-content">
-                            <a asp-area="" asp-controller="Goods" asp-action="Index" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.All")</a>
-                            <a asp-area="" asp-controller="SpareParts" asp-action="Index" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.SpareParts")</a>
-                            <a asp-area="" asp-controller="Accessories" asp-action="Index" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.Accessories")</a>
-                            <a asp-area="" asp-controller="Chemistry" asp-action="Index" style="color: black">@SharedLocalizer.GetLocalizedHtmlString("header.Chemistry")</a>
+                            <a asp-area="" asp-controller="Goods" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.All")</a>
+                            <a asp-area="" asp-controller="SpareParts" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.SpareParts")</a>
+                            <a asp-area="" asp-controller="Accessories" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.Accessories")</a>
+                            <a asp-area="" asp-controller="Chemistry" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.Chemistry")</a>
                         </div>
                     </div>
                 </li>
                 <li><a asp-area="" asp-controller="Home" asp-action="About" style="color: white">@SharedLocalizer.GetLocalizedHtmlString("header.HelpContact")</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="Team" style="color: white">@SharedLocalizer.GetLocalizedHtmlString("header.Team")</a></li>
-                
-               
-
-                @if (User.Identity.IsAuthenticated)
-                {
-                    if (User.IsInRole("Admin"))
-                    {
-                        <li><a asp-area="" asp-controller="Home" asp-action="Money" style="color: white">@SharedLocalizer.GetLocalizedHtmlString("header.Money")</a></li>
-                    }
-                }
+                <li><a asp-area="" asp-controller="Cart" asp-action="Index" class="btn btn-info cart"><span class="glyphicon glyphicon-shopping-cart" style="position: absolute; left: 5px;top:13px"></span>
+                    <p class="p">@SharedLocalizer.GetLocalizedHtmlString("header.ShoppingCart")</p>
+                    </a></li>
             </ul>
-            <a asp-area="" asp-controller="Cart" asp-action="Index" class="btn btn-info" style="position: relative;top: 8px"><span class="glyphicon glyphicon-shopping-cart"></span> @SharedLocalizer.GetLocalizedHtmlString("header.ShoppingCart")</a>
-            <div class="nav navbar-nav navbar-right" style="position: relative;left: 1px">
-                <form>
-                    
+            
+            <div class="nav navbar-nav navbar-right" style="position: relative; left: 10px;">
+                <form>                   
                     @await Html.PartialAsync("_SelectLanguagePartial")
                 </form>
             </div>

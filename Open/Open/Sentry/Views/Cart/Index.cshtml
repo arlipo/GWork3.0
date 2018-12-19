@@ -1,7 +1,6 @@
-﻿@using Open.Domain.Common
-@using Open.Sentry.Extensions
+﻿@using Open.Sentry.Extensions
 @model Open.Facade.ShoppingCart.CartViewsList
-
+<link rel="stylesheet" type="text/css" href="~/css/Cart/index.css"/>
 <h1>Cart</h1>
 
 <div class="container text-left" style="background-color: #B3CBDE; opacity: 70;">
@@ -9,10 +8,12 @@
     <table class="table" style="background-color: #B3CBDE; color:black;">
         @{var dummy = Model.FirstOrDefault();}
         <thead>
+        <tr>
             @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
             @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.UnitPrice)
             @Html.SortColumnHeaderFor(ViewData["SortQuantity"], model => dummy.Quantity)
             @Html.SortColumnHeaderFor(ViewData["SortTotalPrice"], model => dummy.TotalPrice)
+        </tr>
         </thead>
         <tbody>
         @foreach (var item in Model) {
