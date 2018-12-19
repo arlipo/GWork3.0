@@ -1,5 +1,6 @@
 ﻿@using Open.Sentry.Extensions
 @model Open.Core.IPaginatedList<Open.Facade.Goods.GoodView>
+<link rel="stylesheet" href="~/css/Goods/goods.css" />
 
 @{
 
@@ -16,14 +17,8 @@
     }
 }
 
-<style>
-    Title {
-        color: aliceblue;
-    }
-</style>
-
 <body>
-    <table class="table" style="background-color: #B3CBDE; color:black;">
+    <table class="table">
         @{var dummy = Model.FirstOrDefault();}
         <thead>
             <tr>

@@ -3,6 +3,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="~/css/Goods/goods.css" />
 @{
 
     ViewBag.Title = "Goods";
@@ -10,22 +11,20 @@
 }
 
 @section Create
-{
-    @if (User.Identity.IsAuthenticated) {
-        if (User.IsInRole("Admin")) {
+    {
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (User.IsInRole("Admin"))
+        {
             <a asp-controller="Goods" asp-action="Create">Add new product</a>
         }
     }
 }
 
-<style>
-    Title {
-        color: aliceblue;
-    }
-</style>
+
 
 <body>
-    <table class="table" style="background-color: #B3CBDE; color:black;">
+    <table class="table">
         @{var dummy = Model.FirstOrDefault();}
         <thead>
             <tr>

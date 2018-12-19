@@ -1,5 +1,6 @@
 ﻿@using Open.Sentry.Extensions
 @model Open.Core.IPaginatedList<Open.Facade.Goods.GoodView>
+<link rel="stylesheet" href="~/css/Goods/goods.css" />
 
     @{
 
@@ -7,22 +8,19 @@
         Layout = "_IndexPartial";
     }
 
-@section Create
-{
-    @if (User.Identity.IsAuthenticated) {
-        if (User.IsInRole("Admin")) {
-            <a asp-controller="Goods" asp-action="Create">Add new product</a>
+    @section Create
+        {
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (User.IsInRole("Admin"))
+            {
+                <a asp-controller="Goods" asp-action="Create">Add new product</a>
+            }
         }
     }
-}
-    <style>
-        Title {
-            color: aliceblue;
-        }
-    </style>
 
     <body>
-        <table class="table" style="background-color: #B3CBDE; color:aliceblue;">
+        <table class="table">
             @{var dummy = Model.FirstOrDefault();}
             <thead>
                 <tr>

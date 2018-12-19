@@ -1,20 +1,21 @@
-﻿ 
-        body {
-            background-image: url(../../back.jpg);
-            opacity: 0.89;
-        }
+﻿
+body {
+
+	background-image: url(../../back.jpg);
+	opacity: 0.89;
+}
 
         footer {
             color: aliceblue;
         }
 
 .navbar {
-    background-color: black;
-    opacity: initial;
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    width: 100%;
+
+	background-color: black;
+	opacity: initial;
+	z-index: 2;
+	top: 0;
+	width: 100%;
 }
 
 

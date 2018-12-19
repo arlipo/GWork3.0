@@ -77,7 +77,6 @@
     <Folder Include="wwwroot\css\Accessories\" />
     <Folder Include="wwwroot\css\Account\" />
     <Folder Include="wwwroot\css\Chemistry\" />
-    <Folder Include="wwwroot\css\Goods\" />
     <Folder Include="wwwroot\css\Manage\" />
   </ItemGroup>
 
