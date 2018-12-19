@@ -64,10 +64,11 @@
     position: absolute;
     top: 8px;
     height: 40px;
-    width: 120px;
+    width: 126px;
 }
 
 .p {
+    font-size: 15px;
     position: absolute;
     top: 10px;
     left: 24px;
