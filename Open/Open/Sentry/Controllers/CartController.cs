@@ -26,8 +26,7 @@ namespace Open.Sentry.Controllers
         }
 
         public IActionResult CheckOut() {
-
-            return RedirectToAction("Index");
+            return View("Checkout");
         }
 
         public IActionResult PlusOne(string id)
