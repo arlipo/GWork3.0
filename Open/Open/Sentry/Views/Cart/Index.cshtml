@@ -1,11 +1,11 @@
 ﻿@using Open.Sentry.Extensions
 @model Open.Facade.ShoppingCart.CartViewsList
 <link rel="stylesheet" type="text/css" href="~/css/Cart/index.css"/>
-<h1>Cart</h1>
+
 
 <div class="container text-left" style="background-color: #B3CBDE; opacity: 70;">
-
-    <table class="table" style="background-color: #B3CBDE; color:black;">
+    <h1>Cart</h1>
+    <table class="table">
         @{var dummy = Model.FirstOrDefault();}
         <thead>
             <tr>
@@ -23,9 +23,9 @@
                     <td>@Html.DisplayFor(modelItem => item.Name)</td>
                     <td>&euro;@Html.DisplayFor(modelItem => item.UnitPrice)</td>
                     <td>
-                        <a asp-action="MinusOne" asp-route-id="@item.ID" class="btn btn-default" style="position: relative; right: 10px">-</a>
+                        <a asp-action="MinusOne" asp-route-id="@item.ID" class="btn btn-default" style="border-radius: 50%; background-color:#dce6ef; position: relative; right: 10px">-</a>
                         @Html.DisplayFor(modelItem => item.Quantity)
-                        <a asp-action="PlusOne" asp-route-id="@item.ID" class="btn btn-default" style="position: relative; left: 10px">+</a>
+                        <a asp-action="PlusOne" asp-route-id="@item.ID" class="btn btn-default" style="background-color:#dce6ef; border-radius: 50%; position: relative; left: 10px" >+</a>
                     </td>
                     <td>&euro;@Html.DisplayFor(modelItem => item.TotalPrice)</td>
                     <td><a asp-action="Remove" asp-route-id="@item.ID" class="btn btn-default">Remove</a></td>
@@ -34,10 +34,10 @@
         </tbody>
     </table>
     <form action="http://localhost:57494/goods">
-        <button class="btn btn-info">Continue Shopping</button>
+        <button class="btn btn-default" style=" background-color:#4e84b1;">Continue Shopping</button>
     </form>
     <div style="float: right; position: relative; right: 25px; bottom: 10px">
-        <a asp-action="CheckOut" class="btn btn-success">CHECKOUT</a>
+        <a asp-action="CheckOut" class="btn btn-default" style=" background-color:#4e84b1; ">CHECKOUT</a>
     </div>
     <div style="float: right; position: relative; right: 60px">
         <p><strong>Total: &euro;@Model.SubTotal()</strong></p>

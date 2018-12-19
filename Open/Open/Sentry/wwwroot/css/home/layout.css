@@ -20,7 +20,7 @@ body {
 
 
 .dropbtn {
-    background-image: url(../../back.jpg);
+ background-color:black;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -35,21 +35,21 @@ body {
 .dropdown-content {
 	display: none;
 	position: absolute;
-	background-color: #24547B;
+	background-color: black;
 	min-width: 160px;
 	box-shadow: 3px 5px 16px 0 black;
 	z-index: 1;
 }
 
             .dropdown-content a {
-                color: black;
+                color: white;
                 padding: 12px 16px;
                 text-decoration: none;
                 display: block;
             }
 
                 .dropdown-content a:hover {
-                    background-color: #B3CBDE;
+                    background-color: #24547B;
                 }
 
         .dropdown:hover .dropdown-content {
@@ -74,3 +74,4 @@ body {
     top: 10px;
     left: 24px;
 }
+

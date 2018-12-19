@@ -6,3 +6,7 @@ body {
 	background-color: #B3CBDE;
 
 }
+tr:nth-child(even) {
+	background-color: #95b5d0;
+}
+
