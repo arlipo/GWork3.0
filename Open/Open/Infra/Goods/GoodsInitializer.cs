@@ -91,7 +91,7 @@ namespace Open.Infra.Goods {
                     "Natural rubber matting provides years of trouble-free service. Our matting provides excellent insulation" +
                     " from the cold. ",
                 Type = GoodTypes.Accessories,
-                Price = "15,99",
+                Price = "15.99",
                 Quantity = "4",
                 Brand = "1"
 
