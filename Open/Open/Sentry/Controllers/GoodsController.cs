@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Open.Aids;
 using Open.Core;
-using Open.Data.Goods;
 using Open.Data.ShoppingCart;
 using Open.Domain.Goods;
-using Open.Domain.ShoppingCart;
 using Open.Facade.Goods;
 
 namespace Open.Sentry.Controllers {
@@ -40,6 +37,12 @@ namespace Open.Sentry.Controllers {
             ViewData["CurrentFilter"] = searchString;
             repository.SearchString = searchString;
             repository.PageIndex = page ?? 1;
+            var l = await getPaginatedList(category);
+            return View(new GoodViewsList(l));
+        }
+
+        private async Task<IPaginatedList<Good>> getPaginatedList(string category)
+        {
             IPaginatedList<Good> l;
             if (category != null && categories.ContainsKey(category))
             {
@@ -51,7 +54,7 @@ namespace Open.Sentry.Controllers {
                 l = await repository.GetObjectsList();
                 ViewBag.Title = "All Products";
             }
-            return View(new GoodViewsList(l));
+            return l;
         }
 
         public async Task<IActionResult> Edit(string id) {
