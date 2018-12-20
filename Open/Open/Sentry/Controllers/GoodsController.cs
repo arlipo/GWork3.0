@@ -41,8 +41,16 @@ namespace Open.Sentry.Controllers {
             repository.SearchString = searchString;
             repository.PageIndex = page ?? 1;
             IPaginatedList<Good> l;
-            if (category != null) l = await repository.GetWithSpecificType(categories[category]);
-            else l = await repository.GetObjectsList();
+            if (category != null && categories.ContainsKey(category))
+            {
+                l = await repository.GetWithSpecificType(categories[category]);
+                ViewBag.Title = category;
+            }
+            else
+            {
+                l = await repository.GetObjectsList();
+                ViewBag.Title = "All Products";
+            }
             return View(new GoodViewsList(l));
         }
 
