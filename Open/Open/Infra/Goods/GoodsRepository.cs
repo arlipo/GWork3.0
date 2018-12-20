@@ -24,12 +24,13 @@ namespace Open.Infra.Goods {
             return new GoodsList(l, p);
         }
         public async Task<PaginatedList<Good>> GetWithSpecificType(GoodTypes type) {
-            var countries = getSorted().Where(s => s.Contains(SearchString)).AsNoTracking();
-            var count = await countries.CountAsync();
+            var goods = getSorted().Where(s => s.Contains(SearchString)).AsNoTracking();
+            var count = await goods.CountAsync();
             var p = new RepositoryPage(count, PageIndex, PageSize);
-            var items = await countries.Skip(p.FirstItemIndex).Take(p.PageSize).ToListAsync();
+            var items = await goods.ToListAsync();
             var newList = items.Where(x => x.Type == type).ToList();
-            return createList(newList, p);
+            var finalList = newList.Skip(p.FirstItemIndex).Take(p.PageSize).ToList();
+            return createList(finalList, p);
         }
     }
 }
