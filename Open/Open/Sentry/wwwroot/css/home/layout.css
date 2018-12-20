@@ -1,6 +1,7 @@
 ﻿
 body {
-
+    position: relative;
+    top: 40px;
 	background-image: url(../../back.jpg);
 	opacity: 0.89;
 }
@@ -10,7 +11,7 @@ body {
         }
 
 .navbar {
-
+    position: fixed;
 	background-color: black;
 	opacity: initial;
 	z-index: 2;
