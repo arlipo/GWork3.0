@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -17,6 +18,12 @@ namespace Open.Sentry.Controllers {
 
     public class GoodsController : Controller
     {
+        private static readonly Dictionary<string, GoodTypes> categories = new Dictionary<string, GoodTypes>
+        {
+            {"Chemistry", GoodTypes.Chemistry},
+            {"Accessories", GoodTypes.Accessories},
+            {"SpareParts", GoodTypes.SpareParts}
+        };
         private readonly IGoodsRepository repository;
         internal const string properties =
             "ID, Name, Code, ImageType, Description, Price, Type, Image";
@@ -26,13 +33,16 @@ namespace Open.Sentry.Controllers {
         }
 
         public async Task<IActionResult> Index(string sortOrder = null, string currentFilter = null,
+            string category = null,
             string searchString = null, int? page = null) {
             if (searchString != null) page = 1;
             else searchString = currentFilter;
             ViewData["CurrentFilter"] = searchString;
             repository.SearchString = searchString;
             repository.PageIndex = page ?? 1;
-            var l = await repository.GetObjectsList();
+            IPaginatedList<Good> l;
+            if (category != null) l = await repository.GetWithSpecificType(categories[category]);
+            else l = await repository.GetObjectsList();
             return View(new GoodViewsList(l));
         }
 

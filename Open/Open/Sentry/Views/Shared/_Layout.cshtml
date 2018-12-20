@@ -24,9 +24,9 @@
                         <button class="dropbtn">@SharedLocalizer.GetLocalizedHtmlString("header.Products")</button>
                         <div class="dropdown-content">
                             <a asp-area="" asp-controller="Goods" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.All")</a>
-                            <a asp-area="" asp-controller="SpareParts" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.SpareParts")</a>
-                            <a asp-area="" asp-controller="Accessories" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.Accessories")</a>
-                            <a asp-area="" asp-controller="Chemistry" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.Chemistry")</a>
+                            <a asp-area="" asp-controller="Goods" asp-route-category="SpareParts" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.SpareParts")</a>
+                            <a asp-area="" asp-controller="Goods" asp-route-category="Accessories" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.Accessories")</a>
+                            <a asp-area="" asp-controller="Goods" asp-route-category="Chemistry" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.Chemistry")</a>
                         </div>
                     </div>
                 </li>
