@@ -25,10 +25,10 @@ namespace Open.Infra.Goods {
         }
         public async Task<PaginatedList<Good>> GetWithSpecificType(GoodTypes type) {
             var goods = getSorted().Where(s => s.Contains(SearchString)).AsNoTracking();
-            var count = await goods.CountAsync();
-            var p = new RepositoryPage(count, PageIndex, PageSize);
             var items = await goods.ToListAsync();
             var newList = items.Where(x => x.Type == type).ToList();
+            var count = newList.Count;
+            var p = new RepositoryPage(count, PageIndex, PageSize);
             var finalList = newList.Skip(p.FirstItemIndex).Take(p.PageSize).ToList();
             return createList(finalList, p);
         }
