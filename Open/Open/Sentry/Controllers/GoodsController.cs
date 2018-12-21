@@ -57,10 +57,35 @@ namespace Open.Sentry.Controllers {
             return l;
         }
 
+        public async Task<IActionResult> Details(string id)
+        {
+            var c = await repository.GetObject(id);
+            return View(GoodViewFactory.Create(c));
+        }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            var c = await repository.GetObject(id);
+            return View(GoodViewFactory.Create(c));
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            var c = await repository.GetObject(id);
+            await repository.DeleteObject(c);
+            return RedirectToAction("Index");
+        }
+
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(string id) {
             var c = await repository.GetObject(id);
             return View(GoodViewFactory.Create(c));
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost] public async Task<IActionResult> Edit([Bind(properties)] GoodView c) {
             if (!ModelState.IsValid) return View(c);
             var o = await repository.GetObject(c.Code);
@@ -72,6 +97,8 @@ namespace Open.Sentry.Controllers {
             await repository.UpdateObject(o);
             return RedirectToAction("Index");
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpGet] public IActionResult Create() {
             return View();
         }

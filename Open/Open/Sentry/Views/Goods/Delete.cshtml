@@ -1,0 +1,21 @@
+﻿@using Open.Sentry.Extensions
+@model Open.Facade.Goods.GoodView
+
+@{
+    ViewBag.Title = "Delete";
+    ViewBag.Button = "Delete";
+    Layout = "_DeletePartial";
+}
+<body>
+    @Html.ViewingControlsFor(model => model.Name)
+    @Html.ViewingControlsFor(model => model.Code)
+    @Html.ViewingControlsFor(model => model.Type)
+    @Html.ViewingControlsFor(model => model.Price)
+    @Html.ViewingControlsFor(model => model.Description)
+</body>
+
+@section Actions{
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+    |
+    @Html.ActionLink("Back to List", "Index")
+}

@@ -1,0 +1,24 @@
+﻿@using Open.Sentry.Extensions
+@model Open.Facade.Goods.GoodView
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "_DetailsPartial";
+}
+<body>
+    @Html.ViewingControlsFor(o => Model.Name)
+    @Html.ViewingControlsFor(o => Model.Type)
+    @Html.ViewingControlsFor(o => Model.Price)
+    @Html.ViewingControlsFor(o => Model.Description)
+    @if (User.IsInRole("Admin"))
+    {
+        @Html.ViewingControlsFor(o => Model.Code)
+        @Html.ViewingControlsFor(o => Model.Quantity)
+    }
+</body>
+
+@section Actions{
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID })
+    |
+    @Html.ActionLink("Back to List", "Index")
+}

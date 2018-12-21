@@ -9,13 +9,10 @@
 }
 
 @section Create
+{
+    @if (User.IsInRole("Admin"))
     {
-    @if (User.Identity.IsAuthenticated)
-    {
-        if (User.IsInRole("Admin"))
-        {
-            <a asp-controller="Goods" asp-action="Create">Add new product</a>
-        }
+        <a asp-controller="Goods" asp-action="Create">Add new product</a>
     }
 }
 
@@ -36,7 +33,8 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@if(User.IsInRole("Admin")) {@Html.DisplayFor(modelItem => item.Name)}
+                        else { <a asp-action="Details" asp-route-id="@item.ID">@item.Name</a>}</td>
                     <td>&euro;@Html.DisplayFor(modelItem => item.Price)</td>
                     <td>@Html.DisplayFor(modelItem => item.Image)</td>
                     <td>@Html.DisplayFor(modelItem => item.Quantity)</td>

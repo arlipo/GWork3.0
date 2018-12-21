@@ -3,18 +3,17 @@
 
 @{
     ViewBag.Title = "Edit";
-    ViewBag.SubTitle = $"Goods ({Model.Code})";
     ViewBag.Button = "Save";
     Layout = "_EditPartial";
 }
 
 <body >
-    @Html.EditingControlsFor(model => model.Description)
-    @Html.EditingControlsFor(model => model.Name)
-    @Html.EditingControlsFor(model => model.ValidFrom)
-    @Html.EditingControlsFor(model => model.ValidTo)
-    @Html.EditingControlsFor(model => model.Image)
-    @Html.EditingControlsFor(model => model.Price)
+@Html.ViewingControlsFor(model => model.Code)
+@Html.EditingControlsFor(model => model.Description)
+@Html.EditingControlsFor(model => model.Name)
+@Html.EditingControlsForEnum(model => model.Type)
+@Html.EditingControlsFor(model => model.Image)
+@Html.EditingControlsFor(model => model.Price)
 </body>
 
 @section Actions{
