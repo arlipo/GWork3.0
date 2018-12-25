@@ -22,35 +22,35 @@ namespace Open.Tests.Sentry.Controllers {
             var a = GetUrl.ForControllerAction<HomeController>(x => x.About());
             await testControllerAction(a, "<h2>About</h2>");
         }
-        [TestMethod] public async Task ContactTest() {
-            var a = GetUrl.ForControllerAction<HomeController>(x => x.Contact());
-            await testControllerAction(a, "<h2>Contact</h2>");
-        }
+        //[TestMethod] public async Task ContactTest() {
+        //    var a = GetUrl.ForControllerAction<HomeController>(x => x.Contact());
+        //    await testControllerAction(a, "<h2>Contact</h2>");
+        //}
         [TestMethod] public async Task ErrorTest() {
             var a = GetUrl.ForControllerAction<HomeController>(x => x.Error());
             await testControllerAction(a, "<h1 class=\"text-danger\">Error.</h1>");
         }
-        [TestMethod] public async Task MoneyTest() {
-            var a = GetUrl.ForControllerAction<HomeController>(x => x.Money());
-            await testControllerAction(a,
-                "<h2>Money</h2>",
-                "<h3>Money related stuff.</h3>",
-                "<li><a href=\"/Countries\">Countries</a></li>",
-                "<li><a href=\"/Currencies\">Currencies</a></li>",
-                "<li><a href=\"/RateTypes\">Rate Types</a></li>",
-                "<li><a href=\"/Rates\">Rates</a></li>",
-                "<li><a href=\"/PaymentMethods\">Payment methods</a></li>",
-                "<li><a href=\"/Payments\">Payments</a></li>",
-                "<li><a href=\"/Calculator\">Calculator</a></li>");
-        }
-        [TestMethod] public async Task ContactsTest() {
-            var a = GetUrl.ForControllerAction<HomeController>(x => x.Contacts());
-            await testControllerAction(a,
-                "<h2>Contacts</h2>",
-                "<h3>Contacts related stuff.</h3>",
-                "<li><a href=\"/Countries\">Countries</a></li>",
-                "<li><a href=\"/Contacts\">Contacts</a></li>");
-        }
+        //[TestMethod] public async Task MoneyTest() {
+        //    var a = GetUrl.ForControllerAction<HomeController>(x => x.Money());
+        //    await testControllerAction(a,
+        //        "<h2>Money</h2>",
+        //        "<h3>Money related stuff.</h3>",
+        //        "<li><a href=\"/Countries\">Countries</a></li>",
+        //        "<li><a href=\"/Currencies\">Currencies</a></li>",
+        //        "<li><a href=\"/RateTypes\">Rate Types</a></li>",
+        //        "<li><a href=\"/Rates\">Rates</a></li>",
+        //        "<li><a href=\"/PaymentMethods\">Payment methods</a></li>",
+        //        "<li><a href=\"/Payments\">Payments</a></li>",
+        //        "<li><a href=\"/Calculator\">Calculator</a></li>");
+        //}
+        //[TestMethod] public async Task ContactsTest() {
+        //    var a = GetUrl.ForControllerAction<HomeController>(x => x.Contacts());
+        //    await testControllerAction(a,
+        //        "<h2>Contacts</h2>",
+        //        "<h3>Contacts related stuff.</h3>",
+        //        "<li><a href=\"/Countries\">Countries</a></li>",
+        //        "<li><a href=\"/Contacts\">Contacts</a></li>");
+        //}
     }
 }
 
