@@ -18,6 +18,7 @@ using System.Globalization;
 using System.Reflection;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
+using Open.Aids.Hub;
 using Open.Sentry.Resouces;
 
 namespace Open.Sentry {
@@ -103,6 +104,7 @@ namespace Open.Sentry {
                 });
 
             services.AddMvc();
+            services.AddSignalR();
         }
     
 
@@ -135,6 +137,8 @@ namespace Open.Sentry {
             app.UseRequestLocalization(locOptions.Value);
             app.UseStaticFiles();
             app.UseAuthentication();
+
+            //app.UseSignalR(route => { route.MapHub<ChatHub>("/chatHub"); });
 
             app.UseMvc(routes => {
                 routes.MapRoute(
