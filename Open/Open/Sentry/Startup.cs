@@ -137,7 +137,8 @@ namespace Open.Sentry {
             app.UseStaticFiles();
             app.UseAuthentication();
 
-            app.UseSignalR(route => { route.MapHub<ChatHub.ChatHub>("/chatHub"); });
+            app.UseSignalR(routes => 
+                { routes.MapHub<ChatHub.ChatHub>("/chatHub"); });
 
             app.UseMvc(routes => {
                 routes.MapRoute(
