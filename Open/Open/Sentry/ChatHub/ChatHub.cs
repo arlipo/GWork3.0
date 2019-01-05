@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using System;
+using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
 
 namespace Open.Sentry.ChatHub
@@ -25,14 +26,14 @@ namespace Open.Sentry.ChatHub
             await Clients.All.SendAsync("ListAction", Context.User.Identity.Name);
         }
 
-        //public override async Task OnConnectedAsync()
-        //{
-        //    await Clients.All.SendAsync("SendAction", Context.User.Identity.Name, "joined");
-        //}
+        public override async Task OnConnectedAsync()
+        {
+            await Clients.All.SendAsync("SendAction", Context.User.Identity.Name, "joined");
+        }
 
-        //public override async Task OnDisconnectedAsync(Exception ex)
-        //{
-        //    await Clients.All.SendAsync("SendAction", Context.User.Identity.Name, "left");
-        //}
+        public override async Task OnDisconnectedAsync(Exception ex)
+        {
+            await Clients.All.SendAsync("SendAction", Context.User.Identity.Name, "left");
+        }
     }
 }

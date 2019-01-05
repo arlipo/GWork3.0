@@ -24,31 +24,39 @@
 </head>
 
 <body>
-    <div class="container-fluid bg-1 text-center">
-        <h2>@SharedLocalizer.GetLocalizedHtmlString("Home.About.HowCan")</h2>
-        <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.GetHelp")</p>
-        <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.Browse")</p>
-        <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home">@SharedLocalizer.GetLocalizedHtmlString("Home.About.Returns")<span class="glyphicon glyphicon-usd"></span></a></li>
-            <li><a data-toggle="tab" href="#menu1">@SharedLocalizer.GetLocalizedHtmlString("Home.About.Shipping") <span class="glyphicon glyphicon-home"></span></a></li>
-            <li><a data-toggle="tab" href="#menu2">@SharedLocalizer.GetLocalizedHtmlString("Home.About.Account")<span class="glyphicon glyphicon-user"></span></a></li>
-        </ul>
-        <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
-                <h3>@SharedLocalizer.GetLocalizedHtmlString("Home.About.WhereItem")</h3>
-                <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.WhereTEXT")</p>
+<div class="container-fluid bg-1 text-center">
+    <h2>@SharedLocalizer.GetLocalizedHtmlString("Home.About.HowCan")</h2>
+    <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.GetHelp")</p>
+    <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.Browse")</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">@SharedLocalizer.GetLocalizedHtmlString("Home.About.Returns")<span class="glyphicon glyphicon-usd"></span></a></li>
+        <li><a data-toggle="tab" href="#menu1">@SharedLocalizer.GetLocalizedHtmlString("Home.About.Shipping") <span class="glyphicon glyphicon-home"></span></a></li>
+        <li><a data-toggle="tab" href="#menu2">@SharedLocalizer.GetLocalizedHtmlString("Home.About.Account")<span class="glyphicon glyphicon-user"></span></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <h3>@SharedLocalizer.GetLocalizedHtmlString("Home.About.WhereItem")</h3>
+            <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.WhereTEXT")</p>
 
-            </div>
-            <div id="menu1" class="tab-pane fade">
-                <h3>@SharedLocalizer.GetLocalizedHtmlString("Home.About.ShippingBuyers")</h3>
-                <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.ShippingTEXT")</p>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <h3>@SharedLocalizer.GetLocalizedHtmlString("Home.About.ShippingBuyers")</h3>
+            <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.ShippingTEXT")</p>
 
-            </div>
-            <div id="menu2" class="tab-pane fade">
-                <h3>@SharedLocalizer.GetLocalizedHtmlString("Home.About.AccStatus")</h3>
-                <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.AccStatusTEXT")</p>
-            </div>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <h3>@SharedLocalizer.GetLocalizedHtmlString("Home.About.AccStatus")</h3>
+            <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.AccStatusTEXT")</p>
         </div>
     </div>
+</div>
+<div id="chat">
+    <form id="frm-send-message" action="#">
+        <label for="message">Message:</label>
+        <input type="text" id="message" />
+        <input type="submit" id="send" value="Send" />
+    </form>
+    <ul id="messages" style="text-align: center; list-style:none"></ul>
+</div>
 </body>
 </html>
