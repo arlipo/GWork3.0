@@ -24,31 +24,84 @@
 </head>
 
 <body>
-    <div class="container-fluid bg-1 text-center">
-        <h2>@SharedLocalizer.GetLocalizedHtmlString("Home.About.HowCan")</h2>
-        <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.GetHelp")</p>
-        <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.Browse")</p>
-        <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home">@SharedLocalizer.GetLocalizedHtmlString("Home.About.Returns")<span class="glyphicon glyphicon-usd"></span></a></li>
-            <li><a data-toggle="tab" href="#menu1">@SharedLocalizer.GetLocalizedHtmlString("Home.About.Shipping") <span class="glyphicon glyphicon-home"></span></a></li>
-            <li><a data-toggle="tab" href="#menu2">@SharedLocalizer.GetLocalizedHtmlString("Home.About.Account")<span class="glyphicon glyphicon-user"></span></a></li>
-        </ul>
-        <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
-                <h3>@SharedLocalizer.GetLocalizedHtmlString("Home.About.WhereItem")</h3>
-                <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.WhereTEXT")</p>
+<div class="container-fluid bg-1 text-center">
+    <h2>@SharedLocalizer.GetLocalizedHtmlString("Home.About.HowCan")</h2>
+    <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.GetHelp")</p>
+    <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.Browse")</p>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">@SharedLocalizer.GetLocalizedHtmlString("Home.About.Returns")<span class="glyphicon glyphicon-usd"></span></a></li>
+        <li><a data-toggle="tab" href="#menu1">@SharedLocalizer.GetLocalizedHtmlString("Home.About.Shipping") <span class="glyphicon glyphicon-home"></span></a></li>
+        <li><a data-toggle="tab" href="#menu2">@SharedLocalizer.GetLocalizedHtmlString("Home.About.Account")<span class="glyphicon glyphicon-user"></span></a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <h3>@SharedLocalizer.GetLocalizedHtmlString("Home.About.WhereItem")</h3>
+            <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.WhereTEXT")</p>
 
-            </div>
-            <div id="menu1" class="tab-pane fade">
-                <h3>@SharedLocalizer.GetLocalizedHtmlString("Home.About.ShippingBuyers")</h3>
-                <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.ShippingTEXT")</p>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <h3>@SharedLocalizer.GetLocalizedHtmlString("Home.About.ShippingBuyers")</h3>
+            <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.ShippingTEXT")</p>
 
-            </div>
-            <div id="menu2" class="tab-pane fade">
-                <h3>@SharedLocalizer.GetLocalizedHtmlString("Home.About.AccStatus")</h3>
-                <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.AccStatusTEXT")</p>
-            </div>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <h3>@SharedLocalizer.GetLocalizedHtmlString("Home.About.AccStatus")</h3>
+            <p>@SharedLocalizer.GetLocalizedHtmlString("Home.About.AccStatusTEXT")</p>
         </div>
     </div>
+</div>
+@*<div class="form-group col-xl-12">  
+    <h1 style="color: White; font-style: oblique;font-size: medium" id="label1">You can leave a message or feedback for us down below</h1><br />  
+    <textarea class="form-control" rows="4" cols="40" id="message" placeholder="Share what's in your mind"></textarea>  
+    <br />  
+    <input type="button" class="btn btn-primary" id="sendmessage" value="Send" />  
+    <br />  
+    <br />  
+    <h1 style="color: white;font-style:oblique;font-size:medium" id="label2">Group Chat Conversations History</h1>  
+    <div class="container chatArea">  
+        <input type="hidden" id="displayname" />  
+        <ul id="discussion"></ul>  
+    </div>  
+</div>*@  
+
+@*@section scripts {  
+    <script src="~/Scripts/jquery.signalR-2.2.1.min.js"></script>  
+    <script src="~/signalr/hubs"></script>  
+    <script>  
+        $(function () {  
+            var chat = $.connection.chatHub;  
+            chat.client.Send = function (name, message) {  
+                $('#discussion').append('<ul style="list-style-type:square"><li><strong style="color:red;font-style:normal;font-size:medium;text-transform:uppercase">' + htmlEncode(name) + '  ' + '<strong style="color:black;font-style:normal;font-size:medium;text-transform:lowercase">said</strong>'  
+                    + '</strong>: ' + '<strong style="color:blue;font-style:oblique;font-size:medium">' + htmlEncode(message) + '</strong>' + '</li></ul>');  
+            };  
+            $('#displayname').val(prompt('Your Good Name Please:', ''));  
+            $('#message').focus();  
+            $.connection.hub.start().done(function () {  
+                $('#sendmessage').click(function () {  
+                    chat.server.send($('#displayname').val(), $('#message').val());  
+                    $('#message').val('').focus();  
+                });  
+            });  
+        });  
+        function htmlEncode(value) {  
+            var encodedValue = $('<div />').text(value).html();  
+            return encodedValue;  
+        }  
+    </script>  
+}*@   
+
+<div id="chat">
+    <form id="frm-send-message" action="#">
+        <br />
+        <h1 style="color: White; font-style: oblique;font-size: medium"
+            id="label1">
+            You can leave a message or feedback for us down below
+        </h1><br />
+        <label for="message">Message:</label>
+        <textarea class="form-control" rows="4" cols="40" id="message" placeholder="Share what's in your mind"></textarea><br/>
+        <input type="submit" id="send" value="Send" />
+    </form>
+    <ul id="messages" style="text-align: center; list-style: none"></ul>
+</div>
 </body>
 </html>

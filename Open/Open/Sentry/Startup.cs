@@ -11,14 +11,13 @@ using Open.Infra.Goods;
 using Open.Sentry.Data;
 using Open.Sentry.Models;
 using Open.Sentry.Services;
-using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
+using Open.Sentry.ChatHub;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
-using Open.Aids.Hub;
 using Open.Sentry.Resouces;
 
 namespace Open.Sentry {
@@ -138,7 +137,8 @@ namespace Open.Sentry {
             app.UseStaticFiles();
             app.UseAuthentication();
 
-            //app.UseSignalR(route => { route.MapHub<ChatHub>("/chatHub"); });
+            app.UseSignalR(routes => 
+                { routes.MapHub<ChatHub.ChatHub>("/chatHub"); });
 
             app.UseMvc(routes => {
                 routes.MapRoute(
