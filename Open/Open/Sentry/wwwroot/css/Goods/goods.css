@@ -1,9 +1,10 @@
 ﻿Title {
-	color: aliceblue;
+	color: blue;
 }
 body {
 	color: black;
 	background-color: #B3CBDE;
+    font-size: 140%;
 
 }
 tr:nth-child(even) {

@@ -1,6 +1,6 @@
 ﻿@using Open.Sentry.Resouces
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     @inject LocService SharedLocalizer
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @RenderSection("Scripts", required: false)
 </head>
-<body>
+
 <nav class="navbar navbar">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -32,30 +32,34 @@
                 </li>
                 <li><a asp-area="" asp-controller="Home" asp-action="About" style="color: white">@SharedLocalizer.GetLocalizedHtmlString("header.HelpContact")</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="Team" style="color: white">@SharedLocalizer.GetLocalizedHtmlString("header.Team")</a></li>
-                <li><a asp-area="" asp-controller="Cart" asp-action="Index" class="btn btn-info cart"><span class="glyphicon glyphicon-shopping-cart" style="position: absolute; left: 5px;top:13px"></span>
-                    <p class="p">@SharedLocalizer.GetLocalizedHtmlString("header.ShoppingCart")</p>
-                    </a></li>
+                <li>
+                    <a asp-area="" asp-controller="Cart" asp-action="Index" class="btn btn-info cart">
+                        <span class="glyphicon glyphicon-shopping-cart" style="position: absolute; left: 5px;top:13px"></span>
+                        <p class="p">@SharedLocalizer.GetLocalizedHtmlString("header.ShoppingCart")</p>
+                    </a>
+                </li>
             </ul>
-            
+
             <div class="nav navbar-nav navbar-right" style="position: relative; left: 10px;">
-                <form>                   
+                <form>
                     @await Html.PartialAsync("_SelectLanguagePartial")
                 </form>
             </div>
-            
+
             @await Html.PartialAsync("_LoginPartial")
-           
+
         </div>
     </div>
 </nav>
-<div class="container body-content">
-    <br/>
-    @RenderBody()
-    <hr/>
-    <footer>
-        <p>Made by Gwork Company</p>
-    </footer>
-</div> 
+<body>
+    <div class="container body-content">
+        <br />
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>Made by Gwork Company</p>
+        </footer>
+    </div>
 </body>
 </html>
 

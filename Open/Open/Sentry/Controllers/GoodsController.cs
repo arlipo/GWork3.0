@@ -87,13 +87,18 @@ namespace Open.Sentry.Controllers {
             return View(GoodViewFactory.Create(c));
         }
 
-        [Authorize(Roles = "Admin")]
-        [HttpPost] public async Task<IActionResult> Edit([Bind(properties)] GoodView c) {
+        [Authorize(Roles = "Admin")] [HttpPost]
+        public async Task<IActionResult> Edit([Bind(properties)] GoodView c, IFormFile file) {
             if (!ModelState.IsValid) return View(c);
-            var o = await repository.GetObject(c.Code);
+
+            var ImageData = FileHelper.ParseImageToBytes(file);
+
+            var o = await repository.GetObject(c.ID);
+
             o.Data.Name = c.Name;
             o.Data.Description = c.Description;
             o.Data.Price = c.Price;
+            o.Data.Image = ImageData;
 
             await repository.UpdateObject(o);
             return RedirectToAction("Index");
@@ -106,8 +111,9 @@ namespace Open.Sentry.Controllers {
 
         [Authorize(Roles = "Admin")] [HttpPost]
         public async Task<IActionResult> Create([Bind(properties)] GoodView c, IFormFile file) {
+            if (!ModelState.IsValid) return View(c);
 
-            var fileData = FileHelper.ParseImageToBytes(file);
+            var ImageData = FileHelper.ParseImageToBytes(file);
 
             c.ID = Guid.NewGuid().ToString();
             c.Code = GetRandom.Code();
@@ -115,11 +121,9 @@ namespace Open.Sentry.Controllers {
                 
             await validateId(c.ID, ModelState);
 
-            if (!ModelState.IsValid) return View(c);  
-
             var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
                 c.Quantity, c.Brand,
-                fileData);
+                ImageData);
             
             await repository.AddObject(o);
             return RedirectToAction("Index");

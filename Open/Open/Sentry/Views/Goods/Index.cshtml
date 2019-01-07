@@ -30,13 +30,21 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
-            {
+            @foreach (var item in Model) {
+
+
                 <tr>
                     <td>@if(User.IsInRole("Admin")) {@Html.DisplayFor(modelItem => item.Name)}
                         else { <a asp-action="Details" asp-route-id="@item.ID">@item.Name</a>}</td>
                     <td>&euro;@Html.DisplayFor(modelItem => item.Price)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Image)</td>
+                                                     
+                    <td>@{
+                            if (item.Image!=null) {
+                                var base64EncodedImg = Convert.ToBase64String(item.Image);
+                                <img src="data:image;base64,@base64EncodedImg" width="60" height="60"/>
+                            }
+                         }</td>
+                                                     
                     <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
 
                     @if (User.Identity.IsAuthenticated)
@@ -54,17 +62,6 @@
                             </td>
                         }
                     }
-                    @*
-                        <div class="modal fade bootstrapmodal" >
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        This item was added to your shopping cart!</div>
-                                    <button data-dismiss="model" class="close"> <span>&times;</span></button>
-                                </div>
-                            </div>
-                        </div>
-                    *@
                 </tr>
             }
         </tbody>

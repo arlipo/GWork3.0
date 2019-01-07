@@ -7,13 +7,26 @@
     Layout = "_EditPartial";
 }
 
-<body >
+<body>
 @Html.ViewingControlsFor(model => model.Code)
 @Html.EditingControlsFor(model => model.Description)
 @Html.EditingControlsFor(model => model.Name)
 @Html.EditingControlsForEnum(model => model.Type)
-@Html.EditingControlsFor(model => model.Image)
 @Html.EditingControlsFor(model => model.Price)
+<div class="form-group">
+    <label class="control-label col-md-2">Picture</label>
+    <input type="file" name="file" accept="image/*" class="input">
+</div>
+<div style="position: absolute; bottom: 197px; left: 700px;">
+    @{
+        if (Model.Image != null)
+        {
+            var base64EncodedImg = Convert.ToBase64String(Model.Image);
+            <img src="data:image;base64,@base64EncodedImg" width="180" height="180" />
+        }
+}
+</div>
+
 </body>
 
 @section Actions{
