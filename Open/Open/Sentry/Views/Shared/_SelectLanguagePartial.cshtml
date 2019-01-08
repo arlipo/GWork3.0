@@ -7,22 +7,23 @@
 @inject IOptions<RequestLocalizationOptions> LocOptions
 @using Open.Sentry.Resouces
 @inject LocService SharedLocalizer
-@{
-    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
-    var cultureItems = LocOptions.Value.SupportedUICultures
-        .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
-        .ToList();
-}
+    <link rel="stylesheet" href="~/css/home/language.css" />
+    @{
+        var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+        var cultureItems = LocOptions.Value.SupportedUICultures
+            .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+            .ToList();
+    }
 
-<div title="@Localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name">
-    <form class="form-inline" id="selectLanguage" asp-controller="SetLanguage" asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path" method="post" role="form">
-        
-        <div class="input-group">
+    <div title="@Localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name">
+        <form class="form-inline" id="selectLanguage" asp-controller="SetLanguage" asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path" method="post" role="form">
 
-            <select class="custom-select" name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems"></select>
-            <div class="input-group-append">
-                <button type="submit" class="btn btn-inf">@SharedLocalizer.GetLocalizedHtmlString("save")</button>
+            <div class="input-group">
+
+                <select class="custom-select" name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems"></select>
+                <div class="input-group-append">
+                    <button type="submit" class="button button1">@SharedLocalizer.GetLocalizedHtmlString("save")</button>
+                </div>
             </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
