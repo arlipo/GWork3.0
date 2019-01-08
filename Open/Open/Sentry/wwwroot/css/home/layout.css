@@ -1,8 +1,8 @@
 ﻿
 body {
     position: relative;
-    top: 40px;
-    background-color: #00050f;
+    top: 20px;
+	background-image: url(../../678.jpg);
 }
 
         footer {
@@ -13,8 +13,8 @@ body {
     position: fixed;
 	background-color: black;
 	opacity: initial;
+	top:5px;
 	z-index: 2;
-	top: 0;
 	width: 100%;
 }
 
