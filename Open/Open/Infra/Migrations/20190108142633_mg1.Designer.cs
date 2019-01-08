@@ -10,7 +10,7 @@ using Open.Infra;
 namespace Open.Infra.Migrations
 {
     [DbContext(typeof(SentryDbContext))]
-    [Migration("20181216202426_mg1")]
+    [Migration("20190108142633_mg1")]
     partial class mg1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,7 +50,9 @@ namespace Open.Infra.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<byte[]>("Image");
+                    b.Property<byte[]>("ImgData");
+
+                    b.Property<string>("ImgName");
 
                     b.Property<string>("Name");
 

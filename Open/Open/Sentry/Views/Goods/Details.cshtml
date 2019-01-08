@@ -5,28 +5,36 @@
     ViewBag.Title = "Details";
     Layout = "_DetailsPartial";
 }
-<body style="color: aliceblue">
+<body>
 
-    <div style="position: absolute; bottom: 197px; left: 113px;">
+    <div style="position: absolute">
         @{
-            if (Model.Image != null)
+            if (Model.ImgData != null)
             {
-                var base64EncodedImg = Convert.ToBase64String(Model.Image);
-                <img src="data:image;base64,@base64EncodedImg" width="180" height="180" />
+                var base64EncodedImg = Convert.ToBase64String(Model.ImgData);
+                <img  alt="@Model.ImgName" src="data:image;base64,@base64EncodedImg" width="180" height="180"/>
             }
         }
     </div>
-    <div style="position: relative; left: 110px">
-        @Html.ViewingControlsFor(o => Model.Name)
-        @Html.ViewingControlsFor(o => Model.Type)
-        @Html.ViewingControlsFor(o => Model.Price)
-        <div style="width: 1000px; position: relative; left: 23px">@Html.ViewingControlsFor(o => Model.Description)</div>
-        @if (User.IsInRole("Admin"))
-        {
-            @Html.ViewingControlsFor(o => Model.Code)
-            @Html.ViewingControlsFor(o => Model.Quantity)
+<div style="position: relative; left: 115px;color: aliceblue">
+    @Html.ViewingControlsFor(o => Model.Name)
+    @Html.ViewingControlsFor(o => Model.Type)
+    @Html.ViewingControlsFor(o => Model.Price)
+    <div style="width: 1000px; position: relative; left: 23px">@Html.ViewingControlsFor(o => Model.Description)</div>
+    @if (User.IsInRole("Admin"))
+    {
+        @Html.ViewingControlsFor(o => Model.Code)
+        @Html.ViewingControlsFor(o => Model.Quantity)
+    }
+    <div style="position: relative; right: 37px; top: 8px">
+        @{
+            if (!User.IsInRole("Admin")) {
+                <a asp-action="AddToCart" asp-route-id="@Model.ID" class="btn btn-default" style="font-weight: bold">Add to Cart</a>
+            }
         }
     </div>
+</div>
+<br/>
 </body>
 
 @section Actions{

@@ -7,7 +7,7 @@
     Layout = "_EditPartial";
 }
 
-<body>
+<body style="color:lavender">
 @Html.ViewingControlsFor(model => model.Code)
 @Html.EditingControlsFor(model => model.Description)
 @Html.EditingControlsFor(model => model.Name)
@@ -19,12 +19,18 @@
 </div>
 <div style="position: absolute; bottom: 197px; left: 700px;">
     @{
-        if (Model.Image != null)
+        if (Model.ImgData != null)
         {
-            var base64EncodedImg = Convert.ToBase64String(Model.Image);
-            <img src="data:image;base64,@base64EncodedImg" width="180" height="180" />
+            var base64EncodedImg = Convert.ToBase64String(Model.ImgData);
+            <img alt="@Model.ImgName" src="data:image;base64,@base64EncodedImg" width="180" height="180" />
         }
-}
+        else {
+            <p style="font-weight: bold; position: relative; left: 28px">There is no image</p>
+        }
+    }
+</div>
+<div style="position: absolute; bottom: 150px; left: 730px;">
+    <a asp-action="DeleteImg" asp-route-id="@Model.ID" class="btn btn-default" style="font-weight: bold">Delete Picture</a>
 </div>
 
 </body>

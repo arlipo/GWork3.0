@@ -25,7 +25,7 @@
             <tr>
                 @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
                 @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.Price)
-                @Html.SortColumnHeaderFor(ViewData["SortImage"], model => dummy.Image)
+                @Html.SortColumnHeaderFor(ViewData["SortImage"], model => dummy.ImgData)
                 @Html.SortColumnHeaderFor(ViewData["SortQuantity"], model => dummy.Quantity)
             </tr>
         </thead>
@@ -39,9 +39,9 @@
                     <td>&euro;@Html.DisplayFor(modelItem => item.Price)</td>
                                                      
                     <td>@{
-                            if (item.Image!=null) {
-                                var base64EncodedImg = Convert.ToBase64String(item.Image);
-                                <img src="data:image;base64,@base64EncodedImg" width="60" height="60"/>
+                        if (item.ImgData != null) {
+                            var base64EncodedImg = Convert.ToBase64String(item.ImgData);
+                                <img alt="@item.ImgName" src="data:image;base64,@base64EncodedImg" width="60" height="60"/>
                             }
                          }</td>
                                                      
