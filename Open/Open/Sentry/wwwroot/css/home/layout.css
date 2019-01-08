@@ -3,7 +3,6 @@ body {
     position: relative;
     top: 40px;
 	background-image: url(../../back.jpg);
-	opacity: 0.89;
 }
 
         footer {
@@ -67,6 +66,11 @@ body {
     top: 8px;
     height: 40px;
     width: 126px;
+}
+.input {
+    position: relative;
+    left: 14px;
+    top: 4px;
 }
 
 .p {

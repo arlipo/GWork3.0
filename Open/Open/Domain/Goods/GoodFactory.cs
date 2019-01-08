@@ -12,7 +12,7 @@ namespace Open.Domain.Goods
         }
         
         public static Good Create(string id, string name, string code, string description, string price, 
-            GoodTypes type, string quantity, string brand, byte[] image,DateTime? validFrom = null, DateTime? validTo = null)
+            GoodTypes type, string quantity, string brand, byte[] image = null,DateTime? validFrom = null, DateTime? validTo = null)
         {
             GoodsData o = new GoodsData
             {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Open.Aids;
@@ -9,7 +10,8 @@ using Open.Core;
 using Open.Data.ShoppingCart;
 using Open.Domain.Goods;
 using Open.Facade.Goods;
-
+using Open.Infra;
+using Open.Sentry.FileLogic;
 namespace Open.Sentry.Controllers {
 
 
@@ -23,7 +25,7 @@ namespace Open.Sentry.Controllers {
         };
         private readonly IGoodsRepository repository;
         internal const string properties =
-            "ID, Name, Code, ImageType, Description, Price, Type, Image";
+            "ID, Name, Code, Description, Price, Type, Quantity";
 
         public GoodsController(IGoodsRepository r) {
             repository = r;
@@ -85,39 +87,44 @@ namespace Open.Sentry.Controllers {
             return View(GoodViewFactory.Create(c));
         }
 
-        [Authorize(Roles = "Admin")]
-        [HttpPost] public async Task<IActionResult> Edit([Bind(properties)] GoodView c) {
+        [Authorize(Roles = "Admin")] [HttpPost]
+        public async Task<IActionResult> Edit([Bind(properties)] GoodView c, IFormFile file) {
             if (!ModelState.IsValid) return View(c);
-            var o = await repository.GetObject(c.Code);
+
+            var ImageData = FileHelper.ParseImageToBytes(file);
+
+            var o = await repository.GetObject(c.ID);
+
             o.Data.Name = c.Name;
             o.Data.Description = c.Description;
-            o.Data.Image = c.Image;
             o.Data.Price = c.Price;
+            o.Data.Image = ImageData;
 
             await repository.UpdateObject(o);
             return RedirectToAction("Index");
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpGet] public IActionResult Create() {
+        public IActionResult Create() {
             return View();
         }
 
-        [Authorize(Roles = "Admin")] [ValidateAntiForgeryToken] [HttpPost]
-        public async Task<IActionResult> Create([Bind(properties)] GoodView c) {
+        [Authorize(Roles = "Admin")] [HttpPost]
+        public async Task<IActionResult> Create([Bind(properties)] GoodView c, IFormFile file) {
+            if (!ModelState.IsValid) return View(c);
+
+            var ImageData = FileHelper.ParseImageToBytes(file);
 
             c.ID = Guid.NewGuid().ToString();
-
             c.Code = GetRandom.Code();
             await changeCodeIfInUse(c.Code, c);
-
+                
             await validateId(c.ID, ModelState);
-
-            if (!ModelState.IsValid) return View(c);  
 
             var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
                 c.Quantity, c.Brand,
-                c.Image);
+                ImageData);
+            
             await repository.AddObject(o);
             return RedirectToAction("Index");
         }
@@ -127,7 +134,10 @@ namespace Open.Sentry.Controllers {
                 d.AddModelError(string.Empty, idIsInUseMessage(id));
         }
         private async Task changeCodeIfInUse(string code, GoodView c) {
-            if (await isCodeInUse(code)) c.Code = GetRandom.Code();
+            while (await isCodeInUse(code)) {
+                c.Code = GetRandom.Code();
+                code = c.Code;
+            }
         }
         private async Task<bool> isIdInUse(string id) {
             return (await repository.GetObject(id))?.Data?.ID == id;

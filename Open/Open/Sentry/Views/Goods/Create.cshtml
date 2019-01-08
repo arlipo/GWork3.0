@@ -7,20 +7,17 @@
     Layout = "_EditPartial";
 }
 
+
 <body>
-<form asp-action="Create" method="post" enctype="multipart/form-data">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     @Html.EditingControlsFor(model => model.Name)
     @Html.EditingControlsFor(model => model.Description)
-    <div class="form-group">
-        <label asp-for="Image" class="control-label col-md-2">Picture</label>
-        <input type="file" accept="image/*" asp-for="Image">
-        <span asp-validation-for="Image" class="text-danger"></span>
-    </div>
     @Html.EditingControlsFor(model => model.Price)
     @Html.EditingControlsForEnum(model => model.Type)
-    @Html.EditingControlsFor(model=> model.Quantity)
-</form>
+    @Html.EditingControlsFor(model => model.Quantity)
+    <div class="form-group">
+        <label class="control-label col-md-2">Picture</label>
+        <input type="file" name="file" accept="image/*" class="input">
+    </div>
 </body>
 
 @section Actions{
