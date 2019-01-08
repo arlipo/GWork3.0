@@ -4,16 +4,17 @@ using Microsoft.AspNetCore.Http;
 namespace Open.Sentry.FileLogic {
     public class FileHelper {
 
-        public static byte[] ParseImageToBytes(IFormFile file) {
+        public static (byte[], string) ParseImageToBytes(IFormFile file) {
             byte[] bytes;
-
-            if (file == null) return null;
+            var name = "";
+            if (file == null) return (null, name);
+            name = file.FileName;
 
             using (var binaryReader = new BinaryReader(file.OpenReadStream())) {
                 bytes = binaryReader.ReadBytes((int) file.Length);
             }
 
-            return bytes;
+            return (bytes, name);
         }
     }
 }

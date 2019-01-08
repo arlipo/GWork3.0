@@ -15,7 +15,8 @@ namespace Open.Facade.Goods
                 Code = o?.Data?.Code,
                 Type = o?.Data?.Type ?? GoodTypes.Accessories,
                 Description = o?.Data?.Description,
-                Image = o?.Data?.Image,
+                ImgData = o?.Data?.ImgData,
+                ImgName = o?.Data?.ImgName,
                 Price = o?.Data?.Price,
                 Quantity = o?.Data?.Quantity,
                 Brand = o?.Data?.Brand

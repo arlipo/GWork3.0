@@ -48,7 +48,9 @@ namespace Open.Infra.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<byte[]>("Image");
+                    b.Property<byte[]>("ImgData");
+
+                    b.Property<string>("ImgName");
 
                     b.Property<string>("Name");
 

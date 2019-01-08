@@ -91,17 +91,31 @@ namespace Open.Sentry.Controllers {
         public async Task<IActionResult> Edit([Bind(properties)] GoodView c, IFormFile file) {
             if (!ModelState.IsValid) return View(c);
 
-            var ImageData = FileHelper.ParseImageToBytes(file);
-
             var o = await repository.GetObject(c.ID);
+
+            if (file!=null) {
+                var (imgData, imgName) = FileHelper.ParseImageToBytes(file);
+                o.Data.ImgData = imgData;
+                o.Data.ImgName = imgName;
+            }
 
             o.Data.Name = c.Name;
             o.Data.Description = c.Description;
             o.Data.Price = c.Price;
-            o.Data.Image = ImageData;
 
             await repository.UpdateObject(o);
-            return RedirectToAction("Index");
+            return RedirectToAction("Edit");
+        }
+        public async Task<IActionResult> DeleteImg([Bind(properties)] GoodView c)
+        {
+            var o = await repository.GetObject(c.ID);
+            
+            o.Data.ImgData = null;
+            o.Data.ImgName = null;
+
+            await repository.UpdateObject(o);
+
+            return RedirectToAction("Edit", new { id = c.ID });
         }
 
         [Authorize(Roles = "Admin")]
@@ -113,7 +127,7 @@ namespace Open.Sentry.Controllers {
         public async Task<IActionResult> Create([Bind(properties)] GoodView c, IFormFile file) {
             if (!ModelState.IsValid) return View(c);
 
-            var ImageData = FileHelper.ParseImageToBytes(file);
+            var (imgData, imgName) = FileHelper.ParseImageToBytes(file);
 
             c.ID = Guid.NewGuid().ToString();
             c.Code = GetRandom.Code();
@@ -123,7 +137,7 @@ namespace Open.Sentry.Controllers {
 
             var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
                 c.Quantity, c.Brand,
-                ImageData);
+                imgData, imgName);
             
             await repository.AddObject(o);
             return RedirectToAction("Index");

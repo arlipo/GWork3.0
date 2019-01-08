@@ -13,8 +13,8 @@ body {
     position: fixed;
 	background-color: black;
 	opacity: initial;
-	top:5px;
 	z-index: 2;
+    top: 0;
 	width: 100%;
 }
 
