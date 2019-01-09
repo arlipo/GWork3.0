@@ -2,7 +2,11 @@
 body {
     position: relative;
     top: 20px;
-	background-image: url(../../45.jpg);
+    background: url(../../images/wall2.jpg) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
         footer {
