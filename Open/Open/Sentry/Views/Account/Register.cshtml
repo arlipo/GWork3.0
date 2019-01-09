@@ -6,10 +6,11 @@
     ViewData["Title"] = "Register";
 }
 
-<h2>@ViewData["Title"]</h2>
+
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" style="background-color: #B3CBDE";>
+        <h2>@ViewData["Title"]</h2>
         <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
             <h4>@SharedLocalizer.GetLocalizedHtmlString("register.CreateNewAccount")</h4>
             <hr />

@@ -10,14 +10,14 @@ using Open.Sentry.Data;
 namespace Open.Sentry.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181214073315_initial2")]
-    partial class initial2
+    [Migration("20190108210913_mig2")]
+    partial class mig2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.3-rtm-32065")
+                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
