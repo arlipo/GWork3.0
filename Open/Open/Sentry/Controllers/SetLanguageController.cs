@@ -2,8 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
-
-namespace Sentry.Controllers
+namespace Open.Sentry.Controllers
 {
     public class SetLanguageController : Controller
     {

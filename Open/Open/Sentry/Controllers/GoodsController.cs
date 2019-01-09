@@ -106,7 +106,7 @@ namespace Open.Sentry.Controllers {
             await repository.UpdateObject(o);
             return RedirectToAction("Edit");
         }
-        public async Task<IActionResult> DeleteImg([Bind(properties)] GoodView c)
+        public async Task<IActionResult> DeleteImg(GoodView c)
         {
             var o = await repository.GetObject(c.ID);
             

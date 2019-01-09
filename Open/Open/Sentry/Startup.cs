@@ -18,8 +18,7 @@ using System.Reflection;
 using Open.Sentry.ChatHub;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
-using Open.Sentry.Resouces;
-
+using Open.Sentry.Resource;
 namespace Open.Sentry {
     public class Startup
     {
@@ -71,6 +70,9 @@ namespace Open.Sentry {
             });
 
 
+
+            services.AddMvc();
+
             services.AddSingleton<LocService>();
             services.AddLocalization(options => options.ResourcesPath = "Resource");
 
@@ -101,8 +103,6 @@ namespace Open.Sentry {
 
                     options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
                 });
-
-            services.AddMvc();
             services.AddSignalR();
         }
     
@@ -140,10 +140,11 @@ namespace Open.Sentry {
             app.UseSignalR(routes => 
                 { routes.MapHub<ChatHub.ChatHub>("/chatHub"); });
 
-            app.UseMvc(routes => {
+            app.UseMvc(routes =>
+            {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{lang=en-US}/{controller=Home}/{action=Index}/{id?}");
             });
         }
         protected virtual void setErrorPage(IApplicationBuilder app, IHostingEnvironment env)

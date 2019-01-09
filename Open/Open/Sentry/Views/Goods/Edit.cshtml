@@ -7,32 +7,35 @@
     Layout = "_EditPartial";
 }
 
-<body style="color:lavender">
-@Html.ViewingControlsFor(model => model.Code)
-@Html.EditingControlsFor(model => model.Description)
-@Html.EditingControlsFor(model => model.Name)
-@Html.EditingControlsForEnum(model => model.Type)
-@Html.EditingControlsFor(model => model.Price)
-<div class="form-group">
-    <label class="control-label col-md-2">Picture</label>
-    <input type="file" name="file" accept="image/*" class="input">
-</div>
-<div style="position: absolute; bottom: 197px; left: 700px;">
-    @{
-        if (Model.ImgData != null)
-        {
-            var base64EncodedImg = Convert.ToBase64String(Model.ImgData);
-            <img alt="@Model.ImgName" src="data:image;base64,@base64EncodedImg" width="180" height="180" />
+<body>
+<div style="color: #e2e2e2">
+    @Html.ViewingControlsFor(model => model.Code)
+    @Html.EditingControlsFor(model => model.Description)
+    @Html.EditingControlsFor(model => model.Name)
+    @Html.EditingControlsForEnum(model => model.Type)
+    @Html.EditingControlsFor(model => model.Price)
+    <div class="form-group">
+        <label class="control-label col-md-2">Picture</label>
+        <input type="file" name="file" accept="image/*" class="input">
+    </div>
+    <div style="position: absolute; bottom: 197px; left: 700px;">
+        @{
+            if (Model.ImgData != null) {
+                var base64EncodedImg = Convert.ToBase64String(Model.ImgData);
+                <img alt="@Model.ImgName" src="data:image;base64,@base64EncodedImg" width="180" height="180"/>
+            }
+            else {
+                <p style="font-weight: bold; position: relative; left: 28px">There is no image</p>
+            }
         }
-        else {
-            <p style="font-weight: bold; position: relative; left: 28px">There is no image</p>
-        }
-    }
+    </div>
+    <div style="position: absolute; bottom: 150px; left: 730px;">
+        <a asp-action="DeleteImg" asp-route-id="@Model.ID" class="btn btn-default" style="font-weight: bold">Delete Picture</a>
+    </div>
+    <div style="position: absolute; bottom: 106px; left: 380px;">
+        <a asp-action="Index" class="btn btn-default" style="font-weight: bold">Back to Catalog</a>
+    </div>
 </div>
-<div style="position: absolute; bottom: 150px; left: 730px;">
-    <a asp-action="DeleteImg" asp-route-id="@Model.ID" class="btn btn-default" style="font-weight: bold">Delete Picture</a>
-</div>
-
 </body>
 
 @section Actions{
