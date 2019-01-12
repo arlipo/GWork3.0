@@ -1,7 +1,41 @@
-﻿
-@{
-    ViewData["Title"] = "Checkout";
-}
+﻿@using Open.Sentry.Extensions
+@model Open.Facade.ShoppingCart.CartViewsList
+<link rel="stylesheet" type="text/css" href="~/css/Cart/index.css" />
 
-<h2>Checkout</h2>
 
+<div class="container text-left" style="background-color: #B3CBDE; opacity: 70;">
+    <h1>Cart</h1>
+    <table class="table">
+        @{var dummy = Model.FirstOrDefault();}
+        <thead>
+        <tr>
+            @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
+            @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.UnitPrice)
+            @Html.SortColumnHeaderFor(ViewData["SortQuantity"], model => dummy.Quantity)
+            @Html.SortColumnHeaderFor(ViewData["SortTotalPrice"], model => dummy.TotalPrice)
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>&euro;@Html.DisplayFor(modelItem => item.UnitPrice)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                <td>&euro;@Html.DisplayFor(modelItem => item.TotalPrice)</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <form action="http://localhost:57494/goods">
+        <button class="button button4">Continue Shopping</button>
+    </form>
+    <div style="float: right; position: relative; right: 25px; bottom: 10px">
+        <a asp-action="Index" class="button button5">Back</a>
+    </div>
+    <div style="float: right; position: relative; right: 60px">
+        <p><strong>Total: &euro;@Model.SubTotal()</strong></p>
+    </div>
+    <br />
+</div>

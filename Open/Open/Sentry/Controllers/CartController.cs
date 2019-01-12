@@ -13,16 +13,15 @@ namespace Open.Sentry.Controllers {
 
         //[Authorize]
         public IActionResult Index() {
-            var l = new CartViewsList(cart);
-            return View(l);
+            return View(new CartViewsList(cart));
         }
 
         public static void Add(CartData db) {
             cart.AddItem(db);
         }
 
-        public IActionResult CheckOut() {
-            return View("Checkout");
+        public IActionResult Checkout() {
+            return View(new CartViewsList(cart));
         }
 
         public IActionResult PlusOne(string id) {
