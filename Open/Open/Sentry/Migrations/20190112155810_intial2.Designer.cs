@@ -10,8 +10,8 @@ using Open.Sentry.Data;
 namespace Open.Sentry.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190111161922_initial2")]
-    partial class initial2
+    [Migration("20190112155810_intial2")]
+    partial class intial2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -141,7 +141,7 @@ namespace Open.Sentry.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<int>("Credits");
+                    b.Property<decimal>("Credits");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256);

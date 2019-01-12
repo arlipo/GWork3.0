@@ -24,6 +24,12 @@ namespace Open.Sentry.Controllers {
             return View(new CartViewsList(cart));
         }
 
+        [HttpPost]
+        public IActionResult CheckoutConfirmed()
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
         public IActionResult PlusOne(string id) {
             var item = cart.GetCartItemByID(id);
             Add(item.Data);

@@ -139,7 +139,7 @@ namespace Open.Sentry.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<int>("Credits");
+                    b.Property<decimal>("Credits");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256);
