@@ -8,24 +8,24 @@
     <table class="table">
         @{var dummy = Model.FirstOrDefault();}
         <thead>
-        <tr>
-            @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
-            @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.UnitPrice)
-            @Html.SortColumnHeaderFor(ViewData["SortQuantity"], model => dummy.Quantity)
-            @Html.SortColumnHeaderFor(ViewData["SortTotalPrice"], model => dummy.TotalPrice)
-        </tr>
+            <tr>
+                @Html.SortColumnHeaderFor(ViewData["SortName"], model => dummy.Name)
+                @Html.SortColumnHeaderFor(ViewData["SortPrice"], model => dummy.UnitPrice)
+                @Html.SortColumnHeaderFor(ViewData["SortQuantity"], model => dummy.Quantity)
+                @Html.SortColumnHeaderFor(ViewData["SortTotalPrice"], model => dummy.TotalPrice)
+            </tr>
         </thead>
         <tbody>
-        @foreach (var item in Model)
-        {
+            @foreach (var item in Model)
+            {
 
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                <td>&euro;@Html.DisplayFor(modelItem => item.UnitPrice)</td>
-                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
-                <td>&euro;@Html.DisplayFor(modelItem => item.TotalPrice)</td>
-            </tr>
-        }
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>&euro;@Html.DisplayFor(modelItem => item.UnitPrice)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                    <td>&euro;@Html.DisplayFor(modelItem => item.TotalPrice)</td>
+                </tr>
+            }
         </tbody>
     </table>
     <form action="http://localhost:57494/goods">
@@ -33,6 +33,9 @@
     </form>
     <div style="float: right; position: relative; right: 25px; bottom: 10px">
         <a asp-action="Index" class="button button5">Back</a>
+    </div>
+    <div style="float: right; position: relative; right: 25px; bottom: 10px">
+        <a asp-action="Buy" class="button button5">Buy</a>
     </div>
     <div style="float: right; position: relative; right: 60px">
         <p><strong>Total: &euro;@Model.SubTotal()</strong></p>

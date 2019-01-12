@@ -1,5 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Open.Data.Goods;
 using Open.Data.ShoppingCart;
@@ -7,11 +9,16 @@ using Open.Domain.Goods;
 using Open.Domain.ShoppingCart;
 using Open.Facade.Goods;
 using Open.Facade.ShoppingCart;
+using Open.Sentry.Models;
+
 namespace Open.Sentry.Controllers {
     public class CartController : Controller {
         private static readonly Cart cart = new Cart();
+        private readonly UserManager<ApplicationUser> um;
 
-        //[Authorize]
+        public CartController(UserManager<ApplicationUser> um) { this.um = um; }
+
+        [Authorize]
         public IActionResult Index() {
             return View(new CartViewsList(cart));
         }
@@ -20,14 +27,9 @@ namespace Open.Sentry.Controllers {
             cart.AddItem(db);
         }
 
+        [Authorize]
         public IActionResult Checkout() {
             return View(new CartViewsList(cart));
-        }
-
-        [HttpPost]
-        public IActionResult CheckoutConfirmed()
-        {
-            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult PlusOne(string id) {
@@ -51,6 +53,20 @@ namespace Open.Sentry.Controllers {
             var item = cart.GetCartItemByID(id);
             cart.Remove(item);
             return RedirectToAction("Index");
+        }
+        
+        [Authorize]
+        public async Task<IActionResult> Buy()
+        {
+            var user = await um.GetUserAsync(User);
+            var cost = cart.GetSubTotal();
+            var isCreditsRemoved = user.RemoveCredits(cost);
+            if (isCreditsRemoved)
+            {
+                await um.UpdateAsync(user);
+                return RedirectToAction("Index", "Home");
+            }
+            return View("Checkout");
         }
     }
 }
