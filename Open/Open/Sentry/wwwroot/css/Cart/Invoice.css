@@ -1,0 +1,42 @@
+﻿ul {
+	list-style: none;
+}
+
+.container {
+	background-color: #B3CBDE;
+}
+
+.inv-header {
+	background-color: #B3CBDE;
+}
+
+
+.inv-title {
+	padding: 10px;
+	text-align: center;
+	margin-bottom: 20px;
+	background-color: #B3CBDE;
+}
+
+
+
+.inv-logo {
+	width: 200px;
+	background-color: #B3CBDE;
+}
+
+.inv-footer {
+	clear: both;
+}
+
+	.inv-footer table {
+		width: 30%;
+		float: right;
+		border: 1px solid silver;
+		border-collapse: collapse;
+	}
+
+		.inv-footer table th, .inv-footer table td {
+			padding: 8px;
+			text-align: right;
+}

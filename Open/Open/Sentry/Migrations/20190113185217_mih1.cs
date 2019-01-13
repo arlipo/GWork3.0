@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Open.Sentry.Migrations
 {
-    public partial class initial : Migration
+    public partial class mih1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

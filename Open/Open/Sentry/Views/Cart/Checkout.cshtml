@@ -1,10 +1,30 @@
 ﻿@using Open.Sentry.Extensions
 @model Open.Facade.ShoppingCart.CartViewsList
 <link rel="stylesheet" type="text/css" href="~/css/Cart/index.css" />
+<link rel="stylesheet" type="text/css" href="~/css/Cart/invoice.css" />
 
+<div class="container">
+    <div class="inv-title">
+        <h1 class="no-margin">Invoice</h1>
+    </div>
+    <div class="inv-footer">
+        <div>
+            <img src="~/images/logo.png" class="inv-logo">
+            <ul>
+                <li>Ehitajate tee 5, </li>
+                <li>19086 Tallinn</li>
+                <li> gwork@gmail.com</li>
+                <li> Issue Date</li>
+                <li>
+                    <script>document.write(new Date().toLocaleDateString());</script>
+                </li>
 
-<div class="container text-left" style="background-color: #B3CBDE; opacity: 70;">
-    <h1>Cart</h1>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="inv-header" style="background-color: #B3CBDE; opacity: 70;">
     <table class="table">
         @{var dummy = Model.FirstOrDefault();}
         <thead>
@@ -26,19 +46,40 @@
                     <td>&euro;@Html.DisplayFor(modelItem => item.TotalPrice)</td>
                 </tr>
             }
+
         </tbody>
     </table>
-    <form action="http://localhost:57494/goods">
-        <button class="button button4">Continue Shopping</button>
-    </form>
-    <div style="float: right; position: relative; right: 25px; bottom: 10px">
-        <a asp-action="Index" class="button button5">Back</a>
-    </div>
-    <div style="float: right; position: relative; right: 25px; bottom: 10px">
-        <a asp-action="Buy" class="button button5">Buy</a>
-    </div>
-    <div style="float: right; position: relative; right: 60px">
-        <p><strong>Total: &euro;@Model.SubTotal()</strong></p>
-    </div>
-    <br />
 </div>
+
+
+<form action="http://localhost:57494/goods">
+    <button class="button button4">Continue Shopping</button>
+</form>
+<div style="float: right; position: relative; right: 25px; bottom: 10px">
+    <a asp-action="Index" class="button button5">Back</a>
+</div>
+<div style="float: right; position: relative; right: 25px; bottom: 10px">
+    <a asp-action="Buy" class="button button5">Buy</a>
+</div>
+<div style="float: right; position: relative; right: 60px">
+    <p><strong>Total: &euro;@Model.SubTotal()</strong></p>
+</div>
+
+
+<div class="container-fluid bg-2 text-center">
+    <h3>Shipping</h3>
+    <p>
+        Shipping Ways.
+
+        ● Pickup
+        ● Courier.
+        Payment Methods:
+        ● Cash
+        Cash payment upon receipt of goods
+        ● Bank transfer. Bank transfer
+        Prepayment
+    </p>
+
+</div>
+<br />
+
