@@ -133,7 +133,7 @@ namespace Open.Sentry.Controllers {
             c.ID = Guid.NewGuid().ToString();
             c.Code = GetRandom.Code();
             await changeCodeIfInUse(c.Code, c);
-                
+            
             await validateId(c.ID, ModelState);
 
             var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
