@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Open.Aids;
 using Open.Sentry.Models;
+using Open.Sentry.Models.AccountViewModels;
 
 namespace Open.Sentry.Data
 {
@@ -10,9 +12,8 @@ namespace Open.Sentry.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+
         }
-
-
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

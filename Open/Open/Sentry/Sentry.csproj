@@ -9,16 +9,12 @@
  </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Pages\**" />
     <Compile Remove="wwwroot\css\Accessories\**" />
     <Compile Remove="wwwroot\css\Chemistry\**" />
-    <Content Remove="Pages\**" />
     <Content Remove="wwwroot\css\Accessories\**" />
     <Content Remove="wwwroot\css\Chemistry\**" />
-    <EmbeddedResource Remove="Pages\**" />
     <EmbeddedResource Remove="wwwroot\css\Accessories\**" />
     <EmbeddedResource Remove="wwwroot\css\Chemistry\**" />
-    <None Remove="Pages\**" />
     <None Remove="wwwroot\css\Accessories\**" />
     <None Remove="wwwroot\css\Chemistry\**" />
   </ItemGroup>

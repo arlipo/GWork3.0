@@ -33,7 +33,7 @@ namespace Open.Sentry.Controllers {
                 await RoleManager.CreateAsync(new IdentityRole("Admin"));
             }
 
-            //Assign Admin role to the main User here we have given our newly loregistered login id for Admin management  
+            //Assign Admin role to the main User here we have given our newly registered login id for Admin management  
             ApplicationUser user = await UserManager.FindByEmailAsync("Admin@admin.com");
             await UserManager.AddToRoleAsync(user, "Admin");
 

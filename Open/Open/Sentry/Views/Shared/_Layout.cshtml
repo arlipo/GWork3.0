@@ -1,5 +1,21 @@
-﻿@using Open.Sentry.Resource
+﻿@using Open.Sentry.Models
+@using Open.Sentry.Resource
+
+
 <!DOCTYPE html>
+
+@inject LocService SharedLocalizer
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/home/layout.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>@ViewData["Title"]GWork Shop</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@RenderSection("Scripts", required: false)
+
 <nav class="navbar navbar">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -26,40 +42,40 @@
                         <p class="p">@SharedLocalizer.GetLocalizedHtmlString("header.ShoppingCart")</p>
                     </a>
                 </li>
-            </ul>
+                <li>
+                    @{
+                        if (SignInManager.IsSignedIn(User) || User.IsInRole("Admin"))
+                        {
+                            <a asp-controller="Credits" asp-action="Index">Balance:</a>
+                        }
+                        @*else if (SignInManager.IsSignedIn(User))
+                        {
+                            <p>Balance: @_user.Credits</p>
+                        }*@
+                    }
+                    </li>
+                </ul>
 
-            <div class="nav navbar-nav navbar-right" style="position: relative; left: 10px;">
-                <form>
-                    @await Html.PartialAsync("_SelectLanguagePartial")
-                </form>
+                <div class="nav navbar-nav navbar-right" style="position: relative; left: 10px;">
+                    <form>
+                        @await Html.PartialAsync("_SelectLanguagePartial")
+                    </form>
+                </div>
+
+                @await Html.PartialAsync("_LoginPartial")
+
             </div>
-
-            @await Html.PartialAsync("_LoginPartial")
-
         </div>
-    </div>
-</nav>
-<html>
-<head>
-    @inject LocService SharedLocalizer
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/home/layout.css" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]GWork Shop</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    @RenderSection("Scripts", required: false)
-</head>
-<body>
-<div class="container body-content">
-    <br/>
-    @RenderBody()
-    <hr/>
-    <footer>
-        <p>Made by Gwork Company</p>
-    </footer>
-</div>
-</body>
-</html>
+    </nav>
+    <body>
+        <div class="container body-content">
+            <br />
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>Made by Gwork Company</p>
+            </footer>
+        </div>
+    </body>
 
 

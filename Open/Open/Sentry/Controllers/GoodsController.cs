@@ -106,6 +106,7 @@ namespace Open.Sentry.Controllers {
             await repository.UpdateObject(o);
             return RedirectToAction("Edit");
         }
+        [HttpPost]
         public async Task<IActionResult> DeleteImg(GoodView c)
         {
             var o = await repository.GetObject(c.ID);
