@@ -20,6 +20,26 @@ tr:nth-child(even) {
 	background-color: #dce6ef;
 	border-radius: 8px;
 }
+.button1 {
+	text-align: center;
+	color: black;
+	padding: 1px 12px;
+	border: 1px solid #008CBA;
+	background-color: #dce6ef;
+	border-radius: 7px;
+	position: sticky;
+}
+
+.button2 {
+	text-align: center;
+	color: black;
+	padding: 4px 10px;
+	border: 1px solid #008CBA;
+	background-color: #dce6ef;
+	border-radius: 7px;
+	position: sticky;
+}
+
 
 
 .button5 {
