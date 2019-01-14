@@ -60,6 +60,7 @@ namespace Open.Sentry.Controllers {
             if (isCreditsRemoved)
             {
                 await um.UpdateAsync(user);
+                cart.RemoveAllItems();
                 return RedirectToAction("Index", "Home");
             }
             return View("Checkout");

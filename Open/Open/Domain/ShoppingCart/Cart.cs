@@ -66,5 +66,10 @@ namespace Open.Domain.ShoppingCart
             }
             return new CartItem(new CartData()); 
         }
+
+        public void RemoveAllItems()
+        {
+            RemoveRange(0, Count - 1);
+        }
     }
 }
