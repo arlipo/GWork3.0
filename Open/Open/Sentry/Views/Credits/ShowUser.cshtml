@@ -12,10 +12,10 @@
     </div>
     <div class="form-horizontal">
         <form method="post" asp-action="SetAmount" asp-route-email=@Model.Email>
-            <label asp-for="Credits" style="color: #e2e2e2">Email &nbsp;</label>
+            <label asp-for="Credits" style="color: #e2e2e2">Amount of EURO &nbsp;</label>
             <input asp-for="Credits" style="width: 300px" />
             <span asp-validation-for="Credits" class="text-danger"></span>
-            <div style="position: relative; left: 360px; bottom: 31px">
+            <div style="position: relative; left: 440px; bottom: 31px">
                 <input type="submit" value="Set" class="btn" style="font-weight: bold" />
             </div>
         </form>
