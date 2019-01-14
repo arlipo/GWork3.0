@@ -19,8 +19,8 @@ namespace Open.Sentry.Controllers {
             return View(new CartViewsList(cart));
         }
 
-        public static void Add(CartData db) {
-            cart.AddItem(db);
+        public static void Add(CartData data) {
+            cart.AddItem(data);
         }
 
         [Authorize]
