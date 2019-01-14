@@ -25,11 +25,11 @@ namespace Open.Sentry.Controllers
         {
             return View();
         }
-
         
         public async Task<IActionResult> ShowUser(CreditsViewModel model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user is null) return View("Index");
             model.Credits = user.Credits;
             return View(model);
         }
@@ -39,19 +39,11 @@ namespace Open.Sentry.Controllers
             var balance = user.Credits.ToString();
             return balance;
         }
-        //[HttpPost]
-        //public async Task<IActionResult> DeleteCredits(ApplicationUser model)
-        //{
-        //    var user = await _userManager.FindByEmailAsync(model.Email);
-        //    user.Credits = 0;
 
-        //    return RedirectToAction("Edit", new { id = model.Email });
-        //}
-        public async Task<IActionResult> SetAmount(CreditsViewModel model, string email)
+        public async Task<IActionResult> SetAmount(CreditsViewModel model)
         {
-            var user = await _userManager.FindByEmailAsync(email);
+            var user = await _userManager.FindByEmailAsync(model.Email);
             user.Credits = model.Credits;
-            model.Email = email;
             await _userManager.UpdateAsync(user);
             return View("ShowUser", model);
         }
