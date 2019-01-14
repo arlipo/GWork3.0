@@ -1,8 +1,23 @@
 ﻿@model Open.Sentry.Models.AccountViewModels.CreditsViewModel
 
 @{
-    ViewBag.Title = "Deposit money";
+    ViewBag.Title = "Money editor";
     Layout = "_Layout";
 }
+<h2 style="color: #e2e2e2">@ViewBag.Title</h2>
+<body>
+    <div class="form-horizontal">
+        <form method="post" asp-action="ShowUser">
+            <label asp-for="Email" style="color: #e2e2e2">Email &nbsp;</label>
+            <input asp-for="Email" style="width: 300px" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <div style="position: relative; left: 360px; bottom: 31px">
+                <input type="submit" value="Show" class="btn" style="font-weight: bold" />
+            </div>
+        </form>
+        <div>
 
-<h2>Title</h2>
+        </div>
+    </div>
+<br/>
+</body>

@@ -1,6 +1,6 @@
-﻿@using Open.Sentry.Models
+﻿@using Open.Sentry.Controllers
+@using Open.Sentry.Models
 @using Open.Sentry.Resource
-
 
 <!DOCTYPE html>
 
@@ -24,8 +24,8 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <div class="dropdown">
-                        <button class="dropbtn">@SharedLocalizer.GetLocalizedHtmlString("header.Products")</button>
+                    <div class="dropdown" style="position: relative;top: 15px">
+                        <button class="dropbtn" style="height: 160%">@SharedLocalizer.GetLocalizedHtmlString("header.Products")</button>
                         <div class="dropdown-content">
                             <a asp-area="" asp-controller="Goods" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.All")</a>
                             <a asp-area="" asp-controller="Goods" asp-route-category="SpareParts" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.SpareParts")</a>
@@ -46,36 +46,40 @@
                     @{
                         if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                         {
-                            <a asp-controller="Credits" asp-action="Index">Balance:</a>
+                            <a asp-controller="Credits" asp-action="Index">Money</a>
                         }
-                        @*else if (SignInManager.IsSignedIn(User))
+                        else if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
                         {
-                            <p>Balance: @_user.Credits</p>
-                        }*@
+                            var user = await UserManager.GetUserAsync(User);
+                            var balance = CreditsController.UserBalance(user);
+                            <p style="color: #e2e2e2; position: relative; top: 17px; left: 10px">Balance: &euro;@balance</p>
+
+                        }
+
                     }
-                    </li>
-                </ul>
+                </li>
+            </ul>
 
-                <div class="nav navbar-nav navbar-right" style="position: relative; left: 10px;">
-                    <form>
-                        @await Html.PartialAsync("_SelectLanguagePartial")
-                    </form>
-                </div>
-
-                @await Html.PartialAsync("_LoginPartial")
-
+            <div class="nav navbar-nav navbar-right" style="position: relative; left: 10px;">
+                <form>
+                    @await Html.PartialAsync("_SelectLanguagePartial")
+                </form>
             </div>
+
+            @await Html.PartialAsync("_LoginPartial")
+
         </div>
-    </nav>
-    <body>
-        <div class="container body-content">
-            <br />
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>Made by Gwork Company</p>
-            </footer>
-        </div>
-    </body>
+    </div>
+</nav>
+<body>
+    <div class="container body-content">
+        <br />
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>Made by Gwork Company</p>
+        </footer>
+    </div>
+</body>
 
 

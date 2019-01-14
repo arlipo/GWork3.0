@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -24,22 +26,19 @@ namespace Open.Sentry.Controllers
             return View();
         }
 
-        [HttpPost]
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Edit(CreditsViewModel model)
+        
+        public async Task<IActionResult> ShowUser(CreditsViewModel model)
         {
-            if (ModelState.IsValid)
-            {
-                var user = await _userManager.FindByEmailAsync(model.Email);
-
-                user.Credits = model.Credits;
-
-                _dataContext.Update(user);
-                await _dataContext.SaveChangesAsync();                
-            }
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            model.Credits = user.Credits;
             return View(model);
         }
 
+        public static string UserBalance(ApplicationUser user)
+        {
+            string balance = user.Credits.ToString();
+            return balance;
+        }
         //[HttpPost]
         //public async Task<IActionResult> DeleteCredits(ApplicationUser model)
         //{
