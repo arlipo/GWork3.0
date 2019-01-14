@@ -36,7 +36,7 @@
 
                 <tr>
                     <td>@if(User.IsInRole("Admin")) {@Html.DisplayFor(modelItem => item.Name)}
-                        else { <a asp-action="Details" asp-route-id="@item.ID">@item.Name</a>}</td>
+                        else { <a asp-action="Details" asp-route-id="@item.ID" style="color: #303030; font-weight: bold">@item.Name</a>}</td>
                     <td>&euro;@Html.DisplayFor(modelItem => item.Price)</td>
                                                      
                     <td>@{

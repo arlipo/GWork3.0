@@ -20,7 +20,7 @@
 <div style="position: relative; left: 115px;color: aliceblue">
     @Html.ViewingControlsFor(o => Model.Name)
     @Html.ViewingControlsFor(o => Model.Type)
-    <p>&euro;</p>@Html.ViewingControlsFor(o => Model.Price)
+    @Html.ViewingControlsFor(o => Model.Price)
     <div style="width: 1000px; position: relative; left: 23px">@Html.ViewingControlsFor(o => Model.Description)</div>
     @if (User.IsInRole("Admin"))
     {
