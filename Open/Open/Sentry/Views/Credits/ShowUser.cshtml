@@ -6,18 +6,22 @@
 }
 
 <body>
-    <h2 style="color: #e2e2e2">@Model.Email</h2>
-    <div style="float: right; position: relative; right: 25px; bottom: 10px">
-        <a asp-action="Index" class="button button5">Back</a>
-    </div>
-    <div class="form-horizontal">
-        <form method="post" asp-action="SetAmount" asp-route-email=@Model.Email>
-            <label asp-for="Credits" style="color: #e2e2e2">Amount of EURO &nbsp;</label>
-            <input asp-for="Credits" style="width: 300px" />
-            <span asp-validation-for="Credits" class="text-danger"></span>
-            <div style="position: relative; left: 440px; bottom: 31px">
-                <input type="submit" value="Set" class="btn" style="font-weight: bold" />
-            </div>
-        </form>
-    </div>
+<br />
+<br />
+<h2 style="color: #e2e2e2">@Model.Email</h2>
+<br />
+<div style="position: absolute; top: 188px;">
+    <a asp-action="Index" style="font-weight: bold">Back</a>
+</div>
+<div class="form-horizontal">
+    <form method="post" asp-action="SetAmount" asp-route-email=@Model.Email>
+        <label asp-for="Credits" style="color: #e2e2e2">User's balance &nbsp;</label>
+        <input asp-for="Credits" style="width: 300px" />
+        <span asp-validation-for="Credits" class="text-danger"></span>
+        <div style="position: absolute; left: 535px; top: 140px">
+            <input type="submit" value="Set" class="btn" style="font-weight: bold" />
+        </div>
+    </form>
+    <br />
+</div>
 </body>

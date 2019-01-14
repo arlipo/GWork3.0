@@ -46,7 +46,7 @@
                     @{
                         if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                         {
-                            <a asp-controller="Credits" asp-action="Index">Money</a>
+                            <a asp-controller="Credits" asp-action="Index" style="font-weight: bold; color: #4286f4; top: 3px;left: 3px">$Money</a>
                         }
                         else if (SignInManager.IsSignedIn(User))
                         {
