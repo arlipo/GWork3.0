@@ -1,4 +1,5 @@
-﻿@using Open.Sentry.Extensions
+﻿@using Microsoft.AspNetCore.Http.Extensions
+@using Open.Sentry.Extensions
 @model Open.Facade.Goods.GoodView
 
 @{
@@ -19,7 +20,7 @@
 <div style="position: relative; left: 115px;color: aliceblue">
     @Html.ViewingControlsFor(o => Model.Name)
     @Html.ViewingControlsFor(o => Model.Type)
-    @Html.ViewingControlsFor(o => Model.Price)
+    <p>&euro;</p>@Html.ViewingControlsFor(o => Model.Price)
     <div style="width: 1000px; position: relative; left: 23px">@Html.ViewingControlsFor(o => Model.Description)</div>
     @if (User.IsInRole("Admin"))
     {
@@ -29,7 +30,7 @@
     <div style="position: relative; right: 37px; top: 8px">
         @{
             if (!User.IsInRole("Admin")) {
-                <a asp-action="AddToCart" asp-route-id="@Model.ID" class="btn btn-default" style="font-weight: bold">Add to Cart</a>
+                <a asp-action="AddToCart" asp-route-id="@Model.ID" asp-route-returnUrl="@Context.Request.GetEncodedUrl()" class="btn btn-default" style="font-weight: bold">Add to Cart</a>
             }
         }
     </div>

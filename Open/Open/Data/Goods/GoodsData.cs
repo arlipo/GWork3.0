@@ -29,16 +29,8 @@ namespace Open.Data.Goods
 
         public GoodTypes Type { get; set; }
 
-        public string Quantity
-        {
-            get => getString(ref quantity);
-            set => price = value;
-        }
+        public string Quantity { get; set; }
 
-        public string Brand
-        {
-            get => getString(ref brand);
-            set => price = value;
-        }
+        public string Brand { get; set; }
     }
 }
