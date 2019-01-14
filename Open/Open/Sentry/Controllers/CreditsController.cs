@@ -29,6 +29,7 @@ namespace Open.Sentry.Controllers
         public async Task<IActionResult> ShowUser(CreditsViewModel model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user is null) return View("Index");
             model.Credits = user.Credits;
             return View(model);
         }
