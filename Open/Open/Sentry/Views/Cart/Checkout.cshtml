@@ -58,9 +58,9 @@
 <div style="float: right; position: relative; right: 25px; bottom: 10px">
     <a asp-action="Index" class="button button5">Back</a>
 </div>
-<div style="float: right; position: relative; right: 25px; bottom: 10px">
+@*<div style="float: right; position: relative; right: 25px; bottom: 10px">
     <a asp-action="Buy" class="button button5">Buy</a>
-</div>
+</div>*@
 <div style="float: right; position: relative; right: 60px">
     <p><strong>Total: &euro;@Model.SubTotal()</strong></p>
 </div>
@@ -69,16 +69,20 @@
 <div class="container-fluid bg-2 text-center">
     <h3>Shipping</h3>
     <p>
+    <p>
         Shipping Ways.
 
         ● Pickup
         ● Courier.
+    </p>
+    <p>
         Payment Methods:
         ● Cash
-        Cash payment upon receipt of goods
-        ● Bank transfer. Bank transfer
+        ● Bank transfer
         Prepayment
     </p>
+    <p>SwedBank </p>
+    <p> IBAN: EE2200222234568650 </p>
 
 </div>
 <br />

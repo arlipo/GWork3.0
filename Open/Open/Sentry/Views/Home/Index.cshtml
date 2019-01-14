@@ -20,7 +20,7 @@
             <b>@SharedLocalizer.GetLocalizedHtmlString("Home.Index.BestPro")</b>
         </h2>
         <br>
-        <img src="~/images/GWorkLogo.png" alt="Logo" width="150" height="87">
+        <img src="~/images/logo.png" alt="Logo" width="500" height="400">
         <br>
         <br>
         <br>
@@ -32,44 +32,23 @@
     </div>
     <br>
 <div class="container-fluid bg-3">
-            <h3 class="margin"><strong><font size="20" color: black; face="Arial">@SharedLocalizer.GetLocalizedHtmlString("Home.Index.HotItems")</font></strong></h3><br>
+            <h3 class="margin"><strong><font size="20" color: black; face="Arial">Category</font></strong></h3><br>
         <div class="row">
             <div class="col-sm-4">
-                <p><strong>Antifreeze + coolant LONG LIFE</strong></p>
-                <p></p>
-                <img src="~/images/freez.png" alt="Image" width="255" height="255">
-                <p><strong>8,99€</strong></p>
-                <button class="btn btn-info">@SharedLocalizer.GetLocalizedHtmlString("Home.Index.Buy")</button>
-            </div>
-            <div class="col-sm-4">
-                <p><strong>RIDEX Brake Disc Rear Axle</strong></p>
-                <img src="~/images/ridex.png" alt="Image" width="255" height="255">
-                <p><strong>14,99€</strong></p>
-                <button class="btn btn-info" >@SharedLocalizer.GetLocalizedHtmlString("Home.Index.Buy")</button>
-            </div>
-            <div class="col-sm-4">
-                <p><strong>EXTREME Mobile phone holders</strong></p>
                 <img src="~/images/horder.png" alt="Image" width="255" height="255">
-                <p><strong>6,99€</strong></p>
-
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">@SharedLocalizer.GetLocalizedHtmlString("Home.Index.Buy")</button>
-
-                <div class="modal fade fd right" id="myModal" role="dialog">
-                    <div class="modal-dialog" >
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Modal Header</h4>
-                            </div>
-                            <div class="modal-body" style="color:black">
-                                <p> @SharedLocalizer.GetLocalizedHtmlString("Home.Index.ThankYou")</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">@SharedLocalizer.GetLocalizedHtmlString("Home.Index.Close")</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
+                <p>  <a asp-area="" asp-controller="Goods" asp-route-category="Accessories" asp-action="Index" style="color:white;">@SharedLocalizer.GetLocalizedHtmlString("header.Accessories")</a></p>
+            </div>
+            <div class="col-sm-4">
+                <img src="~/images/ridex.png" alt="Image" width="255" height="255">
+                <p> <a asp-area="" asp-controller="Goods" asp-route-category="SpareParts" asp-action="Index" style="color:white;">@SharedLocalizer.GetLocalizedHtmlString("header.SpareParts")</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <img src="~/images/freez.png" alt="Image" width="255" height="255">
+                <p>
+                    <a asp-area="" asp-controller="Goods" asp-route-category="Chemistry" asp-action="Index" style="color:white;">@SharedLocalizer.GetLocalizedHtmlString("header.Chemistry")</a>
+                </p>
             </div>
         </div>
             <br/>
