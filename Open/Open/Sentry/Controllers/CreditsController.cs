@@ -36,7 +36,7 @@ namespace Open.Sentry.Controllers
 
         public static string UserBalance(ApplicationUser user)
         {
-            string balance = user.Credits.ToString();
+            var balance = user.Credits.ToString();
             return balance;
         }
         //[HttpPost]
