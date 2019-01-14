@@ -69,7 +69,7 @@ namespace Open.Domain.ShoppingCart
 
         public void RemoveAllItems()
         {
-            RemoveRange(0, Count - 1);
+            RemoveRange(0, Count);
         }
     }
 }
