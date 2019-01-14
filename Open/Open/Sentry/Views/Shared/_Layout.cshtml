@@ -24,8 +24,8 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <div class="dropdown" style="position: relative;top: 15px">
-                        <button class="dropbtn" style="height: 160%">@SharedLocalizer.GetLocalizedHtmlString("header.Products")</button>
+                    <div class="dropdown">
+                        <button class="dropbtn">@SharedLocalizer.GetLocalizedHtmlString("header.Products")</button>
                         <div class="dropdown-content">
                             <a asp-area="" asp-controller="Goods" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.All")</a>
                             <a asp-area="" asp-controller="Goods" asp-route-category="SpareParts" asp-action="Index">@SharedLocalizer.GetLocalizedHtmlString("header.SpareParts")</a>
