@@ -57,13 +57,10 @@ namespace Open.Sentry.Controllers {
             var user = await um.GetUserAsync(User);
             var cost = cart.GetSubTotal();
             var isCreditsRemoved = user.RemoveCredits(cost);
-            if (isCreditsRemoved)
-            {
-                await um.UpdateAsync(user);
-                cart.RemoveAllItems();
-                return RedirectToAction("Index", "Home");
-            }
-            return View("Checkout");
+            if (!isCreditsRemoved) return View("Checkout");
+            await um.UpdateAsync(user);
+            cart.RemoveAllItems();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
