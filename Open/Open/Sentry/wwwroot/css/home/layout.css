@@ -21,16 +21,17 @@ body {
 
 
 .dropbtn {
+
  background-color:black;
     color: white;
     font-size: 16px;
     border: none;
 }
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+.dropdown {
+	font-size: 16px;
+	padding: 14px 16px;
+}
 
 .dropdown-content {
 	display: none;

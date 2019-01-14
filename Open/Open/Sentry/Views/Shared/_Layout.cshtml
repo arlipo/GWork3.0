@@ -48,7 +48,7 @@
                         {
                             <a asp-controller="Credits" asp-action="Index">Money</a>
                         }
-                        else if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
+                        else if (SignInManager.IsSignedIn(User))
                         {
                             var user = await UserManager.GetUserAsync(User);
                             var balance = CreditsController.UserBalance(user);

@@ -58,9 +58,9 @@
 <div style="float: right; position: relative; right: 25px; bottom: 10px">
     <a asp-action="Index" class="button button5">Back</a>
 </div>
-@*<div style="float: right; position: relative; right: 25px; bottom: 10px">
+<div style="float: right; position: relative; right: 25px; bottom: 10px">
     <a asp-action="Buy" class="button button5">Buy</a>
-</div>*@
+</div>
 <div style="float: right; position: relative; right: 60px">
     <p><strong>Total: &euro;@Model.SubTotal()</strong></p>
 </div>
@@ -84,6 +84,18 @@
     <p>SwedBank </p>
     <p> IBAN: EE2200222234568650 </p>
 
+    <h2>Contact Us :</h2>
+
+    <form action="mailto:luiza.anna.mesh@gmail.com" method="post" enctype="text/plain">
+        Name:<br>
+        <input type="text" name="name"><br>
+        E-mail:<br>
+        <input type="text" name="mail"><br>
+        Comment:<br>
+        <input type="text" name="comment" size="50"><br><br>
+        <input type="submit" value="Send">
+        <input type="reset" value="Reset">
+    </form>
 </div>
 <br />
 

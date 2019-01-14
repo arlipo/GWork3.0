@@ -1,4 +1,21 @@
 ﻿@model Open.Sentry.Models.AccountViewModels.CreditsViewModel
 
+@{
+    ViewBag.Title = "Money editor";
+    Layout = "_Layout";
+}
 
-<h2 style="color: #e2e2e2">@Model.Credits</h2>
+<body>
+    <h2 style="color: #e2e2e2">@Model.Email</h2>
+    <div style="float: right; position: relative; right: 25px; bottom: 10px">
+        <a asp-action="Index" class="button button5">Back</a>
+    </div>
+    <div class="input-group" style="float: right; position: relative; right: 25px; bottom: 10px">
+        <form method="post">
+            <input type="text" name="amount">
+            <div style="position: relative; left: 360px; bottom: 31px">
+                <input type="button" value="Add" class="btn" style="font-weight: bold" />
+            </div>
+        </form>
+    </div>
+</body>
