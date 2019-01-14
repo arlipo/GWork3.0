@@ -36,7 +36,7 @@ namespace Open.Sentry.Controllers
 
         public static string UserBalance(ApplicationUser user)
         {
-            string balance = user.Credits.ToString();
+            var balance = user.Credits.ToString();
             return balance;
         }
         //[HttpPost]
@@ -47,5 +47,13 @@ namespace Open.Sentry.Controllers
 
         //    return RedirectToAction("Edit", new { id = model.Email });
         //}
+        public async Task<IActionResult> SetAmount(CreditsViewModel model, string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            user.Credits = model.Credits;
+            model.Email = email;
+            await _userManager.UpdateAsync(user);
+            return View("ShowUser", model);
+        }
     }
 }
