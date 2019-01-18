@@ -37,5 +37,18 @@ namespace Open.Tests.Aids {
             Assert.IsFalse(Regex.IsMatch("123'", match));
             Assert.IsFalse(Regex.IsMatch("123\"", match));
         }
+
+        [TestMethod]
+        public void PriceTest()
+        {
+            const string match = RegularExpressionFor.Price;
+            Assert.IsTrue(Regex.IsMatch("123", match));
+            Assert.IsTrue(Regex.IsMatch("123.1", match));
+            Assert.IsFalse(Regex.IsMatch("123 ", match));
+            Assert.IsFalse(Regex.IsMatch("123a", match));
+            Assert.IsFalse(Regex.IsMatch("a123", match));
+            Assert.IsFalse(Regex.IsMatch("123'", match));
+            Assert.IsFalse(Regex.IsMatch("123\"", match));
+        }
     }
 }

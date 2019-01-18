@@ -42,17 +42,5 @@ namespace Open.Tests.Data.Goods
         {
             canReadWrite(() => obj.Type, x => obj.Type = x);
         }
-
-        [TestMethod]
-        public void QuantityTest()
-        {
-            canReadWrite(() => obj.Quantity, x => obj.Quantity = x);
-        }
-
-        [TestMethod]
-        public void BrandTest()
-        {
-            canReadWrite(() => obj.Brand, x => obj.Brand = x);
-        }
     }
 }

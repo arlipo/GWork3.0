@@ -4,6 +4,9 @@ using System.Drawing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Aids;
 using Open.Core;
+using Open.Domain.Customers;
+using Open.Domain.Goods;
+
 namespace Open.Tests.Aids {
 
     [TestClass] public class GetRandomTests : BaseTests {
@@ -48,6 +51,11 @@ namespace Open.Tests.Aids {
             }
         }
 
+        [TestMethod] public void ObjectTest() {
+            var o = GetRandom.Object(typeof(Customer));
+            Assert.IsInstanceOfType(o, typeof(Customer));
+        }
+
         [TestMethod] public void BoolTest() {
             var b = GetRandom.Bool();
             Assert.IsInstanceOfType(b, typeof(bool));
@@ -62,6 +70,17 @@ namespace Open.Tests.Aids {
             doGetRandomTests(GetRandom.Char, char.MinValue, char.MaxValue);
             doGetRandomTests(GetRandom.Char, char.MinValue, (char) (char.MinValue + 100));
             doGetRandomTests(GetRandom.Char, (char) (char.MaxValue - 100), char.MaxValue);
+        }
+
+        [TestMethod] public void CodeTest()
+        {
+            var code = GetRandom.Code();
+            Assert.IsInstanceOfType(code, typeof(string));
+            var c = code.ToCharArray();
+            for (var i = 0; i < c.Length; i++)
+            {
+                Assert.IsTrue(i < 6 ? char.IsLetter(c[i]) : char.IsNumber(c[i]));
+            }
         }
 
         [TestMethod] public void ColorTest() {

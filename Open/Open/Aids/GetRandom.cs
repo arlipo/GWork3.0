@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 namespace Open.Aids {
 
@@ -110,10 +112,10 @@ namespace Open.Aids {
                 min);
         }
 
-        public static object Value(Type t) {
+        public static object Value(Type t)
+        {
             var x = Nullable.GetUnderlyingType(t);
             if (!(x is null)) t = x;
-            if (t.IsArray) return Array(t.GetElementType());
             if (t.IsEnum) return Enum(t);
             if (t == typeof(string)) return String();
             if (t == typeof(char)) return Char();
@@ -164,7 +166,7 @@ namespace Open.Aids {
         }
         public static string Code()
         {
-            string code = String(6, 6) + UInt8(0, 9) + UInt8(0, 9);
+            var code = String(6, 6) + UInt8(0, 9) + UInt8(0, 9);
             return code;
         }
     }

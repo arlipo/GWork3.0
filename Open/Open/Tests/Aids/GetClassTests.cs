@@ -65,6 +65,15 @@ namespace Open.Tests.Aids
         }
 
         [TestMethod]
+        public void PropertyTest()
+        {
+            var a = GetClass.Property<classTest>("F");
+            Assert.IsNotNull(a);
+            Assert.IsInstanceOfType(a, typeof(PropertyInfo));
+            Assert.AreEqual("F", a.Name);
+        }
+
+        [TestMethod]
         public void ReadWritePropertyValuesTest()
         {
             var o = GetRandom.Object<classTest>();
