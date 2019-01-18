@@ -8,12 +8,6 @@ namespace Open.Tests.Domain {
         [TestMethod] public void IsCommonTested() {
             isAllTested(assembly, Namespace("Common"));
         }
-        [TestMethod] public void IsPartyTested() {
-            isAllTested(assembly, Namespace("Party"));
-        }
-        [TestMethod] public void IsQuantityTested() {
-            isAllTested(assembly, Namespace("Quantity"));
-        }
         [TestMethod]
         public void IsTested()
         {

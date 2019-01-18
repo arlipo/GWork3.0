@@ -15,9 +15,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Party\**" />
+    <Compile Remove="Data\Quantity\**" />
     <Compile Remove="Domain\Inventory\**" />
+    <Compile Remove="Domain\Party\**" />
+    <Compile Remove="Domain\Quantity\**" />
+    <Compile Remove="Facade\Party\**" />
+    <Compile Remove="Facade\Quantity\**" />
+    <Compile Remove="Infra\Party\**" />
+    <Compile Remove="Infra\Quantity\**" />
+    <EmbeddedResource Remove="Data\Party\**" />
+    <EmbeddedResource Remove="Data\Quantity\**" />
     <EmbeddedResource Remove="Domain\Inventory\**" />
+    <EmbeddedResource Remove="Domain\Party\**" />
+    <EmbeddedResource Remove="Domain\Quantity\**" />
+    <EmbeddedResource Remove="Facade\Party\**" />
+    <EmbeddedResource Remove="Facade\Quantity\**" />
+    <EmbeddedResource Remove="Infra\Party\**" />
+    <EmbeddedResource Remove="Infra\Quantity\**" />
+    <None Remove="Data\Party\**" />
+    <None Remove="Data\Quantity\**" />
     <None Remove="Domain\Inventory\**" />
+    <None Remove="Domain\Party\**" />
+    <None Remove="Domain\Quantity\**" />
+    <None Remove="Facade\Party\**" />
+    <None Remove="Facade\Quantity\**" />
+    <None Remove="Infra\Party\**" />
+    <None Remove="Infra\Quantity\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,15 +65,7 @@
 
   <ItemGroup>
     <Folder Include="Aids\Extensions\" />
-    <Folder Include="Data\Party\" />
-    <Folder Include="Data\Quantity\" />
     <Folder Include="Domain\Common\" />
-    <Folder Include="Domain\Party\" />
-    <Folder Include="Domain\Quantity\" />
-    <Folder Include="Facade\Party\" />
-    <Folder Include="Facade\Quantity\" />
-    <Folder Include="Infra\Party\" />
-    <Folder Include="Infra\Quantity\" />
   </ItemGroup>
 
 </Project>

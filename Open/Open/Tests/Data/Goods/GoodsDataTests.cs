@@ -24,5 +24,35 @@ namespace Open.Tests.Data.Goods
         {
             canReadWrite(() => obj.Description, x => obj.Description = x);
         }
+
+        [TestMethod]
+        public void ImgDataTest()
+        {
+            canReadWrite(() => obj.ImgData, x => obj.ImgData = x);
+        }
+
+        [TestMethod]
+        public void ImgNameTest()
+        {
+            canReadWrite(() => obj.ImgName, x => obj.ImgName = x);
+        }
+
+        [TestMethod]
+        public void TypeTest()
+        {
+            canReadWrite(() => obj.Type, x => obj.Type = x);
+        }
+
+        [TestMethod]
+        public void QuantityTest()
+        {
+            canReadWrite(() => obj.Quantity, x => obj.Quantity = x);
+        }
+
+        [TestMethod]
+        public void BrandTest()
+        {
+            canReadWrite(() => obj.Brand, x => obj.Brand = x);
+        }
     }
 }
