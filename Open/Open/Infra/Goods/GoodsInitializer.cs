@@ -24,8 +24,6 @@ namespace Open.Infra.Goods {
                     " for use in all automobiles and light-duty trucks, regardless of make, " +
                     "model, year or original antifreeze color.",
                 Price = "8.99",
-                Quantity = "10",
-                Brand = "1",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\1.jpg")
             });
             add(c, new GoodsData {
@@ -38,8 +36,6 @@ namespace Open.Infra.Goods {
                               "for direct replacement.",
                 Type = GoodTypes.SpareParts,
                 Price = "14.99",
-                Quantity = "9",
-                Brand = "2",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\2.jpg")
 
             });
@@ -53,8 +49,6 @@ namespace Open.Infra.Goods {
                     "charging cable not included.",
                 Type = GoodTypes.Accessories,
                 Price = "6.99",
-                Quantity = "12",
-                Brand = "3",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\3.jpg")
             });
             add(c, new GoodsData {
@@ -63,8 +57,6 @@ namespace Open.Infra.Goods {
                 Description = "AUDI 3 button remote key fob case FULL service repair kit.",
                 Type = GoodTypes.SpareParts,
                 Price = "9.99",
-                Quantity = "8",
-                Brand = "1",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\4.jpg")
 
             });
@@ -78,8 +70,6 @@ namespace Open.Infra.Goods {
                 Type = GoodTypes.Accessories,
                 ID = "5",
                 Price = "7.99",
-                Quantity = "7",
-                Brand = "2",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\5.jpg")
             });
             add(c, new GoodsData {
@@ -90,8 +80,6 @@ namespace Open.Infra.Goods {
                     " steering wheels with an exterior diameter of 37 - 39cm.Simply stretches over the existing steering wheel",
                 Type = GoodTypes.Accessories,
                 Price = "9.99",
-                Quantity = "2",
-                Brand = "3",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\6.jpg")
             });
             add(c, new GoodsData {
@@ -102,8 +90,6 @@ namespace Open.Infra.Goods {
                     " from the cold. ",
                 Type = GoodTypes.Accessories,
                 Price = "15.99",
-                Quantity = "4",
-                Brand = "1",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\7.jpg")
 
             });
@@ -114,8 +100,6 @@ namespace Open.Infra.Goods {
                     "This cup/can holder has a designated space for cans/cups anda space for coins and other small items.",
                 Type = GoodTypes.Accessories,
                 Price = "10.99",
-                Quantity = "3",
-                Brand = "2",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\8.jpg")
             });
 
@@ -127,8 +111,6 @@ namespace Open.Infra.Goods {
                               "One spray is all you need for a full size vehicle",
                 Type = GoodTypes.Chemistry,
                 Price = "9.99",
-                Quantity = "2",
-                Brand = "3",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\9.jpg")
             });
             add(c, new GoodsData {
@@ -140,8 +122,6 @@ namespace Open.Infra.Goods {
                     "Suitable For: Volkswagen",
                 Type = GoodTypes.Chemistry,
                 Price = "14.49",
-                Quantity = "3",
-                Brand = "1",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\10.jpg")
             });
             add(c, new GoodsData() {
@@ -152,8 +132,6 @@ namespace Open.Infra.Goods {
                               "are specifically designed to use a low viscosity (HTHS) motor oil. ",
                 Type = GoodTypes.Chemistry,
                 Price = "20.49",
-                Quantity = "1",
-                Brand = "2",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\11.jpg")
             });
             add(c, new GoodsData() {
@@ -163,8 +141,6 @@ namespace Open.Infra.Goods {
                               "o-rings and one bottle of Honda Genuine power steering fluid.",
                 Type = GoodTypes.Chemistry,
                 Price = "23.49",
-                Quantity = "4",
-                Brand = "1",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\12.jpg")
             });
             add(c, new GoodsData() {
@@ -173,8 +149,6 @@ namespace Open.Infra.Goods {
                 Description = "Genuine Ford Antifreeze Antifreeze Super plus Premium 4 Liter",
                 Type = GoodTypes.Chemistry,
                 Price = "10.99",
-                Quantity = "4",
-                Brand = "2",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\13.jpg")
             });
             add(c, new GoodsData() {
@@ -184,8 +158,6 @@ namespace Open.Infra.Goods {
                     "Suitable for brake cleaner and other de-greaser products, Motorcycle Motorbike",
                 Type = GoodTypes.Chemistry,
                 Price = "7.49",
-                Quantity = "5",
-                Brand = "3",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\14.jpg")
             });
             add(c, new GoodsData() {
@@ -195,8 +167,6 @@ namespace Open.Infra.Goods {
                     "Removes gently and effectively all kinds of dirt on the body (dirt, dust, oil, salt - and insect remains, poplar buds and leaves tree secretions.",
                 Type = GoodTypes.Chemistry,
                 Price = "20.99",
-                Quantity = "5",
-                Brand = "2",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\15.jpg")
             });
             add(c, new GoodsData() {
@@ -207,8 +177,6 @@ namespace Open.Infra.Goods {
                               "the vehicle is intensely cleaned surface and brought to shine over the waxes contained in the product. ",
                 Type = GoodTypes.Chemistry,
                 Price = "20.99",
-                Quantity = "3",
-                Brand = "3",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\16.jpg")
             });
             add(c, new GoodsData {
@@ -217,8 +185,6 @@ namespace Open.Infra.Goods {
                 Description = "Temperature switch, Weight [kg] - 0,010, 2 connectors",
                 Type = GoodTypes.SpareParts,
                 Price = "6.80",
-                Quantity = "3",
-                Brand = "1",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\17.jpg")
             });
             add(c, new GoodsData {
@@ -227,8 +193,6 @@ namespace Open.Infra.Goods {
                 Description = "Brake pedal, Weight [kg] - 0,06",
                 Type = GoodTypes.SpareParts,
                 Price = "4",
-                Quantity = "2",
-                Brand = "3",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\18.jpg")
             });
             add(c, new GoodsData {
@@ -240,8 +204,6 @@ namespace Open.Infra.Goods {
                     " a sudden stop.",
                 Type = GoodTypes.SpareParts,
                 Price = "3.6",
-                Quantity = "9",
-                Brand = "2",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\19.jpg")
             });
             add(c, new GoodsData {
@@ -249,8 +211,6 @@ namespace Open.Infra.Goods {
                 Code = GetRandom.Code(),
                 Type = GoodTypes.SpareParts,
                 Price = "10.9",
-                Quantity = "5",
-                Brand = "2",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\20.jpg")
             });
             add(c, new GoodsData {
@@ -261,8 +221,6 @@ namespace Open.Infra.Goods {
                               " sealing and venting",
                 Type = GoodTypes.SpareParts,
                 Price = "7.49",
-                Quantity = "5",
-                Brand = "3",
                 ImgData = File.ReadAllBytes(@"C:\Users\Porokhnya\source\repos\GWork3.0\Open\Open\Sentry\wwwroot\images\Parts\21.jpg")
             });
         }

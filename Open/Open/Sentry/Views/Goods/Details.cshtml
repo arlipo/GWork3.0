@@ -25,7 +25,6 @@
     @if (User.IsInRole("Admin"))
     {
         @Html.ViewingControlsFor(o => Model.Code)
-        @Html.ViewingControlsFor(o => Model.Quantity)
     }
     <div style="position: relative; right: 37px; top: 8px">
         @{

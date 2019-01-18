@@ -25,7 +25,7 @@ namespace Open.Sentry.Controllers {
         };
         private readonly IGoodsRepository repository;
         internal const string properties =
-            "ID, Name, Code, Description, Price, Type, Quantity";
+            "ID, Name, Code, Description, Price, Type";
 
         public GoodsController(IGoodsRepository r) {
             repository = r;
