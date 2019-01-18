@@ -25,7 +25,7 @@ namespace Open.Sentry.Controllers {
         };
         private readonly IGoodsRepository repository;
         internal const string properties =
-            "ID, Name, Code, Description, Price, Type, Quantity";
+            "ID, Name, Code, Description, Price, Type";
 
         public GoodsController(IGoodsRepository r) {
             repository = r;
@@ -137,7 +137,6 @@ namespace Open.Sentry.Controllers {
             await validateId(c.ID, ModelState);
 
             var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
-                c.Quantity, c.Brand,
                 imgData, imgName);
             
             await repository.AddObject(o);

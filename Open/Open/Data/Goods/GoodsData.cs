@@ -5,7 +5,7 @@ namespace Open.Data.Goods
 {
     public class GoodsData : NamedData
     {
-        private string description, price, imgName, quantity, brand;
+        private string description, price, imgName;
 
         public byte[] ImgData { get; set; }
 
@@ -28,9 +28,5 @@ namespace Open.Data.Goods
         }
 
         public GoodTypes Type { get; set; }
-
-        public string Quantity { get; set; }
-
-        public string Brand { get; set; }
     }
 }
