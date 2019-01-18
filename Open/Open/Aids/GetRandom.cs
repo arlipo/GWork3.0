@@ -116,6 +116,7 @@ namespace Open.Aids {
         {
             var x = Nullable.GetUnderlyingType(t);
             if (!(x is null)) t = x;
+            if (t.IsArray) return Array(t.GetElementType());
             if (t.IsEnum) return Enum(t);
             if (t == typeof(string)) return String();
             if (t == typeof(char)) return Char();
