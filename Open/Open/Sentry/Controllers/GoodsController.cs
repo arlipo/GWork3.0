@@ -137,7 +137,6 @@ namespace Open.Sentry.Controllers {
             await validateId(c.ID, ModelState);
 
             var o = GoodFactory.Create(c.ID, c.Name, c.Code, c.Description, c.Price, c.Type,
-                c.Quantity, c.Brand,
                 imgData, imgName);
             
             await repository.AddObject(o);
