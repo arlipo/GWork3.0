@@ -3,9 +3,9 @@ using Open.Domain.Customers;
 
 namespace Open.Facade.Customers
 {
-    public class CustomerViewList : PaginatedList<CustomerView>
+    public class CustomerViewsList : PaginatedList<CustomerView>
     {
-        public CustomerViewList(IPaginatedList<Customer> list)
+        public CustomerViewsList(IPaginatedList<Customer> list)
         {
             if (list is null) return;
             PageIndex = list.PageIndex;

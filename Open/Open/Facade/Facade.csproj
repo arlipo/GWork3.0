@@ -54,7 +54,7 @@
     <Compile Include="Common\EntityView.cs" />
     <Compile Include="Customers\CustomerView.cs" />
     <Compile Include="Customers\CustomerViewFactory.cs" />
-    <Compile Include="Customers\CustomerViewList.cs" />
+    <Compile Include="Customers\CustomerViewsList.cs" />
     <Compile Include="ShoppingCart\CartView.cs" />
     <Compile Include="ShoppingCart\CartViewFactory.cs" />
     <Compile Include="ShoppingCart\CartViewsList.cs" />

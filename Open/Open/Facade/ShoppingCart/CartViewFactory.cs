@@ -3,9 +3,9 @@
 namespace Open.Facade.ShoppingCart {
     public static class CartViewFactory {
         public static CartView Create(CartItem itm) {
-            var db = itm.Data.GoodsData;
+            var data = itm.Data.GoodsData;
             var o = new CartView {
-                GoodsData = db,
+                GoodsData = data,
                 Quantity = itm.Data.Quantity
             };
             return o;

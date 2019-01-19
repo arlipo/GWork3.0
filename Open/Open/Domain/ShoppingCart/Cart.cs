@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Web;
-using Open.Data.Goods;
 using Open.Data.ShoppingCart;
 namespace Open.Domain.ShoppingCart
 {
@@ -19,25 +17,7 @@ namespace Open.Domain.ShoppingCart
             newItem.Data.Quantity = 1;
             Add(newItem);
         }
-        /* -------------------NOT-USED-YET-----------------------
-        public void SetItemQuantity(GoodsData data, int quantity)
-        {
-            if (quantity == 0)
-            {
-                RemoveItem(data);
-                return;
-            }
 
-            var updatedItem = new CartItem(data);
-
-            foreach (var item in this)
-            {
-                if (!item.Equals(updatedItem)) continue;
-                item.Quantity = quantity;
-                return;
-            }
-        }
-        */
         public void RemoveItem(CartData data)
         {
             var newItem = new CartItem(data);

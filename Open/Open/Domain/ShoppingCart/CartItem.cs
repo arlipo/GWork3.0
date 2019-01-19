@@ -1,8 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using Open.Data.Goods;
-using Open.Data.ShoppingCart;
-using Open.Domain.Goods;
+﻿using Open.Data.ShoppingCart;
 
 namespace Open.Domain.ShoppingCart
 {
