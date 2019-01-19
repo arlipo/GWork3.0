@@ -30,5 +30,23 @@ namespace Open.Tests.Facade.ShoppingCart
         {
             canReadWrite(() => obj.Quantity, x => obj.Quantity = x);
         }
+
+        [TestMethod]
+        public void GoodsDataTest()
+        {
+            Assert.IsNotNull(obj.GoodsData);
+        }
+
+        [TestMethod]
+        public void UnitPriceTest()
+        {
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public void TotalPriceTest()
+        {
+            Assert.Inconclusive();
+        }
     }
 }

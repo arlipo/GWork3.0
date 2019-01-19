@@ -14,6 +14,12 @@ namespace Open.Tests.Facade.Goods
         }
 
         [TestMethod]
+        public void NameTest()
+        {
+            canReadWrite(() => obj.Name, x => obj.Name = x);
+        }
+
+        [TestMethod]
         public void CodeTest()
         {
             canReadWrite(() => obj.Code, x => obj.Code = x);

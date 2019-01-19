@@ -19,11 +19,35 @@ namespace Open.Tests.Data.ShoppingCart
         {
             canReadWrite(() => obj.ID, x => obj.ID = x);
         }
-        
+
+        [TestMethod]
+        public void QuantityTest()
+        {
+            canReadWrite(() => obj.Quantity, x => obj.Quantity = x);
+        }
+
         [TestMethod]
         public void NameTest()
         {
             Assert.IsNotNull(obj.Name);
+        }
+
+        [TestMethod]
+        public void GoodsDataTest()
+        {
+            Assert.IsNotNull(obj.GoodsData);
+        }
+
+        [TestMethod]
+        public void UnitPriceTest()
+        {
+            Assert.Inconclusive();
+        }
+
+        [TestMethod]
+        public void TotalPriceTest()
+        {
+            Assert.Inconclusive();
         }
     }
 }
