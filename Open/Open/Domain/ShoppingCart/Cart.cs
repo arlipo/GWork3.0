@@ -26,9 +26,15 @@ namespace Open.Domain.ShoppingCart
                 if (item.Data.ID.Equals(newItem.Data.ID))
                 {
                     item.Data.Quantity--;
+                    removeItemIfQuantityIsNull(item);
                     return;
                 }
             }
+        }
+
+        private void removeItemIfQuantityIsNull(CartItem item)
+        {
+            if (item.Data.Quantity == 0) { Remove(item); }
         }
 
         public decimal GetSubTotal()

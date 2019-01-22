@@ -1,4 +1,5 @@
-﻿using Open.Core;
+﻿using Open.Aids;
+using Open.Core;
 using Open.Data.Goods;
 namespace Open.Data.ShoppingCart
 {
@@ -16,7 +17,7 @@ namespace Open.Data.ShoppingCart
 
         public string Name => GoodsData.Name;
 
-        public decimal UnitPrice => decimal.Parse(GoodsData.Price);
+        public decimal UnitPrice => Safe.Run(() => decimal.Parse(GoodsData.Price), default(decimal));
 
         public decimal TotalPrice => UnitPrice * Quantity;
     }

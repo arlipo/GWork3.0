@@ -8,7 +8,7 @@ namespace Open.Domain.ShoppingCart
 
         public CartItem(CartData data)
         {
-            Data = data;
+            Data = data ?? new CartData();
         }
 
         public bool Equals(CartItem item) => item?.Data?.ID == Data?.ID;

@@ -37,12 +37,7 @@ namespace Open.Sentry.Controllers {
         public IActionResult MinusOne(string id) {
             var item = cart.GetCartItemByID(id);
             cart.RemoveItem(item.Data);
-            removeItemIfQuantityIsNull(item);
             return RedirectToAction("Index");
-        }
-
-        public void removeItemIfQuantityIsNull(CartItem item) {
-            if (item.Data.Quantity == 0) { cart.Remove(item); }
         }
 
         public IActionResult Remove(string id) {
