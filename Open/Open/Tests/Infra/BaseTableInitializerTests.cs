@@ -1,18 +1,10 @@
-﻿
-
-
-
-
-
-
-
-
-
-using System.Linq;
+﻿using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Open.Tests.Infra {
     public abstract class
-        BaseTableInitializerTests<TObject, TDbRecord> : BaseDbSetTests<TObject, TDbRecord>
+        BaseTableInitializerTests<TContext, TObject, TDbRecord> : BaseDbSetTests<TContext, TObject, TDbRecord>
+        where TContext: DbContext
         where TDbRecord : class, new() {
         protected abstract void initialize();
         protected virtual void doBeforeCleanup() {}

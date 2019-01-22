@@ -4,10 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Open.Data.Customers;
+using Open.Data.Goods;
 using Open.Infra;
-namespace Open.Tests.Infra {
 
-    public class SentryDbContextTests : BaseIntegrationTests<SentryDbContext>
+namespace Open.Tests.Infra
+{
+
+    public class SentryDbContextTests : BaseIntegrationTests<SentryDbContext, SentryDbContext>
     {
 
         private class testClass : SentryDbContext
@@ -31,12 +35,27 @@ namespace Open.Tests.Infra {
             base.TestInitialize();
             type = typeof(SentryDbContext);
         }
-
+        protected override SentryDbContext createContext(DbContextOptions<SentryDbContext> o) {
+            return new SentryDbContext(o);
+        }
+        [TestMethod] public void CreateGoodTableTest() {
+            var set = new ConventionSet();
+            var mb = new ModelBuilder(set);
+            SentryDbContext.createGoodTable(mb);
+            testHasGoodsEntities(mb);
+        }
+        [TestMethod] public void CreateCustomersTableTest() {
+            var set = new ConventionSet();
+            var mb = new ModelBuilder(set);
+            SentryDbContext.createCustomersTable(mb);
+            testHasCustomersEntities(mb);
+        }
         protected override SentryDbContext getRandomObject()
         {
             return db;
         }
-     private static IMutableEntityType testEntity<T>(ModelBuilder mb, bool hasPrimaryKey = false,
+
+        private static IMutableEntityType testEntity<T>(ModelBuilder mb, bool hasPrimaryKey = false,
             int foreignKeysCount = 0)
         {
             var name = typeof(T).FullName;
@@ -45,6 +64,20 @@ namespace Open.Tests.Infra {
             testPrimaryKey(entity, hasPrimaryKey);
             testForeignKey(entity, foreignKeysCount);
             return entity;
+        }
+
+        private static void testHasGoodsEntities(ModelBuilder mb)
+        {
+            testEntity<GoodsData>(mb);
+            var entity = testEntity<GoodsData>(mb, true);
+            testPrimaryKey(entity);
+        }
+
+        private static void testHasCustomersEntities(ModelBuilder mb)
+        {
+            testEntity<CustomersData>(mb);
+            var entity = testEntity<CustomersData>(mb, true);
+            testPrimaryKey(entity);
         }
 
         private static void testForeignKey(IMutableEntityType entity, int foreignKeysCount)
@@ -81,6 +114,16 @@ namespace Open.Tests.Infra {
                 {
                     Assert.IsNotNull(key.Properties.FirstOrDefault(x => x.Name == v));
                 }
+        }
+
+        [TestMethod]
+        public void OnModelCreatingTest()
+        {
+            var o = new DbContextOptions<SentryDbContext>();
+            var context = new testClass(o);
+            var mb = context.RunOnModelCreating();
+            testHasCustomersEntities(mb);
+            testHasGoodsEntities(mb);
         }
     }
 }

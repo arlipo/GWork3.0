@@ -2,12 +2,14 @@
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Aids;
 using Open.Core;
 using Open.Data.Common;
 namespace Open.Tests.Infra {
-public abstract class PaginatedRepositoryTests<TObject, TDbRecord> : BaseRepositoryTests<TObject, TDbRecord>
+public abstract class PaginatedRepositoryTests<TContext,TObject, TDbRecord> : BaseRepositoryTests<TContext,TObject, TDbRecord>
+    where TContext: DbContext
     where TDbRecord : PeriodData
     {
         protected IPaginatedRepository<TObject,TDbRecord> paginatedRepository;
@@ -119,4 +121,3 @@ public abstract class PaginatedRepositoryTests<TObject, TDbRecord> : BaseReposit
         }
     }
 }
-

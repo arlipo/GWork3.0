@@ -1,10 +1,10 @@
-﻿using System.Linq;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Open.Aids;
 using Open.Core;
 namespace Open.Tests.Infra {
-    public abstract class BaseDbSetTests<TObject, TDbRecord> : BaseIntegrationTests<ICrudRepository<TObject>>
+    public abstract class BaseDbSetTests<TContext, TObject, TDbRecord> : BaseIntegrationTests<TContext, ICrudRepository<TObject>>
+        where TContext: DbContext
         where TDbRecord : class{
         protected DbSet<TDbRecord> dbSet;
         protected ICrudRepository<TObject> repository;
@@ -36,14 +36,6 @@ namespace Open.Tests.Infra {
             });
             Assert.AreEqual(count, recordsCount(dbSet), "Cant initialize dbSet");
         }
-        protected virtual void clearDbSet<T>(DbSet<T> set) where T : class {
-            Safe.Run(() => {
-                foreach (var e in set) set.Remove(e);
-                db.SaveChanges();
-            });
-            Assert.AreEqual(0, recordsCount(set), "Cant remove from dbSet");
-        }
-        private static int recordsCount<T>(DbSet<T> set) where T: class => Safe.Run(set.Count, -1);
     }
 }
 

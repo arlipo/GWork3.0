@@ -64,6 +64,7 @@
     <Compile Include="ITerm.cs" />
     <Compile Include="Messages.cs" />
     <Compile Include="MoneyOperation.cs" />
+    <Compile Include="Operation.cs" />
     <Compile Include="PaginatedList.cs" />
     <Compile Include="PartyNameType.cs" />
     <Compile Include="PricingStrategy.cs" />
